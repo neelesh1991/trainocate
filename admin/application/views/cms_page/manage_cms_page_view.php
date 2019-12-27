@@ -90,7 +90,7 @@
 
                                       <span class="help-block">Base URL</span>                              
 
-                                    </div>
+                                    </div> 
 
                                     <div class="col-md-6">
 
