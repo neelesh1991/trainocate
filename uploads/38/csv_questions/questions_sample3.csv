@@ -1,0 +1,8 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+"You have a massively multiplayer online (MMO) game which sends events from each player every 10
+seconds. Events contain stats about the player session’s state (play, idle, off) as well as ping duration.
+You want to use Dataflow for windowing. The purpose is to aggregate events and extracting stats to
+detect how many players are currently online and what is the average ping duration for each server in
+a time window of 30 seconds.
+Which windowing function you should choose to design the pipeline?",Fixed-time window.,Sliding-time window,Per-session window,Single global window,,,2,Google cloud certified professional Data Engineer,5

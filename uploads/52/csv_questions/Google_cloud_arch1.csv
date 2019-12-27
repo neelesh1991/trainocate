@@ -1,0 +1,541 @@
+Sr no.,Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+1,"For this question, refer to the Dress4Win case study.
+You want to ensure Dress4Win’s sales and tax records remain available for infrequent viewing by
+auditors for at least 10 years. Cost optimization is your top priority. Which cloud services should you
+choose?","Google Bigtable with US or EU as location to store the data, and gcloud to access
+the data.","BigQuery to store the data, and a web server cluster in a managed instance group to
+access the data. Google Cloud SQL mirrored across two distinct regions to store the
+data, and a Redis cluster in a managed instance group to access the data.","Google Cloud Storage Nearline to store the data, and gsutil to access the data.","Google Cloud Storage Coldline to store the data, and gsutil to access the data.",,,4,Google cloud Certified Professional cloud Architech,5
+2,"You have been asked to select the storage system for the click-data of your company's large portfolio
+of websites. This data is streamed in from a custom website analytics package at a typical rate of
+6,000 clicks per minute, with bursts of up to 8,500 clicks per second. It must be stored for future
+analysis by your data science and user experience teams.
+Which storage infrastructure should you choose?",Google cloud Datastore,Google Cloud SQL,Google Cloud Bigtable,Google Cloud Storage,,,3,Google cloud Certified Professional cloud Architech,5
+3,"Over time, you've created 5 snapshots of a single instance. To save space, you delete snapshots
+number 3 and 4. What has happened to the fifth snapshot?","The data from both snapshots 3 and 4 necessary for continuance are
+transferred to snapshot 5.",It is no longer useable and cannot restore data.,"All later snapshots, including 5, are automatically deleted as well.","The data from snapshot 4 necessary for continuance was transferred to snapshot 5,
+however snapshot 3's contents were transferred to snapshot 2.",,,1,Google cloud Certified Professional cloud Architech,5
+4,"One of your clients is using customer –managed encryption, which of the following statements are
+true when you are applying customer-managed encryption key to an object.[Select any 3]",the encryption key is used to encrypt the object's data,the encryption key is used to encrypt the object’s CRC32C checksum,the encryption key is used to encrypt the object's name,the encryption key is used to encrypt the object's MD5 hash,,,"1,2&4",Google cloud Certified Professional cloud Architech,5
+5,"Your company just finished a rapid lift and shift to Google Compute Engine for your compute needs.
+You have another 9 months to design and deploy a more cloud-native solution. The business team is
+looking for services with lesser responsibility and easy manageability. Please select the order of
+services with lesser responsibility to more responsibility","Google Container Engine with containers > Google App Engine Standard
+Environment >Cloud Functions >Compute Engine with containers >Compute Engine","Cloud Functions >Google App Engine Standard Environment>Google Container
+Engine with containers >Compute Engine with containers > Compute Engine","Cloud Functions >Google Container Engine with containers >Google App Engine
+Standard Environment >Compute Engine >Compute Engine with containers","Google App Engine Standard Environment > Cloud Functions>Compute Engine with
+containers>Google Container Engine with containers>Compute Engine",,,2,Google cloud Certified Professional cloud Architech,5
+6,"You need to regularly create disk level backups of the root disk of a critical instance. These backups
+need to be able to be converted into new instances that can be used in different projects. How should
+you do this? Select 2 possible way to accomplish this","Create snapshots, turn the snapshot into a custom image, and share the image
+across projects.",Use the VM migration tools in Compute Engine to copy a VM to a different project.,Create snapshots and share them to other projects.,"Stream your VM's data into Cloud Storage and share the exported data in the storage
+bucket with another project.",,,1&3,Google cloud Certified Professional cloud Architech,5
+7,"Your company has decided to build a backup replica of their on- premises user authentication
+PostgreSQL database on Google Cloud Platform. The database is 4 TB, and large updates are
+frequent. Replication requires RFC1918 private address space. Which networking approach would be
+the best choice?","Create two VPN tunnels within the same Cloud VPN gateway to the same
+destination VPN gateway",Direct Peering,Google Cloud Dedicated Interconnect or Google Cloud Partner Interconnect,Google Cloud VPN connected to the data center network.,,,3,Google cloud Certified Professional cloud Architech,5
+8,"You are using DataFlow to ingest a large amount of data and later you send the data to Bigquery for
+Analysis, but you realize the data is dirty, what would be the best choice to use to clean the data?","Fetch data from Bigquery and clean data from DataPrep and send it back to
+Bigquery","Fetch the data from Bigquery and create one more pipeline, clean data from
+DataFlow and send it back to Bigquery","Fetch the data from Bigquery and clean data from DataProc and send it back to
+Bigquery",Send the data to Data Storage and use BigTable to clean the data .,,,2,Google cloud Certified Professional cloud Architech,5
+9,"You need to allow traffic from specific virtual machines in 'subnet-a' network access to machines in
+'subnet-b' without giving the entirety of subnet-a access. How can you accomplish this?","Create a firewall rule to allow traffic from resources with specific network tags,
+then assign the machines in subnet-a the same tags.","Relocate the subnet-a machines to a different subnet and give the new subnet the
+needed access.","Create a rule to deny all traffic to the entire subnet, then create a second rule with
+higher priority giving access to tagged VM's in subnet-a",You can only grant firewall access to an entire subnet and not individual VM's inside.,,,1,Google cloud Certified Professional cloud Architech,5
+10,"You are creating a single preemptible VM instance named “preempt” to be used as scratch space for a
+single workload. If your VM is preempted, you need to ensure that disk contents can be re-used.
+Which gcloud command would you use to create this instance?","gcloud compute instances create ""preempt"" --preemptible --no-boot-diskauto-
+delete","gcloud compute instances create ""preempt"" --preemptible --boot-disk-autodelete=
+no","gcloud compute instances create ""preempt"" --preemptible","gcloud compute instances create ""preempt"" --no-auto-delete",,,1,Google cloud Certified Professional cloud Architech,5
+11,"Which of the following are the best practices recommended by Google Cloud when dealing with
+service Accounts. Select 3 relevant options",Grant the service account full set of permissions,"Do not delete service accounts that are in use by running instances on Google
+App Engine or Google Compute Engine",Grant serviceAccountUser role to all the users in the organization,"Use the display name of a service account to keep track of the service
+accounts. When you create a service account, populate its display name with
+the purpose of the service account","Create service accounts for each service with only the permissions required for
+that service.",,"2,4&5",Google cloud Certified Professional cloud Architech,5
+12,"You are working on a project with two compliance requirements. The first requirement states that your
+developers should be able to see the Google Cloud Platform billing charges for only their own
+projects. The second requirement states that your finance team members can set budgets and view
+the current charges for all projects in the organization. The finance team should not be able to view
+the project contents. You want to set permissions. What should you do?","Add the finance team members to the default IAM Owner role. Add the developers
+to a custom role that allows them to see their own spend only.","Add the finance team members to the Billing Administrator role for each of the
+billing accounts that they need to manage. Add the developers to the Viewer
+role for the Project.",Add the developers and finance managers to the Viewer role for the Project,"Add the finance team to the Viewer role for the Project. Add the developers to the
+Security Reviewer role for each of the billing accounts.",,,2,Google cloud Certified Professional cloud Architech,5
+13,"Your company is using Bigquery for data analysis, many users have access to this service and the data
+set, you would want to know which user has run what query, what would be the best way to get the
+required information?","Go to job history, it has information about which user has run what query",Query the Stackdriver logs,Check the Audit logs for the user ID.,Go to Query history it has information about which user has run what query.,,,4,Google cloud Certified Professional cloud Architech,5
+14,"You are managing the GCP Account of a client, the client raises a request to attach 9 local SSDs and
+launch a VM instance in us-east1 Region, as a Cloud Architect what would be your response to the
+above request?",You can always attach maximum of ten local SSD devices to a VM instance,"If a resource is not available, you won’t be able to create new resources of that
+type, even if you still have remaining quota in your region or project and you
+can attach up to eight local SSD devices for 3 TB of total local SSD storage
+space per instance","Launch the instance first and add the local SSD drives later for optimal
+performance.",Request changes to quota from the Quotas page in the GCP Console,,,2,Google cloud Certified Professional cloud Architech,5
+15,"A digital Media company has recently moved its infrastructure from On-premise to Google Cloud, they
+have several instances under a Global HTTPS load balancer, a few days ago the Application and
+Infrastructure were subjected to DDOS attacks, they are looking for a service that would provide a
+defense mechanism against the DDOS attacks. Please select the relevant service.",Cloud Armor,Cloud-Identity Aware Proxy,GCP Firewalls,IAM policies,,,1,Google cloud Certified Professional cloud Architech,5
+16,"Using principal of least privilege and allowing for maximum automation, what steps can you take to
+store audit logs for long-term access and to allow access for external auditors to view? (Choose two)","Generate a signed URL to the Stackdriver export destination for auditors to
+access",Create an account for auditors to have view access to Stackdriver Logging.,Export audit logs to Cloud Storage via an export sink,Export audit logs to BigQuery via an export sink.,,,1&3,Google cloud Certified Professional cloud Architech,5
+17,"One of the customer needs to store time series data in Google Cloud Platform. They have found Big
+Table to be a natural fit for time series data . Choose the best practise suggested by Google Cloud for
+schema design patterns for storing time series in Cloud Bigtable.","For row key design pattern ,use tall and narrow tables","For row key Always for a row key for a time series includes a timestamp, make sure
+all your writes will target a single node; fill that node; and then move onto the next
+node in the cluster","Prefer reverse timestamps only where your most common query is for the latest
+values","For patterns for column design , in general ,keep row sizes below
+approximately 100 MB",Design your row key with your queries in mind .,,"1,3,4&5",Google cloud Certified Professional cloud Architech,5
+18,"To reduce costs, the Director of Engineering has required all developers to move their development
+infrastructure resources from on-premises virtual machines (VMs) to Google Cloud Platform. These
+resources go through multiple start/stop events during the day and require state to persist. You have
+been asked to design the process of running a development environment in Google Cloud while
+providing cost visibility to the finance department. Which two steps should you take? Choose 2
+answers","Store all state in Google Cloud Storage, snapshot the persistent disks, and terminate
+the VM.",Use the --no-auto-delete flag on all persistent disks and stop the VM.,Apply VM CPU utilization label and include it in the BigQuery billing export,Use Google BigQuery billing export and labels to associate cost to groups.,Use the -auto-delete flag on all persistent disks and terminate the VM.,"Store all state into local SSD, snapshot the persistent disks, and terminate the VM.",2&4,Google cloud Certified Professional cloud Architech,5
+19,"For this question, refer to the MountKirk Games case study:
+MountKirk Games needs to build out their streaming data analytics pipeline to feed from their game
+backend application. What GCP services in which order will achieve this?",Cloud Storage - Cloud Dataflow - BigQuery,Cloud Dataproc - Cloud Storage - BigQuery,Cloud Pub/Sub - Cloud Dataflow - Cloud Bigtable,Cloud Pub/Sub - Cloud Dataflow - BigQuery,,,4,Google cloud Certified Professional cloud Architech,5
+20,"A Global Media company is configuring a Global load balancer for non-http(s) traffic, they are looking
+for a service with SSL offloading, as a Cloud Architect what would be your load balancing choice?",HTTPS load balancing,SSL proxy Load balancing,TCP proxy Load balancing for all non-http(s) traffic,Network TCP/UDP load balancing,,,2,Google cloud Certified Professional cloud Architech,5
+21,"You created an update for your application on App Engine. You want to deploy the update without
+impacting your users. You want to be able to roll back as quickly as possible if it fails. What should you
+do?","Delete the current version of your application. Deploy the update using the same
+version identifier as the deleted version.","Notify your users of an upcoming maintenance window. Deploy the update in that
+maintenance window",Deploy the update as the same version that is currently running,"Deploy the update as a new version. Migrate traffic from the current version to
+the new version.",,,4,Google cloud Certified Professional cloud Architech,5
+22,"You are designing a large distributed application with 30 microservices. Each of your distributed
+microservices needs to connect to a database back-end. You want to store the credentials securely.
+Where should you store the credentials?",In a secret management system,In the source code,In an environment variable,In a config file that has restricted access through ACLs,,,1,Google cloud Certified Professional cloud Architech,5
+23,"For this question, refer to the TerramEarth case study:
+Based on TerramEarth's current data flow environment (refer to the image in the case study), what are
+the direct GCP services needed to replicate the same structure for batch uploads?",Cloud Spanner - Cloud SQL - BigQuery,Cloud Dataflow - Cloud Bigtable - Cloud Dataproc,Cloud Dataproc - Cloud Storage - BigQuery,Cloud Storage - Cloud Dataflow - BigQuery,,,4,Google cloud Certified Professional cloud Architech,5
+24,"One of the large data Analysis company uses Big Query, Big Table, Data Proc and Cloud Storage
+services. They use a Hybrid Architecture involving on premise and Google Cloud, Cloud VPN is used
+to connect to Google Cloud Platform. One of the main challenges for the Organization is mitigating
+Data exfiltration risks stemming from stolen identities, IAM policy misconfigurations, malicious insiders
+and compromised virtual machines. What Google Cloud Service can they use to address the
+challenge?",Shared VPC,Cloud Armour,VPC Service Controls,Resource Manager,,,3,Google cloud Certified Professional cloud Architech,5
+25,"You have a definition for an instance template that contains a web application. You are asked to
+deploy the application so that it can scale based on the HTTP traffic it receives. What should you do?","Create a VM from the instance template. Create a custom image from the VM’s disk.
+Export the image to Cloud Storage. Create an HTTP load balancer and add the
+Cloud Storage bucket as its backend service.","Create a VM from the instance template. Create an App Engine application in
+Automatic Scaling mode that forwards all traffic to the VM.","Create a managed instance group based on the instance template. Configure
+autoscaling based on HTTP traffic and configure the instance group as the
+backend service of an HTTP load balancer","Create the necessary amount of instances required for peak user traffic based on
+the instance template. Create an unmanaged instance group and add the instances
+to that instance group. Configure the instance group as the Backend Service of an
+HTTP load balancer",,,3,Google cloud Certified Professional cloud Architech,5
+26,"One of the customers want to redact the sensitive data like credit card numbers , social security
+numbers that are generated by the application logs .Please select the suitable service that fulfils the
+necessary requirement .",Cloud Data Loss Prevention,Cloud Secure,VPC Service control,Cloud Armour,,,1,Google cloud Certified Professional cloud Architech,5
+27,"For future phases, Dress4Win is looking at options to deploy data analytics to the Google Cloud.
+Which option meets their business and technical requirements?","Run current jobs from the current technical environment on Google Cloud
+Dataproc.","Review all current data jobs. Identify the most critical jobs and create Google
+BigQuery tables to storeand query data","Review all current data jobs. Identify the most critical jobs and develop Google
+Cloud Data and pipelines to process data.","Deploy a Hadoop/Spark cluster to Google Compute Engine virtual machines. Move
+current jobs fromthe current technical environment and run them on the
+Hadoop/Spark cluster.",,,1,Google cloud Certified Professional cloud Architech,5
+28,"What activity is carried out after the data is transferred to Transfer Appliance to reverse compression,
+deduplication and encryption which are carried out while transferring the data to a transfer appliance?",Link Aggregation,Data Rehydration,Data Capture,Data Recapture,,,2,Google cloud Certified Professional cloud Architech,5
+29,"Your company plans to migrate a multi-petabyte data set to the cloud. The data set must be available
+24hrs a day. Your business analysts have experience only with using an SQL interface. How should you
+store the data to optimize it for ease of analysis?",Load data into Google BigQuery,Insert data into Google Cloud SQL,Put flat files into Google Cloud Storage.,Stream data into Google Cloud Datastore.,,,1,Google cloud Certified Professional cloud Architech,5
+30,"For this question, refer to the TerramEarth case study
+You analyzed TerramEarth's business requirement to reduce downtime and found that they can
+achieve a majority of time saving by reducing customers' wait time for parts. You decided to focus on
+reduction of the 3 weeks aggregate reporting time. Which modifications to the company's processes
+should you recommend?","Migrate from CSV to binary format, migrate from FTP to SFTP transport, and develop
+machine learning analysis of metrics.","Migrate from FTP to streaming transport, migrate from CSV to binary format, and
+develop machine learning analysis of metrics.","Increase fleet cellular connectivity to 80%, migrate from FTP to streaming
+transport, and develop machine learning analysis of metrics.","Migrate from FTP to SFTP transport, develop machine learning analysis of metrics,
+and increase dealer local inventory by a fixed factor",,,3,Google cloud Certified Professional cloud Architech,5
+31,"You can SSH into an instance from another instance in the same VPC by its internal IP address, but not
+its external IP address. What is one possible reason why this is so?","The outgoing instance does not have correct permission granted to its service
+account.",The external IP address is disabled,The firewall rule to allow SSH is restricted to the internal VPC.,The receiving instance has an ephemeral address instead of a reserved address,,,2,Google cloud Certified Professional cloud Architech,5
+32,"You are helping the QA team to roll out a new load-testing tool to test the scalability of your primary
+cloud services that run on Google Compute Engine with Cloud Bigtable. Which three requirements
+should they include? Choose 3 answers",Ensure all third-party systems your services used are capable of handling high load.,"Instrument the load-testing tool and the target services with detailed logging
+and metrics collection.",Create a separate Google Cloud project to use for the load-testing environment.,"Instrument the production services to record every transaction for replay by the
+load- testing tool.",Ensure that the load tests validate the performance of Cloud Bigtable,Schedule the load-testing tool to regularly run against the production environment.,"2,3&5",Google cloud Certified Professional cloud Architech,5
+33,"For this question, refer to the MountKirk Games case study:
+MountKirk Games needs to set up their game backend database. Based on their requirements, which
+storage service best fits their needs?",Cloud SQL,Cloud Dataflow,Host database on a Compute Engine NoSQL instance.,Cloud Datastore,,,4,Google cloud Certified Professional cloud Architech,5
+34,"You want to enable your running Google Container Engine cluster to scale as demand for your
+application changes. What should you do? Select one","Add additional nodes to your Container Engine cluster using the following
+command: gcloud container clusters resize CLUSTER_NAME --size 10","Add a tag to the instances in the cluster with the following command: gcloud
+compute instances add-tags INSTANCE --tags enable-autoscaling max-nodes-10","Update the existing Container Engine cluster with the following command:
+gcloud container clusters update CLUSTER_NAME --enable-autoscaling --minnodes=
+l --max-nodes=10","Create a new Container Engine cluster with the following command: gcloud
+container clusters create CLUSTER_NAME --enable-autoscaling --min-nodes=l --
+max-nodes=10 and redeploy your application",,,3,Google cloud Certified Professional cloud Architech,5
+35,"The application reliability team at your company has added a debug feature to their backend service
+to send all server events to Google Cloud Storage for eventual analysis
+The event records are at least 50 KB and at most 15 MB and are expected to peak at 3,000 events per
+second. You want to minimize data loss. Which process should you implement?","Append metadata to file body. Compress individual files. Name files with a
+random prefix pattern. Save files to one bucket","Batch every 10,000 events with a single manifest file for metadata. Compress event
+files and manifest file into a single archive file. Name files using serverName-
+EventSequence. Create a new bucket if bucket is older than 1 day and save the
+single archive file to the new bucket. Otherwise, save the single archive file to
+existing bucket.","Compress individual files. Name files with serverName-EventSequence. Save files to
+one bucket Set custom metadata headers for each object after saving.","Append metadata to file body. Compress individual files. Name files with
+serverName-Timestamp. Create a new bucket if bucket is older than 1 hour and save
+individual files to the new bucket. Otherwise, save files to existing bucket",,,1,Google cloud Certified Professional cloud Architech,5
+36,"Your organization requires that metrics from all applications be retained for 5 years for future analysis
+in possible legal proceedings. Which approach should you use?","Configure Stackdriver Monitoring for all Projects, and export to BigQuery.",Configure Stackdriver Monitoring for all Projects with the default retention policies.,"Configure Stackdriver Monitoring for all Projects, and export to Google Cloud
+Storage.",Grant the security team access to the logs in each Project.,,,3,Google cloud Certified Professional cloud Architech,5
+37,"Mountkirk Games wants to set up a continuous delivery pipeline. Their architecture includes many
+small services that they want to be able to update and roll back quickly.
+Mountkirk Games has the following requirements:
+* Services are deployed redundantly across multiple regions in the US and Europe.
+* Only frontend services are exposed on the public internet.
+* They can provide a single frontend IP for their fleet of services.
+* Deployment artifacts are immutable.
+Which set of products should they use?","Google Cloud Functions, Google Cloud Pub/Sub, Google Cloud Deployment
+Manager","Google Cloud Storage, Google App Engine, Google Network Load Balancer","Google Container Registry, Google Container Engine, Google HTTP(s) Load
+Balancer","Google Cloud Storage, Google Cloud Dataflow, Google Compute Engine",,,3,Google cloud Certified Professional cloud Architech,5
+38,"You have a mission-critical database running on an instance on Google Compute Engine. You need to
+automate a database backup once per day to another disk. The database must remain fully
+operational and functional and can have no downtime. How can you best perform an automated
+backup of the database with minimal downtime and minimal costs?","Use a cron job to schedule your application to backup the database to another
+persistent disk.",Use a cron job to schedule a disk snapshot once per day,"Write the database to two different disk locations simultaneously, then schedule a
+snapshot of the secondary disk, which will allow the primary disk to continue
+running.",Use the automated snapshot service on Compute Engine to schedule a snapshot.,,,1,Google cloud Certified Professional cloud Architech,5
+39,"For this question, refer to the JencoMart case study.
+The JencoMart security team requires that all Google Cloud Platform infrastructure is deployed using
+a least privilege model with separation of duties for administration between production and
+development resources. What Google domain and project structure should you recommend?","Create two G Suite accounts to manage users: one for development and one for
+production. Each account should contain one project for every application.","Create two G Suite accounts to manage users: one with a single project for all
+development applications and one with a single project for all production
+applications.","Create a single G Suite account to manage users with each stage of each
+application in its own project.","Create a single G Suite account to manage users with one project for the
+development environment and one project for the production environment.",,,1,Google cloud Certified Professional cloud Architech,5
+40,"Your company wants to reduce cost on infrequently accessed data by moving it to the cloud. The data
+will still be accessed approximately once a month to refresh historical charts. In addition, data older
+than 5 years is no longer needed. How should you store and manage the data?","In Google Cloud Storage and stored in a Multi-Regional bucket. Set an Object
+Lifecycle Management policy to delete data older than 5 years.","In Google Cloud Storage and stored in a Multi-Regional bucket. Set an Object
+Lifecycle Management policy to change the storage class to Coldline for data older
+than 5 years","In Google Cloud Storage and stored in a Nearline bucket. Set an Object
+Lifecycle Management policy to delete data older than 5 years.","In Google Cloud Storage and stored in a Nearline bucket. Set an Object Lifecycle
+Management policy to change the storage class to Coldline for data older than 5
+years.",,,3,Google cloud Certified Professional cloud Architech,5
+41,"For this question, refer to the JencoMart case study
+A few days after JencoMart migrates the user credentials database to Google Cloud Platform and
+shuts down the old server, the new database server stops responding to SSH connections. It is still
+serving database requests to the application servers correctly. What three steps should you take to
+diagnose the problem? Choose 3 answers.",Check inbound firewall rules for the network the machine is connected to.,"Print the Serial Console output for the instance for troubleshooting, activate the
+interactive console, and investigate",Take a snapshot of the disk and connect to a new machine to investigate.,"Delete the instance, attach the disk to a new VM, and investigate.","Connect the machine to another network with very simple firewall rules and
+investigate.",Delete the virtual machine (VM) and disks and create a new one,"1,2&3",Google cloud Certified Professional cloud Architech,5
+42,"For this question, refer to the Mountkirk Games case study.
+Mountkirk Games’ gaming servers are not automatically scaling properly. Last month, they rolled out a
+new feature, which suddenly became very popular. A record number of users are trying to use the
+service, but many of them are getting 503 errors and very slow response times. What should they
+investigate first?",Verify that the database is online.,Verify that the project quota hasn’t been exceeded.,Verify that the new feature code did not introduce any performance bugs.,Verify that the load-testing team is not running their tool against production.,,,2,Google cloud Certified Professional cloud Architech,5
+43,"Your customer is moving an existing corporate application from an on-premises data center to Google
+Cloud Platform . The business owner requires minimal user disruption. There are strict security team
+requirements for storing passwords. What authentication strategy should they use?",Use G Suite Password Sync to replicate passwords into Google.,Ask users to set their Google password to match their corporate password.,Provision users in Google using the Google Cloud Directory Sync tool.,Federate authentication via SAML 2.0 to the existing Identity Provider.,,,3,Google cloud Certified Professional cloud Architech,5
+44,"When creating firewall rules, what forms of segmentation can narrow which resources the rule is
+applied to? (Choose all that apply)",Network range in source filters,Zone,Region,Network tags,,,1&4,Google cloud Certified Professional cloud Architech,5
+45,"You write a Python script to connect to Google BigQuery from a Google Compute Engine virtual
+machine. The script is printing errors that it cannot connect to BigQuery. What should you do to fix the
+script?","Run your script on a new virtual machine with the BigQuery access scope
+enabled",Install the latest BigQuery API client library for Python,"Install the bq component for gccloud with the command gcloud components install
+bq.","Create a new service account with BigQuery access and execute your script with
+that user",,,1,Google cloud Certified Professional cloud Architech,5
+46,"Your company wants to try out the cloud with low risk. They want to archive approximately 100 TB of
+their log data to the cloud and test the analytics features available to them there, while also retaining
+that data as a long-term disaster recovery backup. Which two steps should they take? Choose 2
+answers",Load logs into Google BigQuery.,Import logs into Google Stackdriver.,Insert logs into Google Cloud Bigtable.,Load logs into Google Cloud SQL.,Upload log files into Google Cloud Storage.,,1&5,Google cloud Certified Professional cloud Architech,5
+47,"Your solution is producing performance bugs in production that you did not see in staging and test
+environments. You want to adjust your test and deployment procedures to avoid this problem in the
+future. What should you do? Select one.",Deploy changes to a small subset of users before rolling out to production.,Increase the load on your test and staging environments,Deploy smaller changes to production.,Deploy fewer changes to production.,,,1,Google cloud Certified Professional cloud Architech,5
+48,"For this question, refer to the TerramEarth case study.
+To speed up data retrieval, more vehicles will be upgraded to cellular connections and be able to
+transmit data to the ETL process. The current FTP process is error-prone and restarts the data transfer
+from the start of the file when connections fail, which happens often. You want to improve the
+reliability of the solution and minimize data transfer time on the cellular connections. What should you
+do?","Use multiple Google Container Engine clusters running FTP servers located in
+different regions. Save the data to Multi-Regional buckets in US, EU, and Asia. Run
+the ETL process using the data in the bucket","Directly transfer the files to a different Google Cloud Regional Storage bucket
+location in US, EU, and Asia using Google APIs over HTTP(S). Run the ETL
+process to retrieve the data from each Regional bucket.","Use one Google Container Engine cluster of FTP servers. Save the data to a Multi-
+Regional bucket. Run the ETL process using data in the bucket.","Directly transfer the files to different Google Cloud Multi-Regional Storage bucket
+locations in US, EU, and Asia using Google APIs over HTTP(S). Run the ETL process
+using the data in the bucket.",,,2,Google cloud Certified Professional cloud Architech,5
+49,"What is the best practice for separating responsibilities and access for production and development
+environments?","Separate project for each environment, each team only has access to their
+project","Separate project for each environment, both teams have access to both projects.","Both environments use the same project, but different VPC's.","Both environments use the same project, just note which resources are in use by
+which group.",,,1,Google cloud Certified Professional cloud Architech,5
+50,"Your developer currently maintains a J2EE application. What two considerations should he consider
+for moving his application to the cloud to meet demand and minimize overhead? (Choose two)",Host resources in Cloud Bigtable.,Configure application for Cloud Dataproc,Re-tooling the application to run on App Engine.,Re-tool to run on managed instance group with appropriate storage backend.,,,3&4,Google cloud Certified Professional cloud Architech,5
+51,"You work in a small company where everyone should be able to view all resources of a specific
+project. You want to grant them access following Google’s recommended practices. What should you
+do?","Create a script that uses ""gcloud projects add-iam-policy-binding"" for all users’
+email addresses and the Project Viewer role.","A. Create a script that uses ""gcloud iam roles create"" for all users’ email addresses
+and the Project Viewer role.","Create a new Google Group and add all users to the group. Use ""gcloud
+projects add-iam-policy-binding"" with the Project Viewer role and Group email
+address.","Create a new Google Group and add all members to the group. Use ""gcloud iam
+roles create"" with the Project Viewer role and Group email address.",,,3,Google cloud Certified Professional cloud Architech,5
+52,"One of your primary business objectives is being able to trust the data stored in your application. You
+want to log all changes to the application data. How can you design your logging system to verify
+authenticity of your logs?",Create a JSON dump of each log entry and store it in Google Cloud Storage.,Write the log concurrently in the cloud and on premises.,Digitally sign each timestamp and log entry and store the signature.,Use an SQL database and limit who can modify the log table.,,,3,Google cloud Certified Professional cloud Architech,5
+53,"What is the command for creating a storage bucket that has once per month access and is named
+'archive_bucket'?",gsutil rm -coldline gs://archive_bucket,gsutil mb -c coldline gs://archive_bucket,gsutil mb -c nearline gs://archive_bucket,gsutil mb gs://archive_bucket,,,3,Google cloud Certified Professional cloud Architech,5
+54,"For this question, refer to the Dress4Win case study
+Dress4Win is evaluating how their current database structure would translate to Google Cloud. They
+need to know which databases can be converted to a managed service, and which ones will need to
+remain unmanaged. They do not want to re-engineer their databases into a different format. Choose the two correct answers for their available options for database hosting, keeping in mind to use
+managed services where applicable. (Choose two).",Host their Redis database on a Compute Engine instance.,Host Redis database on Cloud Datastore.,Host MySQL database on Cloud SQL.,Host MySQL database on a Compute Engine instance,,,1&3,Google cloud Certified Professional cloud Architech,5
+55,"To set up a virtual private network between your office network and Google Cloud Platform and have
+the routes automatically updated when the network topology changes, what is the minimal number of
+each type of component you need to implement?",2 Cloud VPN Gateways and 1 Peer Gateway,"1 Cloud VPN Gateway, 1 Peer Gateway, and 1 Cloud Router",2 Peer Gateways and 1 Cloud Router,2 Cloud VPN Gateways and 1 Cloud Router,,,2,Google cloud Certified Professional cloud Architech,5
+56,"You need to deploy an update to an application in Google App Engine. The update is risky, but it can
+only be tested in a live environment. What is the best way to introduce the update to minimize risk?","Deploy a new version of the application but use traffic splitting to only direct a
+small number of users to the new version.",Deploy the application temporarily and be prepared to pull it back if needed,"Warn users that a new app version may have issues and provide a way to contact
+you if there are problems.","Create a new project with the new app version, then redirect users to the new
+version.",,,1,Google cloud Certified Professional cloud Architech,5
+57,How are subnetworks different than the legacy networks?,"They're the same, only the branding is different.","Each subnetwork controls the IP address range used for instances that are
+allocated to that subnetwork.",With subnetworks IP address allocation occurs at the global network level.,Legacy networks are the preferred way to create networks.,,,2,Google cloud Certified Professional cloud Architech,5
+58,"For this question, refer to the Dress4Win case study.
+Dress4Win has a number of internal backends that they do not want to be exposed to the public
+Internet. How can they reduce their external exposure while still allowing maintenance access to
+resources when working remotely?","Remove the external IP address and use Cloud Shell to access internal-only
+resources","Remove the external IP address and use a bastion host to access internal-only
+resources.","Remove the external IP address and have remote employees dial into the company
+VPN connection for maintenance work.","Hide the external IP address behind a load balancer and restrict load balancer
+access to the internal company network.",,,2,Google cloud Certified Professional cloud Architech,5
+59,"You have a collection of media files over 5GB each that you need to migrate to Google Cloud Storage.
+The files are in your on-premises data center. What migration method can you use to help speed up
+the transfer process?",Use multi-threaded uploads using the -m option,"Use parallel uploads to break the file into smaller chunks then transfer it
+simultaneously.",Use the Cloud Transfer Service to transfer.,Start a recursive upload.,,,2,Google cloud Certified Professional cloud Architech,5
+60,"For this question, refer to the JencoMart case study.
+One of the major business goals is to expand to Asia market, so JencoMart has built a version of their
+application on Google Cloud Platform that serves traffic to Asia. You want to measure success against
+their business and technical goals. Which metrics should you keep track of? Select one.","Total visits, error rates, and latency from Asia",Latency difference between US and Asia,The number of character sets present in the database,Error rates for requests from Asia,Total visits and average latency for users in Asia,,5,Google cloud Certified Professional cloud Architech,5
+61,"A lead engineer wrote a custom tool that deploys virtual machines in the legacy data center. He wants
+to migrate the custom tool to the new cloud environment. You want to advocate for the adoption of
+Google Cloud Deployment Manager. What are two business risks of migrating to Cloud Deployment
+Manager? Choose 2 answers",Cloud Deployment Manager requires a Google APIs service account to run,Cloud Deployment Manager APIs could be deprecated in the future.,"Cloud Deployment Manager only supports automation of Google Cloud
+resources.",Cloud Deployment Manager is unfamiliar to the company's engineers,Cloud Deployment Manager uses Python,"Cloud Deployment Manager can be used to permanently delete cloud
+resources.",3&6,Google cloud Certified Professional cloud Architech,5
+62,"Your developer group works on a set of VM's frequently throughout the day. To save costs, you
+terminate the VM when it is not in use. However, you need to preserve the contents of the disk when
+the VM is terminated so users can resume where they left off when a new one is created. What is the
+most cost-effective way to do? (Choose two)",Set the disk to no-auto-delete to preserve contents,Back up the disk contents to Cloud Storage before deleting.,"When not in use, only stop the instance instead of deleting it.",Take a snapshot of the disk before terminating the VM.,,,1&3,Google cloud Certified Professional cloud Architech,5
+63,"You have created a Kubernetes engine cluster named 'mycluster'. You've realized that you need to
+change the machine type for the cluster from n1-standard-1 to n1-standard-4. What is the command
+to make this change?","You must create a new node pool in the same cluster and migrate the workload
+to the new pool",gcloud container clusters update mycluster --machine-type n1-standard-4,This action is not possible,gcloud container clusters resize mycluster --machine-type n1-standard-4,,,1,Google cloud Certified Professional cloud Architech,5
+64,"You're writing a Python application and want your application to run in a sandboxed managed
+environment with the ability to scale up in seconds to account for huge spikes in demand. Which
+service should you host your application on?",Compute Engine,App Engine Flexible Environment,Kubernetes Engine,App Engine Standard Environment,,,4,Google cloud Certified Professional cloud Architech,5
+65,"Your marketing department wants to send out a promotional email campaign. The development team
+wants to minimize direct operation management. They project a wide range of possible customer
+responses, from 100 to 500,000 click-throughs per day. The link leads to a simple website that
+explains the promotion and collects user information and preferences. Which infrastructure should
+you recommend?","Use a single compute Engine virtual machine (VM) to host a web server, backed by
+Google Cloud SQL.","Use a Google Container Engine cluster to serve the website and store data to
+persistent disk.","Use a managed instance group to serve the website and Google Cloud Bigtable to
+store user data.","Use Google App Engine to serve the website and Google Cloud Datastore to
+store user data.",,,4,Google cloud Certified Professional cloud Architech,5
+66,"Your customer is moving their corporate applications to Google Cloud Platform. The security team
+wants detailed visibility of all projects in the organization. You provision the Google Cloud Resource
+Manager and set up yourself as the org admin. Which Google Cloud Identity and Access Management
+(Cloud IAM) roles should you give to the security team?","Org viewer, project owner","Org viewer, project viewer","Org admin, project browser","Project owner, network admin",,,2,Google cloud Certified Professional cloud Architech,5
+67,"Using the principle of least privilege, your colleague Bob needs to be able to create new instances on
+Compute Engine in project 'Project A'. How should you give him access without giving more
+permissions than is necessary?",Give Bob Compute Engine Instance Admin Role for Project A,Give Bob Compute Engine Admin Role for Project A.,Create a shared VPC that Bob can access Compute resources from.,Give Bob Project Editor IAM role for Project A.,,,1,Google cloud Certified Professional cloud Architech,5
+68,Select examples of principal of least privilege. Choose the 3 correct answers:,Restrict service account access,Assign Compute Instance Admin role vs Compute Admin,Separate production and test environments,Create IAM Folders to manage groups of projects,,,"1,2&3",Google cloud Certified Professional cloud Architech,5
+69,"Using principal of least privilege and allowing for maximum automation, what steps can you take to
+store audit logs for long-term access and to allow access for external auditors to view? Choose the 2
+correct answers:",Create account for auditors to have view access to Stackdriver Logging.,Export audit logs to Cloud Storage via an export sink.,Export audit logs to BigQuery via an export sink.,"Create account for auditors to have view access to export storage bucket with
+the Storage Object Viewer role.",,,2&4,Google cloud Certified Professional cloud Architech,5
+70,"If external auditors need to be able to access your admin activity logs once a year for compliance,
+what is the best method of preserving and sharing that log data? (Choose two)","If they need access to multiple logs in a single bucket, and they have a GCP
+account, export logs to a Cloud Storage bucket for long-term retention and
+grant auditor accounts the Storage Object Viewer role to the bucket.","Create GCP accounts for the auditors and grant the Project Viewer role to view logs
+in Stackdriver Logging","If they do not need a GCP account and need to view a single date's object,
+export the logs to a Cloud Storage bucket for long-term retention and generate
+a signed URL for temporary object-level access.",Export logs to Cloud Storage bucket and email a list of the logs once per year.,,,1&3,Google cloud Certified Professional cloud Architech,5
+71,"Your application needs to process credit card transactions. You want the smallest scope of Payment
+Card Industry (PCI) compliance without compromising the ability to analyze transactional data and
+trends relating to which payment methods are used. How should you design your architecture?
+Select one:","Create separate subnetworks and isolate the components that process credit card
+data.","Streamline the audit discovery phase by labeling all of the virtual machines (VMs)
+that process PCI data.",Create separate projects that only process credit card data.,"Enable Logging export to Google BigQuery and use ACLs and views to scope
+the data shared with the auditor.",Create a tokenizer service and store only tokenized data.,,4,Google cloud Certified Professional cloud Architech,5
+72,"You want to optimize the performance of an accurate, real-time, weather-charting application. The
+data comes from 50,000 sensors sending 10 readings a second, in the format of a timestamp and
+sensor reading. Where should you store the data?",Google BigQuery,Google Cloud Storage,Google Cloud Bigtable,Google Cloud SQL,,,3,Google cloud Certified Professional cloud Architech,5
+73,"You need to take streaming data from thousands of Internet of Things (IoT) devices, ingest it, run it
+through a processing pipeline, and store it for analysis. You want to run SQL queries against your data
+for analysis. What services in which order should you use for this task?","Cloud Dataflow, Cloud Pub/Sub, BigQuery","Cloud Pub/Sub, Cloud Dataflow, Cloud Dataproc","Cloud Pub/Sub, Cloud Dataflow, BigQuery","App Engine, Cloud Dataflow, BigQuery",,,3,Google cloud Certified Professional cloud Architech,5
+74,"Your company has decided to make a major revision of their API in order to create better experiences
+for their developers. They need to keep the old version of the API available and deployable, while
+allowing new customers and testers to try out the new API. They want to keep the same SSL and DNS
+records in place to serve both APIs. What should they do?",Configure a new load balancer for the new version of the API,Reconfigure old clients to use a new endpoint for the new API.,Have the old API forward traffic to the new API based on the path.,Use separate backend pools for each API path behind the load balancer.,,,4,Google cloud Certified Professional cloud Architech,5
+75,"You are running an application in Google App Engine that is serving production traffic. You want to
+deploy a risky but necessary change to the application. It could take down your service if not properly
+coded. During development of the application, you realized that it can only be properly tested by live
+user traffic. How should you test the feature?","Deploy the new application version temporarily, and then roll it back.","Create a second project with the new app in isolation, and onboard users.","Set up a second Google App Engine service, and then update a subset of clients to
+hit the new service","Deploy a new version of the application and use traffic splitting to send a small
+percentage of traffic to it.",,,4,Google cloud Certified Professional cloud Architech,5
+76,"Your company's user-feedback portal comprises a standard LAMP stack replicated across two zones.
+It is deployed in the us-central1 region and uses autoscaled managed instance groups on all layers,
+except the database. Currently, only a small group of select customers have access to the portal. The
+portal meets a 99.99% availability SLA under these conditions. However next quarter, your company
+will be making the portal available to all users, including unauthenticated users. You need to develop
+a resiliency testing strategy to ensure the system maintains the SLA once they introduce additional
+user load. What should you do?","Expose the new system to a larger group of users and increase group’s size each
+day until autoscale logic is triggered on all layers. At the same time, terminate
+random resources on both zones.","Create synthetic random user input, replay synthetic load until autoscale logic
+is triggered on at least one layer, and introduce ""chaos"" to the system by
+terminating random resources on both zones.","Capture existing users input and replay captured user load until autoscale is
+triggered on all layers. At the same time, terminate all resources in one of the zones.","Capture existing users input and replay captured user load until resource utilization
+crosses 80%. Also, derive estimated number of users based on existing users’ usage
+of the app, and deploy enough resources to handle 200% of expected load.",,,2,Google cloud Certified Professional cloud Architech,5
+77,"Dress4Win wants to do penetration security scanning on the test and development environments
+deployed to the cloud. The scanning should be performed from an end user perspective as much as
+possible. How should they conduct the penetration testing?","Notify Google to begin conducting regular penetration security scanning on behalf
+of Dress4Win.","Deploy the security scanners into the cloud environments and conduct penetration
+testing within each environment.","Use the on-premises scanners to conduct penetration testing on the cloud
+environments routing traffic over the VPN.","Use the on-premises scanners to conduct penetration testing on the cloud
+environments routing traffic over the public internet.",,,4,Google cloud Certified Professional cloud Architech,5
+78,"For this question, refer to the Mountkirk Games case study.
+Mountkirk Games wants you to design their new testing strategy. How should the test coverage differ
+from their existing backends on the other platforms?",Tests should scale well beyond the prior approaches,"Unit tests are no longer required, only end-to-end tests.",Tests should be applied after the release is in the production environment.,"Tests should include directly testing the Google Cloud Platform (GCP)
+infrastructure.",,,4,Google cloud Certified Professional cloud Architech,5
+79,"For this question, refer to the TerramEarth case study.
+The TerramEarth development team wants to create an API to meet the company's business
+requirements. You want the development team to focus their development effort on business value
+versus creating a custom framework. Which method should they use?","Use Google App Engine with Google Cloud Endpoints. Focus on an API for
+dealers and partners","Use Google App Engine with a JAX-RS Jersey Java-based framework. Focus on an
+API for the public.","Use Google App Engine with the Swagger (open API Specification) framework. Focus
+on an API for the public.","Use Google Container Engine with a Django Python container. Focus on an API for
+the public.","Use Google Container Engine with a Tomcat container with the Swagger (Open API
+Specification) framework. Focus on an API for dealers and partners.",,1,Google cloud Certified Professional cloud Architech,5
+80,"A recent software update to an e-commerce website running on Google Cloud has caused the
+website to crash for several hours. The CTO decides that all critical changes must now have a
+backout/roll-back plan. The website is deployed on hundreds of virtual machines (VMs), and critical
+changes are frequent. Which two actions should you take to implement the back-out/roll-back plan?
+(Choose two)","Create a Nearline copy for the website static data files stored in Google Cloud
+Storage.","Enable object versioning on the website's static data files stored in Google
+Cloud Storage","Use managed instance groups with the “update-instances” command when
+starting a rolling update.","Enable Google Cloud Deployment Manager (CDM) on the project and define each
+change with a new CDM template.","Create a snapshot of each VM prior to an update and recover the VM from the
+snapshot in case of a new version failure.",,2&3,Google cloud Certified Professional cloud Architech,5
+81,"You need to have a backup/rollback plan in place for your application that is distributed across a large
+managed instance group. What is the preferred method for doing so?","Use the Rolling Update feature to deploy/roll back versions with different
+managed instance group templates.","Use the managed instance group snapshot function that is included in Compute
+Engine.",Have each instance write critical application data to a Cloud Storage bucket.,Schedule a cron job to take snapshots of each instance in the group.,,,1,Google cloud Certified Professional cloud Architech,5
+82,"Your company is planning on deploying a web application to Google Cloud hosted on a custom Linux
+distribution. Your website will be accessible globally and needs to scale to meet demand. Choose all
+of the components that will be necessary to achieve this goal.
+Choose the 2 correct answers:",App Engine Standard environment,HTTP Load Balancer,Managed Instance Group on Compute Engine,Network Load Balancer,,,2&3,Google cloud Certified Professional cloud Architech,5
+83,"Your company collects and stores security camera footage in Google Cloud Storage. Within the first
+30 days, footage is
+processed regularly for threat detection, object detection, trend analysis, and suspicious behavior
+detection. You want to minimize the cost of storing all the data. How should you store the video","Use Google Cloud Regional Storage for the first 30 days, and then move to
+Coldline Storage.","Use Google Cloud Nearline Storage for the first 30 days, and then move to Coldline
+Storage.","Use Google Cloud Regional Storage for the first 30 days, and then move to Nearline
+Storage","Use Google Cloud Regional Storage for the first 30 days, and then move to Google
+Persistent Disk.",,,1,Google cloud Certified Professional cloud Architech,5
+84,"Your company currently hosts an AWS S3 bucket. You need to keep the contents of this bucket in sync
+with a new Google Cloud Storage bucket to support a backup storage destination. What is the best
+method to achieve this?","Once per week, use a gsutil cp command to copy over newly modified files.",Use gsutil rsync commands to keep both locations in sync.,Use Storage Transfer Service to keep both the source and destination in sync,Use gsutil -m cp to keep both locations in sync.,,,3,Google cloud Certified Professional cloud Architech,5
+85,"Your application is hosted across multiple regions and consists of both relational database data and
+static images. Your database has over 10 TB of data. You want to use a single storage repository for
+each data type across all regions. Which two products would you choose for this task? (Choose two)
+Explanation:",Cloud Bigtable,Cloud Spanner,Cloud SQL,Cloud Storage,,,2&4,Google cloud Certified Professional cloud Architech,5
+86,"A production database virtual machine on Google Compute Engine has an ext4-formatted persistent
+disk for data files. The database is about to run out of storage space. How can you remediate the
+problem with the least amount of downtime?","In the Cloud Platform Console, increase the size of the persistent disk and use
+the resize2fs command in Linux.","Shut down the virtual machine, use the Cloud Platform Console to increase the
+persistent disk size, then restart the virtual machine.","In the Cloud Platform Console, increase the size of the persistent disk and verify the
+new space is ready to use with the fdisk command in Linux","In the Cloud Platform Console, create a new persistent disk attached to the virtual
+machine, format and mount it, and configure the database service to move the files
+to the new disk.","In the Cloud Platform Console, create a snapshot of the persistent disk, restore the
+snapshot to a new larger disk, unmount the old disk, mount the new disk, and restart
+the database service.",,1,Google cloud Certified Professional cloud Architech,5
+87,"You are migrating your existing data center environment to Google Cloud Platform. You have a 1
+petabyte Storage Area Network (SAN) that needs to be migrated. What GCP service will this data map
+to?",Persistent Disk,Cloud Bigtable,Cloud Storage,BigQuery,,,1,Google cloud Certified Professional cloud Architech,5
+88,"You have a managed instance group comprised of preemptible VM's. All of the VM's keep deleting
+and recreating themselves every minute. What is a possible cause of this behavior?","Your zonal capacity is limited, causing all preemptible VM's to be shutdown to
+recover capacity. Try deploying your group to another zone.",You have hit your instance quota for the region.,"Your managed instance group's VM's are toggled to only last 1 minute in
+preemptible settings.","Your managed instance group's health check is repeatedly failing, either to a
+misconfigured health check or misconfigured firewall rules not allowing the
+health check to access the instances.",,,4,Google cloud Certified Professional cloud Architech,5
+89,"When creating firewall rules, what forms of segmentation can narrow which resources the rule is
+applied to? (Choose all that apply)",Network range in source filters,Zone,Region,Network tags,,,1&4,Google cloud Certified Professional cloud Architech,5
+90,"Your business is connected to a VPN connection to GCP. On GCP, you are hosting an internal website
+using an HTTP load balancer which serves traffic to a managed instance group. Your users are unable
+to access the internal website, though all systems are up. What is a possible cause for this problem?",You've enabled static IP address for the managed instance group servers.,Your load balancer is not set for the correct region.,Firewall rules are not correctly configured.,You need to enable Stackdriver debugger to collect more information.,,,3,Google cloud Certified Professional cloud Architech,5
+91,"Your company is building a large-scale web application. Each team is responsible for its own service
+component of the application and wants to manage its own individual projects. You want each service
+to communicate with the others over RFC1918 address space. What should you do?",Deploy each service into a single project within the same VPC.,"Configure Shared VPC and add each project as a service of the Shared VPC
+project.",Configure each service to communicate with the others over HTTPS protocol.,"Configure a global load balancer for each project and communicate between each
+service using the global load balancer IP addresses.",,,2,Google cloud Certified Professional cloud Architech,5
+92,"For this question, refer to the JencoMart case study.
+JencoMart wants to move their User Profiles database to Google Cloud Platform. Which Google
+Database should they use?",Cloud Spanner,Google Cloud SQL,Google BigQuery,Google Cloud Datastore,,,1,Google cloud Certified Professional cloud Architech,5
+93,"Your company wants to track whether someone is present in a meeting room reserved for a
+scheduled meeting. There are 1000 meeting rooms across 5 offices on 3 continents.
+Each room is equipped with a motion sensor that reports its status every second. The data from the
+motion detector includes only a sensor ID and several different discrete items of information. Analysts
+will use this data, together with information about account owners and office locations. Which
+database type should you use?",Relational database,Blobstore,Flat file,NoSQL database,,,4,Google cloud Certified Professional cloud Architech,5
+94,"Your company plans to host a large donation website on Google Cloud Platform. You anticipate a large
+and undetermined amount of traffic that will create many database writes. To be certain that you do
+not drop any writes to a database hosted on GCP. Which service should you use with managed
+service?","Cloud SQL with Bigger (More CPU, Memory, and Disk Size) machine type with
+throughput capacity matching to the anticipated peak write throughput.","Cloud Pub/Sub for capturing the writes and draining the queue to write to the
+database.",Memcached to store the writes until the writes are committed to the database.,Install your MySQL database on Compute instance and enable autoscaling,,,2,Google cloud Certified Professional cloud Architech,5
+95,"Your customer is moving their storage product to Google Cloud Storage (GCS). The data contains
+personally identifiable
+information (PII) and sensitive customer information. What security strategy should you use for GCS?",Use signed URLs to generate time bound access to objects.,Grant IAM read-only access to users and use default ACLs on the bucket,"Grant no Google Cloud Identity and Access Management (Cloud IAM) roles to
+users and use granular ACLs on the bucket.","Create randomized bucket and object names. Enable public access, but only
+provide specific file URLs to people who do not have Google accounts and need
+access.",,,3,Google cloud Certified Professional cloud Architech,5
+96,"Your infrastructure includes two 100-TB enterprise file servers. You need to perform a one-way, onetime
+migration of this data to the Google Cloud securely. Only users in Germany will access this data.
+You want to create the most cost-effective solution. What should you do?","Use Transfer Appliance to transfer the offsite backup files to a Cloud Storage
+Regional storage bucket as a final destination.","Use Transfer Appliance to transfer the offsite backup files to a Cloud Storage Multi-
+Regional bucket as a final destination.","Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage
+Regional storage bucket as a final destination.","Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage
+Multi-Regional storage bucket as a final destination.",,,1,Google cloud Certified Professional cloud Architech,5
+97,"You are designing a relational data repository on Google Cloud to grow as needed. The data will be
+transactional consistent and added from any location in the world. You want to monitor and adjust
+node count for input traffic, which can spike unpredictably. What should you do?","Use Cloud Spanner for storage. Monitor storage usage and increase node count if
+more than 70% utilized.","Use Cloud Spanner for storage. Monitor CPU utilization and increase node
+count if more than 70% utilized for your time span.","Use Cloud Bigtable for storage. Monitor data stored and increase node count if more
+than 70% utilized.","Use Cloud Bigtable for storage. Monitor CPU utilization and increase node count if
+more than 70% utilized for your time span",,,2,Google cloud Certified Professional cloud Architech,5
+98,"You need to create a new Kubernetes Cluster on Google Cloud Platform that can autoscale the
+number of worker nodes. What should you do?","Create a cluster on Kubernetes Engine and enable autoscaling on Kubernetes
+Engine.","Create a cluster on Kubernetes Engine and enable autoscaling on the instance
+group of the cluster.","Configure a Compute Engine instance as a worker and add it to an unmanaged
+instance group. Add a load balancer to the instance group and rely on the load
+balancer to create additional Compute Engine instances when needed.","Create Compute Engine instances for the workers and the master and install
+Kubernetes. Rely on Kubernetes to create additional Compute Engine instances
+when needed.",,,1,Google cloud Certified Professional cloud Architech,5
+99,"Your development team has installed a new Linux kernel module on the batch servers in Google
+Compute Engine (GCE) virtual machines (VMs) to speed up the nightly batch process. Two days after
+the installation, 50% of the batch servers failed the nightly batch run. You want to collect details on the
+failure to pass back to the development team. Which three actions should you take? Choose 3
+answers","Identify whether a live migration event of the failed server occurred, using in
+the activity log.",Use Stackdriver Logging to search for the module log entries,"Use gcloud or Cloud Console to connect to the serial console and observe the
+logs.",Read the debug GCE Activity log using the API or Cloud Console.,"Export a debug VM into an image and run the image on a local server where kernel
+log messages will be displayed on the native screen.","Adjust the Google Stackdriver timeline to match the failure time and observe the
+batch server metrics.","1,3&6",Google cloud Certified Professional cloud Architech,5
+100,"Your company runs several databases on a single MySQL instance. They need to take backups of a
+specific database at regular intervals. The backup activity needs to complete as quickly as possible
+and cannot be allowed to impact disk performance. How should you configure the storage?","Mount additional persistent disk volumes onto each virtual machine (VM) instance in
+a RAID10 array and use LVM to create snapshots to send to Cloud Storage.","Configure a cron job to use the gcloud tool to take regular backups using persistent
+disk snapshots.","Mount a Local SSD volume as the backup location. After the backup is
+complete, use gsutil to move the backup to Google Cloud Storage.","Use gcsfuse to mount a Google Cloud Storage bucket as a volume directly on the
+instance and write backups to the mounted location using mysqldump",,,3,Google cloud Certified Professional cloud Architech,5

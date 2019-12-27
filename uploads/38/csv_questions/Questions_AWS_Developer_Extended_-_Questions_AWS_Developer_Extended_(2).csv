@@ -1,0 +1,245 @@
+Question,Option 1,Option2,Option3,Option4,Option5,Option 6,Correct Option (note:- if Correct option is Option 1 then insert 1),Category Name,Marks
+"If you are connecting to AWS from a computer and not an EC2 instance, you need to 
+create an AWS user, attach permissions, generate access keys and store the API access 
+keys in the AWS credentials file. Choose the correct answer from the options below.",TRUE,FALSE,,,,,1,Developer,5
+"You decide to configure a bucket for static website hosting. As per the AWS 
+documentation, you create a bucket named 'mybucket.com' and then you enable website 
+hosting with an index document of 'index.html' and you leave the error document as blank. 
+You then upload a file named 'index.html' to the bucket. After clicking on the endpoint of 
+mybucket.com.s3-website-us-east-1.amazonAWS.com you receive 403 Forbidden error. 
+You then change the CORS configuration on the bucket so that everyone has access, 
+however you still receive the 403 Forbidden error. What additional step do you need to do 
+so that the endpoint is accessible to everyone? Choose the correct answer from the 
+options below",Register mybucket.com on Route53,Wait for the DNS change to propagate,"You need to add a name for the error document, because it is a required field","Change the permissions on the index.html file also, so that everyone has 
+access. ",,,4,Developer,5
+"In regards to their data consistency model, AWS states that ""Amazon S3 buckets in all 
+Regions provide read-after-write consistency for PUTS of new objects and eventual 
+consistency for overwrite PUTS and DELETES."" What does AWS actually mean when they 
+say Read-after-write consistency for PUTS of new objects? Choose the correct answer 
+from the options below","If you write a new key to S3, you will be able to retrieve any object 
+immediately afterwards. Also, any newly created object or file will be visible 
+immediately, without any delay","If you write a new key to S3, a subsequent read might return the old data or the 
+updated data. Your applications should be built with this uncertainty in mind","If you write a new key to S3, it may write corrupted or partial data.","You cannot write a new key to S3 unless there has been a read done prior to the 
+write",,,1,Developer,5
+"You decide to create a bucket on AWS S3 called 'bucketever' and then perform the 
+following actions in the order that they are listed here.
+- You upload a file to the bucket called 'file1'
+- You enable versioning on the bucket
+- You upload a file called 'file2'
+- You upload a file called 'file3'
+- You upload another file called 'file2'
+Which of the following is true for your bucket 'bucketever'?","There will be 1 version ID for file1, there will be 2 version IDs for file2 and 1 version 
+ID for file3","The version ID for file1 will be null, there will be 2 version IDs for file2 and 1 
+version ID for file3","There will be 1 version ID for file1, the version ID for file2 will be null and there will 
+be 1 version ID for file3","All file version ID's will be null because versioning must be enabled before 
+uploading objects to 'bucketever'",,,2,Developer,5
+"One of your requirements is to setup an S3 bucket to store your files like documents and 
+images. However, those objects should not be directly accessible via the S3 URL, they 
+should ONLY be accessible from pages on your website so that only your paying 
+customers can see them. How could you implement this? Choose the correct answer from 
+the options below",Use HTTPS endpoints to encrypt your data,"You can use a bucket policy and check for the AWS:Referer key in a condition, where that key matches your domain",You can't. The S3 URL must be public in order to use it on your website.,"You can use server-side and client-side encryption, where only your application 
+can decrypt the objects",,,2,Developer,5
+"Your application is trying to upload a 6 GB file to Simple Storage Service and receive a ""Your proposed upload exceeds the maximum allowed object size."" error message. What 
+is a possible solution for this? Choose the correct answer from the options below","None, Simple Storage Service objects are limited to 5 GB",Use the multipart upload API for this object,Use the large object upload API for this object,Contact support to increase your object size limit,,,2,Developer,5
+"While working with the AWS S3 API you receive the following error message: 409 Conflict. 
+What might be the cause of this error?",BadDigest,User does not have proper permissions to make the API call,Bucket already exists,Bucket name does not exist,,,3,Developer,5
+"If you're executing .Net code against AWS on an EC2 instance that is assigned an IAM role, 
+which of the following is a true statement? Choose the correct answer from the options 
+below",The code will assume the same permissions as the IAM role,The code must have AWS access keys in order to execute,Only .Net code can assume IAM roles,None of the above,,,1,Developer,5
+"Which API call occurs in the final process of creating an Instance Store AMI? Choose the 
+correct answer from the options below",ami-create-image,CreateImage,RegisterImage,ami-register-image,,,3,Developer,5
+"Which API call would best be used to describe an Amazon Machine Image? Choose the 
+correct answer from the options below",DescribeImage,DescribeImages,ami-describe-image,ami-describe-images,,,2,Developer,5
+"You have created a VPC that has just one subnet with an internet gateway attached and 
+required route table entry set. Which of the following is true with regards to the 
+connection of an EC2 instance located in the VPC?
+Choose the correct answer from the options below",It can connect.,It does not need a NAT instance or an EIP to communicate with the internet.,"It needs an EIP or public IP assigned to it in order to connect to the internet 
+and send data in or out. A",None of the above,,,3,Developer,5
+"Which of the following would you expect to see in the body of an SNS notification? 
+Choose the correct answer from the options below",UnsubscribeURL,MessageBody,SignatureId,Subjects,,,1,Developer,5
+"Which of the following is true if long polling is enabled? Choose the correct answer from 
+the options below","If long polling is enabled, then each poll only polls a subset of SQS servers; in 
+order for all messages to be received, polling must continuously occur",Increases costs because each request lasts longer,The reader will listen to the queue until timeout,"The reader will listen to the queue until a message is available or until 
+timeout ",,,4,Developer,5
+"What is Amazon SQS max message size? Choose the correct answer from the options 
+below",64KB,128KB,16 KB,256KB,,,4,Developer,5
+"What is the default number of S3 buckets allowed per AWS account? Choose the correct 
+answer from the options below.",100,50,1000,150,,,1,Developer,5
+"A Developer is writing several Lambda functions that each access data in a common RDS 
+DB instance. They must share a connection string that contains the database credentials, 
+which are a secret. A company policy requires that all secrets be stored encrypted.
+Which solution will minimize the amount of code the Developer must write?",Use common DynamoDB table to store settings,Use AWS Lambda environment variables,Use Systems Manager Parameter Store secure strings,Use a table in a separate RDS database,,,3,Developer,5
+"An application is publishing a custom CloudWatch metric any time an HTTP 504 error 
+appears in the application error logs. These errors are being received intermittently. There 
+is a CloudWatch Alarm for this metric and the Developer would like the alarm to trigger 
+ONLY if it breaches two evaluation periods or more.
+What should be done to meet these requirements?","Update the CloudWatch Alarm to send a custom notification depending on 
+results",Publish the value zero whenever there are no “HTTP 504” errors,"Use high – resolution metrics to get data pushed to CloudWatch more 
+frequently","The evaluation period and Data Points to Alarm should be set to 2 
+while creating this alarm A",,,4,Developer,5
+"An organization has an Amazon Aurora RDS instance that handles all of its AWS-based 
+e-commerce activity. The application accessing the database needs to create large sales 
+reports on an hourly basis, running 15 minutes after the hour. This reporting activity is 
+slowing down the e-commerce application.
+Which combination of actions should be taken to reduce the impact on the main 
+e-commerce application? Select 2 answers from the options given below",Point the reporting application to the read replica,Migrate the data to a set of highly available Amazon EC2 instances,Use SQS Buffering to retrieve data for reports,Create a read replica of the database,,,1&4,Developer,5
+"A developer has written an application that will be deployed by a company. The 
+application is used to read and write objects to an S3 bucket. It is expected that the 
+number of reads could exceed 400 requests per second. What should the developer do to 
+ensure that the requests are handled accordingly",Enable versioning for the underlying bucket,"Ensure that the application uses a hash prefix when writing the data to the 
+bucket",S3 can support these request rates and nothing needs to be done.,Enable Cross region replication for the bucket,,,3,Developer,5
+"You are developing an application that will interact with a DynamoDB table. The table is 
+going to take in a lot of read and write operations. Which of the following would be the 
+ideal partition key for the DynamoDB table to ensure ideal performance?",CustomerID,CustomerName,Location,Age,,,1,Developer,5
+"A developer is making use of AWS services to develop an application. He has been asked 
+to develop the application in a manner to compensate any network delays. Which of the 
+following two mechanisms should he implement in the application?",Multiple SQS queues,Exponential backoff algorithm,Retries in your application code,Consider using the Java SDK,,,2&3,Developer,5
+"Your team has completed the development of an application and now this needs to be 
+deployed to an application on an EC2 Instance. The Application data will be stored on a 
+separate volume which needs to be encrypted at rest. How can you ensure this 
+requirement is met? Choose 2 answers from the options given below",Ensure that Encryption is enabled during volume creation time.,Ensure to use Throughput Optimized HDD to allow for Encryption,Create a Customer master key in the KMS service,Create an EBS Encryption Key,,,1&3,Developer,5
+"You have a number of Lambda functions that need to be deployed using AWS 
+CodeDeploy. The lambda functions have gone through multiple code revisions and 
+versioning in Lambda is being used to maintain the revisions. Which of the following must 
+be done to ensure that the right version of the function is deployed in AWS CodeDeploy?",Specify the version to be deployed in the AppSpec file.,Specify the version to be deployed in the BuildSpec file,"Create a Lambda function environment variable called ‘VER’ and mention 
+the version that needs to be deployed","Create an ALIAS for the Lambda function. Mark this as the recent version. 
+Use this ALIAS in CodeDeploy",,,1,Developer,5
+"Your mobile application includes a photo-sharing service that is expecting tens of 
+thousands of users at launch. You will leverage Amazon Simple Storage Service (S3) for 
+storage of the user Images, and you must decide how to authenticate and authorize your 
+users for access to these images. You also need to manage the storage of these images. 
+Which two of the following approaches should you use? Choose two answers from the 
+options below","Create an Amazon S3 bucket per user, and use your application to generate 
+the S3 URL for the appropriate content.","Use AWS Identity and Access Management (IAM) user accounts as your 
+application-level user database, and offload the burden of authentication 
+from your application code","Authenticate your users at the application level, and use AWS Security 
+Token Service (STS)to grant token-based authorization to S3 objects","Authenticate your users at the application level, and send an SMS token 
+message to the user. Create an Amazon S3 bucket with the same name as 
+the SMS message token, and move the user’s objects to that bucket.","Use a key-based naming scheme comprised from the user IDs for all 
+user objects in a single Amazon S3 bucket. A",,3&5,Developer,5
+"You’ve developed an application script that needs to be bootstrapped into instances that 
+are launched via an Autoscaling Group. How would you achieve this in the easy way 
+possible?","Place a scheduled task on the instance that starts as soon as the Instance 
+is launched.",Place the script in the metadata for the instance,Place the script in the Userdata for the instance,Create a Lambda function to install the script,,,3,Developer,5
+"You’ve developed a set of scripts using AWS Lambda. These scripts need to access EC2 
+Instances in a VPC. Which of the following needs to be done to ensure that the AWS 
+Lambda function can access the resources in the VPC. Choose 2 answers from the options 
+given below","Ensure that the subnet ID’s are mentioned when configuring the 
+Lambda function","Ensure that the NACL ID’s are mentioned when configuring the Lambda 
+function","Ensure that the Security Group ID’s are mentioned when configuring 
+the Lambda function","Ensure that the VPC Flow Log ID’s are mentioned when configuring the 
+Lambda function",,,1&3,Developer,5
+"You have a lambda function that is processed asynchronously. You need a way to check 
+and debug issues if the function fails? How could you accomplish this?",Use AWS Cloudwatch metrics,Assign a dead letter queue,Configure SNS notifications,Use AWS Cloudtrail logs,,,2,Developer,5
+"Your company has asked you to maintain an application using Elastic Beanstalk. They 
+have mentioned that when updates are made to the application, that the infrastructure 
+maintains its full capacity. Which of the following deployment methods should you use for 
+this requirement? Please select 2 correct options.",All at once,Rolling,Immutable,Rolling with additional batch,,,3&4,Developer,5
+"A DynamoDB table is set with a Read Throughput capacity of 5 RCU. Which of the 
+following read configuration will provide us the maximum read throughput?",Read capacity set to 5 for 4KB reads of data at strong consistency,Read capacity set to 5 for 4KB reads of data at eventual consistency,Read capacity set to 15 for 1KB reads of data at strong consistency,Read capacity set to 5 for 1KB reads of data at eventual consistency,,,2,Developer,5
+"You are using the AWS CodeDeploy service to deploy an application onto AWS. The 
+application uses secure parameters which are stored in the AWS Systems Manager 
+Parameter store. Which of the following must be done, so that the deployment can be 
+automated via CodeDeploy? Choose 2 answers from the options given below",Use the aws ssm get-parameters with the --with-decryption option,Use the aws ssm get-parameters with the --with-no-decryption option,Give permissions to the AWS Code Deploy service via AWS Access Keys,Give permissions to the AWS Code Deploy service via an IAM Role,,,1&4,Developer,5
+"Your company has an application that is interacting with a DynamoDB table. After 
+reviewing the logs for the application , it has been noticed that there quite a few 
+“ProvisionedThroughputExceededException” occurring in the logs. Which of the following 
+can be implemented to overcome these errors?",Implement global tables,Use exponential backoff in the program,"Ensure the correct permissions are set for the Instance profile for the 
+instance hosting the application",Ensure to use indexes instead,,,2,Developer,5
+"SQS guarantees delivery but there can be duplicates. Choose the correct answer from the 
+options below",TRUE,FALSE,,,,,1,Developer,5
+"What is the maximum number of SWF domains allowed in an AWS account? Choose the 
+correct answer from the options below.",50,100,200,1000,,,2,Developer,5
+"Company B has created an e-commerce site using DynamoDB and is designing 
+a orders table that includes items ordered and the users who ordered the item. When 
+creating a primary key on a table which of the following would be the best attribute for the 
+primary key? Select the BEST possible answer",user_id where there are many users to few products,product_id where there are few products to many users,category_id where there are few categories to many products,None of the above,,,1,Developer,5
+"In DynamoDB, an atomic counter allows all write requests to be applied in the order they 
+are received by incrementing or decrementing the attribute value",TRUE,FALSE,,,,,1,Developer,5
+"Company B is writing 10 items to the products table every second. Each item is 15.5Kb in 
+size. What would be the required provisioned write throughput for best performance? 
+Choose the correct answer from the options below.",10,160,155,16,,,2,Developer,5
+"For how long can a SWF workflow task or task execution can live up to? Choose the 
+correct answer from the options below.",14 days,24 hours,1 year,3 days,,,3,Developer,5
+"How many secondary indexes are allowed per DynamoDB table? Choose the correct 
+answer from the options below",There is no limit,25,5,1,,,2,Developer,5
+"You can define a maximum of 5 local secondary indexes and 20 global secondary indexes 
+per table.  How can you increase your DynamoDB global secondary indexes limit in a 
+region?",DynamoDB does not allow secondary index limit increase,By contacting AWS and requesting a limit increase,By calling the UpdateLimit API call,"DynamoDB can't increase secondary index limit, so you increase it by 
+writing code that uses multiple regions",,,2,Developer,5
+"How many global secondary indexes are allowed per table by default? Choose the correct 
+answer from the options below",20,1,10,15,,,1,Developer,5
+"Company B has a DynamoDB table where the average item size is 10KB. Company B 
+anticipates the application will read 100 items from the table per second using eventually 
+consistent reads. How much read capacity throughput should they provision? Choose the 
+correct answer from the options below",200,300,150,100,,,3,Developer,5
+"Which of the following datatypes can be indexed in DynamoDB. Choose 3 answers from 
+the options given below",String,Number,List,Boolean,,,1&2&4,Developer,5
+Any local secondary index in a DynamoDB table can be modified once it is created,FALSE,TRUE,,,,,1,Developer,5
+"What is maximum limit for the size of an item collection in DynamoDB? Choose an answer 
+from the options below",1GB,10MB,10GB,100MB,,,3,Developer,5
+"How is the coordination between worker processes done in SWF? Choose the correct 
+answer from the options below",By writing a program called the decider,By using SQS,By using a master worker process,This is not possible,,,1,Developer,5
+"fn:GetAtt is used on a CloudFormation template to: Choose an answer from the options 
+below",Conditionally create stack resources,Return the value of an attribute from a resource on the template,"Appends a set of values into a single value which can include resources on the 
+template","Returns the value corresponding to keys into a two-level map declared in the 
+mappings section",,,2,Developer,5
+"Which command line commands list all current stacks in your CloudFormation service? 
+Choose the 2 correct answers from the options below",AWS cloudformation create-stack,AWS cloudformation list-stacks,AWS cloudformation describe-stack-resources,AWS cloudformation describe-stacks,,,2&4,Developer,5
+"In SWF what are the containers called for segregating application resources. Choose the 
+correct answer from the options below.",Dockers,Domains,Namespaces,Metrics,,,2,Developer,5
+"You have created a mobile application that relies on reading data from DynamoDB. How 
+could you give each mobile device permissions to read from DynamoDB? Choose an 
+answer from the options below","Connect to an EC2 instance which will pull the data from DynamoDB 
+securely","Create an IAM role that can be assumed by an app that allows 
+federated users ",Add the username and password into the app code,Create an IAM user,,,2,Developer,5
+"You want to find out what AMIs are available for you to use in a given region. Which API 
+call is most appropriate? Choose an answer from the options below",ListInstances,ListAMIs,DescribeImages,DescribeAMIs,,,3,Developer,5
+"Which statement about DynamoDB is true? Choose the correct answer from the options 
+below",DynamoDB can use a pessimistic locking model,DynamoDB can restrict item access during reads.,DynamoDB can use conditional writes for consistency.,DynamoDB can restrict item access during writes.,,,3,Developer,5
+"Which of the following statements is true about DynamoDB? Choose the correct answer 
+from the options below",Read requests are eventually consistent unless otherwise specified,Read requests are strongly consistent.,Tables do not contain primary keys.,None of the above,,,1,Developer,5
+"Which of the following can be increased by contacting AWS? Choose 3 correct answer 
+from the options below",DynamoDB tables per account has a initial limit of 256 tables/region,DynamoDB secondary indexes per table,S3 buckets per account,S3 buckets per region,,,1&2&3,Developer,5
+"You are creating several DynamoDB tables for a new project. While doing so, you receive 
+the error message, “LimitExceededException.” You are well below the maximum number 
+of tables per account and there is no read or write activity on the tables yet. Why have you 
+received this error? Choose a correct answer from the options below",You attempted to create GSI at the time of table creation.,"You attempted to create local indexes at the same time you created the 
+tables",You failed to pre-warm the tables,"You attempted to create more than one table with a secondary index 
+at a time",,,4,Developer,5
+"You've enabled website hosting on a bucket named ""demo.com"" in the US-East-1 (US 
+standard region). Select the URL you'll receive from AWS as the URL for the bucket. 
+Choose a correct answer from the options below",demo.com.s3-website-us-east-1.amazonaws.com,demo-com.s3-website-us-east-1.amazonaws.com,demo.com.s3-website.amazonaws.com,demo.com.us-east-1-s3-website.amazonaws.com,,,1,Developer,5
+"Which of these CloudFormation snippets of code will return an address that can be used 
+to access our application from our browser if we're using a resource type of 
+AWS::ElasticLoadBalancing::LoadBalancer with Logical ID ""ElasticLoadBalancer""? Choose 
+an answer from the options below","""Fn::Join"" : [ """", [ ""http://"", { ""Fn::GetAtt"" : [ ""ElasticLoadBalancer"", 
+""DNSName"" ]}]]","""Fn::Join"" : [ """", [ ""http://"", { ""Ref"" : [""ElasticLoadBalancer"" }]]","""Fn::Join"" : [ ""http://"", [ ""."", { ""Fn::GetAtt"" : [ ""ElasticLoadBalancer"", ""DNSName"" ]}]]","""Fn::Join"" : [ """", [ ""http://"", { ""Fn::GetAtt"" : [ ""ElasticLoadBalancer"", ""URL"" ]}]]",,,1,Developer,5
+"At what size does does AWS recommend customers to use the multi-part upload tool 
+when uploading object to S3?",1 MB,1 TB,100 MB,1 GB,,,3,Developer,5
+"If your table item's size is 3KB and you want to have 90 strongly consistent reads per 
+second, how many read capacity units will you need to provision on the table? Choose the 
+correct answer from the options below",90,45,10,19,,,1,Developer,5
+"Which of the following are supported platforms in Elastic Beanstalk? Choose 2 correct 
+answer from the options below",IBM WebSphere,Oracle Weblogic,Microsoft IIS,Apache,,,3&4,Developer,5
+"You want 5 strongly consistent 1KB writes per second. How many units of throughput 
+capacity do you need to provision? Choose the correct answer from the options below",10,9,5,4,,,3,Developer,5
+"Company A has recently launched an online commerce site for bicycles on AWS. They 
+have a “Product” DynamoDB table that stores details for each bicycle, such as, 
+manufacturer, color, price, quantity and size to display in the online store. Due to customer 
+demand, they want to include an image for each bicycle along with the existing details.
+Which approach below provides the least impact to provisioned throughput on the 
+“Product” table? Choose an answer from the options below","Create an “Images” DynamoDB table to store the Image with a foreign key 
+constraint to the “Product” table","Add an image data type to the “Product” table to store the images in binary 
+format",Serialize the image and store it in multiple DynamoDB tables,"Store the images in Amazon S3 and add an S3 URL pointer to the “Product” 
+table item for each image",,,4,Developer,5
+"You are writing to a DynamoDB table and receive the following exception:” 
+ProvisionedThroughputExceededException”, though according to your Cloudwatch 
+metrics for the table, you are not exceeding your provisioned throughput. What could be 
+an explanation for this?",You haven’t provisioned enough DynamoDB storage instances,You’re exceeding your capacity on a particular Range Key,You’re exceeding your capacity on a particular Hash Key,You’re exceeding your capacity on a particular Sort Key,You haven’t configured DynamoDB Auto Scaling triggers,,3,Developer,5
+"What AWS products and features can be deployed by Elastic Beanstalk? Choose 3 
+answers from the options below",Auto scaling groups,Route 53 hosted zones,Elastic Load Balancers,RDS Instances,Elastic IP addresses,SQS Queues,1&3&4,Developer,5
+"Which of the following statements about SWF are true? Choose 3 answers from the 
+options below",SWF uses deciders and workers to complete tasks,SWF requires at least 1 EC2 instance per domain,SWF triggers SNS notifications on task assignment,SWF requires an S3 bucket for workflow storage,SWF tasks are assigned once and never duplicated,SWF workflow executions can last up to a year,1&5&6,Developer,5
+"Which of the following is chosen as the default region when making an API call with an 
+AWS SDK? Choose an answer from the options below",ap-northeast-1,us-west-2,us-east-1,eu-west-1,us-central-1,,3,Developer,5

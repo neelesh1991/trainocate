@@ -1,0 +1,289 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+"Which of the following statements are correct with respect to instance store and EBS
+volume? Please select 2 correct options.","Instance store backed EC2 instances will persist storage across instance
+stop, terminate and failures.","EBS backed EC2 instances can persist storage across instance stop,
+terminate and failures.","Instance store backed EC2 instance will persist storage only during instance
+stop and start.","You cannot add instance store volumes once EC2 instance is launched.
+?",All available EC2 instance types support instance store and EBS volumes.,,2&4,AWS cloud Arch Associate,5
+"You are working for a data management company which uses AWS platform to manage
+the data for various customers. They are using AWS EBS backed EC2 instance with “Delete
+EBS volume on termination” checked. EC2 instances are used to run data streaming
+application which generates logs and are stored on EBS volumes. The log files are critical
+for auditing purposes. How would you protect the data stored on EBS volumes from
+accidental terminations of EC2 instances?",Every EBS volume will have a daily EBS snapshot created automatically by AWS,"Setup a Data LifeCycle Manager policy scheduler to create EBS snapshots
+for your EBS volumes.","When EC2 instance is terminated, it automatically creates a snapshot of EBS
+volume and then deletes the EBS volume.","Write a custom script on your EC2 instance and schedule it to back up the data
+onto AWS S3.",,,2,AWS cloud Arch Associate,5
+What is the service used by AWS to segregate control over the various AWS services ?,AWS RDS,AWS Integrity Management,AWS Identity and Access Management,Amazon EMR,,,3,AWS cloud Arch Associate,5
+Which of the following is not true with respect to EBS volume encryption?,Encrypts data at rest inside the volume.,Encrypts all data moving between the volume and the instance.,Encrypts all snapshots created from the volume.,Encrypted EBS volumes are supported on all instance types,,,4,AWS cloud Arch Associate,5
+Which of the following statements is true with respect to encryption?,Enable encryption when creating a snapshot from unencrypted volume,"Enable encryption while copying snapshot from an unencrypted
+snapshot.",Disable encryption while creating a snapshot from encrypted volume.,Disable encryption while copying snapshot from an encrypted snapshot.,,,2,AWS cloud Arch Associate,5
+"You are working as an architect in your organization. An application team is using EBS
+volume for their database workloads which would need a high throughput, low latency
+and maximum I/O. They chose Provisioned IOPS EBS volume for better performance.
+However, after setting up the entire application, they notice the performance is not up to
+the mark. Which performance tuning mechanisms would you suggest? Please choose 3
+correct options.",Use EBS-Optimized Instances,"Use Throughput optimized HDD volume types for low latency and
+maximum I/O.",Use a Modern Linux Kernel.,Use RAID 0 to Maximize Utilization of Instance Resources.,"Performance of Provisioned IOPS SSD volume increase with volume size.
+Increase EBS volume size.",,1&3&4,AWS cloud Arch Associate,5
+"You are using AWS EC2 linux instance for log processing which would require high
+throughput. You chose Throughput optimized HDD storage with 500 GB in size. You
+deployed your application to production mode and it is running as expected. After a
+month, you see an increase in log files and you are fast approaching the 500 GB size and
+running out of space on the EBS volume. Which of the following is a best approach to
+mitigate the situation with minimal configuration?","Add a new EBS volume, mount on EC2 instance and configure your
+application accordingly",Increase the size of the existing EBS volume.,"EBS volume size cannot be changed. Build purging logic for your old log
+files","You can have only one EBS volume per instance. Snapshot existing EBS
+volume, detach current volume, create a new volume from snapshot with
+bigger size and attached to EC2 instance.",,,2,AWS cloud Arch Associate,5
+"Designing highly available, cost-efficient, fault-tolerant, scalable systems
+Which of the following services are automatically integrated with the API gateway service
+in the background to ensure better response to calls made to the API Gateway?",AWS Cloudwatch,AWS Cloudfront,AWS Volume gateway,AWS Lambda,,,4,AWS cloud Arch Associate,5
+"Designing highly available, cost-efficient, fault-tolerant, scalable systems
+There is a requirement in your organization to use the API gateway. But there is a specific
+requirement to have separate API’s versions for staging , testing and production
+environments. Which feature of the API gateway can be used to fulfil this requirement.",API Domain Name,Swagger extensions,Using AWS Cloudfront,Using Stages,,,4,AWS cloud Arch Associate,5
+"Topic : Data Security
+Which of the below security features of the API gateway can be used to ensure that API's
+resources can receive requests from a domain other than the API's own domain",API Stages,API Deployment,API CORS,API Access,,,3,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+You have an EC2 Instance located in your AWS VPC. This EC2 Instance hosts an
+application that is going to make use of the API Application gateway. Which of the
+following features can assist to ensure that the EC2 Instances only accepts request from
+the API Gateway.",Use the CORS feature in the API Gateway,Use SSL Certificates,Use Swagger Extensions,Use Stages,,,2,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+When integrating AWS Lambda or calling an AWS Lambda function from the API
+gateway ,which of the following is a must pre-requisite action that must be performed first",Grant access to the IAM role to have the required access with to lambda.,Grant access to the IAM user to have the required access level with Cloudwatch,Grant access to the IAM user to have the required access level with API Gateway,Grant access to the IAM group to have the required access level for API Gateway,,,1,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+You are currently architecting a solution for your company that will make use of API
+gateways. You want to ensure that you design the API gateway in such a way that latency
+to requests to the API gateway is reduced. Which of the following things can you ensure is
+carried out to fulfil this requirement.",Use AWS API Gateway with Cloudfront,Enable API Caching,Enable API Stages,Enable CORS configuration for the API Gateway,,,2,AWS cloud Arch Associate,5
+"Topic : Troubleshooting
+You are encountering a ""429"" Error code from your API Gateway. What can you do to
+resolve this error",Consider using Cloudfront to cache the request,Consider changing the throttling limits for your account,Consider enabling CORS configuration for your API,Consider using stage variables for your API,,,2,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+You are trying to enable the API caching for your API Gateway by using AWS free tier
+account. But it is unsuccessful. What could be the possible reason for this?",The API Resource is not defined properly,The Method Resource is not defined properly,"API caching in Amazon API Gateway is not eligible for the AWS Free
+Tier",The Swagger extensions are not enabled,,,3,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+You have defined an api path /sping in the API gateway, but are getting unexpected
+results when calling the relevant API. Why is this the case",You have not enable API Cache,The /sping is reserved by AWS,You have to increase the throttling for your account,You need to enable cross account access,,,2,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+You need to pass configuration parameters from your API Gateway to the Lambda
+function. Which of the following can be used for this purpose
+",Swagger extensions,Stage Variables,API Gateway variables,Deployment variables,,,2,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+You want to use the API Gateway to make calls to Amazon S3. Which of the following can
+assist in this?",Using Stage variables,Using the AWS Service proxy,Using REST API,Using Cloudfront along with the API Gateway,,,2,AWS cloud Arch Associate,5
+"Topic : Data Security
+Apart from IAM Roles and policies which of the below services can be used to control
+access to your API gateway",Amazon Cloudfront,Amazon Cloudwatch,Amazon Cognito,Web Identity Federation,,,3,AWS cloud Arch Associate,5
+"Topic : Implementation and Deployment
+After creating an API , what must be done so that users can call the relevant API
+Explanation:
+Answer -",Deploy the API,Copy the API,Build the API,Assign an SSL Certificate,,,1,AWS cloud Arch Associate,5
+"You are working as an AWS Architect for a start-up company. They have a production
+website which is two-tier with web servers in front end & database servers in back end. All
+these database servers are spread across multiple Availability Zones & are stateful
+instance. You have configured Auto Scaling Group for these servers with minimum of 2
+instance & maximum of 6 instance. During scale in of these instances post peak hours, you
+are observing data loss from these database servers. What feature needs to be configured
+additionally to avoid data loss & copy data before instance termination?","Modify cooldown period to complete custom actions before Instance
+terminates.",Add lifecycle hooks to Auto scaling group,Customise Termination policy to complete data copy before termination,Suspend Terminate process which will avoid data loss.,,,2,AWS cloud Arch Associate,5
+"Which of the following programming languages have an officially supported AWS SDK?
+Select 2 options.",PHP,Pascal,Java,SQL,Perl,,1&3,AWS cloud Arch Associate,5
+How long can messages live in a SQS queue ?,12 hours,10 days,14 days,1 year,,,3,AWS cloud Arch Associate,5
+"A company is migrating an on-premises 10TB MySQL database to AWS. There's a business
+requirement that the replica lag should be kept under 100 milliseconds. In addition to this
+requirement, the company expects this database to quadruple in size.
+Which Amazon RDS engine meets the above requirements?",MySQL,Microsoft SQL Server,Oracle,Amazon Aurora,,,4,AWS cloud Arch Associate,5
+"An application with a 150 GB relational database runs on an EC2 Instance. While the
+application is used infrequently with small peaks in the morning and evening, which of the
+storage type is the best for the above requirement?",Amazon EBS provisioned IOPS SSD,Amazon EBS Throughput Optimized HDD,Amazon EBS General Purpose SSD,Amazon EFS,,,3,AWS cloud Arch Associate,5
+"You are working as a consultant for a start-up firm. They have developed a web
+application for employee to enable them file sharing with external vendors securely. They
+created an Auto Scaling group for Web servers which require two m4. large EC2 instances
+running at all time & scaling up to maximum twelve instances. Post deploying this
+application, huge rise in billing is observed. Due to limited budget, CTO has requested
+your advice to optimise usage of instance in Auto Scaling groups. What will be best
+solution to reduce cost without any performance impact?",Create an Auto Scaling group with t2. micro On-Demand instances.,"Create an Auto Scaling group with a mix of On-Demand & Spot Instance.
+Select On-Demand base as 0. Above On-Demand base, select 100% of On-
+Demand instance & 0% of Spot Instance.",Create an Auto Scaling group with all Spot Instance.,"Create an Auto Scaling group with a mix of On-Demand & Spot
+Instance.Select On-Demand base as 2. Above On-Demand base,
+select 20% of On-Demand instance & 80% of Spot Instance.",,,4,AWS cloud Arch Associate,5
+"You are working as an AWS Architect for a start-up company. It has production website on
+AWS which is a two-tier with web servers in front end & database servers in back end.
+Third party firm has been looking after operations of these database servers. They need to
+access these database servers in private subnets on SSH port. As per standard operating
+procedure provided by Security team, all access to these servers should be over secure
+layer & should be logged, what will be best solution to meet this requirement?",Deploy Bastion hosts in Private Subnet,Deploy NAT Instance in Private Subnet,Deploy NAT Instance in Public Subnet,Deploy Bastion hosts in Public Subnet,,,4,AWS cloud Arch Associate,5
+"A Solutions Architect designing a solution to store and archive corporate documents, has
+determined Amazon Glacier as the right choice of solution.
+An important requirement is that the data must be delivered within 10 minutes of a
+retrieval request.
+Which feature in Amazon Glacier can help meet this requirement?",Vault Lock,Expedited retrieval,Bulk retrieval,Standard retrieval,,,2,AWS cloud Arch Associate,5
+"You are working for a start-up company which develops mobile gaming applications using
+AWS resources. For creating AWS resources, the project team is using CloudFormation
+Templates. The Project Team is concerned about changes made in EC2 instance
+properties by Operations Team apart from parameters specified in CloudFormation
+Templates. To observe changes in AWS EC2 instance, you advice to use CloudFormation
+Drift Detection. Post Drift detect, when you check drift status for all AWS EC2 instance,
+drift for certain property values having default values for resource properties is not displayed. Which of the following can be done to include these resources properties to
+be captured in CloudFormation Drift Detection?","Run CloudFormation Drift Detection on individual stack resources instead
+of entire CloudFormation stack.","Explicitly set the property value, which can be the same as the default
+value.","Manually check these resources as this is not supported in CloudFormation
+Drift Detection.","Assign Read permission to CloudFormation Drift Detection to determine
+drift.",,,2,AWS cloud Arch Associate,5
+"You working in the media industry and you have created a web application where users
+will be able to upload photos they create to your website. This web application must be
+able to call the S3 API in order to be able to function. Where should you store your API
+credentials whilst maintaining the maximum level of security?",Save the API credentials to your php files,"Don’t save your API credentials. Instead create a role in IAM and assign this
+role to an EC2 instance when you first create it.",Save your API credentials in a public Github repository,Pass API credentials to the instance using instance userdata.,,,2,AWS cloud Arch Associate,5
+"A website runs on EC2 Instances behind an Application Load Balancer. The instances run
+in an Auto Scaling Group across multiple Availability Zones and deliver several large files
+that are stored on a shared Amazon EFS file system. The company needs to avoid serving
+the files from EC2 Instances every time a user requests these digital assets.
+What should the company do to improve the user experience of the website?",Move the digital assets to Amazon Glacier.,Cache static content using CloudFront,Resize the images so that they are smaller.,Use reserved EC2 Instances.,,,2,AWS cloud Arch Associate,5
+"A Solutions Architect is designing a highly scalable system to track records. These records
+must remain available for immediate download for up to three months and then must be
+deleted.
+What is the most appropriate decision for this use case?","Store the files in Amazon EBS and create a Lifecycle Policy to remove files
+after 3 months","Store the files in Amazon S3 and create a Lifecycle Policy to remove
+files after 3 months.","Store the files in Amazon Glacier and create a Lifecycle Policy to remove
+files after 3 months","Store the files in Amazon EFS and create a Lifecycle Policy to remove files
+after 3 months.",,,2,AWS cloud Arch Associate,5
+"The security policy of an organization requires an application to encrypt data before
+writing to the disk. Which solution should the organization use to meet this requirement?",AWS KMS API,AWS Certificate Manager,API Gateway with STS,IAM Access Key,,,1,AWS cloud Arch Associate,5
+"A team is building an application that must persist and index JSON data in a highly
+available data store. Latency of data access must remain consistent despite very high
+application traffic.
+What service should the team choose for the above requirement?",Amazon EFS,Amazon Redshift,DynamoDB,AWS CloudFormation,,,3,AWS cloud Arch Associate,5
+"You have developed a new web application on AWS for a real estate firm. It has web
+interface where real estate employees upload photos of new construction houses in S3
+buckets. Prospective buyer’s login to these web site & access photos. Marketing Team has
+initiated an intensive marketing event to promote new housing schemes which we will
+lead to buyer’s frequently accessing these images. As this is a new application you have
+no projection of traffic. You have created Auto Scaling across multiple instance types for
+these web servers, but you also need to optimised cost for storage. You don’t want to
+compromise on latency & all images should be downloaded instantaneously without any
+outage. Which of the following is recommended storage solution to meet this
+requirement?",Use One Zone-IA storage class to store all images,Use Standard-IA to store all images.,Use S3 Intelligent-Tiering storage class,"Use Standard storage class, use Storage class analytics to identify & move
+objects using lifecycle policies.",,,3,AWS cloud Arch Associate,5
+"A company is generating large datasets with millions of rows to be summarized columnwise.
+To build daily reports from these data sets, Business Intelligence tools would be
+used.
+Which storage service meets these requirements?",Amazon Redshift,Amazon RDS,ElastiCache,DynamoDB,,,1,AWS cloud Arch Associate,5
+"A company is developing a web application to be hosted in AWS. This application needs a
+data store for session data.
+As an AWS Solution Architect, which of the following would you recommend as an ideal
+option to store session data? Choose 2 answers from the options given below.",CloudWatch,DynamoDB,Elastic Load Balancing,ElastiCache,Storage Gateway,,2&4,AWS cloud Arch Associate,5
+"A company needs to store images that are uploaded by users via a mobile application.
+There is also a need to ensure that a security measure is in place to avoid the data loss.
+What step should be taken for protection against unintended user actions?",Store data in an EBS volume and create snapshots once a week,Store data in an S3 bucket and enable versioning,Store data on Amazon EFS storage,Store data on EC2 instance storage.,,,2,AWS cloud Arch Associate,5
+"What are some of the common causes why you cannot connect to a DB instance on
+AWS ?
+Select 3 options.","There is a read replica being created, hence you cannot connect",The DB is still being created,The local firewall is stopping the communication traffic,The security groups for the DB are not properly configured,,,2&3&4,AWS cloud Arch Associate,5
+"There is a requirement to host a database on an EC2 Instance. It is also required that the
+EBS volume should support 18,000 IOPS.
+Which Amazon EBS volume type meets the performance requirements of this database?",EBS Provisioned IOPS SSD,EBS Throughput Optimized HDD,EBS General Purpose SSD,EBS Cold HDD,,,1,AWS cloud Arch Associate,5
+"Development teams in your organization use S3 buckets to store log files for various
+applications hosted in AWS development environments. The developers intend to keep
+the logs for a month for troubleshooting purposes, and subsequently purge the logs.
+What feature will enable this requirement?",Adding a bucket policy on the S3 bucket.,Configuring lifecycle configuration rules on the S3 bucket.,Creating an IAM policy for the S3 bucket,Enabling CORS on the S3 bucket,,,2,AWS cloud Arch Associate,5
+"What options can be used to host an application that uses NGINX and is scalable at any
+point in time?
+Choose 2 correct answers.",AWS EC2,AWS Elastic Beanstalk,AWS SQS,AWS ELB,,,1&2,AWS cloud Arch Associate,5
+"There is a requirement to get the IP addresses for resources accessed in a private subnet.
+Which of the following can be used to fulfill this purpose?",Trusted Advisor,VPC Flow Logs,Use CloudWatch metrics,Use CloudTrail,,,2,AWS cloud Arch Associate,5
+"A database is required for a Two-Tier application. The data would go through multiple
+schema changes. The database needs to be durable, ACID compliant and changes to the
+database should not result in database downtime. Which of the following is the best
+option for data storage?",AWS S3,AWS Redshift,AWS DynamoDB,AWS Aurora,,,3,AWS cloud Arch Associate,5
+"An application requires an EC2 Instance for continuous batch processing activities
+requiring a maximum data throughput of 500MiB/s. Which of the following is the best
+storage option for this?",EBS IOPS,EBS SSD,EBS Throughput Optimized HDD,EBS Cold Storage,,,3,AWS cloud Arch Associate,5
+"An application needs to access data in another AWS account in another VPC in the same
+region. Which of the following can be used to ensure that the data can be accessed as
+required?",Establish a NAT instance between both accounts,Use a VPN between both accounts.,Use a NAT Gateway between both accounts,Use VPC Peering between both accounts,,,4,AWS cloud Arch Associate,5
+"An application currently using a NAT Instance is required to use a NAT Gateway. Which of
+the following can be used to accomplish this?",Use NAT Instances along with the NAT Gateway,Host the NAT Instance in the private subnet.,"Migrate from a NAT Instance to a NAT Gateway and host the NAT
+Gateway in the public subnet.",Convert the NAT Instance to a NAT Gateway,,,3,AWS cloud Arch Associate,5
+"An application consists of the following architecture:
+a. EC2 Instances in multiple AZ’s behind an ELB
+b. The EC2 Instances are launched via an Auto Scaling Group c. There is a NAT instance which is used so that instances can download updates from the
+Internet.
+Which of the following is a bottleneck in the architecture?",The EC2 Instances,The ELB,The NAT Instance,The Auto Scaling Group,,,3,AWS cloud Arch Associate,5
+"There is a requirement to host a database application having resource-intensive reads and
+writes. Which of the below options is most suitable?",EBS Provisioned IOPS SSD,EBS SSD,EBS Throughput Optimized HDD,EBS Cold Storage,,,1,AWS cloud Arch Associate,5
+"Currently a company makes use of EBS snapshots to back up their EBS Volumes. As a part
+of the business continuity requirement, these snapshots need to be made available in
+another region. How can this be achieved?",Directly create the snapshot in the other region,Create Snapshot and copy the snapshot to a new region,"Copy the snapshot to an S3 bucket and then enable Cross-Region
+Replication for the bucket.",Copy the EBS Snapshot to an EC2 instance in another region.,,,2,AWS cloud Arch Associate,5
+"A company has resources hosted in their AWS Account. There is a requirement to monitor
+API activity for all regions and the audit needs to be applied for future regions as well.
+Which of the following can be used to fulfill this requirement?","Ensure CloudTrail for each region, then enable for each future region.",Ensure one CloudTrail trail is enabled for all regions.,"Create a CloudTrail for each region. Use CloudFormation to enable the trail
+for all future regions.","Create a CloudTrail for each region. Use AWS Config to enable the trail for
+all future regions.",,,2,AWS cloud Arch Associate,5
+"There is a requirement for an iSCSI device and the legacy application needs local
+storage with low-latency access to all the data. Which of the following can be used to
+meet the demands of the application?",Configure the Simple Storage Service,Configure Storage Gateway Cached volume,Configure Storage Gateway Stored volume,Configure Amazon Glacier,,,3,AWS cloud Arch Associate,5
+"There is a requirement for EC2 Instances in a private subnet to access an S3 bucket. It is
+required that the traffic does not traverse to the Internet. Which of the following can be
+used to fulfill this requirement?",VPC Endpoint,NAT Instance,NAT Gateway,Internet Gateway,,,1,AWS cloud Arch Associate,5
+"There is an application which consists of EC2 Instances behind a classic ELB. An EC2 proxy
+is used for content management to backend instances. The application might not be able
+to scale properly.
+Which of the following can be used to scale the proxy and backend instances
+appropriately? Choose 2 answers from the options given below.",Use Auto Scaling for the proxy servers,Use Auto Scaling for the backend instances.,Replace the Classic ELB with Application ELB,Use Application ELB for both the front end and backend instances,,,1&2,AWS cloud Arch Associate,5
+"There is a website hosted in AWS that might get a lot of traffic over the next couple of
+weeks. If the application experiences a natural disaster at this time, which of the following
+can be used to reduce potential disruption to users?",Use an ELB to divert traffic to an Infrastructure hosted in another region.,Use an ELB to divert traffic to an Infrastructure hosted in another AZ.,Use CloudFormation to create backup resources in another AZ.,Use Route53 to route to a static web site,,,4,AWS cloud Arch Associate,5
+"You have a requirement to host a static website for a domain called mycompany.com in
+AWS. It is required to ensure that the traffic is distributed properly.
+How can this be achieved? Choose 2 answers from the options given below.",Host the static site on an EC2 Instance,Use Route53 with static web site in S3,Enter the Alias records from Route53 in the domain registrar,Place the EC2 instance behind the ELB,,,2&3,AWS cloud Arch Associate,5
+"A database hosted using the AWS RDS service is getting a lot of database queries and has
+now become a bottleneck for the associating application. What action will ensure that the
+database is not a performance bottleneck?",Setup a CloudFront distribution in front of the database.,Setup an ELB in front of the database,Setup ElastiCache in front of the database,Setup SNS in front of the database,,,3,AWS cloud Arch Associate,5
+"A database is being hosted using the AWS RDS service. This database is to be made into a
+production database and is required to have high availability. Which of the following can
+be used to achieve this requirement?","Use Multi-AZ for the RDS instance to ensure that a secondary database is
+created in another region.","Use the Read Replica feature to create another instance of the DB in
+another region.","Use Multi-AZ for the RDS instance to ensure that a secondary
+database is created in another Availability Zone.","Use the Read Replica feature to create another instance of the DB in
+another Availability Zone.",,,3,AWS cloud Arch Associate,5
+"A company wants to host a web application and a database layer in AWS. This will be
+done with the use of subnets in a VPC.
+Which of the following is a proper architectural design for supporting the required tiers of
+the application?","Use a public subnet for the web tier and a public subnet for the database
+layer.","Use a public subnet for the web tier and a private subnet for the
+database layer.","Use a private subnet for the web tier and a private subnet for the database
+layer.","Use a private subnet for the web tier and a public subnet for the database
+layer.",,,2,AWS cloud Arch Associate,5
+"A company has an infrastructure that consists of machines which keep sending log
+information every 5 minutes. The number of these machines can run into thousands and it
+is required to ensure that the data can be analyzed at a later stage. Which of the following
+would help in fulfilling this requirement?","Use Kinesis Data Streams with S3 to take the logs and store them in S3
+for further processing","Launch an Elastic Beanstalk application to take the processing job of the
+logs.","Launch an EC2 instance with enough EBS volumes to consume the logs
+which can be usedfor further processing.",Use CloudTrail to store all the logs which can be analyzed at a later stage.,,,1,AWS cloud Arch Associate,5
+"An application hosted in AWS allows users to upload video to an S3 bucket. A user is
+required to be given access to upload some video for a week based on the profile. How
+can be this be accomplished in the best way possible?",Create an IAM bucket policy to provide access for a week’s duration.,"Create a pre-signed URL for each profile which will last for a week’s
+duration.",Create an S3 bucket policy to provide access for a week’s duration.,Create an IAM role to provide access for a week’s duration,,,2,AWS cloud Arch Associate,5
+"A company has a requirement for archival of 6TB of data. There is an agreement with the
+stakeholders for an 8-hour agreed retrieval time. Which of the following can be used as
+the MOST cost-effective storage option?",AWS S3 Standard,AWS S3 Infrequent Access,AWS Glacier,AWS EBS Volumes,,,3,AWS cloud Arch Associate,5
+"A company hosts 5 web servers in AWS. They want to ensure that Route53 can be used to
+route user traffic to random healthy web servers when they request for the underlying
+web application. Which routing policy should be used to fulfill this requirement?",Simple,Weighted,Multivalue Answer,Latency,,,3,AWS cloud Arch Associate,5
+In AWS what is used for encrypting and decrypting login information to EC2 instances,Templates,AMI’s,Key pairs,None of the above,,,3,AWS cloud Arch Associate,5
+"For DynamoDB, what are the scenario’s in which you would want to enable Cross-region
+replication?",Live data migration,Easier Traffic management,Disaster Recovery,All of the above,,,4,AWS cloud Arch Associate,5
+"You are developing a highly available web application using stateless web servers. Which
+services are suitable for storing session state data?
+Choose 3 answers",Amazon CloudWatch,Amazon Relational Database Service (RDS),Elastic Load Balancing,Amazon ElastiCache,AWS Storage Gateway,Amazon DynamoDB,2&4&6,AWS cloud Arch Associate,5
+"Which of the following is mandatory when defining a cloudformation template?
+",Resources,Parameters,Outputs,Mappings,,,1,AWS cloud Arch Associate,5
+,,Parameters,,,,,,,

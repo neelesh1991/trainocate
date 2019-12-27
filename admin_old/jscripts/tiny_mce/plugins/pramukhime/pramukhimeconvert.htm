@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#pramukhime.convert_title}</title>
+	<script language="javascript" type="text/javascript">
+	var u = document.location.href;
+	var bu = unescape(u.indexOf("?bu") >= 0? u.substring(u.indexOf("?bu")+4):'');
+	bu = bu.indexOf("&") >=0? bu.substring(0,bu.indexOf("&")):bu;
+	document.write('<sc'+'ript language="javascript" type="text/javascript" src="' + bu + '\/tiny_mce_popup.js" ><\/script>');
+	document.write('<sc' + 'ript language="javascript" type="text/javascript" src="' + bu + '\/utils/mctabs.js" ><\/script>');
+	</script>
+	<script type="text/javascript" src="js/pramukhimedlg.js"></script>
+    <script language="javascript" type="text/javascript">
+        tinyMCEPopup.onInit.add(PramukhIMEConvertDialog.init, PramukhIMEConvertDialog);
+    </script>
+    <link href="css/pramukhime.css" type="text/css" rel="Stylesheet" />
+</head>
+<body style="display:none;">
+	<div class="tabs">
+	</div>
+	<div class="panel_wrapper">
+        {#pramukhime.convert_instruction}
+		<table class="pi_unicodetext" border="0">
+            <tr>
+                <td class="title pi_center"><span id="sourcelanguage">Source Language</span></td>
+                <td class="center"></td>
+                <td class="title pi_center"><select id="destinationlanguage" name="destinationlanguage" class="title"></select></td>
+            </tr>
+            <tr>
+                <td style="height:380px;"><iframe id="ifrLanguage1" src="javascript:'';" frameBorder="0" class="pi_iframe_convert"></iframe></td>
+                <td>
+                    <input type="button" id="btnto" value="---&gt;" class="button" onclick="PramukhIMEConvertDialog.convertText(false);"/><br /><br /><br />
+                    <input type="button" id="btnfrom" value="&lt;---" class="button" onclick="PramukhIMEConvertDialog.convertText(true);"/>
+                </td>
+                <td style="height:380px;"><iframe id="ifrLanguage2" src="javascript:'';" frameBorder="0" class="pi_iframe_convert"></iframe></td>
+            </tr>
+            <tr>
+                <td class="pi_center"><input type="button" id="btninsert1" value="{#insert}" class="button" onclick="PramukhIMEConvertDialog.insert(1);"/></td>
+                <td></td>
+                <td class="pi_center"><input type="button" id="btninsert2" value="{#insert}" class="button" onclick="PramukhIMEConvertDialog.insert(2);"/></td>
+            </tr>
+        </table>
+	</div>
+    <div class="mceActionPanel">
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+	</div>
+</body>
+</html>

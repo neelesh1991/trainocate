@@ -1,0 +1,26 @@
+/* For help */
+.panel_wrapper div.current {height:420px;}
+.pi_help_frm { width:100%; border:0px; height:410px;}
+.pi_quickhelpimg {max-height:350px;  max-width:570px; overflow:auto;}
+
+/* For clickale map */
+a.pi_square:hover, a.pi_square:link, a.pi_square:visited, a.pi_square:active, a.pi_selectedsquare:hover, a.pi_selectedsquare:link, a.pi_selectedsquare:visited, a.pi_selectedsquare:active, a.pi_lsquare, a.pi_selectedlsquare{width:30px; height:30px; border-width:0px 1px 1px 0px; border-color:Gray; border-style:solid; vertical-align:middle;  text-align:center; line-height:24px; font-size:16px; cursor:pointer; cursor: hand; display:inline-block; text-decoration:none; color:black;}
+a.pi_square:hover, a.pi_lsquare:hover, a.pi_selectedsquare:hover, a.pi_selectedsquare:link, a.pi_selectedsquare:visited, a.pi_selectedsquare:active, a.pi_selectedlsquare {background-color:#ff9933;}
+a.pi_lsquare:hover, a.pi_lsquare:link, a.pi_lsquare:visited, a.pi_lsquare:active, a.pi_selectedlsquare:hover, a.pi_selectedlsquare:link, a.pi_selectedlsquare:visited, a.pi_selectedlsquare:active { width:61px }
+.pi_content {border-width: 1px 0px 0px 1px; border-style: solid; border-color:Gray; white-space:normal; max-height:230px; overflow:auto;}
+.pi_preview {width:100px; height:100px; font-size:40px; text-align:center; line-height:100px; vertical-align:middle;border: 1px solid Gray; }
+.pi_lefttitle {width: 100px;}
+.pi_unicodetext, .pi_unicodetext label, .pi_unicodetext textarea{width:100%;font-size:16px; }
+.pi_unicodetext textarea { height:50px;}
+.pi_leftdiv{float:left; width:527px;}
+.pi_rightdiv{float:right; text-align:center;}
+.pi_clear{clear:both;}
+a.pi_examples:hover, a.pi_examples:link, a.pi_examples:visited, a.pi_examples:active, a.pi_examplechars, .pi_examples{text-decoration:none; font-size:16px; cursor:pointer; cursor:hand;}
+.pi_examplechars {height:30px; font-size:16px;}
+
+
+/* For convert*/
+.pi_center { text-align:center;}
+.pi_ta { width:100%; font-size:16px; height:350px;}
+input.button {float:none;}
+.pi_iframe_convert {border: 1px solid gray;height:100%; width:100%;}

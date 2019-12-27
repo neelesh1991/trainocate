@@ -1,0 +1,88 @@
+/***** Theme Primary Color (Blue) ******/
+
+/* color */
+a:hover
+.f-column-widget h4::before,
+.facts-column:hover i,
+.nav-list > ul > li > a:hover,
+.search-nd-cart li a:hover,
+.gallery-figure .overlay a,
+.filter-tags-holder ul li a.selected,
+.service-icon,
+.form-group select:focus ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group textarea:focus ~ .control-label,
+.main-heading h2::before,
+.main-heading h2::after,
+.contact-address .social-icons-2 ul li a:hover,
+.join-event-option .social-icons-2 ul li a:hover,
+.aside-widet h4::before,
+.add-cart-option li a:hover,
+.change-view-option ul li a:hover,
+.product-view-option ul li a:hover,
+.product-disc li a:hover,
+.teacher-quote .social-icons-2 ul li a:hover,
+.aurthor-wigdet .social-icons-2 ul li a:hover,
+.bodypass-list .comments-holder ul li .read-more,
+.login-form .social-icons-2 ul li a:hover,
+.tranding-post .blog-detail::before,
+.social-icons-2 ul li a:hover,
+.replay-btn,
+.faq-search .search-bar button
+{ color: #005D9B;}
+
+
+/* Background Color */
+.top-bar,
+.add-cart-no,
+.btn.blue,
+.btn.blank:hover,
+.circle-btn,
+.owl-dots .owl-dot.active,
+.social-icons li a:hover,
+.about-us::before,
+.form-group .bar::before,
+.service-column.style-3:hover .service-icon,
+.owl-nav .owl-prev:hover,
+.owl-nav .owl-next:hover,
+.timeline-tabs ul li.active a,
+.pagination-holder .pagination li a:hover,
+.pagination-holder .pagination li.active a,
+.pricing-slider .ui-slider-handle,
+.pricing-slider .ui-slider .ui-slider-range,
+.t-table-widget thead tr th,
+#closeSearch,
+.aside-calender .ui-datepicker-header,
+.ui-state-default.ui-state-active,
+.aside-tags-list li a:hover
+{ background: #005D9B;}
+
+.pagination li.done a{
+ background: #4caf50 ;
+}
+/* Border Color */
+.nav-list > ul > li > a::before,
+.nav-list > ul > li.active > a::before,
+.btn.blank:hover,
+.our-courses,
+.social-icons li a:hover,
+.filter-tags-holder ul li a.selected,
+.owl-nav .owl-prev:hover,
+.owl-nav .owl-next:hover,
+.categories-list > li h5,
+.pagination-holder .pagination li a:hover,
+.pricing-slider .ui-slider-handle,
+.nav-list ul li > ul,
+.aside-tags-list li a:hover,
+.p-detail blockquote
+{ border-color: #005D9B;}
+
+
+/* Background RGba Color Dark */
+.slider-nav:hover,
+.gallery-figure .overlay
+{ background: rgba( 0,93,155, 0.96);}
+
+/* Background RGba Color Light */
+
+{ background: rgba( 0,93,155, 0.8);}

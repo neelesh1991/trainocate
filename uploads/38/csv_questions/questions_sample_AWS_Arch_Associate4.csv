@@ -1,0 +1,16 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+main,"2 EC2 Instances in us-west-2a, 2 EC2 Instances in us-west-2b, and 2 EC2
+Instances in us-west-2c","3 EC2 Instances in us-west-2a, 3 EC2 Instances in us-west-2b, and no EC2
+Instances in us-west-2c","4 EC2 Instances in us-west-2a, 2 EC2 Instances in us-west-2b, and 2 EC2
+Instances in us-west-2c","6 EC2 Instances in us-west-2a, 6 EC2 Instances in us-west-2b, and no
+EC2 Instances in us-west-2c","3 EC2 Instances in us-west-2a, 3 EC2 Instances in us-west-2b, and 3
+EC2 Instances in us-west-2c",,4&5,Multiple,5
+second,A Web application using Amazon RDS,A long running worker process,A static website,A management task run once on nightly basis,,,1&2&3,Multiple,5
+third,"Modify the Auto Scaling group termination policy to terminate the older
+instance first.","Modify the Auto Scaling group termination policy to terminate the newest
+instance first.",Modify the Auto Scaling group cool down timers.,Modify the Auto Scaling group to use Scheduled Scaling actions.,"Modify the CloudWatch alarm period that triggers your Auto Scaling
+scale down policy",,3&5,Multiple,5
+ssssssssssssssss,sdfs,dfs,dfs,sds,,,1&2&3,Multiple,2
+onlyforoption,1s,sdfs,,,,,1&2&3,sdfs,5
+no options,,,,,,,1,dfs,5

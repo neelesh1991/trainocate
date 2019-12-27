@@ -1,0 +1,4 @@
+"user_id","name","email_id","contact_no","organization","city","exam_name","start_time","end_time","no_of_question","attempt_question","correct_answer","out_of_marks","total_marks","percentage"
+"600","Ramesh","Ramesh.kumar@tatasteel.com","8073837796","Tata Steel","jamshedpur","AWS Cloud Architect - Professional","2019-08-31 17:21:12","2019-08-31 18:21:12","0","0","0","0","0","0"
+"614","Sheela devi","vsheela@virtusa.com","8883784209","virtusa","Chennai","AWS Cloud Architect - Professional","2019-09-06 04:51:39","2019-09-06 10:24:08","15","1","0","75","0","0"
+"636","brjesh@tatasteel.com","brjesh.sinha@gmail.com","9204058759","","JAMSHEDPUR","AWS Cloud Architect - Professional","2019-09-06 13:06:43","2019-09-06 14:06:43","0","0","0","0","0","0"

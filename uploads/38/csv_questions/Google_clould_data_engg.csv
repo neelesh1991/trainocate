@@ -1,0 +1,651 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+"An environment safety facility receives thousands of events every 60 seconds from its sensors
+assembled in different sectors monitoring air pollution in the region. Scientists want to access and
+query the data for observation and daily reporting. Due to current funding state, their budget is limited
+and they seek a cost-effective, highly available and ACID-compliant solution supports SQL querying.
+Which approach would you recommend for such scenario?","Use BigQuery to store and query the event data. Enable streaming on BigQuery for
+data to be loaded in real-time.",Batch-load data into BigTable with launching 10 nodes to allow high performance.,"Use Cloud SQL to load events into a relational database and allow access to
+scientists to query.","Use BigQuery to store and query event data. Batch load the data to BigQuery
+using its API.",,,4,Google cloud certified professional Data Engineer,5
+"You have a dataflow pipeline reads a CSV file daily at 6am, applies the needed cleansing &
+transformation on it, then loads it to BigQuery. Occassionally, the CSV file might be modified within the
+day due to human error or incomplete data. This causes you to manually re-run dataflow pipeline
+again. Is there a way to fix this by automatically re-run the pipeline if file has been modified?","Use Cloud Scheduler to re-run dataflow after 6am. Check what is the average time
+the file is modified and schedule based on it.","Use Dataproc to reprocess the file after 6am. You can use Cloud Functions to launch
+a Dataproc cluster","Use Cloud Composer to rerun dataflow and reprocess the file. Create a custom
+sensor to detect file condition if changed.","Use a compute engine to schedule a cron job to run every 10 minutes to check if the
+file was modified to rerun dataflow.",,,3,Google cloud certified professional Data Engineer,5
+"A dairy products company is using sensors installed around different areas in its farms to monitor
+employees activities and detect any intruders. Apache Kafka cluster is used to gather the events
+coming from sensors. Recently, Kafka cluster is becoming a bottleneck causing lag in receiving sensor events. Turns out sensors are sending more frequent events and due to the company expanding with
+more farms, more sensors are installed and this will cause extra load on the cluster.
+What is the most resilient approach to solve this issue?",Use pub/sub to ingest and stream sensor events.,Scale out Kafka cluster to withstand the continuously flowing event stream.,"Spin up a new Kafka cluster and distribute sensors even streams between the two
+clusters.", Build a Dataflow pipeline to ingest the events stream.,,,1,Google cloud certified professional Data Engineer,5
+"A social media platform stores various details of their platform users such as session login time, URLs
+visited, activities on platform and other logs. With GDPR (General Data Protection Regulation)
+compliance to be officially implemented, the platform now allows users to download their activity
+logs from their profile settings which they can click a button to call an API to generate a full report.
+Recently, users are complaining timeouts after 60 seconds of requesting to download their activity
+logs at peak hours when the platform has the most traffic. They have to try for several minutes or even
+hours for the API to return their report available for download.
+How can you solve this issue?","Increase timeout for API at peak times to 120 seconds. If it keeps failing, try
+increasing the timeout until the issue is resolved","Build a Dataflow pipeline to generate daily reports of users’ activity logs. Users can
+download those daily reports whenever they want to.",Migrate data source to Cloud Spanner for horizontal scaling to avoid query timeouts.,"Use Pub/sub to pull the requests for activity logs from users. Send a link to
+users by their email addresses with a temporary download link for them to
+access their report.",,,4,Google cloud certified professional Data Engineer,5
+"A company decides to migrate its on-premise data infrastructure to the cloud mainly for high
+availability of cloud services and to lower the high costs of storing data on-premise. The infrastructure
+uses HDFS to store data and be processed and transformed using Apache Hive & Spark. The company
+wants to migrate the infrastructure and DevOps team still wants to administrate the infrastructure in
+the cloud. As a data architect, which of the following is the approach recommended by Google?",Use Dataproc to process the data. Store data in Google Storage,"Build a Dataflow pipeline. Store the data in Google Storage. Use Cloud Compute to
+launch instances and install the required dependencies for processing the data.",Use Dataproc to process the data. Store data in Dataproc’s HDFS.,"Build a Dataflow pipeline. Store the data in persistent disks in HDFS. Execute the
+code in Spark framework provided by Dataflow.",,,1,Google cloud certified professional Data Engineer,5
+"Data analysts are switching to use Apache Spark to perform experiments on the data before applying
+the changes to production. Those experiments are not critical, but they will be conducted on big data
+sets. As a data engineer, the head of data asked you to prepare the tech stack required to be used by
+data analysts to run their Spark scripts and experiment on with taking into consideration the cost of
+the stack used.
+Which of the following tech stack is suggested?","Launch a Dataproc cluster in high-availability mode with using high-memory worker
+machine types.","Launch a Dataproc cluster in standard mode with using high-CPU worker machine
+types.","Launch a Dataproc cluster in standard mode with using high-memory worker
+machine types.",Advice the data analysts to use Dataprep for their data manipulation,,,3,Google cloud certified professional Data Engineer,5
+"You have several Data Studio reports reading from BigQuery. Those reports are used to visualize
+several metrics for marketing team. Data visualized is updated only once a day. You notice that reports
+running queries on BigQuery are not free and they cost for each query. You want to control and
+minimize the costs caused by frequent queries coming from Data Studio dashboards.
+What should you do?","Enable caching on reports for reading from BigQuery. No need to change the
+credentials.",Grant owner credentials for the reports on BigQuery datasets and enable caching.,Configure reports data sources to update data every 24 hours only.,"Export data as CSV files to Google Storage every 24 hours and change reports data
+source to read from those files.",,,1,Google cloud certified professional Data Engineer,5
+"You are using BigQuery as the data warehouse. Data analysts & scientists run queries to get data from
+BigQuery. When you checked the billing costs for the previous month, you noticed a spike in running
+queries on BigQuery despite caching is enabled. You tried to find out the reason for the spike by
+reading some of the queries data analysts and scientists are running on BigQuery.
+Which of the following can be reasons for queries not cached? (Choose 2)",Queries use current_timestamp function.,SELECT queries with asterisk (*).,Queries select from authorized views on archive tables.,Queries use wildcards.,,,1&4,Google cloud certified professional Data Engineer,5
+"You are deploying a Tensorflow model built by data science team to the cloud. Based on the
+requirements provided by data scientists, the model should be able to return the output as soon as
+possible to minimize the latency of serving predictions. Input will be passed as JSON.
+Which of the following approaches are best for this scenario?","Use Google Kubernetes Engine to deploy the model. Use online prediction to pass
+input data to the model hosted in cloud.","Use Google Kubernetes Engine to deploy the model. Use batch prediction to pass
+input data to the model hosted in cloud.","Use Cloud Machine Learning Engine to deploy the model. Use batch prediction to
+pass input data to the model hosted in cloud.","Use Cloud Machine Learning Engine to deploy the model. Use online prediction
+to pass input data to the model hosted in cloud.",,,4,Google cloud certified professional Data Engineer,5
+"You have a massively multiplayer online (MMO) game which sends events from each player every 10
+seconds. Events contain stats about the player session’s state (play, idle, off) as well as ping duration.
+You want to use Dataflow for windowing. The purpose is to aggregate events and extracting stats to
+detect how many players are currently online and what is the average ping duration for each server in
+a time window of 30 seconds.
+Which windowing function you should choose to design the pipeline?",Fixed-time window.,Sliding-time window,Per-session window,Single global window,,,2,Google cloud certified professional Data Engineer,5
+"An e-payment service allows users to purchase online and transfer money securely. They log into the
+website to perform the transactions and they log out. The website needs to check if their sessions are
+idle for 10 minutes, means they did not perform any action or they opened a new link within the
+website. In case of idle session, the website ends their session for security purposes.You need to build a Dataflow pipeline to aggregate session events received from the website and
+detect sessions idle more than 10 minutes to get their sessions expired.
+Which windowing function you should choose to design the pipeline?",Fixed-time window with duration of 10 minutes.,Sliding-time window with duration of 10 minutes,Per-session window with time gap duration of 10 minutes.,Single global window with time-based trigger of 10 minutes.,,,3,Google cloud certified professional Data Engineer,5
+"You have several Dataflow pipelines streaming data for transformation and further analysis. At one
+point of the transformation, there is a need for two pipelines to share data among pipeline instances.
+You need to modify the architecture to allow data sharing between different pipelines.
+How should this requirement be met in Google Cloud?", Enable data sharing option when creating Dataflow pipeline.,"Grant pipeline instances the right IAM roles to access other pipelines instances for
+data sharing.",Use Google Storage to share data with other pipeline instances.,"Data sharing among Dataflow pipelines is only possible if instances reside in same
+region.",,,3,Google cloud certified professional Data Engineer,5
+"You are building a data pipeline using Google Dataflow SDK. This pipeline is going to perform
+operations on data using conditional and for loops creating a branch pipeline.
+Which of the following concepts should be used to achieve this?",ParDo,Pcollection,Transform,Pipeline,,,3,Google cloud certified professional Data Engineer,5
+"A multinational company has multiple Google Storage buckets in different regions around the world.
+Each branch has its own set of buckets in the region nearest to them to avoid latencies.
+However, this led to a problem for the analytics team to reach and do the necessary reports on the
+data using BigQuery since they need to create the tables in the same region either to import the data
+or create external tables to access the data in different regions. The head of data decided to sync the
+data daily from different Google Storage buckets scattered in different regions to a single multiregional
+bucket to do the necessary data analysis and reporting.
+Which service could help with this approach?",Appliance Transfer Service,gsutil,gsutil,Dataflow,,,3,Google cloud certified professional Data Engineer,5
+"A company is migrating its current infrastructure from on-premise to Google cloud. It stores over
+280TB of data on its on-premise HDFS servers. You were tasked to move data from HDFS to Google
+Storage in a secure and efficient manner. Which of the following approaches are best to fulfill this
+task?","Install Google Storage gsutil tool on servers and copy the data from HDFS to Google
+Storage.",Use Cloud Data Transfer Service to migrate the data to Google Storage.,"Import the data from HDFS to BigQuery. Then, export the data to Google Storage in
+AVRO format.",Use Transfer Appliance Service to migrate the data to Google Storage.,,,4,Google cloud certified professional Data Engineer,5
+"A company is moving its data center from its on-premise servers to the cloud. It was estimated that
+they have about 2 Petabytes of data to be moved and security team is very concerned the data should
+be migrated securely and project manager has a timeline of 6 months for the whole migration to be
+done.
+Which of the following approaches is best to do the job?",Appliance Transfer Service,Google Storage (Coldline).,Cloud Transfer Service,Datastore.,,,1,Google cloud certified professional Data Engineer,5
+"A company plans to move its 250TB of data from their on-premise FTP servers to the cloud. The
+security team wants to make sure the data is transferred securely. Data transfer should be a one-time
+migration. Data team reported the data should be accessed by clients in Asia.
+Which of the following is the best approach?","Use Transfer Appliance Service for one-time migration to Google Storage.
+Google Storage bucket should be multi-regional in Asia.","Use Transfer Appliance Service for one-time migration to Google Storage. Google
+Storage bucket should be in Tokyo region","Use Storage Transfer Service for one-time migration to Google Storage. Google
+Storage bucket should be multi-regional in Asia.","Use Storage Transfer Service for one-time migration to Google Storage. Google
+Storage bucket should be in Tokyo region.",,,1,Google cloud certified professional Data Engineer,5
+"You have been using BigTable instance with HDD as storage type. You want to increase the
+performance of the instance by changing the storage type to SSD. You want to make sure the data will
+not be lost. How can you achieve that?","Use Dataflow to export data from the existing BigTable instance to the new
+instance.","From Google Cloud console UI, you can switch the storage type from HDD to SDD.
+Data will be moved to new storage type. Instance will be inaccessible by this time
+until migration is complete.","From Google Cloud console UI, you can switch the storage type from HDD to SDD.
+Data will be moved to new storage type. Instance will be in read-only mode by this
+time until migration is complete.",You need to change the instance from development to production.,,,1,Google cloud certified professional Data Engineer,5
+"You use BigQuery as the main data warehouse. You decided to perform advanced data transformation
+of the data. You want to use Dataproc with Apache Spark to do the transformation. How can you
+enable Dataproc’s access to data in BigQuery?","Install Dataproc’s BigQuery connector on the cluster using initialization actions.
+Dataproc temporarily loads data from BigQuery to Google Storage. If failed,
+Dataproc deletes temp files before finishing the job.","Install Dataproc’s BigQuery connector on the cluster using initialization actions.
+Dataproc temporarily loads data from BigQuery to Google Storage. If failed, you
+need to manually delete temp files.","Dataproc cannot directly connect to BigQuery. You should export data from
+BigQuery to Google Storage first. Dataproc can then read data from Google Storage.
+You need to manually delete data files after Dataproc is done.",Dataproc can connect to BigQuery if you set the cluster as owner to the dataset,,,2,Google cloud certified professional Data Engineer,5
+"You have a Dataflow pipeline to run and process set of data files received from a client for
+transformation and load data into data warehouse. This pipeline should run at 7am everyday so
+metrics can be ready by 9am when client’s management can browse latest stats based on provided
+data.
+Which service you should use to schedule Dataflow pipeline?",Cloud Functions,Compute Engine,Kubernetes Engine,Kubernetes Engine,,,4,Google cloud certified professional Data Engineer,5
+"You have the following legacy SQL query in BigQuery:
+# legacy SQL SELECT
+order_date,
+COUNT(DISTINCT customer_id)) AS customers
+FROM
+[my-project:orders.orders_2018]
+GROUP BY
+order_date ORDER BY
+order_date;
+How can you convert this query to standard SQL?",Change table syntax to `my-project:orders.orders_2018',Change table syntax to `my-project.orders.orders_2018',Change table syntax to [my-project.orders.orders_2018],No change required. This works fine if standard SQL is enabled.,,,2,Google cloud certified professional Data Engineer,5
+"What is the keyword in BigQuery standard SQL used when selecting from multiple tables with
+wildcard by their suffices?",_WILDCARD_SUFFIX,_TABLES_SUFFIX,_SUFFIX,_TABLE_SUFFIX,,,4,Google cloud certified professional Data Engineer,5
+"A weather forecasting facility receives events from its 25,000 sensors every 10 seconds. Those events
+are stored in Google Storage in JSON format. Events can have different attributes based on purpose,location and brand. Data Science team wants to apply their SQL-queries on this data for further
+transformation and forecasting analysis.
+Which of the following approaches is best to satisfy Data Scientists request?",Load the data directly to BigQuery with enabling “auto-detect” option,"Build a dataflow pipeline to read JSON data and transform it to a structured format
+like CSV. Then, load the data to BigQuery.","Import the data to BigTable. Choose combination #eventType-location-brand to
+differentiate between different events.","Use Dataproc cluster and create Hive external clusters on the data for data
+scientists to query data.",,,1,Google cloud certified professional Data Engineer,5
+Which of the following statements is not true about BigQuery:,You cannot upload multiple tables at the same time.,Uploading data is free of charge. Streaming data is not.,Use window functions instead of cross joins for better performance.,You can upload data in SQL format.,,,4,Google cloud certified professional Data Engineer,5
+"Your company uses BigQuery as their main data warehouse. Recently, data team has proposed a new
+schema for existing tables: They want to modify some column names to a more meaningful ones. You
+are tasked to help data team apply the necessary changes on BigQuery’s tables schemas. How can
+you achieve this?",Modify column names for each table using ALTER command,"Export data for tables with schema changes to Google Storage. Create a new table
+with the new schema. Import data to new table from Google Storage.",Create views on BigQuery tables with new column names.,"Create a new table in BigQuery with the new schema. Insert data from existing
+tables to the new tables using INSERT SELECT statement.",,,4,Google cloud certified professional Data Engineer,5
+"A pharmaceutical factory has over 100,000 different sensors generating JSON-format events every 10
+seconds to be collected. You need to gather the event data for sensor & time series analysis.
+Which database is best used to collect event data?",Google Storage,Cloud Spanner,BigTable,Datastore,,,3,Google cloud certified professional Data Engineer,5
+"An e-payment company collects its service payment transaction events from its app installed in
+nearly 200,000 devices. Those events need to be stored for further time-series analysis and fraud
+detection. Which of the following approaches is recommended to implement?","Use Google Storage to store data. Use Dataproc with Apache Hive to do required
+queries on data","Use Cloud SQL as a database. Make sure you launch a multi-regional instance for
+higher peformance.","Use BigTable as a database. Use short & wide tables when designing the schema
+and row key.","Use BigTable as a database. Use tall & narrow tables when designing the
+schema and row key.",,,4,Google cloud certified professional Data Engineer,5
+"A company wants to use NoSQL database for storing its system logs. The system can generate
+thousands of logs every minute. Those logs are occasionally read by security team in case of possible
+anomaly behavior or developers for debugging purposes. Due to system’s architecture, system logs
+are not structured and can be different between different components.
+Which database do you suggest be used for this scenario?",Use BigTable as a database with HDD storage to store system logs.,Use BigTable as a database with SSD storage to store system logs.,Use Datastore as a database to store system logs.,Use Firebase as a database to store system logs.,,,1,Google cloud certified professional Data Engineer,5
+"You design a pipeline for your company. You want to find a solution to store event data generated in
+CSV format. The goal is to SQL-query data over time window.
+Which storage and schema design should you use recommended by Google?","Use Google Storage to store event data and use BigQuery to create external
+tables referencing event data and partitioned by time window.","Use Google Storage to store event data and use DataPrep jobs to partition data by
+time windows.","Use BigTable for storage and design tall and narrow tables adding each event as
+single row.","Use BigTable for storage and design short and wide tables adding each event as
+single row.",,,1,Google cloud certified professional Data Engineer,5
+"A company specializes in monitoring and distributing data about road traffic for more than 60 cities.
+Data is used by navigation apps to notify users of traffic congestion on their destination routes and
+alert them of road accidents. There are thousands of queries running to write new events and read
+events for analysis and get the latest stats on road traffic.
+Which of the following is the best option for this scenario?",Cloud Spanner,BigQuery,Datastore,BigTable,,,4,Google cloud certified professional Data Engineer,5
+"Analytics team receives data from different data sources stored in Google Storage. The team wants to
+query the data for required ETL operations which they will fully take care of using SQL. They wantyour advice on what is the best approach recommended by Google to do it. What would you suggest?","Batch load the data from Google Storage into BigQuery using its batch API, run
+cleansing and transformation queries on data and insert the transformed rows to
+another BigQuery table.","Batch load the data from Google Storage into BigQuery using its batch API, run
+cleansing and transformation queries on data and export the data to Google
+Storage. Launch Dataproc cluster and use Hive to query the transformed data.","Create external tables on data using BigQuery, apply the cleansing and
+transformation queries on data then load the output to an internal BigQuery
+table for reporting and visualization.","Create external tables on data using BigQuery, apply the cleansing and
+transformation queries on data then load the output to BigTable for reporting and
+visualization",,,3,Google cloud certified professional Data Engineer,5
+"You want to import data into BigQuery. You used Google Cloud’s BigQuery UI to import the data. You
+selected a comma-delimiter CSV file from your local machine to upload and enabled “automatically
+detect” for BigQuery to predict the schema of the table. When you checked the data, you found a
+skew in data and it’s not properly distributed.
+What can be the reason for the skew in the table?","CSV file is not UTF-8 encoded. You need to convert the CSV file’s encoding and load
+it again.","CSV file is not UTF-8 encoded. You need to explicitly specify the encoding
+when loading data so it can be converted to UTF-8",File size exceeds 1GB. You need to break the file into smaller chunks.,You need to explicitly specify the delimiter of CSV file when loading the data.,,,2,Google cloud certified professional Data Engineer,5
+Which of the following statements is not true about Dataproc?,You can change number of preemptible workers for existing clusters,Dataproc charges by the second.,You cannot store data in preemptible nodes.,You can change workers instance type for existing clusters.,,,4,Google cloud certified professional Data Engineer,5
+"Your team is planning to perform tests on Cloud BigTable instance to ensure the performance quality
+of the BigTable instance to be used in production. Which of the following conditions should be met to
+consider the performance testing valid? (Choose 3)",Use development instance for testing,Run a heavy pre-test for several minutes before the test starts,Scale up the instance just before the test starts.,Use at least 300GB of data.,Do not scale up the instance just before the test starts.,Test should take no longer than 10 minutes,"2,4&5",Google cloud certified professional Data Engineer,5
+"Your team decided to use BigTable for storing event data. The engineer responsible of launching and
+testing the instance has reported a slower performance than expected by Google Cloud
+documentation. Which of the following could be a factor for the slow performance? (Choose 3)
+Explanation:
+Answers: A, B & F
+There are several factors that can cause Cloud Bigtable to perform more slowly than expected:
+The table's schema is not designed correctly. To get good performance from Cloud BigTable, it's
+essential to design a schema that makes it possible to distribute reads and writes evenly across each
+table.
+The workload isn't appropriate for Cloud BigTable. If you test with a small amount (< 300 GB) of data,
+or if you test for a very short period of time (seconds rather than minutes or hours), Cloud BigTable
+won't be able to balance your data in a way that gives you good performance.
+The rows",The rows in the tables tested contain high number of cells.,The rows in the tables have large data size.,Test data size is over 300GB.,The instance uses SSD storage type.,Heavy pre-test was done before the testing started.,The instance doesn’t have enough nodes,"1,2&6",Google cloud certified professional Data Engineer,5
+"A fast-food chain restaurant wants to detect the different meal photos its customers upload to the
+different social media platforms tagged with their name in order to know what meals customers like
+and share the most for better quality analysis.
+It asks your advice on developing such solution for them. However, they want it to be available and in
+production the soonest possible because they expect a high activity on their social media pages by
+the next public holiday which is coming in 2 weeks and marketing team finds it a great opportunity to
+receive feedback based on what customers say online.
+What is the best approach for this?","Use AutoML Vision to build and train the model by using all the training photos you
+collected from food-chain’s social media pages for better results.","Use AutoML Vision to build and train the model by using 50-70% of training
+photos you collected from food-chain’s social media pages while the rest of
+training set is to test and tune the model.","Use Dataproc to build the model using SparkML. Use 50-70% of training photos you
+collected to train the model and the rest to test and tune the model. Deploy the
+model using Cloud ML Engine.","Use Cloud ML Engine with TensorFlow to build the model. Use all training photos
+you collected to train the model. Deploy the model using Cloud ML Engine.",,,2,Google cloud certified professional Data Engineer,5
+"A video-on-demand company wants to generate subtitles for its content on the web. They have over
+20,000 hours of content to be subtitled and their current subtitle team cannot catch up with the
+every- growing video hours the content team keep adding to the website library. They want a solution
+to automate this as man power can be expensive and may take long time.
+Which service of the following can greatly help the automation of video subtitles?",Cloud Natural Language.,Cloud Speech-to-Text.,AutoML Vision API.,Machine Learning Engine.,,,2,Google cloud certified professional Data Engineer,5
+"A financial services firm providing products such as credit cards and bank loans receives thousands of
+online applications from clients applying for their products. Because it takes a lot of effort to scan and
+check all applications if they meet the minimum requirements for the products they are applying for,
+they want to build a machine learning model takes application fields like annual income, marital
+status, date of birth, occupation and other attributes as input and finds out if the applicant is qualified
+for the product the client applies for.
+What is the machine learning technique will help build such model?",Regression,Classification,Clustering,Reinforcement learning,,,2,Google cloud certified professional Data Engineer,5
+"You have built a machine learning model to classify if a customer would buy a certain product when
+recommended by the company’s website. You trained the model with a sample set. Upon testing the
+model, you found out only 28% of the testing sets are actually true positives and the model isn’t very
+accurate. You figured out the model is over-fitted. How would you solve this?","Increase training data, increase feature parameters & increase regularization.","Decrease training data, decrease feature parameters & increase regularization.","Increase training data, decrease feature parameters & increase regularization.","Increase training data, decrease feature parameters & decrease regularization.",,,3,Google cloud certified professional Data Engineer,5
+"A coach line bus service company wants to predict how many passengers they expect to book for
+tickets on their buses for the upcoming months. This helps the company to know how many buses
+they need to be in service for maintenance and fuel and how many drivers to be available. The
+company has data sets of all booked tickets since its launch in 1968 and it allows private sharing of
+the data if this helps the prediction process.
+You will build the machine learning model for the coach line company. Which technique you will use
+to predict the number of passengers in the next months?",Regression.,Association.,Classification.,Clustering.,,,1,Google cloud certified professional Data Engineer,5
+"You are building a machine learning model to solve a classification problem. The model should
+identify if a patient has a tumor. Based on statistics, only 1.4% of scanned patients are identified
+positive for tumor.
+You want to make sure the machine learning model is able to correctly identify patients with tumor.
+What is the technique to examine the effectiveness of the model?",Gradient Descent,Precision,Recall,Dropout,,,3,Google cloud certified professional Data Engineer,5
+Which of the following vectors are sparse vectors and used for categorical features:,"[1, 0, 1, 0]","[1, 0, 0, 1]","[0, 1, 0]","[0, 1, 0, 3, 0]",,,3,Google cloud certified professional Data Engineer,5
+"You are training a Tensorflow deep neural network model. The model should recognize different type
+of cars and return the brand and type of the car from the image input. While training, you decided to
+perform hyper-parameter tuning to optimize the model.
+Which of the variables are used for hyperparameter tuning? (Choose 2)",Number of nodes in hidden layers,Number of features,Number of hidden layers,2Weight values,,,1&3,Google cloud certified professional Data Engineer,5
+"Data scientists of your company has finished building their deep neural network model. As a data
+engineer, you are asked to deploy the model to production. Which of the following products in Google
+Cloud you would use to host the model?",Google Kubernetes Engine,Google ML Deep Learning VM,Google Container Registry,Google Machine Learning Engine,,,4,Google cloud certified professional Data Engineer,5
+"Data science team has successfully built a deep neural network machine learning model to detect car
+plate numbers entering and exiting a parking lot of a high-rise condominium. The model was built
+using Tensorflow and the model was exported as SavedModel. As a data engineer, you are assigned
+to deploy their model. The company is using Google Cloud for their project.
+Which approach is best for deploying the detection model?","Upload SavedModel object to Google Storage. Use Dataproc with Spark ML to use
+the model by accessing it using Google Storage Connector","Deploy the model to Google Kubernetes Engine after wrapping SavedModel as
+docker image and uploading it to Google Container Registry.","Deploy the model to Cloud ML Engine after asking data science team to convert the
+model to binary format using PyTorch.",Deploy the model exported as SavedModel directly to Cloud ML Engine.,,,4,Google cloud certified professional Data Engineer,5
+"You are asked by the data science team to deploy their Tensorflow deep neural network model to the
+cloud. You choose Cloud ML Engine as the product to deploy the model with. Upon checking the
+available tiers, you decided to choose a custom tier launching a cluster with custom specifications to
+cover the requirements provided to deploy the model.
+Which of the following specifications you can set for the ML Engine cluster? (Choose 2)",workerCount,masterCount,masterCPU,workerType,,,1&4,Google cloud certified professional Data Engineer,5
+"You launched a Dataproc cluster to perform some Apache Spark jobs. You are looking for a method to
+securely transfer web traffic data between your machine’s web browser and Dataproc cluster.
+How can you achieve this?",FTP connection,SSH tunnel,VPN connection, Incognito mode,,,2,Google cloud certified professional Data Engineer,5
+"There is a plan by data team to migrate the data warehouse to BigQuery. After the migration is done,
+you are tasked to assign each user the right role to access datasets in BigQuery. You have the
+following teams need to access data warehouse:Data analysts: They need read/write access to data. They should not create or delete datasets.
+Data engineers: They are admins on the data warehouse. They need full privileges on data sets.
+Dev team: They need read access only to the datasets. They can list the project’s data sets and tables. How would you assign the roles to each team?","Assign admin role to data engineer group. Assign owner role to data analyst group.
+Assign viewer role to dev team group.","Assign owner role to data engineer group. Assign editor role to data analyst group.
+Assign user role to dev team group.","Assign admin role to data engineer group. Assign editor role to data analyst
+group. Assign viewer role to dev team group.","Assign owner role to data engineer group. Assign editor role to data analyst group.
+Assign viewer role to dev team group.",,,3,Google cloud certified professional Data Engineer,5
+"Your company uses BigQuery as the main data warehouse. Data warehouse is divided into several
+datasets based on data origin and profile. Data analysts want to access certain data resides in a
+dataset considered sensitive and should not be openly available to all users. Security team allows
+only certain tables with limited columns for data analysts to read from.
+Which of the following actions will you take?","Create a new dataset in BigQuery. Create authorized views on tables data
+analysts want to read from. Grant viewer role to data analysts on new dataset.","Create authorized views on tables data analysts want to read from on the same
+dataset tables reside in. Grant viewer role to marketing team on the views.","Grant data analysts viewer role on these specific tables with specifying what
+columns to be read from.","Create a new dataset in BigQuery. Grant viewer role to data analysts on the new
+dataset. Copy the tables from the current dataset to the new one with only columns
+allowed.",,,1,Google cloud certified professional Data Engineer,5
+"You are writing highly-confidential data related to customers’ personally identifiable information (PII).
+The security team is concerned about how secure the network connection between the instances and
+Google Storage buckets. Security team proposes to use encryption keys generated by security team.
+Those keys will be rotated every 30 days for more security.
+As a data engineer, what should you do to satisfy security team’s requirement?","Upload encryption key provided by security team to Cloud Key Management Service
+(KMS) and use the key to encrypt data when writing to Google Storage.","Create symmetric keys using Cloud Key Management Service (KMS) and use those
+to encrypt data when writing to Google Storage. Create new keys every 30 days.","Create asymmetric keys using Cloud Key Management Service (KMS) and use those
+to encrypt data when writing to Google Storage. Create new keys every 30 days.","Supply the encryption key provided by security team and reference it as part of
+the API service calls to encrypt data in Cloud Storage.",,,4,Google cloud certified professional Data Engineer,5
+"You have about 20TB of data which is not accessed and the data team decided to archive them in the
+cloud. The team is looking for a storage solution that is highly available with minimum costs. On the
+other hand, the data may be accessed a few times a year for reconciliation purposes.
+Which of the following choices best satisfy data team’s requirements?",Google Storage Standard,Google Storage Nearline,Google Storage Coldline.,Google Storage Archive,,,2,Google cloud certified professional Data Engineer,5
+"You have a complex data pipeline which has a combination of shell scripts, python code and spark
+jobs. These task are scheduled by cron jobs to run. The problem with this approach is, in case of
+failure, the whole pipeline breaks and failure control with stopping next tasks from running after a
+certain task fails and re-running the pipeline again is difficult and messy. You want a solution which
+can manage the pipeline’s different jobs to be failure-resilient, scalable and easy to monitor.
+What approach is best for this scenario?",Use Cloud Composer to orchestrate the pipeline workflow.,"Use Dataproc for Apache Spark jobs and migrate all other tasks to use Apache Spark
+instead.",Use Cloud Scheduler to schedule pipeline’s tasks.,Use Dataflow to re-build the data pipeline.,,,1,Google cloud certified professional Data Engineer,5
+"A social media platform stores various details of their platform users such as session login time, URLs
+visited, activities on platform and other logs. With GDPR (General Data Protection Regulation)
+compliance to be officially implemented, the platform now allows users to download their activity
+logs from their profile settings which they can click a button to call an API to generate a full report.
+Recently, users are complaining timeouts after 60 seconds of requesting to download their activity
+logs at peak hours when the platform has the most traffic. They have to try for several minutes or even
+hours for the API to return their report available for download.
+How can you solve this issue?","Increase timeout for API at peak times to 120 seconds. If it keeps failing, try
+increasing the timeout until the issue is resolved.","Build a Dataflow pipeline to generate daily reports of users’ activity logs. Users can
+download those daily reports whenever they want to.",Migrate data source to Cloud Spanner for horizontal scaling to avoid query timeouts.,"Use Pub/sub to pull the requests for activity logs from users. Send a link to
+users by their email addresses with a temporary download link for them to
+access their report",,,4,Google cloud certified professional Data Engineer,5
+"You are building a streaming data pipeline for a VOD (Video-on-demand) service company. It receives
+event data from its player app sending details of what users are watching, video state (play, pause,
+loading) and other metrics can be derived from the device used such as OS, brand and screen
+resolution.
+The event data collected should be analyzed by most recent data for quality check and further action
+in case of streaming issues. How can you ingest the stream data?","Use Cloud Pub/Sub to ingest the events and attach a unique ID to every event in the
+publisher.","Use Cloud Pub/Sub to ingest the events and attach timestamp to every event
+in the publisher.","Use Cloud Pub/Sub to ingest the events and store them to BigTable without any
+enrichment. Pub/Sub publisher automatically adds timestamp to messages before
+publishing to subscribers.",Launch a compute engine and install Apache Kafka to ingest the event stream.,,,2,Google cloud certified professional Data Engineer,5
+"Data analysts are using Google Data Studio to build dashboards reading data from BigQuery as a data
+source. The CTO wants to minimize the costs of BigQuery queries run by dashboards. You suggested
+enabling predictive (pre-fetch) caching.
+Which of the following will minimize the costs?","Restrict data fetch to be once every 24 hours and make sure Data Studio report has
+view credentials on the BigQuery dataset.","Enable pre-fetch caching for the report and make sure Data Studio report has view
+credentials on the BigQuery dataset.","Enable pre-fetch caching for the report and make sure Data Studio report is an
+owner on the BigQuery dataset.","Restrict data fetch to be once every 24 hours and make sure Data Studio report is an
+owner on the BigQuery dataset.",,,3,Google cloud certified professional Data Engineer,5
+"Restrict data fetch to be once every 24 hours and make sure Data Studio report is an
+owner on the BigQuery dataset.","Use online prediction when using the model. Batch prediction supports
+asynchronous requests.","Use batch prediction when using the model. Batch prediction supports
+asynchronous requests.","Use batch prediction when using the model to return the results as soon as
+possible.","Use online prediction when using the model to return the results as soon as
+possible.",,,2,Google cloud certified professional Data Engineer,5
+"A facility receives events from sensors return current temperature based on sensor’s location. You are
+asked to build a pipeline to aggregate the incoming events to get the average temperature every 60
+seconds for each region.",Fixed-time window with duration of 60 seconds,Sliding-time window with duration of 60 seconds,Per-session window with time gap duration of 60 seconds.,Single global window with time-based trigger of 60 seconds.,,,2,Google cloud certified professional Data Engineer,5
+"A gaming app allows up to 32 players to compete in “battle royale” mode in a single gaming session.
+Recently, players are sending feedback complaining some users are idle and not competing in the
+session which breaks the experience for them. The development team decided to end the session for
+players who are idle for more than 60 seconds to solve this problem.
+Gaming app sends events every second contain player’s state (active, idle, pending) and other details.
+You want to build a Dataflow pipeline which aggregates these events so idle players can be detected
+in the time frame specified by development team.
+Which windowing function you should choose to design the pipeline?",Fixed-time window with duration of 60 seconds.,Sliding-time window with duration of 60 seconds.,Per-session window with time gap duration of 60 seconds,Single global window with time-based trigger of 60 seconds.,,,3,Google cloud certified professional Data Engineer,5
+Which of the following statements is not true about Dataflow?,Dataflow supports composite triggers which support both time & data events.,Default windowing behavior is fixed-time window,"Compute engine instances need dataflow.worker permission to run dataflow
+pipelines.",Dataflow supports both batching & streaming,,,2,Google cloud certified professional Data Engineer,5
+"You have a Dataflow pipeline which streams data to be stored to BigTable after it has been
+transformed and enriched. Development team needs to modify the transformation code based on
+client’s needs. The pipeline is in production which keeps streaming and any interruption to the
+pipeline may lead to data loss or unexpected output.
+How can you make sure the pipeline can be stopped without any consequences?",Turn off Dataflow pipeline with ‘cancel’ option.,"Create a new Dataflow pipeline with the new transformation code, then switch data
+stream to the new pipeline.","Transfer Dataflow pipeline to write data to Google Storage. Perform the needed
+changes then transfer pipeline back to write to BigTable and re-process the data
+written in Google Storage",Turn off Dataflow pipeline with ‘drain’ option.,,,4,Google cloud certified professional Data Engineer,5
+"You are using Dataflow SDK to analyze data related to customer segmentation. You need to extract
+certain fields from the data files to be processed for further transformation.
+Which operation is used to perform the operation required?",ParDo,Pcollection,Transform,Pipeline,,,1,Google cloud certified professional Data Engineer,5
+"An e-wallet company is designing a relational database solution for their e-payment transactions.
+Database will face high read/write transactions and accessed from different parts of Europe and may
+be expanded to other continents in the future. The database should be scalable and able to scale out
+to meet high demands.
+What is the best approach for this scenario?","Use Cloud BigTable as a database. For scaling out, monitor CPU utilization and
+increase nodes when more than 75% of CPU is utilized in a 15-minute timespan.","Use Cloud SQL as a database. For scaling out, monitor disk utilization and increase
+nodes when more than 85% of storage is utilized in a 15-minute timespan.","Use Cloud BigTable as a database. For scaling out, monitor memory utilization and
+increase nodes when more than 80% of memory is utilized in a 15-minute timespan.","Use Cloud Spanner as a database. For scaling out, monitor CPU utilization and
+increase nodes when more than 75% of CPU is utilized in a 15-minute timespan.",,,4,Google cloud certified professional Data Engineer,5
+"A company is moving its data center from its on-premise servers to the cloud. It was estimated that
+they have about 2 Petabytes of data to be moved and security team is very concerned the data should
+be migrated securely and project manager has a timeline of 6 months for the whole migration to be
+done. Which of the following approaches is best to do the job?",Appliance Transfer Service.,Google Storage (Coldline).,Cloud Transfer Service,Datastore.,,,1,Google cloud certified professional Data Engineer,5
+"A company plans to move its 250TB of data from their on-premise FTP servers to the cloud. The
+security team wants to make sure the data is transferred securely. Data transfer should be a one-time
+migration. Data team reported the data should be accessed by clients in Asia.
+Which of the following is the best approach?","Use Transfer Appliance Service for one-time migration to Google Storage.
+Google Storage bucket should be multi-regional in Asia.","Use Transfer Appliance Service for one-time migration to Google Storage. Google
+Storage bucket should be in Tokyo region.","Use Storage Transfer Service for one-time migration to Google Storage. Google
+Storage bucket should be multi-regional in Asia.","Use Storage Transfer Service for one-time migration to Google Storage. Google
+Storage bucket should be in Tokyo region.",,,1,Google cloud certified professional Data Engineer,5
+"A MySQL database hosted in Cloud SQL is used in production to store data about the website’s users
+personal information, website products and user reviews on those products. The data analyst team
+lead wants to perform analysis on the data in the MySQL database. Data analysts use BigQuery as
+their data warehouse to perform OLAP queries to be later visualized using Data Studio.
+How can you import data to BigQuery?","Create Dataflow pipeline to export data from Cloud SQL to Google Storage in
+CSV format. Then, import those CSV export files from Google Storage to
+BigQuery.","Export data from Cloud SQL to Google BigTable. Then, import from BigTable instance
+to BigQuery.","Import data directly from Cloud SQL to BigQuery using Cloud Storage Transfer
+Service.",Import data directly from Cloud SQL using BigQuery’s import UI.,,,1,Google cloud certified professional Data Engineer,5
+"Your team was working on a development BigTable instance for some time experimenting on it to
+stream event data coming from hundreds of sensors sending events frequently. After development is
+done, the team lead considered instead of deleting the instance and losing all events collected since
+building the pipeline, it would be a better idea to use the instance in production with the required
+changes to ensure high availability and best performance.
+Which of the following approaches is best to satisfy the team lead’s requirements?","Export the data from BigTable development instance to Google Storage, launch a
+new BigTable production instance with SSD storage type, then load the data from
+Google Storage to the new BigTable instance.","Export the data from BigTable development instance to Google Storage, launch a
+new BigTable production instance with HDD storage type, then load the data from
+Google Storage to the new BigTable instance.","Change BigTable instance type from development to production, scale up number
+of nodes and ensure the storage type is HDD.","Change BigTable instance type from development to production, scale up
+number of nodes and ensure the storage type is SSD.",,,4,Google cloud certified professional Data Engineer,5
+"You have a system which writes its logs to a file. The system writes to a new log file every hour. You
+want to merge log files every 24 hours to a single file and upload it to a specific bucket in Google
+Storage. You created a Dataflow pipeline to process the logs files and you want to run this pipeline
+everyday at 3am.
+Which of the following is the best approach to schedule this task?",Use Cloud Scheduler to create a cron job to run the Dataflow pipeline at 3am.,Create a Compute Engine VM and create a cron job to run Dataflow pipeline at 3am.,Configure Dataflow pipeline as a streaming job to process the data in real time,Use Cloud Functions to run Dataflow pipeline at 3am.,,,1,Google cloud certified professional Data Engineer,5
+"You have the following BigQuery legacy SQL query:
+SELECT SUM(amount)
+FROM TABLE_DATE_RANGE([some-dataset.orders_], TIMESTAMP(‘2017-06-01’), TIMESTAMP(‘2017-09-
+01’);
+How can you covert it to standard SQL?","SELECT SUM(amount)
+FROM `some-dataset.orders_ *`
+WHERE TABLE_DATE_RANGE BETWEEN ‘20170601’ AND ‘20170901’;","SELECT SUM(amount)
+FROM `some-dataset.orders_ *`
+WHERE _TABLE_SUFFIX BETWEEN ‘20170601’ AND ‘20170901’;","SELECT SUM(amount)
+FROM `some-dataset.orders_`
+WHERE _TABLE_SUFFIX BETWEEN ‘20170601’ AND ‘20170901’;","SELECT SUM(amount)
+FROM `some-dataset.orders_* `
+WHERE _TABLE_DATE_RANGE BETWEEN ‘20170601’ AND ‘20170901’;",,,2,Google cloud certified professional Data Engineer,5
+"An environment safety facility receives thousands of events every 60 seconds from its sensors
+assembled in different sectors monitoring air pollution in the region. Scientists want to access and
+query the data for observation and daily reporting. Due to current funding state, their budget is limited
+and they seek a cost-effective, highly available and ACID-compliant solution supports SQL querying.
+Which approach would you recommend for such scenario?","Use BigQuery to store and query the event data. Enable streaming on BigQuery for
+data to be loaded in real-time.",Batch-load data into BigTable with launching 10 nodes to allow high performance.,"Use Cloud SQL to load events into a relational database and allow access to
+scientists to query.","Use BigQuery to store and query event data. Batch load the data to BigQuery
+using its API.",,,4,Google cloud certified professional Data Engineer,5
+"You are using BigQuery as the data warehouse. Different departments are using BigQuery to read
+data. Upon checking the billing costs, you notice that there is a spike in running queries on BigQuery
+despite caching is enabled. You started scanning through the queries run on BigQuery trying to find
+out if some queries are not cached.
+Which of the following can be reasons for queries not cached? (Choose 2)",SELECT queries with asterisk (*).,Queries select from authorized views on archive tables.,Queries use wildcards.,Jobs use destination tables.,,,3&4,Google cloud certified professional Data Engineer,5
+Which of the following statements is not true about BigQuery:,You cannot upload multiple tables at the same time.,You cannot upload data in SQL format.,Uploading and streaming data are free.,You can scan partitioned tables using _PARTITIONTIME.,,,3,Google cloud certified professional Data Engineer,5
+"An e-commerce company uses BigQuery as its main data warehouse. One of the tables stores
+customers details such as name, address, email and phone number. Data team wants to modify the
+table’s schema and add a new column called ‘zipcode’ which is previously included in address
+column. You are asked to modify the table’s schema and do necessary changes. You need to perform
+the changes with minimal costs. What should you do?","Add a new column called ‘zipcode’ to customers table. Run an update
+statement to extract zip code from address column and set it to the new
+column.",Create a view in BigQuery that extracts zip code from address as a new column.,"Export table data from BigQuery to Google Storage. Use Dataproc to transform data
+and extract the zip code from addresses and append it as a new column. Create a
+new table for customers with new column ‘zipcode.’ Import transformed data to new
+table.","Create a Dataflow pipeline to read data from BigQuery, extract zip code from
+address column, then write data to a newly created table in BigQuery with ‘zipcode’
+column.",,,1,Google cloud certified professional Data Engineer,5
+"You use BigQuery as your main data warehouse. By time, your tables start to get bigger and selecting
+from these tables result in scanning many rows which increases the cost of queries running on them.
+You want to find a way to reduce the costs of queries scanning through your big tables. What should
+you do? (Choose 2)",Use LIMIT when running SELECT statements on the tables.,"Use partitioning to split data into partitions by columns most used for filtering
+data.",Set BigQuery to limit scanning data to certain size.,Use sharding to split data into several tables.,,,2&4,Google cloud certified professional Data Engineer,5
+"An air-quality research facility monitors the quality of the air and alerts of possible high air pollution in
+a region. The facility receives event data from 25,000 sensors every 60 seconds. Event data is then
+used for time-series analysis per region. Cloud experts suggested using BigTable for storing event
+data.
+What will you design the row key for each even in BigTable?",Use event’s timestamp as row key.,Use event’s timestamp as row key.,Use combination of sensor ID with timestamp as timestamp-sensorID.,Use sensor ID as row key.,,,2,Google cloud certified professional Data Engineer,5
+"Your team is planning to perform tests on Cloud BigTable instance to ensure the performance quality
+of the BigTable instance to be used in production. Which of the following conditions should be met to
+consider the performance testing valid? (Choose 3)",Use production instance,Use at least 1TB of data.,Use at least 300GB of data.,Tests should run for at least 10 minutes.,Use development instance.,Storage type should be HDD.,"1,3&4",Google cloud certified professional Data Engineer,5
+"Your company hosts a gaming app which reaches over 30,000 players in a single minute. The app
+generates event data including information about players state, score, location coordinates and other
+stats. You need to find a storage solution which can support high read/write throughput with very low
+latency which doesn’t exceed 10 milliseconds to ensure a quality performance experience for the
+players.
+Which of the following is the best option for this scenario?",Cloud Spanner,BigQuery,BigTable,Datastore,,,3,Google cloud certified professional Data Engineer,5
+"The development team decided to use BigTable to write thousands of incoming stream data. Their
+choice was based on BigTable’s high performance and high throughput and low latency. However, the
+team is facing less than expected performance from the cluster. You are asked for advice on the
+reason for BigTable’s instance performance issue.
+Which of the following can be a reason for the performance issue of BigTable cluster?
+Choose 2 Options.",Row key used is increased monotonically,Rows are less than 10MB of size.,Total data size is less than 1TB.,Cluster is launched in a region different than where users reside.,,,1&3,Google cloud certified professional Data Engineer,5
+"Data team is looking for a database system which is highly available and supports atomic transactions.
+Database should have a flexible but semi-structured schema and supports querying using SQL-like
+language. Solution should be fully managed with no planned downtime.
+Which of the following is the best choice for this scenario?",Cloud SQL,Cloud Spanner,BigTable,Datastore,,,4,Google cloud certified professional Data Engineer,5
+"You have an existing data pipeline which uses Apache Spark to transform the data to be exported in
+CSV format, to be later loaded into MySQL database for further analysis. The CTO decides it’s time to
+migrate the pipeline to Google Cloud. As a data architect, you are tasked to design the new pipeline
+with minimal changes to the current pipeline architecture for a smoother migration.
+Which of the following approaches are best suitable for your CTO’s requirement?",Use Dataproc for data transformation. Use Google Storage for storing data.,Use Dataflow for data transformation. Use BigQuery for storing data.,Use Dataproc for data transformation. Use BigQuery for storing data.,Use Dataflow for data transformation. Use Google Storage for storing data.,,,3,Google cloud certified professional Data Engineer,5
+"You want to use Dataproc for Apache Spark complex transformation jobs on data sets can have size
+up to 200GB. Your team lead wants to make sure the costs can be reduced when launching Dataproc
+clusters.
+Which of the following you can do to minimize the costs when using Dataproc?",Use preemptible instances to be 50% of total cluster workers.,Use preemptible instances to be 100% of total cluster workers.,Use single-node clusters.,Load the data to BigQuery and let Dataproc clusters read from there.,,,1,Google cloud certified professional Data Engineer,5
+"Your team decided to use BigTable for storing event data. The engineer responsible of launching and
+testing the instance has reported a slower performance than expected by Google Cloud
+documentation. Which of the following could be a factor for the slow performance? (Choose 3)",The rows in the tables tested contain very few number of cells.,The rows in the tables have small data size.,"The schema is not designed for the instance to evenly read and write data
+across the tables.",The instance uses HDD storage type.,The instance was scaled up recently.,The instance has too high number of nodes for the data size tested.,"3,4&5",Google cloud certified professional Data Engineer,5
+"An online learning platform wants to generate captions for its videos. The platform offers around 2,500
+courses with topics about business, finance, cooking, development & science. The platform allows
+content with different languages such as French, German, Turkish and Thai. Thus, this can be very
+difficult for a single team to caption all available courses and they are looking for an approach which
+helps do such massive job.
+Which product from Google Cloud will you suggest them to use?",Cloud Speech-to-Text.,Cloud Natural Language.,Machine Learning Engine.,AutoML Vision API.,,,1,Google cloud certified professional Data Engineer,5
+"You need to build a machine learning model to recognize different animals for a pet shop. The
+purpose is to scan the photos on their twitter page and get stats about what pets people like sharing
+while tagging the pet shop brand the most. Due to cost constraints, the project should be as costeffective
+as possible, and that includes work hours dedicated to the project.
+Which approach will you consider to build the project?","Use Cloud ML Engine API and inspect the descriptions returned by the API. Consider
+the description with highest score.","Use Vision API and inspect the descriptions returned by the API. Consider the
+description with highest score.","Use Vision API and inspect the MID values returned by API to recognize the pets in
+photos.","Use Vision API and inspect the descriptions returned by the API. Consider the
+description with median score.",,,2,Google cloud certified professional Data Engineer,5
+"You are working on building your own machine learning model and training it. When you tested the
+model on a testing set, you realized the error rate is very high and the model’s output only matched
+25% of expected output.
+What is the problem you are facing and how can you fix it?","The model is underfitting: You need to increase the features and use more training
+data.",The model is underfitting: You need to lower the features and use less training data.,"The model is overfitting: You need to lower the features and use more training
+data.","The model is overfitting: You need to increase the features and use more training
+data",,,3,Google cloud certified professional Data Engineer,5
+"You are building a machine learning model to solve a binary classification problem. The model is
+going to predict the likelihood of a customer to be using a fraudulent credit card when purchasing
+online.
+Since there is a very small fraction of purchase transactions are proved to be fraudulent, more than
+99% of the purchase transactions are valid.
+You want to make sure the machine learning model is able to identify the fraudulent transactions.
+What is the technique to examine the effectiveness of the model?",Gradient Descent,Recall,Feature engineering,Precision,,,2,Google cloud certified professional Data Engineer,5
+"You are building a machine learning model to solve a classification problem. The model will process
+the faces of customers entering the store to detect if they are first timers so customer service can
+provide them special treatment. Based on the data set provided for previous store visitors, about 74%
+of customers are first timers.
+What is the formula to be used to calculate how accurate the model predicting new customers is?",Precision,Cost function,Recall,Variance,,,1,Google cloud certified professional Data Engineer,5
+"A coach line bus service company wants to predict how many passengers they expect to book for
+tickets on their buses for the upcoming months. This helps the company to know how many buses
+they need to be in service for maintenance and fuel and how many drivers to be available. The
+company has data sets of all booked tickets since its launch in 1968 and it allows private sharing of
+the data if this helps the prediction process.You will build the machine learning model for the coach line company. Which technique you will use
+to predict the number of passengers in the next months?",Regression,Association.,Classification.,Clustering.,,,1,Google cloud certified professional Data Engineer,5
+Which of the following vectors are sparse vectors and used for categorical features:,"[0, 1]","[0, 1, 1, 0, 0]","[1, 0, 0, 1]","[0, 0, 0, 0, 5, 0]",,,1,Google cloud certified professional Data Engineer,5
+"You are training a Tensorflow deep neural network model which predicts a person’s weight based on
+their face image. You want to perform hyperparameter tuning on the model for better prediction
+output.
+Which of the variables are used for hyperparameter tuning? (Choose 2)",Sparse vectors,Number of nodes in hidden layers,Number of hidden layers,Weight values,,,2&3,Google cloud certified professional Data Engineer,5
+"You are preparing a dataset as a training set for a machine learning model. You have the following
+columns chosen as features for the model: Zip code
+Income
+Age   Which feature type each column is:",3 continuous,"2 categorical, 1 continuous","2 continuous, 1 categorical",3 categorical.,,,3,Google cloud certified professional Data Engineer,5
+"You need to deploy a machine learning model built by data science team in the firm you work for. As a
+data engineer, you will be responsible of monitoring the health and traffic of the hosted model on the
+cloud. Some jobs could fail due to several reasons and you should be able to alert data scientists of
+such failed jobs.
+Which of the following approaches is best to implement on Google Cloud?","Use Cloud Machine Learning Engine to host the model. Use Stackdriver to
+monitor the status of jobs for ‘failed’ status.","Use Google Kubernetes Engine to host the model. Use Stackdriver to monitor the
+status of jobs for ‘failed’ status.","Use AutoML Vision to host the model. Use Stackdriver to monitor the status of jobs
+for ‘failed’ status.","Use Google Kubernetes Engine to host the model. Use Stackdriver to monitor the
+status of operations for ‘error’ status.",,,1,Google cloud certified professional Data Engineer,5
+"You want to launch a Cloud Machine Learning Engine cluster to deploy a deep neural network model
+built by Tensorflow by data scientists of your company. Reviewing the standard tiers available by
+Google ML Engine, you could not find a tier that suits the requirements data scientists need for the
+cluster. Google allows you to specify custom cluster specification.
+Which of the following specifications you are allowed to set? (Choose 2)",workerCount,parameterServerCount,masterCount,workerMemory,,,1&2,Google cloud certified professional Data Engineer,5
+"Currently, anyone can access and modify the data sets, as well as creating & deleting data sets. The
+security team wants to restrict access of users on BigQuery and assign the minimum roles for each
+team based on their task requirements. You have the following teams:Data scientists: They should have read & write access to data sets. They may create & delete data sets.
+Data analysts: They have read access to data sets only.
+Development team: They need to create jobs to run queries for updating the website’s stats and product
+details What roles are recommended for each team?","Assign owner role to data scientists. Assign viewer role to data analysts. Assign
+user role to development team.","Assign admin role to data scientists. Assign viewer role to data analysts. Assign
+viewer role to development team.","Assign owner role to data scientists. Assign viewer role to data analysts. Assign
+viewer role to development team.","Assign admin role to data scientists. Assign viewer role to data analysts. Assign user
+role to development team.",,,1,Google cloud certified professional Data Engineer,5
+"Marketing team in your company wants to access certain tables in BigQuery. These tables are stored
+along with other tables considered sensitive and it’s not approved to be accessed by marketing team.
+You need to restrict marketing team’s role to only read from the tables they are allowed to.
+Which of the following actions will you take?","Assign marketing team’s roles as viewers on these specific tables. They won’t be
+able to select from other tables in the dataset.","Create authorized views on tables marketing team wants to read from on the same
+dataset tables reside in. Grant viewer role to marketing team on the views.","Create a new dataset in BigQuery. Grant viewer role to marketing team on the new
+dataset. Copy the tables from the current dataset to the new one.","Create a new dataset in BigQuery. Create authorized views on tables marketing
+team wants to read from. Grant viewer role to marketing team on new dataset.",,,4,Google cloud certified professional Data Engineer,5
+"A Kafka cluster is receiving event data from outsourced sensors. The cluster is installed in a Compute
+Engine instance and it writes events to Google Storage. Due to the new security rules in the company,
+data written to Google Storage should be encrypted. Security team wants to be sure encryption key
+used is provided by them using on-premise vault and no keys generated by third-parties are used.
+What should you do to follow security team’s rules?","Reference the encryption key provided by security team when calling API
+service when writing data to Google Storage to encrypt the data.","Store the encryption key provided by security team in Compute Engine instance and
+reference it when calling API service when writing data to Google Storage to
+encrypt the data.","Store the encryption key provided by security team in Cloud Key Management
+Service (KMS) and reference it when calling API service when writing data to Google
+Storage to encrypt the data","Create encryption keys using Cloud Key Management Service (KMS) and reference it
+when calling API service when writing data to Google Storage to encrypt the data.",,,1,Google cloud certified professional Data Engineer,5
+"You have created a new project on Google Cloud and you need to set roles for users on the project.
+You have the following users:                    Developers: They will be able to modify the state of resources. They should not be able to change users
+roles or set up project billing.
+Team lead: Has all developer roles plus able to create and delete resources as well as setting up project
+billing.
+Finance team: They are required to monitor the project costs. They should not be able to view or modify
+project resources or manipulate user roles.What role each group should be assigned?","Assign owner role to team lead, editor role to developers and admin role to finance
+team.","Assign owner role to team lead, editor role to developers and viewer role to finance
+team.","Assign owner role to team lead, editor role to developers and billing
+administrator to finance team","Assign editor role to team lead, viewer role to developers and billing administrator
+to finance team.",,,3,Google cloud certified professional Data Engineer,5
+"You receive a daily comma-separated (CSV) file which should be imported to BigQuery. You need to
+scan the file in case of incomplete or improperly aligned column values which will cause importing to
+BigQuery fail.
+What should you do to handle invalid inputs?","Import data to BigQuery, then run queries to check if data skew exists among table
+fields.",Import file to BigQuery with setting –max_bad_records.,"Use Google Stackdriver to monitor import status and create an alert for failed
+imports.","Build a Dataflow batch pipeline to scan CSV file, import valid rows to BigQuery
+and push invalid ones to a dead-letter file on Google Storage for later analysis.",,,4,Google cloud certified professional Data Engineer,5
+"The data analysts in your company want to prepare data sets for reporting to upper management.
+While the current data pipeline does part of data modeling to the data sets, data analysts still want to
+perform extra data profiling on data such as detecting duplicates, count null values and other profiling
+techniques. They ask your advice on what tool to use.
+Which of the following is recommended?",Cloud Dataprep,Dataproc,Cloud Composer,Cloud Function,,,1,Google cloud certified professional Data Engineer,5
+"You are in need to restore a snapshot of a compute engine instance you have previously scheduled
+for regular daily snapshots. Which of the following are the steps you should do to perform the
+restoration?","You can simply create a replacement instance directly by selecting the
+snapshot from the list of snapshots available.","You need to create a persistent disk from the snapshot of your choice. Create a new
+compute engine instance and attach the persistent disk to it.","Create a new compute instance with the same exact machine type as the one the
+snapshot was created from. Create a persistent disk using the snapshot to be
+restored from. Attach the persistent disk to the compute engine instance.","Export snapshot to Google Storage. Create new compute engine instance, then
+using gsutil tool, copy the snapshot to the instance’s persistent disk to be restored.",,,1,Google cloud certified professional Data Engineer,5
+"Your data team is using BigQuery as their main data warehouse. There is no format security policy
+implemented to track users activity on the data warehouse. A new security policy to be implemented
+which states any activity on cloud resources should be tracked and logged and BigQuery is one of
+these resources.
+What action should be taken to log data warehouse’s activities?","Restrict users access on BigQuery’s tables using Identity & Access Management
+(IAM).",You can list all query history from BigQuery UI.,Use Google Stackdriver Audit Logs to log and review data warehouse access.,Enable caching on BigQuery to allow auditing users activity.,,,3,Google cloud certified professional Data Engineer,5

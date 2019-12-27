@@ -1,0 +1,470 @@
+Sr.NO,Question,Option 1,Option2,Option3,Option4,Option5,Option 6,Correct OPtion (note:- if Correct option is Option 1 then insert 1),Category Name ,Marks
+1,"A Developer is migrating an on-premises web application to the AWS Cloud. The
+application currently runs on a 32-processor server and stores session state in memory.
+On Friday afternoons the server runs at 75% CPU utilization, but only about 5% CPU
+utilization at other times.
+How should the Developer change to code to better take advantage of running in the
+cloud?",Compress the session state data in memory,Store session state on EC2 instance Store,Encrypt the session state data in memory,Store session state in an ElastiCache cluster,,,4,Developer,5
+2,"An organization’s application needs to monitor application specific events with a standard
+AWS service. The service should capture the number of logged in users and trigger
+events accordingly. During peak times, monitoring frequency will occur every 10 seconds.
+What should be done to meet these requirements",Create an Amazon SNS notification,Create a standard resolution custom Amazon CloudWatch log,Create a high-resolution custom Amazon CloudWatch metric,Create a custom Amazon CloudTrail log,,,3,Developer,5
+3,"A Developer working on an AWS CodeBuild project wants to override a build command as
+part of a build run to test a change. The developer has access to run the builds but does
+not have access to edit the CodeBuild project
+What process should the Developer use to override the build command?","Update the buildspec.yml configuration file that is part of the source code
+and run a new build.","Update the command in the Build Commands section during the build run
+in the AWS console","Run the start build AWS CLI command
+with buildspecOverride property set to the new buildspec.yml file","Update the buildspec property in the StartBuild API to override the build
+command during build run.",,,3,Developer,5
+4,"A Developer is building an application that needs access to an S3 bucket. An IAM role is
+created with the required permissions to access the S3 bucket. Which API call should the
+Developer use in the application so that the code can access to the S3 bucket?",IAM: AccessRole,STS: GetSessionToken,IAM:GetRoleAccess,STS:AssumeRole,,,4,Developer,5
+5,"A Developer is migrating an on-premises application to the AWS Cloud. The application
+currently uses Microsoft SQL, encrypting some of the data using Transparent Data
+Encryption. Which service should the Developer use to minimize code changes?",Amazon RDS,Amazon Aurora,Amazon Redshift,Amazon DynamoDB,,,1,Developer,5
+6,"A developer is using Amazon API Gateway as an HTTP proxy to a backend endpoint. There
+are three separate environments: Development, Testing, Production and three
+corresponding stages in the API gateway.
+How should traffic be directed to different backend endpoints for each of these stages
+without creating a separate API for each?","Add a model to the API and add a schema to differentiate different
+backend endpoints","Use stage variables and configure the stage variables in the HTTP
+integration Request of the API","Use API Custom Authorizers to create an authorizer for each of the
+different stages","Update the Integration Response of the API to add different backend
+endpoints.",,,2,Developer,5
+7,"A developer is writing an application that will store data in a DynamoDB table. The ratio of
+reads operations to write operations will be 1000 to 1, with the same data being accessed
+frequently.
+What should the Developer enable on the DynamoDB table to optimize performance and
+minimize costs?",Amazon DynamoDB auto scaling,Amazon DynamoDB cross-region replication,Amazon DynamoDB Streams,Amazon DynamoDB Accelerator,,,4,Developer,5
+8,"A company is planning on using AWS CodePipeline for their underlying CI/CD process.
+The code will be picked up from an S3 bucket. The company policy mandates that all data
+should be encrypted at rest and that the keys are managed by the customer. Which of the
+following measures would you take to ensure that the CI/CD process conforms to this
+policy? Choose 2 possible actions from the options given below.",Ensure that server-side encryption is enabled on the S3 Bucket,Ensure that server-side encryption is enabled on the CodePipeline stage,Configure the code pickup stage in CodePipeline to use AWS KMS,"Configure AWS KMS with customer managed keys and use it for S3
+bucket encryption",,,1&4,Developer,5
+9,"An application hosted in AWS has been configured to use a DynamoDB table. A number of
+items are written to the DynamoDB table. These items are only accessed in a particular
+time frame, after which they can be deleted. Which of the following is an ideal way to
+manage the deletion of the stale items?","Perform a scan on the table for the stale items and issue the Delete
+operation.","Create an additional column to store the date. Perform a query for the stale
+objectsand the perform the Delete operation.","Enable versioning for the items in DynamoDB and delete the last accessed
+version",Enable TTL for the items in DynamoDB,,,4,Developer,5
+10,"Your team has been instructed on deploying a Microservices and an ETL based
+application onto AWS. There is a requirement to manage the orchestration of application.
+Which of the following would the ideal way to implement this with the least amount of
+administrative effort?",Use the Elastic Beanstalk Service,Use the Elastic Container Service,Deploy Kubernetes on EC2 Instances,Use the Opswork service,,,2,Developer,5
+11,"You are using AWS DynamoDB as a database to save sales data for a global appliance
+company. All data at rest is encrypted using AWS KMS. Which of the following can be
+used for encryption of global secondary indexes with minimum cost ?",Data Keys with AWS Managed CMK.,Table Keys with AWS Managed CMK.,Table Keys with AWS owned CMK.,Data Keys with AWS owned CMK,,,3,Developer,5
+12,"You are developing an application that will be used to receive data from multiple devices.
+You need to ensure that some preprocessing happens on the data before it can be
+analyzed by your Analytics based tool. Which of the following can be used to carry out
+this intermediate activity?",Use Step Functions to pre-process the data,Use Kinesis with AWS Lambda functions to pre-process the data,Use the API gateway service to pre-process the data,Use ELB to pre-process the data,,,2,Developer,5
+13," You’ve been given the requirement to customize the content which is distributed to users
+via a Cloudfront Distribution. The content origin is an S3 bucket. How could you achieve
+this?","Add an event to the S3 bucket. Make the event invoke a Lambda function
+which would customize the content.","Add a Step Function. Add a step with a Lambda function just before the
+content gets delivered to the users",Consider using Lambda@Edge,Consider using a separate application on an EC2 Instance for this purpose.,,,3,Developer,5
+14,"Your team has been instructed to develop a completely new solution onto AWS. Currently
+you have a limitation on the tools available to manage the complete lifecycle of the
+project. Which of the following service from AWS could help you in this aspect",AWS CodePipeline,AWS CodeBuild,AWS CodeCommit,AWS CodeStar,,,4,Developer,5
+15,"Your AWS Lambda function writes to an S3 bucket. Which of the following is best practice
+to pass operational parameters, such as the bucket name, to your Lambda function?","Configure Amazon S3 bucket name with AWS Lambda Environment
+Variables",Hard Code Amazon S3 bucket name to Lambda Function.,Configure Amazon S3 bucket name with AWS Lambda Function Variables,"Configure an Alias with Amazon S3 bucket name & pass it to Lambda
+Function",,,1,Developer,5
+16,"You’ve been hired to develop a gaming application for a large company. The application
+will be developed using AWS resources. You need to ensure the right services are used
+during the development and subsequent deployment of the application. Which of the
+following would you consider incorporating to ensure leaderboards can be maintained
+accurately in the application?",AWS ElasticBeanstalk,AWS ElastiCache – Redis,AWS ElastiCache – Memcached,AWS Opswork,,,2,Developer,5
+17,"An application is being developed that is going to write data to a DynamoDB table. You
+have to setup the read and write throughput for the table. Data is going to be read at the
+rate of 300 items every 30 seconds. Each item is of size 6KB. The reads can be eventual
+consistent reads. What should be the read capacity that needs to be set on the table?",10,20,6,30,,,1,Developer,5
+18,"You are in charge of deploying an application that will be hosted on an EC2 Instance and
+sit behind an Elastic Load balancer. You have been requested to monitor the incoming
+connections to the Elastic Load Balancer. Which of the below options can suffice this
+requirement?",Use AWS CloudTrail with your load balancer,Enable access logs on the load balancer,Use a CloudWatch Logs Agent by installing on EC2,Create a custom metric CloudWatch filter on your load balancer,,,2,Developer,5
+19,"You’re a developer at a company that needs to deploy an application using Elastic
+Beanstalk. There is a requirement to place a healthcheck.config file for the environment. In
+which of the following location should this config file be placed to ensure it is part of the
+elastic beanstalk environment?",In the application root folder,In the config folder,In the packages folder,In the .ebextensions folder,,,4,Developer,5
+20,"You need to setup a RESTful API service in AWS that would be serviced via the following
+url
+Which of the following combination of services can be used for development and hosting
+of the RESTful service? Choose 2 answers from the options below",AWS Lambda and AWS API gateway,AWS S3 and Cloudfront,AWS EC2 and AWS Elastic Load Balancer,AWS SQS and Cloudfront,,,1&3,Developer,5
+21,Which of the following is the right sequence of hooks that get called in AWS CodeDeploy?,Application Stop->BeforeInstall->After Install->Application Start,BeforeInstall->After Install-> Application Stop-> Application Start,BeforeInstall->After Install->Validate Service-> Application Start,BeforeInstall->Application Stop-> Validate Service-> Application Start,,,1,Developer,5
+22,"Your team has a Code Commit repository in your account. You need to give developers in
+another account access to your Code Commit repository. Which of the following is the
+most effective way to grant access?",Create IAM users for each developer and provide access to the repository,"Create an IAM Group , add the IAM users and then provide access to the
+repository","Create a cross account role , give the role the privileges. Provide the
+role ARN to the developers",Enable public access for the repository,,,3,Developer,5
+23,"You have a lambda function that is processed asynchronously. You need a way to check
+and debug issues if the function fails? How could you accomplish this?",Use AWS Cloudwatch metrics,Assign a dead letter queue,Configure SNS notifications,Use AWS Cloudtrail logs,,,2,Developer,5
+24,"Your company currently stores its objects in S3. The current request rate is around 11000
+GET requests per second. There is now a mandate for objects to be encrypted at rest. So
+you enable encryption using KMS. There are now performance issues being encountered.
+What could be the main reason behind this?","Amazon S3 will now throttle the requests since they are now being
+encrypted using KMS",You need to also enable versioning to ensure optimal performance,You are now exceeding the throttle limits for KMS API calls,You need to also enable CORS to ensure optimal performance,,,3,Developer,5
+25,"Your company has asked you to maintain an application using Elastic Beanstalk. At times ,
+you normally hit the application version limit when deploying new versions of the
+application. Which of the following is the most effective way to manage this issue?","Create multiple environments and deploy the different versions to different
+environments",Create an application lifecycle policy,"Create multiple applications and deploy the different versions to different
+applications",Delete the application versions manually,,,2,Developer,5
+26,"Your team is developing a solution that will make use of DynamoDB tables. Due to the
+nature of the application, the data is needed across a couple of regions across the world.
+Which of the following would help reduce the latency of requests to DynamoDB from
+different regions?",Enable Multi-AZ for the DynamoDB table,Enable global tables for DynamoDB,Enable Indexes for the table,Increase the read and write throughput for the table,,,2,Developer,5
+27,"Your team is developing a solution that will make use of DynamoDB tables. Currently, the
+application is designed to perform scans on the entire table. Which of the following can be
+done to improve the performance of the application when it interacts with the DynamoDB
+table? Choose 2 answers from the options given below",Consider using parallel scans,Consider using large tables,Consider using string partition keys,Consider using queries,,,1&4,Developer,5
+28,"A company is storing sensitive data in their S3 bucket. The company policy states that all
+objects in the S3 bucket need to be encrypted at rest. Which of the following help ensure
+this policy is met?","Deny permission to upload an object if the header does not include
+x-amz-server-side-encryption","Deny permission to upload an object if the header includes x-amz-serverside-
+encryption","Deny permission to upload an object if the header does not include
+x-allow-encryption",Deny permission to upload an object if the header includes x-allowencryption,,,1,Developer,5
+29,"A company currently allows access to their API’s to customers via the API gateway.
+Currently all clients have a 6-month period to move from using the older API’s to newer
+versions of the API’s. The code for the API is hosted in AWS Lambda. Which of the
+following is the ideal strategy to employ in such a situation?","Create another AWS Lambda version and give the link to that version to the
+customers","Create another AWS Lambda ALIAS and give the link to that version to the
+customers.",Create another stage in the API gateway,"Create a deployment package that would automatically change the link to
+the new Lambda version",,,3,Developer,5
+30,"You are developing a common lambda function that will be used across several
+environments such as staging, development etc. The lambda function needs to interact
+with each of these environments. What is the best way to develop the Lambda function?","Create a Lambda function for each environment so that each function can
+point to its respective environment","Create one Lambda function and use environment variables for each
+environment to interact","Create one Lambda function and create several versions for each
+environment.","Create one Lambda function and create several ALIAS for each
+environment.",,,2,Developer,5
+31,"An application is currently in production that makes calls to an AWS RDS Instance. The
+application consists of a reporting module and a transactional system. During high load
+times, the response time for the application used to get very high. This was being
+attributed to the number of queries being fired against the database system. Which of the
+following can be used to resolve the response time for the application?",Place a cloudfront distribution in front of the database,Enable Read Replica’s for the database,Move the database to DynamoDB,Enable Multi-AZ for the database,,,2,Developer,5
+32,"You are planning on deploying an application to the worker role in Elastic Beanstalk.
+Moreover, this worker application is going to run the periodic tasks. Which of the following
+is a must have as part of the deployment?",An appspec.yaml file,A cron.yaml file,A cron.config file,An appspec.json file,,,2,Developer,5
+33,"You are developing a Java based application that needs to make use of the AWS KMS
+service for encryption. Which of the following must be done for the encryption and
+decryption process? Choose 2 answers from the options given below.",Use the Customer master key to encrypt the data,"Use the Customer master key to generate a data key for the
+encryption process",Use the Customer master key to decrypt the data,Use the generated data key to decrypt the data,,,2&4,Developer,5
+34,"You have a legacy application that works via XML messages. You need to place the
+application behind the API gateway in order for customers to make API calls. Which of the
+following would you need to configure?",Enable Payload compression,You will need to work with the Request and Response Data mapping,Enable CORS,Enable multiple stages,,,2,Developer,5
+35,"You are planning on using the Serverless Application model which will be used to deploy
+a serverless application consisting of a Node.js function. Which of the following steps
+need to be carried out? Choose 2 answers from the options given below.",Use the Lambda package command,Use the SAM package command,Use the Lambda deploy command,Use the sam deploy command,,,2&4,Developer,5
+36,"Your application must write to an SQS queue. Your corporate security policies require that
+AWS credentials are always encrypted and are rotated at least once a week. How can you
+securely provide credentials that allow your application to write to the queue?","Have the application fetch an access key from an Amazon S3 bucket at run
+time",Launch the application's Amazon EC2 instance with an IAM role.,Embed the Access keys in the application,Create environment variables in the EC2 Instance with the Access Keys,,,2,Developer,5
+37,"You are a developer for a company. You have been asked to deploy an application for
+development purposes onto an Elastic beanstalk environment. You need to ensure that
+custom software is installed on the backend Linux servers that are launched as part of the
+Elastic Beanstalk environment. Which of the following can be used to achieve this?
+Choose 2 answers from the options given below","Create an XML file with the required package names to be installed on the
+server","Create an YAML file with the required package names to be installed
+on the server","Place the file in the .ebextensions folder in your Application Source
+Bundle",Place the file in the .config folder in your Application Source Bundle,,,2&3,Developer,5
+38,"You are a developer and has been hired to lead the application development for a
+company. The application needs to interact with a backend data store. The application
+would need to perform many complex join operations on the data store. Which of the
+following would be the ideal data store for the application?",AWS DynamoDB,AWS RDS,AWS Redshift,AWS S3,,,2,Developer,5
+39,"You’ve created a Lambda function with the default settings. You add code to this function
+which makes calls to DynamoDB. You try and test the function. But the function is not
+completing its execution. Which of the following might be probable causes for this?
+Choose 2 answers from the options given below","The IAM Role attached to the function does not have access to
+DynamoDB",The timeout of the function has been reached,You need to deploy the function first,You need to create a version for the function first,,,1&2,Developer,5
+40,"You’ve just configured a Lambda function that sits behind the API gateway service. When
+you try to invoke the Lambda function via the API gateway service from Javascript in your
+HTML page, you receive the following error.
+No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin
+'null' is therefore not allowed access
+What can be done to resolve this error?",Enable CORS for the lambda function,Enable CORS for the methods in the API gateway,"Change the IAM policy for the Lambda function to enable anonymous
+access",Change the IAM policy for the API gateway to enable anonymous access,,,2,Developer,5
+41,"You have a legacy application which process message from SQS Queue. Application uses
+a single thread to poll multiple queues, which of the following poling timeout will be best
+option to avoid latency in processing messages?",Use Short Polling with default visibility timeout values.,Use Long Polling with higher visibility timeout values.,Use Long Polling with lower visibility timeout values.,Use Short Polling with higher visibility timeout values,,,1,Developer,5
+42,"You are developing a system that will be sending messages to an SQS queue. Another
+application will be running on an EC2 Instance that will be used to process the messages.
+Which of the following are BEST practices when it comes to making COST effective use of
+the SQS queues? Choose 2 answers from the options given below",Use short polling for SQS queues,Use long polling for SQS queues,Group the SQS API operations in batches,Use single queue operations,,,2&3,Developer,5
+43,"Your application is making requests to a DynamoDB table. Due to the certain surge of
+requests , you are now getting throttling errors in your application. Which of the following
+can be used to resolve such errors? Choose 2 answers from the options given below.",Use exponential backoff in your requests from the application,Consider using multiple sort keys,Change the throughput capacity on the tables,Consider using global tables,,,1&3,Developer,5
+44,"You have been told to make use of Cloudformation templates for deploying applications
+on EC2 Instances. These Instances need to be preconfigured with the NGINX web server
+to host the application. How could you accomplish this with Cloudformation?",Use the cfn-init helper script in Cloudformation,Use the Output resource type in Cloudformation,Use the Parameter resource type in Cloudformation,Use SAML to deploy the template,,,1,Developer,5
+45,"You’ve deployed an application using AWS Lambda and the API gateway service. You
+need to deploy a newer version of the application. Management has instructed that the
+newer version be tested by a few users first before being fully deployed. How can you
+accomplish this in the easiest way possible?","Create a new Lambda function and a new API gateway. Give the users the
+new URL","Create a new version of the existing Lambda function and a new API
+gateway. Give the users the new URL",Create a canary release in the API gateway service,"Create another resource and method. Deploy the API. Give the users the
+new URL",,,3,Developer,5
+46,"You’re developing an application that is going to be hosted in AWS Lambda. The function
+will make calls to a database. The security mandate is that all connection strings should
+be kept secure. Which of the following is the MOST secure way to implement this?",Use Lambda Environment variables,Put the database connection string in the app.json file,"Lambda needs to reference the AWS Systems Manager Parameter
+Store for the database connection string","Place the database connection string in the AWS Lambda function itself
+since all lambda functions are encrypted at rest",,,3,Developer,5
+47,"You have created an Amazon DynamoDB table with Global Secondary Index. Which of the
+following can be used to get the latest results quickly with least impact on RCU (Read
+Capacity Unit)?",Query with ConsistentRead,Scan with ConsistentRead,Query with EventualRead,Scan with EventualRead,,,3,Developer,5
+48,"You are a team lead for the development of an application that will be hosted in AWS. The
+application will consist of a front end which will allow users to upload files. Part of the
+application will consist of sending and processing of messages by a backend service. You
+have been told to reduce the cost for the backend service , but also ensure efficiency.
+Which of the following would you consider in the implementation of the backend service?
+Choose 2 answers from the options given below",Create an SQS queue to handle the processing of messages,Create an SNS topics to handle the processing of messages,Create a Lambda function to process the messages from the queue,Create an EC2 Instance to process the messages from the queue,,,1&3,Developer,5
+49,"Which of the following is true with respect to strongly consistent request from an
+application to a DynamoDB with a DAX cluster ?",All requests are forwarded to DynamoDB & results are cached.,"All requests are forwarded to DynamoDB & results are store in Item Cache
+before passing to application","All requests are forwarded to DynamoDB & results are store in Query
+Cache before passing to application",All requests are forwarded to DynamoDB & results are not cached,,,4,Developer,5
+50,"An Amazon DynamoDB table is populated with a large amount of data from an application
+capturing client data from various servers across various regions. Which of the following is
+a preferred option for deletion of old items in a DynamoDB table?",Schedule a cron Job during off peak hours to delete unwanted items.,Run Periodic jobs to delete old items,Pre-Create a DynamoDB table with specific time,Enable TTL on each item to automatically delete old items.,,,4,Developer,5
+51,"You’re planning on using the AWS CodeDeploy tool for deployment of your application.
+Which of the following is used to specify how your application will be deployed to the
+underlying instances?",appConfig.json,DeploymentGroup,appConfig.YAML,AppSpec.json,,,4,Developer,5
+52,"Your company is planning on using the AWS CodePipeline service for their CI/CD
+process. They have their own propriety build process that needs to be incorporated in
+CodePipeline. How can you achieve this?",Create a default action for your Pipeline,Create a custom action for your Pipeline,Create a primary action for your Pipeline,Create a secondary action for your Pipeline,,,2,Developer,5
+53,"You’ve written an application that uploads objects onto an S3 bucket. The size of the
+object varies between 200 – 500 MB. You’ve seen that the application sometimes takes a
+longer than expected time to upload the object. You want to improve the performance of
+the application. Which of the following would you consider?",Create multiple threads and upload the objects in the multiple threads,Write the items in batches for better performance,Use the Multipart upload API,Enable versioning on the Bucket,,,3,Developer,5
+54,"You have a set of developers that need to work with applications hosted on the Elastic
+Beanstalk environment. You need to ensure they can work with the beanstalk
+environments but not give them access to the AWS Console. How can you achieve this in
+the BEST way possible?",Ask them to manage the environments via the SDK,Ask them to manage the environments via the EB CLI,Ask them to manage the environments via an EC2 Instance,Ask them to manage the environments via an ECS cluster,,,2,Developer,5
+55,"A development team is developing a mobile based application. They want to use AWS
+services for data storage and for managing authentication. It also needs to be ensured that
+a second level of authentication is available for users. Which of the following would assist
+in this? Choose 2 answers from the options given below",Use the AWS Cognito Service,Use the AWS Config Service,Enable MFA for the underlying user pool,Enable user names and passwords for the underlying user pools,,,1&3,Developer,5
+56,"Your development team is developing several lambda functions for testing.These
+functions will be called by an external .Net program. The program needs to call each
+lambda function version for testing purposes. How can you accomplish this in easiest way
+to ensure the least changes need to be made to .Net program?",Create different environment variables for the Lambda function,Create different versions for the Lambda function,Create an ALIAS and reference is in the program,Use the SAM for deployment of the functions,,,3,Developer,5
+57,"Your company has a set of EC2 Instances and On-premise. They now want to automate
+the deployment of their applications using the AWS Code Deploy tool in AWS. Which of
+the following is not needed in this scenario?","Ensure both EC2 Instances and On-premise servers have the Code Deploy
+agent installed","Ensure both EC2 Instances and On-premise servers can connect to the
+Code Deploy service",Ensure both EC2 Instances and On-premise servers are tagged,"Ensure both EC2 Instances and On-premise servers have instance
+profile attached to them",,,4,Developer,5
+58,"Your team needs to develop an application that needs to make use of SQS queues. There
+is a requirement that when a message is added to the queue, the message is not visible
+for 5 minutes to consumers. How can you achieve this? Choose 2 answers from the
+options given below",Increase the visibility timeout of the queue,Implement long polling for the SQS queue,Implement delay queues in AWS,Change the message timer value for each individual message,,,3&4,Developer,5
+59,"Which of the following are data types supported while defining Parameters in a
+CloudFormation templates? (Select Three.)",String,Binary Number,Number,Array,List<Integers>,List<Number>,1&3&6,Developer,5
+60,"Your team is planning on hosting an application in Elastic Beanstalk. The underlying
+environment will contain multiple EC2 Instances. You need these instances to share data
+via a shared file system. Which of the following would you use for this purpose?",AWS S3,AWS Glacier,AWS EBS,AWS EFS,,,4,Developer,5
+61," Your development team is currently planning on moving an on-premise data store to AWS
+DynamoDB. There were triggers defined in the prior database which was used for updates
+to existing items. How can you achieve the same when the movement is made to
+DynamoDB in the easiest way possible?",Define triggers in DynamoDB for each table,"Define Lambda functions in response to events from DynamoDB
+Streams",Define SNS topics in response to events from DynamoDB Streams,Define SQS topics in response to events from DynamoDB Streams,,,2,Developer,5
+62,"You are developing an application that is working with a DynamoDB table. During the
+development phase, you want to know how much of the Consumed capacity is being
+used for the queries being fired. How can this be achieved?","The queries by default sent via the program will return the consumed
+capacity as part of the result",Ensure to set the ReturnConsumedCapacity in the query request to TRUE,"Ensure to set the ReturnConsumedCapacity in the query request to
+TOTAL.",Use the Scan operation instead of the query operation,,,3,Developer,5
+63,"You’ve created a Code Commit Repository in AWS. You need to share the repository with
+the developers in your team. Which of the following would be a secure and easier way to
+share the repository with the development team? Choose 2 answers from the options
+given below",Create Git credentials for the IAM users,Allow the developers to connect via HTTPS using the Git credentials,Allow the developers to connect via SSH,Create a public private key pair,,,1&2,Developer,5
+64,"Your company has an application that is interacting with a DynamoDB table. After
+reviewing the logs for the application , it has been noticed that there quite a few
+“ProvisionedThroughputExceededException” occurring in the logs. Which of the following
+can be implemented to overcome these errors?",Implement global tables,Use exponential backoff in the program,"Ensure the correct permissions are set for the Instance profile for the
+instance hosting the application",Ensure to use indexes instead,,,2,Developer,5
+65,"You are planning on using the Serverless Application Model to deploy a Lambda function.
+Below is a normal construct for the template to be used.
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+PutFunction:
+Type: AWS::Serverless::Function
+Properties:
+Handler: index.handler
+Runtime: nodejs6.10
+CodeUri:
+Where would the code base for the CodeUri normally point to?",The code as a zip package in Amazon Glacier,The code as a zip package in Amazon EBS Volumes,The code as a zip package in Amazon S3,The code as a zip package in Amazon Config,,,3,Developer,5
+66,"Your team is planning on deploying an application on an ECS cluster. They need to also
+ensure that the X-Ray service can be used to trace the application deployed on the
+cluster. Which of the following are the right set of steps that are needed to accomplish
+this? Choose 2 answers from the options given below.",Create a Docker image with the X-Ray daemon,Deploy the X-Ray daemon to the ECS Cluster,Deploy the EC2 Instance to the ECS Cluster,Deploy the docker container to the ECS cluster,,,1&4,Developer,5
+67,"Your development team is testing out an application that is being deployed onto AWS
+Elastic Beanstalk. The application needs to have an RDS Instance provisioned as part of
+the Elastic Beanstalk setup. But they want to ensure that the database is preserved for
+analysis even after the environment is torn down. How can you achieve this? Choose 2
+answers from the options given below","Ensure the database is created as part of the Elastic Beanstalk
+environment",Ensure that you only choose the MySQL engine type,"Ensure that the retention for the database is marked as “Create
+Snapshot”","Ensure that the retention for the database is marked as “Automated
+Backup”",,,1&3,Developer,5
+68,"Your team is planning on creating a DynamoDB table and use it with their application.
+They are planning to place the initial Read Capacity to 5 units with the default read
+consistency. Each item is of size 2 KB. You want to read 5 items from the table per second
+where each item is of size 2 KB. What is the total size of data in KB that can be read using
+the above read throughput capacity?",1,5,10,20,,,3,Developer,5
+69,"A developer has created a script which accesses an S3 bucket. The script will run on an
+EC2 Instance at regular intervals. What is the authentication mechanism that should be
+employed to ensure that the script works as desired?","Create an IAM user. Ensure the IAM user has access to the S3 bucket via
+IAM policies. Embed the user name and password in the script.","Create an IAM Role. Ensure the IAM Role has access to the S3 bucket
+via IAM policies. Attach the role to the instance","Create an IAM user. Ensure the IAM user has access to the S3 bucket via
+IAM policies. Embed the Access keys to the program.","Create an IAM user. Ensure the IAM user has access to the S3 bucket via
+IAM policies. Embed the Access keys as environment variables for the
+Instance.",,,2,Developer,5
+70,"While choosing Instance for your web application , which of the following features are
+available additional with M5 instance in comparison with T2 instance.","Network performance of only up to 5 Gbps & Enhanced Networking
+Support with ENA.","Network performance of up to 1 Gbps & Enhanced Networking support
+with Intel 82599 Virtual Function (VF) interface","Network performance of 10- 25 Gbps based upon instance type &
+Enhanced Networking Support with ENA.","Network performance up to 5 Gbps & Enhanced Networking support with
+Intel 82599 Virtual Function (VF) interface",,,3,Developer,5
+71,"Your team has configured an environment in Elastic beanstalk using the following
+configuration
+Java 7 with tomcat 7
+They now want to change the configuration to Java 8 with Tomcat 8.5. How can they
+achieve this in the easiest way possible?",Create a new environment and port the application,Create a new application revision,Use the Change configuration environment,Migrate the environment to Opswork,,,1,Developer,5
+72,"You are planning to use an instance in a Cluster Placement group to achieve a low
+latency network performance along with NVMe EBS. Which of the following General-
+Purpose Instance will support this functionality? (Select Two.)",T2,M5,M5ad,T3a,M4,T3,2&3,Developer,5
+73,"You are a developer for a company that has been given the responsibility to debug
+performance issues for an existing application. The application connects to a MySQL RDS
+Instance in AWS. There is a suspicion that there are performance issues in the underlying
+queries. Which of the following can help diagnose these issues?",The Cloudtrail logs for the region,Get the slow query logs for the RDS service,Use the AWS Config service to diagnose the problem areas,Use the AWS Inspector service to diagnose the problem areas,,,2,Developer,5
+74,"You’ve just started development on an application that will make use of the ElastiCache
+service. You need to ensure that objects are cached but not kept inadvertently for a long
+time. Which of the following cache maintenance strategy would you employ for the cache
+service?",TTL,Lazy Loading,Write Through,Read Through,,,1,Developer,5
+75,"Your development team is planning on building an application based on the Microservice
+architecture pattern. Docker containers would be used to build the application. Which of
+the following services should be considered if orchestration is also needed. Choose
+3 answers from the options given below?",AWS EC2,AWS ECS,Application Load balancer,Classic Load balancer,,,1&2&3,Developer,5
+76,"Your team is planning on creating a Lambda function which will interact with a DynamoDB
+stream. Which of the following would need to be in place to ensure the Lambda function
+can interact with the DynamoDB table.",Access Keys for an IAM user embedded in the function,IAM Role with required permissions to access DynamoDB,"The password for an IAM user in the environment variable for the Lambda
+function",A Security group rule to allow egress traffic into DynamoDB,,,2,Developer,5
+77,"You have created a Lambda State Function which is generating error “ServiceException”,
+Which of the following is a best practice to handle this exception with a Lambda State
+Function?",Use Lambda Catch code with only “ErrorEquals” string.,Use Lambda Retry code with only “BackoffRate” string,Use Lambda Retry code with only “ErrorEquals” string,Use Lambda Catch code with only “ResultPath” string.,,,3,Developer,5
+78,"You have created a web-application which saves all data in Amazon S3 buckets. If you
+have created 3 prefixes in a S3 bucket, what will be PUT & GET read performance you will
+get per second?","3,500 PUT and 5,500 GET requests per second","7,000 PUT and 11,000 GET requests per second.","10,500 GET and 16,500 PUT requests per second.","10,500 PUT and 16,500 GET requests per second.",,,4,Developer,5
+79,"Your team is working on an API definition which will be deployed using the API gateway
+service. You then need to ensure that control is established on who can access the various
+resources within the API gateway. Which of the following can help ensure this security
+requirement is met? Choose 3 Options",Key Policies,IAM Policies,Resource Policies,IAM Roles,,,2&3&4,Developer,5
+80,"As a database developer, you have started working with Redshift. Your IT administrator
+has provisioned a Redshift cluster. You now need to load data into the Redshift cluster
+from S3. Which of the following command should you use for this activity?",GET,COPY,MERGE,PUT,,,2,Developer,5
+81,"You are developing an application that is going to make use of AWS Cognito. The default
+sign-in and sign-up features of the AWS Cognito service will be used. There is a security
+requirement to ensure that if the user’s credentials are compromised, then they would
+need to use a new password. Which of the following needs to be in place for this? Choose
+2 answers from the options given below",Ensure to create a user pool in AWS Cognito,"Ensure to “Block use” for compromised credentials in the Advanced
+Security section","Ensure to “Block use” for compromised credentials in the Basic Security
+section",Verify sign-in operation on Cognito using Secure Remote Password,,,1&2,Developer,5
+82,"You are working on a system that will make use of AWS Kinesis, and it is getting data from
+various log sources. You are looking at creating an initial number of shards for the Kinesis
+stream. Which of the following can be used in the calculation of initial number of shards
+for the Kinesis stream? Choose 2 answers from the options given below.",Incoming write bandwidth,Outgoing write bandwidth,Incoming read bandwidth,Outgoing read bandwidth,,,1&4,Developer,5
+83,"Your team is working on an application that will connect to a MySQL RDS Instance. The
+security mandate is that the connection to the database from the application should be
+encrypted. How can you accomplish this?",By using Access Keys assigned to an IAM user,By using Private Key pairs,By using SSL,By using KMS Keys,,,3,Developer,5
+84,"You have to develop an Orders processing system. The system needs to store the Product
+Information which contains the image for every product. Which of the following
+implementation steps should be used when storing the Product related data. Choose 2
+answers from the options given below","Store the Product ID, Name and price in a DynamoDB table",Store the Product Image as an attribute in the same table,"Store the Product ID, Name and price in an S3 bucket",Store the Product Image in an S3 bucket,,,1&4,Developer,5
+85,"You are using a custom tool known as POSTMAN to make API requests to resources in
+AWS. Part of the job of sending requests is to sign the request. Which of the following
+would you use to sign the API requests made to AWS?",Your user name and password,A private key file,KMS keys,Access Keys,,,4,Developer,5
+86,"Your team has decided to host a static web site using the Simple Storage Service. A
+bucket has been defined with the domain name, the objects uploaded, and the static web
+site hosting enabled for the bucket. But you are still not able to able to access the web
+site. Which of the following could be the underlying issue?",You need to enable versioning for the bucket as well,The bucket must have public read access,You need to ensure the storage class is infrequent access,You need to use AWS Managed Keys,,,2,Developer,5
+87,"Your team is developing an application which makes use of Docker containers. These
+containers will be deployed to the Elastic Container Service. The applications on these
+containers need to interact with DynamoDB tables. Which of the following is the most
+secure way to ensure the containers can interact with DynamoDB?",Create an IAM Role for the ECS Tasks,Embed the Access Keys in the containers,Embed the Access Keys in the cluster,Use an IAM user’s credentials to spin up the cluster,,,1,Developer,5
+88,"Your team is developing a set of Lambda functions. You need to ensure the team uses the
+best practices for working with AWS Lambda. What is the advantage of initializing any
+external dependencies of your Lambda function code? Choose one of the options given
+below.",Ability to decode errors better,Ability to instantiate an object for each invocation,Ability to reuse Execution Context,Ability to call functions faster,,,3,Developer,5
+89,"Your company has a SOAP service that receives requests in XML. The service is going to
+be placed behind the API gateway service. Which of the following must be done to ensure
+that requests made to the API gateway service can be consumed by the SOAP service?",Create a mapping template,Setup a gateway response,Enable support for binary workloads,Setup Private integrations,,,1,Developer,5
+90,"Your team is developing a set of Lambda functions. They need to debug the Lambda
+functions using the X-Ray service. Which of the following are environment variables which
+are used by AWS Lambda to communicate with the X-Ray service? Choose 3 answers
+from the options given below",_X_AMZN_TRACE_ID,AWS_XRAY_CONTEXT_MISSING,AWS_XRAY_DAEMON_ADDRESS,AWS_LAMBDA_XRAY,,,1&2&3,Developer,5
+91,"You’re developing an application that will be hosted on an EC2 Instance. This will be part
+of an Autoscaling Group. The application needs to get the private IP of the instance so that
+it can send it across to a controller-based application. Which of the following can be done
+to achieve this?",Query the Instance Meta Data,Query the Instance User Data,Have an Admin get the IP address from the console,Make the application run IFConfig,,,1,Developer,5
+92,"Your mobile application includes a photo-sharing service that is expecting tens of
+thousands of users at launch. You will leverage Amazon Simple Storage Service (S3) for
+storage of the user Images, and you must decide how to authenticate and authorize your
+users for access to these images. You also need to manage the storage of these images.
+Which two of the following approaches should you use? Choose two answers from the
+options below","Create an Amazon S3 bucket per user, and use your application to generate
+the S3 URL for the appropriate content.","Use AWS Identity and Access Management (IAM) user accounts as your
+application-level user database, and offload the burden of authentication
+from your application code","Authenticate your users at the application level, and use AWS Security
+Token Service (STS)to grant token-based authorization to S3 objects.","Authenticate your users at the application level, and send an SMS token
+message to the user. Create an Amazon S3 bucket with the same name as
+the SMS message token, and move the user’s objects to that bucket","Use a key-based naming scheme comprised from the user IDs for all
+user objects in a single Amazon S3 bucket.",,3&5,Developer,5
+93,"You’ve developed a Lambda function and are now in the process of debugging it. You add
+the necessary print statements in the code to assist in the debugging. You go to
+Cloudwatch logs , but you see no logs for the lambda function. Which of the following
+could be the underlying issue for this?",You’ve not enabled versioning for the Lambda function,"The IAM Role assigned to the Lambda function does not have the
+necessary permission to create Logs",There is not enough memory assigned to the function,There is not enough time assigned to the function,,,2,Developer,5
+94,"You have an application that is hosted on an EC2 Instance. This application is part of a
+custom domain www.demo.com The application has been changed to make calls to the
+API gateway. But the browser is not rendering the responses and Javascript errors are
+being seen in the developer console. What must be done to ensure that this issue can be
+resolved?",Make the application call a Lambda function instead,"There is an issue with the stage defined on the API gateway, hence define
+a new stage",Make use of Cognito user pools,Enable CORS for the API gateway,,,4,Developer,5
+95,"You have deployed an application on an EC2 Instance. This application makes calls to a
+DynamoDB service. There are numerous performance issues present in the application.
+You decide to use the XRay service to debug the performance issues. You are not able to
+see the trails in the XRay service. Which of the following could be the underlying issue?
+Choose 2 answers from the options given below",The X-Ray daemon is not installed on the EC2 Instance,The right AMI is not chosen for the EC2 Instance,"Ensure that the IAM Role attached to the Instance has permission to
+upload data ontoX-Ray","Ensure that the IAM Role attached to the Instance has permission to upload
+data onto Cloudwatch",,,1&3,Developer,5
+96,"Your development team is planning on working with Amazon Step Functions. Which of the
+following is a recommended practise when working with activity workers and tasks in Step
+Functions? Choose 2 answers from the options given below",Ensure to specify a timeout in state machine definitions,We can use only 1 transition per state,"If you are passing larger payloads between states, consider using the
+Simple Storage Service","If you are passing larger payloads between states, consider using EBS
+volumes",,,1&3,Developer,5
+97,"You are a developer for a company that is planning on using the AWS RDS service. Your
+Database administrator spins up a new MySQL RDS Instance in AWS. You now need to
+connect to that instance. How can you achieve this? Choose 2 answers from the options
+given below.","Use the DescribeDBInstances API and get the endpoint for the
+database instance","Use the DescribeDBInstances API and get the IP address for the database
+instance",Request the DBA for the endpoint of the instance,Request the DBA for the IP address of the instance,,,1&3,Developer,5
+98,"You are developing an application that is going to make use of AWS Cognito. The default
+sign-in and sign-up features of the AWS Cognito service will be used. There is a security
+requirement to ensure that if the user’s credentials are compromised, then they would
+need to use a new password. Which of the following needs to be in place for this? Choose
+2 answers from the options given below",Ensure to create a user pool in AWS Cognito,"Ensure to “Block use” for compromised credentials in the Advanced
+Security section","Ensure to “Block use” for compromised credentials in the Basic Security
+section",Verify sign-in operation on Cognito using Secure Remote Password,,,1&2,Developer,5
+99,"You are developing a function that will be hosted in AWS Lambda. The function will be
+developed in .Net. There are a number of external libraries that are needed for the code to
+run. Which of the following is the best practise when it comes to working with external
+dependencies for AWS Lambda?",Make sure that the dependencies are put in the root folder,Selectively only include the libraries that are required,Make sure the libraries are installed in the beginning of the function,Place the entire SDK dependencies in Amazon S3,,,2,Developer,5
+100,"A Developer working on an AWS CodeBuild project wants to override a build command as
+part of a build run to test a change. The developer has access to run the builds but does
+not have access to edit the CodeBuild project
+What process should the Developer use to override the build command?","Update the buildspec.yml configuration file that is part of the source code
+and run a new build","Update the command in the Build Commands section during the build run
+in the AWS console","Run the start build AWS CLI command
+with buildspecOverride property set to the new buildspec.yml file.","Update the buildspec property in the StartBuild API to override the build
+command during build run",,,3,Developer,5

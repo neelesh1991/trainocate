@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#pramukhime.help_title}</title>
+	<script language="javascript" type="text/javascript">
+	var u = document.location.href;
+	var bu = unescape(u.indexOf("?bu") >= 0? u.substring(u.indexOf("?bu")+4):'');
+	bu = bu.indexOf("&") >=0? bu.substring(0,bu.indexOf("&")):bu;
+	document.write('<sc'+'ript language="javascript" type="text/javascript" src="' + bu + '\/tiny_mce_popup.js" ><\/script>');
+	document.write('<sc' + 'ript language="javascript" type="text/javascript" src="' + bu + '\/utils/mctabs.js" ><\/script>');
+	</script>
+	<script type="text/javascript" src="js/pramukhimedlg.js" language="javascript"></script>
+    <script language="javascript" type="text/javascript">
+        tinyMCEPopup.onInit.add(PramukhIMEHelpDialog.init, PramukhIMEHelpDialog);
+    </script>
+	<base target="_self" />
+    <link href="css/pramukhime.css" type="text/css" rel="Stylesheet" />
+</head>
+<body style="display:none;" onload="javascript:mcTabs.displayTab('quick_help_tab','quick_help_panel');">
+	<div class="tabs">
+		<ul>
+			<li id="quick_help_tab"><span><a href="javascript:mcTabs.displayTab('quick_help_tab',  'quick_help_panel');" onmousedown="return false;">{#pramukhime.help_quick_help}</a></span></li>
+			<li id="detailed_help_tab"><span><a href="javascript:mcTabs.displayTab('detailed_help_tab',  'detailed_help_panel');" onmousedown="return false;">{#pramukhime.help_detailed_help}</a></span></li>
+            <li id="about_tab"><span><a href="javascript:mcTabs.displayTab('about_tab',  'about_panel');" onmousedown="return false;">{#pramukhime.help_about}</a></span></li>
+		</ul>
+	</div>
+
+	<div class="panel_wrapper">
+		<div id="quick_help_panel" class="panel">
+            <div id='quickhelp1'>{#pramukhime.help_quick_help1}</div>
+            <div style="text-align:center;" id="quickhelpimg" class="pi_quickhelpimg"><img id="help_img" src="" alt="{#pramukhime.help_quick_help}" /></div>
+            <div id='quickhelp2'>{#pramukhime.help_quick_help2}</div>
+		</div>
+        <div id="detailed_help_panel" class="panel">
+            <iframe src="" class="pi_help_frm" id="help_frm" name="help_frm"></iframe>
+        </div>
+		<div id="about_panel" class="panel">
+            <div>{#pramukhime.help_about_ime}</div>
+            <div id='aboutkb'>{#pramukhime.help_about_kb}</div>
+		</div>
+	</div>
+    <div class="mceActionPanel">
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+	</div>
+</body>
+</html>

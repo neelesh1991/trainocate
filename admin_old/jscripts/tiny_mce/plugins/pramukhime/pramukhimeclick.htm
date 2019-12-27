@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#pramukhime.click_title}</title>
+	<script language="javascript" type="text/javascript">
+	var u = document.location.href;
+	var bu = unescape(u.indexOf("?bu") >= 0? u.substring(u.indexOf("?bu")+4):'');
+	bu = bu.indexOf("&") >=0? bu.substring(0,bu.indexOf("&")):bu;
+	document.write('<sc'+'ript language="javascript" type="text/javascript" src="' + bu + '\/tiny_mce_popup.js" ><\/script>');
+	</script>
+	<script type="text/javascript" src="js/pramukhimedlg.js"></script>
+	<base target="_self" />
+    <script language="javascript" type="text/javascript">
+        tinyMCEPopup.onInit.add(PramukhIMEClickDialog.init, PramukhIMEClickDialog);
+    </script>
+	<link href="css/pramukhime.css" type="text/css" rel="Stylesheet" />
+</head>
+<body style="display:none;" >
+    <form name="source" onsubmit="PramukhIMEClickDialog.insert();return false;" action="#">
+    <div class="tabs"></div>
+	<div class="panel_wrapper">
+        <div>{#pramukhime.click_instruction}</div>
+        <div class="pi_leftdiv title" id="languagetitle">Script Characters</div>
+        <div class="pi_rightdiv pi_lefttitle title">{#pramukhime.click_preview}</div>
+        <div id="content" class="pi_content pi_leftdiv"></div>
+        <div id="preview" class="pi_preview pi_rightdiv">&nbsp;</div>
+        <div class="pi_clear">&nbsp;</div>
+        <div class="pi_examples pi_clear">{#pramukhime.click_example}: <span id="examples"></span></div>
+        <div id="examplechars" class="pi_examplechars">&nbsp;</div>
+        <div class="pi_unicodetext">
+            <label for="unicodeText" >{#pramukhime.click_typedtext}: </label>
+            <textarea rows="2" id="unicodeText" class="pi_unicodetext" name="unicodeText" ></textarea>
+        </div>
+		<div class="pi_clear">{#pramukhime.click_square_box}</div>
+	</div>
+    <div class="mceActionPanel">
+        <input type="submit" id="insert" name="insert" value="{#insert}" />
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+	</div>
+    
+
+    </form>
+</body>
+</html>

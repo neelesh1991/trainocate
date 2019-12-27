@@ -1,0 +1,208 @@
+<<<<<<< HEAD
+Sr.NO,Question,Option 1,Option2,Option3,Option4,Option5,Option 6,Correct OPtion (note:- if Correct option is Option 1 then insert 1),Category Name ,Marks
+1,Which of the following storage mechanisms can be used to store messages effectively which can be used across distributed systems. ,Amazon Glacier,Amazon EBS Volumes, Amazon EBS Snapshots, Amazon SQS ,,,4,AWS Cloud practioner ,5
+2,You are exploring which AWS service will help you in the processing of a large number of data sets.  Pick the correct one form the given list.,EMR,S3,Glacier,"Storage gateway
+",,,1,AWS Cloud practioner ,5
+3,Which one of the following features is normally present in all of AWS Support plans, 24*7 access to Customer Service ,Access to all features in the Trusted Advisor,A technical Account Manager,,,,1,AWS Cloud practioner ,5
+4,Which of the following options would entice a company to use AWS over an onpremises data center? Choose 2 answers from the options given below,Having access to Free and Unlimited Storage , Having access to Unlimited Physical servers ,Having a highly available infrastructure ,Ability to use resources on demand,,,3,AWS Cloud practioner ,5
+=======
+Question,Option1,Option2,Option3,Option4,Option5,Option 6,Correct OPtion (note:- if Correct option is Option 1 then insert 1),Category Name ,Marks,
+Which of the following storage mechanisms can be used to store messages effectively which can be used across distributed systems. ,Amazon Glacier,Amazon EBS Volumes, Amazon EBS Snapshots, Amazon SQS ,,,4,AWS Cloud practioner ,5,
+You are exploring which AWS service will help you in the processing of a large number of data sets.  Pick the correct one form the given list.,EMR,S3,Glacier,"Storage gateway
+",,,1,AWS Cloud practioner ,5,
+Which one of the following features is normally present in all of AWS Support plans, 24*7 access to Customer Service ,Access to all features in the Trusted Advisor,A technical Account Manager,,,,1,AWS Cloud practioner ,5,
+Which of the following options would entice a company to use AWS over an onpremises data center? Choose 2 answers from the options given below,Having access to Free and Unlimited Storage , Having access to Unlimited Physical servers ,Having a highly available infrastructure ,Ability to use resources on demand,,,3 & 4,AWS Cloud practioner ,5,
+"You are planning to serve a web application on the AWS Platform by using EC2 Instances. Which of the below principles would you adopt to ensure that even if some of the EC2 Instances crashes , you still have a working application","Using a scalable system
+",Using an elastic system, Using a regional system,Using a fault tolerant system ,,,4,AWS Cloud practioner ,5,
+What AWS service has built-in DDoS mitigation?,CloudTrai, EC2,CloudFront ,CloudWatch,,,3,AWS Cloud practioner ,5,
+You have 2 accounts in your AWS account. One for the Dev and the other for QA. All are part of consolidated billing. The master account has purchased 3 reserved instances. The Dev department is currently using 2 reserved instances. The QA team is planning on using 3 instances of the same instance type. What is the pricing tier of the instances that can be used by the QA Team?,No Reserved and 3 on-demand,One Reserved and 2 on-demand,Two Reserved and 1 on-demand,Three Reserved and no on-demand,,,2,AWS Cloud practioner ,5,
+Which of the following are best practices when designing cloud based systems? Choose 2 answers from the options below,Build Tightly-coupled components,Build loosely-coupled components,Assume everything will fail,Use as many services as possible,,,2 &3,AWS Cloud practioner ,5,
+Which of the following AWS services can assist you with cost optimization?, AWS Shield, AWS Inspector, AWS WAF,AWS Trusted Advisor ,,,4,AWS Cloud practioner ,5,
+Which of the following is the amount of storage that can be stored in the Simple Storage service?,1 TB,5 TB, 1 PB, Virtually unlimited storage ,,,4,AWS Cloud practioner ,5,
+Which services allow the customer to retain full administrative privileges of the underlying virtual infrastructure? , Amazon EC2 ,Amazon S3, Amazon Lambda,Amazon DynamoDB,,,1,AWS Cloud practioner ,5,
+Which of the following AWS services should you use to migrate an existing database to AWS?,AWS Lambda,AWS Storage gateway, AWS DMS , AWS Snowball,,,3,AWS Cloud practioner ,5,
+"You have a mission-critical application which must be globally available at all times. If this is the case, which of the below deployment mechanisms would you employ", Deployment to multiple edge locations,Deployment to multiple Availability Zones, Deployment to multiple Data Centers,Deployment to multiple Regions ,,,4,AWS Cloud practioner ,5,
+Which of the following can be used to protect against Ddos attacks. Choose 2 answers from the options given below,AWS EC2 ,AWS ELB , AWS Shield , AWS Shield Advanced ,,,3 & 4,AWS Cloud practioner ,5,
+Which of the following is a serverless compute offering from AWS,AWS EC2,AWS Lambda , AWS SNS, AWS SQS,,,2,AWS Cloud practioner ,5,
+Which of the following allows you to carve out a portion of the AWS Cloud, AWS Subnets, AWS VPC ,AWS Regions, AWS Availability Zones,,,2,AWS Cloud practioner ,5,
+You need to compare the cost of running your resources in an on-premises environment or on a co-location environment in AWS. Which of the following options can be used,AWS Inspector,AWS TCO,AWS WAF,AWS Trusted Advisor,,,2,AWS Cloud practioner ,5,
+What is the concept of an AWS region?,It is a collection of Edge locations,It is a collection of Compute capacity,It is a geographical area divided into Availability Zones,It is the same as an Availability zone,,,3,AWS Cloud practioner ,5,
+"In AWS, which security aspects are the customer’s responsibility? Choose 4 answers from the options given below",Security Group and ACL (Access Control List) settings,Decommissioning storage devices,Patch management on the EC2 instance’s operating system,Life-cycle management of IAM credentials,Controlling physical access to compute resources,Encryption of EBS (Elastic Block Storage) volumes,"1,3,4 & 6",AWS Cloud practioner ,5,
+Which of the following can be used to manage identities in AWS.,AWS Config,AWS IAM ,AWS Trusted Advisor, AWS,,,2,AWS Cloud practioner ,5,
+Which of the following is a best practice when working with permissions in AWS.,Ensure the least privilege access is used , Use the root account credentials, Don’t use IAM users and groups, Ensure the highest privilege access is used,,,1,AWS Cloud practioner ,5,
+"What is the ability provided by AWS to enable fast, easy, and secure transfers of files over long distances between your client and your Amazon S3 bucket.",File Transfer,HTTP Transfer,S3 Transfer Acceleration , S3 Acceleration,,,3,AWS Cloud practioner ,5,
+"When working on the costing for on-demand EC2 instances , which of the following are attributes which determine the costing of the EC2 Instance. Choose 3 answers from the options given below",Instance Type,"AMI Type
+",Region,"
+Edge location
+",,,"1,2 & 3",AWS Cloud practioner ,5,
+"A company wants to utilize aws storage. For them low storage cost is paramount, the data is rarely retrieved, and data retrieval times of several hours are acceptable for them. What is the best storage option to use?",AWS Glacier,AWS S3 Reduced Redundancy Storage,EBS backed storage connected to EC2,AWS CloudFront,,,1,AWS Cloud practioner ,5,
+What are characteristics of Amazon S3? Choose 2 answers from the options given below.,S3 allows you to store objects of virtually unlimited size.,S3 allows you to store virtually unlimited amounts of data,S3 should be used to host a relational database.,Objects are directly accessible via a URL.,,,2 & 4,AWS Cloud practioner ,5,
+What is the AWS service provided which provides a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability,AWS RDS, DynamoDB ,Oracle RDS,Elastic Map Reduce,,,2,AWS Cloud practioner ,5,
+You want to monitor the CPU utilization of an EC2 resource in AWS. Which of the below services can help in this regard, AWS Cloudtrail,AWS Inspector,AWS Trusted Advisor, AWS Cloudwatch ,,,4,AWS Cloud practioner ,5,
+"A company is deploying a three-tier, highly available web application to AWS. Which service provides durable storage for static content while utilizing lower Overall CPU resources for the web tier?",Amazon EBS volume,Amazon S3,Amazon EC2 instance store,Amazon RDS instance,,,2,AWS Cloud practioner ,5,
+Which AWS service allows for distribution of incoming application traffic across multiple EC2 instances?, AWS EC2, AWS Autoscaling,AWS ELB , AWS Inspector,,,3,AWS Cloud practioner ,5,
+Which of the below AWS services allows you to increase the number of resources on the demand of the application or users.,AWS EC2,AWS Autoscaling,AWS ELB,AWS Inspector,,,2,AWS Cloud practioner ,5,
+Which of the following is AWS managed database service provides processing power that is up to 5X faster than a traditional MySQL database, MariaDB, Aurora , PostgreSQL, DynamoDB,,,2,AWS Cloud practioner ,5,
+Which of the following is AWS services allows you to build a data warehouse on the cloud., AWS Snowball, AWS Storage Gateway, AWS EMR,AWS Redshift ,,,4,AWS Cloud practioner ,5,
+"Which of the following services helps in governance, compliance, and risk auditing in AWS.",AWS Config,AWS Cloudtrail , AWS Cloudwatch, AWS SNS,,,2,AWS Cloud practioner ,5,
+"When using On-Demand instances in AWS, which of the following is a false statement when it comes to the costing for the Instance.",You pay no upfront costs for the instance,You are charged per second based on the hourly rate,You have to pay the termination fees if you terminate the instance, You pay for as much as you use.,,,3,AWS Cloud practioner ,5,
+AWS provides a storage option known as Amazon Glacier. What is this AWS service designed for. Please specify 2 correct options.,Cached session data ,Infrequently accessed data ,Data archives , Active database storage ,,,2 & 3,AWS Cloud practioner ,5,
+Which of the following is not a supported database in the AWS RDS service.,Aurora," MariaDB
+",MySQL,DB2,,,4,AWS Cloud practioner ,5,
+There is a requirement to move 10 TB data warehouse to the AWS cloud. Which of the following is an ideal service which can be used to move this amount of data to the AWS Cloud.,Amazon Snowball ,Amazon Direct Connect,Amazon S3 MultiPart Upload, Amazon S3 Connector,,,1,AWS Cloud practioner ,5,
+Which of the following security features is associated with a Subnet in a VPC to protect against Incoming traffic requests.,AWS Inspector,Subnet Groups,Security Groups,NACL,,,4,AWS Cloud practioner ,5,
+In AWS billing what option can be used to ensure costs can be reduced if you have multiple accounts,Combined billing,Consolidated billing,Costs are automatically reduced for multiple accounts by AWS.,It is not possible to reduce costs with multiple accounts,,,2,AWS Cloud practioner ,5,
+You have a Web application hosted in an EC2 Instance that needs to send notifications based on events. Which of the below services can assist in sending notifications,AWS SES, AWS SNS , AWS SQS,AWS EC2,,,2,AWS Cloud practioner ,5,
+Which of the following can be attached to EC2 Instances to store data?,Amazon Glacier,Amazon EBS Volumes,Amazon EBS Snapshots,Amazon SQS,,,2,AWS Cloud practioner ,5,
+Which of the following networking component can be used to host EC2 resources in the AWS Cloud?, AWS Trusted Advisor, AWS VPC ,AWS Elastic Load Balancer," AWS Autoscaling
+",,,2,AWS Cloud practioner ,5,
+Your company is planning to host resources in the AWS Cloud. They want to use services which can be used to decouple resources hosted on the cloud. Which of the following services can help fulfil this requirement,AWS EBS Volumes,AWS EBS Snapshots,,"AWS SQS
+",,,4,AWS Cloud practioner ,5,
+Which of the following components of the Cloudfront service can be used to distribute contents to users across the globe.,Amazon VPC,Amazon Regions,Amazon Availability Zones, Amazon Edge locations ,,,4,AWS Cloud practioner ,5,
+"Your company is planning to move to the AWS Cloud. You need to give a presentation on the cost perspective when moving existing resources to the AWS Cloud. When it comes to Amazon EC2, which of the following is an advantage when it comes to the cost perspective.","Having the ability of automated backups of the EC2 instance, so that you don’t need to worry about the maintenance costs.",The ability to choose low cost AMI’s to prepare the EC2 Instances,The ability to only pay for what you use,Ability to tag instances to reduce the overall cost,,,3,AWS Cloud practioner ,5,
+"Your company is planning on moving to the AWS Cloud. Once the movement to the Cloud is complete, they want to ensure that the right security settings are put in place. Which of the below tools can assist from a Security compliance. Choose 2 answers from the options given below",AWS Inspector ,AWS Trusted Advisor ,AWS Support ,AWS Kinesis ,,,1 & 2,AWS Cloud practioner ,5,
+There is a requirement to collect important metrics from AWS RDS and EC2 Instances. Which of the following services can help fulfil this requirement,Amazon CloudFront,Amazon CloudSearch,Amazon CloudWatch ,Amazon Config,,,3,AWS Cloud practioner ,5,
+Which of the following services can provide a complete audit trail of all AWS services used within an account., AWS Trusted Advisor,Amazon EC2 instance usage report,Amazon CloudWatch,AWS Cloud Trail logs ,,,4,AWS Cloud practioner ,5,
+Which of the following service is most useful when a Disaster Recovery method is triggered in AWS.,Amazon Route 53 , Amazon SNS, Amazon SQS, Amazon Inspector,,,1,AWS Cloud practioner ,5,
+Which of the following can not be used to work with AWS services in a programmatic manner?,AWS Powershell,AWS Bash,AWS CLI,AWS Console,,,4,AWS Cloud practioner ,5,
+"When designing a system, you use the principle of “design for failure and nothing will fail”. Which of the following services/features of AWS can assist in supporting this design principle. Choose 3 answers from the options given below", Availability Zones , Regions , Elastic Load Balancer , Pay as you go ,,,"1, 2 & 3",AWS Cloud practioner ,5,
+"Currently your organization has an operational team that takes care of ID management in their on-premise data center. They now also need to manage users and groups created in AWS. Which of the following AWS tools would they need to use for performing this management function.
+", AWS Config, AWS Cloud Trail,AWS Key Management Service (AWS KMS),AWS Identity and Access Management (IAM) ,,,4,AWS Cloud practioner ,5,
+You have a devops team in your current organization structure. They are keen to know if there is any service available in AWS which can be used to manage infrastructure as code. Which of the following can be met with such a requirement, Using AWS Cloudformation , Using AWS Config, Using AWS Inspector, Using AWS Trusted Advisor,,,1,AWS Cloud practioner ,5,
+Which of the following is the responsibility of AWS according to the Shared Security Model? Choose 3 answers from the options given below,Managing AWS Identity and Access Management (IAM),Securing edge locations,Monitoring physical device security,Implementing service organization Control (SOC) standards,,,"2, 3& 4",AWS Cloud practioner ,5,
+By default who from the below roles has complete administrative control over all resources in the respective AWS account?, AWS Support Team, AWS Account Owner , AWS Security Team, AWS Technical Account Manager (TAM),,,2,AWS Cloud practioner ,5,
+Your design team is planning to design an application that will be hosted on the AWS Cloud. One of their main non-functional requirements is given below, Integration, Decoupling , Aggregation, Segregation,,,2,AWS Cloud practioner ,5,
+Which of the following can be used to increase the fault tolerance of an application,Deploying resources across multiple edge locations,Deploying resources across multiple VPC’s,Deploying resources across multiple Availability Zones,Deploying resources across multiple AWS Accounts,,,3,AWS Cloud practioner ,5,
+Which of the following security requirements are managed by AWS? Select 3 answers from the options given below., Password Policies ,User permissions , Physical security ,Disk disposal , Hardware patching ,,"3,4& 5",AWS Cloud practioner ,5,
+Which of the following terms relate to “Creating systems that scale to the required capacity based on changes in demand”,Disaster Recovery,Elasticity, Decoupling,Aggregation,,,2,AWS Cloud practioner ,5,
+Which of the following needs a user name and password to access AWS resources, AWS Management Console , AWS Application Programming Interface (API),AWS Software Development Kit (SDK),AWS CLI,,,1,AWS Cloud practioner ,5,
+Your company is planning to use the AWS Cloud. But there is a management decision that resources need to split department wise. And the decision is tending towards managing multiple AWS accounts. Which of the following would help in effective management and also provide an efficient costing model.,AWS Organizations,Amazon Dev Pay,AWS Trusted Advisor,"AWS Cost Explorer
+",,,1,AWS Cloud practioner ,5,
+Which AWS Cloud service helps in quick deployment of resources which can make use of different programming languages such as .Net and Java?,AWS Elastic Beanstalk , AWS Elastic Compute Cloud (Amazon EC2),AWS VPC,AWS SQS,,,1,AWS Cloud practioner ,5,
+Which of the following initiatives from AWS helps organizations reduce the overall expenditure for IT companies when they host resources on the AWS Cloud?,They decommission older hardware,They continually reduce the cost of cloud computing,They use better security mechanisms so you don’t need to think about security at all,They allow deployment of multiple resources,,,2,AWS Cloud practioner ,5,
+Which of the following is a fully managed NoSQL database service available with AWS.,AWS RDS, AWS DynamoDB , AWS Redshift, AWS MongoDB,,,2,AWS Cloud practioner ,5,
+"If there is a requirement to host EC2 Instances in the AWS Cloud wherein the utilization is guaranteed to be consistent for a long period of time, which of the following would you utilize to ensure costs are minimized?",Reserved instances , On-demand instances, Spot instances,Regular instances,,,1,AWS Cloud practioner ,5,
+Which of the following services helps provide a dedicated connection from on-premise infrastructure to resources hosted in the AWS Cloud without using public internet?,AWS VPC,AWS VPN,AWS Direct Connect,AWS Subnets,,,3,AWS Cloud practioner ,5,
+"A company is deploying a two-tier, highly available web application to AWS. The application needs a storage layer to store artifacts such as photos and videos. Which of the following services can be used as the underlying storage mechanism?",Amazon EBS volume,Amazon S3,Amazon EC2 instance store,Amazon RDS instance,,,2,AWS Cloud practioner ,5,
+Which of the below mentioned services is equivalent to hosting virtual servers on an on-premises location?,AWS IAM, AWS Server, AWS EC2 ,AWS Regions,,,3,AWS Cloud practioner ,5,
+Which of the below cannot be used to get data onto Amazon Glacier. ,AWS Glacier API,AWS Console ,AWS Glacier SDK, AWS S3 Lifecycle policies,,,2,AWS Cloud practioner ,5,
+Which of the following are features of an edge location. Choose 3 answers from the options given below, Distribute content to users ,Cache common responses ,Distribute load across multiple resources ,Used in conjunction with the Cloudfront service ,,,"1,2& 4",AWS Cloud practioner ,5,
+Which of the following terms refers to another geographic location in AWS?,Availability Zone,Data center, Region ,Edge location,,,3,AWS Cloud practioner ,5,
+Which of the following statements are FALSE when it comes to elasticity. Choose 2 answers from the options given below, Diverting traffic to instances based on the demand ,Diverting traffic to instances with the least load , Diverting traffic across multiple regions , Diverting traffic to instances with higher capacity ,,,3 & 4,AWS Cloud practioner ,5,
+You have an EC2 Instance in development that interacts with the Simple Storage Service. The EC2 Instance is going to be promoted to the production environment. Which of the following features should be used for secure communication between the EC2 Instance and the Simple Storage Service., IAM Users, IAM Roles , IAM Groups, IAM policies,,,2,AWS Cloud practioner ,5,
+Which of the following can be used to view one bill when you have multiple AWS Accounts,Consolidated billing ,Combined Billing,Cost Explorer, IAM,,,1,AWS Cloud practioner ,5,
+Which of the following services allows you to analyze EC2 Instances against predefined security templates to check for vulnerabilities,AWS Trusted Advisor,AWS Inspector,AWS WAF,AWS Shield,,,2,AWS Cloud practioner ,5,
+Which of the following disaster recovery deployment mechanisms that has the highest downtime ,Pilot light,Warm standby,Multi Site,Backup and Restore,,,4,AWS Cloud practioner ,5,
+Which of the following services is a serverless compute service in AWS.,AWS EC2, AWS Config, AWS Lambda , AWS Opswork,,,3,AWS Cloud practioner ,5,
+Your company is planning to host a large ecommerce application on the AWS Cloud. One of their major concerns is Internet attacks such as DDos attacks. Which of the following services can help mitigate this concern. Choose 2 answers from the options given below, Cloudfront ,AWS Shield , AWS EC2 , AWS Config ,,,1 & 2,AWS Cloud practioner ,5,…………………….
+You have a set of developers that need to use .Net to call AWS Services. Which of the following tools can be used to achieve this purpose.,AWS SDK ,AWS Console,AWS CLI, AWS IAM,,,1,AWS Cloud practioner ,5,
+Which of the following does AWS perform on its behalf for EBS volumes to make it less prone to failure?, Replication of the volume across Availability Zones, Replication of the volume in the same Availability Zone ,"Replication of the volume across Regions
+",Replication of the volume across Edge locations,,,2,AWS Cloud practioner ,5,
+"Which of the following services is a fully managed, petabyte-scale data warehouse
+service in the AWS cloud",Amazon Redshift,Amazon DynamoDB,Amazon ElastiCache,Amazon Aurora,,,3,AWS Cloud practioner ,5,
+"Your company has just started using the resources on the AWS Cloud. They want to get
+an idea on the costs being incurred so far for the resources being used. How can this be
+achieved.","By going to the Amazon EC2 dashboard. Here you can see the costs of the
+running EC2 resources.","By using the AWS Cost and Usage reports Explorer. Here you can see
+the running and forecast costs.","By using the AWS Trusted Advisor dashboard. This dashboard will give you
+all the costs.",By seeing the AWS Cloud Trail logs.,,,2,AWS Cloud practioner ,5,
+"Your company is planning to offload some of the batch processing workloads on to
+AWS. These jobs can be interrupted and resumed at any time. Which of the following
+instance types would be the most cost effective to use for this purpose.",On-Demand,Spot,Full Upfront Reserved,Partial Upfront Reserved,,,2,AWS Cloud practioner ,5,
+"Which of the following can be used as an additional layer of security to using a user
+name and password when logging into the AWS Console.",Multi-Factor Authentication (MFA),Secondary password,Root access privileges,Secondary user name,,,1,AWS Cloud practioner ,5,
+"Your company handles a crucial ecommerce application. This applications needs to
+have an uptime of at least 99.5%. There is a decision to move the application to the AWS
+Cloud. Which of the following deployment strategies can help build a robust
+architecture for such an application.",Deploying the application across multiple VPC’s,Deploying the application across multiple Regions,Deploying the application across Edge locations,Deploying the application across multiple subnets,,,2,AWS Cloud practioner ,5,
+"You are planning on deploying a video based application onto the AWS Cloud. These
+videos will be accessed by users across the world. Which of the below services can
+help stream the content in an efficient manner to the users across the globe?",Amazon SES,Amazon Cloudtrail,Amazon CloudFront,Amazon S3,,,3,AWS Cloud practioner ,5,
+Which of the following storage options is best when you want to store archive data?,Amazon Storage Gateway,Amazon Glacier,Amazon EBS,Amazon S3,,,2,AWS Cloud practioner ,5,
+"Which of the following is not a category recommendation given by the AWS Trusted
+Advisor?",Security,High Availability,Cost Optimization,Performance,Fault tolerance,,2,AWS Cloud practioner ,5,
+"When giving permission to users via the AWS Identity and Access Management tool ,
+which of the following principles should be applied when granting permissions",Principle of least privilege,Principle of greatest privilege,Principle of most privilege,Principle of lower privilege,,,1,AWS Cloud practioner ,5,
+"You have a set of EC2 Instances hosted on the AWS Cloud. The EC2 Instances are
+hosting a web application. If you get a DDos attack from the internet which of the
+following can help in reducing the overall threat to your EC2 Instances. Choose 2
+answers from the options given below",Usage of Security Groups,Usage of AWS Config,Usage of Network Access Control Lists,Usage of the Internet gateway,,,1&3,AWS Cloud practioner ,5,
+"Your company currently uses VM Templates to spin up virtual machines on their on-
+premise infrastructure. Which of the following can be used in a similar way to spin up
+
+EC2 instances on the AWS Cloud.",EBS Volumes,EBS Snapshots,Amazon Machines Images,Amazon Vmware,,,3,AWS Cloud practioner ,5,
+"Your company is planning to pay for an AWS Support plan. They have the following
+requirements as far as the support plan goes
+· 24x7 access to Cloud Support Engineers via email, chat & phone
+· A response time of less than 1 hour for any business critical system faults
+Which of the following plans will suffice keeping in mind the cost factor.",Basic,Developer,Business,Enterprise,,,4,AWS Cloud practioner ,5,
+"Which of the following storage options provides the option of Lifecycle policies that
+can be used to move objects to archive storage.",Amazon S3,Amazon Glacier,Amazon Storage Gateway,Amazon EBS,,,1,AWS Cloud practioner ,5,
+"Which of the following features of Amazon RDS allows for better availability of
+databases. Choose 2 answers from the options given below",VPC Peering,Multi-AZ,Read Replica’s,Multi-Region,,,2&3,AWS Cloud practioner ,5,
+"There is a requirement for hosting a set of servers in the Cloud for a short period of 3
+months. Which of the following types of instances should be chosen to be cost
+effective.",Spot Instances,On-Demand,No Upfront costs Reserved,Partial Upfront costs Reserved,,,2,AWS Cloud practioner ,5,
+"Which of the following services relates the concept of “Scaling up resources based on
+demand”",AutoScaling,Elastic Load Balancer,VPC,Subnet,,,1,AWS Cloud practioner ,5,
+"Which of the following AWS services use serverless technology. Choose 2 answers from
+the options given below.",DynamoDB,EC2,Simple Storage Service,AWS Autoscaling,,,1&3,AWS Cloud practioner ,5,
+"A company wants to have a database hosted on AWS. As much as possible they want to
+have control over the database itself. Which of the following would be an ideal option
+for this.",Using the AWS DynamoDB service,Using the AWS RDS service,Hosting on the database on an EC2 Instance,Using the Amazon Aurora service,,,3,AWS Cloud practioner ,5,
+"A company is planning to migrate their On-premises Services to the Cloud. Which of the
+following would help them do a cost benefit analysis of moving to the AWS Cloud.",AWS TCO calculator,AWS Config,AWS Cost Explorer,AWS Consolidating billing,,,1,AWS Cloud practioner ,5,
+"Which of the following services relates the concept of “Distributing traffic to multiple
+EC2 Instances”",AutoScaling,Elastic Load Balancer,VPC,Subnets,,,2,AWS Cloud practioner ,5,
+What is a document that provides a formal statement of one or more permissions?,Policy,Permission,Role,Resource,,,1,AWS Cloud practioner ,5,
+"What acts as a firewall that controls the traffic allowed to reach one or more
+instances?",Security group,ACL,IAM,EC2,,,1,AWS Cloud practioner ,5,
+"Which of the following are benefits of the AWS's Relational Database Service (RDS)?
+Choose the 2 correct answers from the options below",Automated patches and backups,You can resize the capacity accordingly,It allows you to store unstructured data,It allows you to store NoSQL data, ,,1&2,AWS Cloud practioner ,5,
+Which AWS service uses Edge Locations for content caching?,AWS SNS,AWS SQS,AWS Cloudfront,AWS Inspector,,,3,AWS Cloud practioner ,5,
+"A company wants to create standard templates for deployment of their Infrastructure.
+Which AWS service can be used in this regard? Please choose one option.",Amazon Simple Workflow Service,AWS Elastic Beanstalk,AWS CloudFormation,AWS OpsWorks,,,3,AWS Cloud practioner ,5,
+"You have a distributed application that periodically processes large volumes of data
+across multiple Amazon EC2 Instances. The application is designed to recover
+gracefully from Amazon EC2 instance failures. You are required to accomplish this task
+in the most cost-effective way.
+Which of the following will meet your requirements?",Spot Instances,Reserved instances,Dedicated instances,On-Demand instances,,,1,AWS Cloud practioner ,5,
+"What is the service provided by AWS that lets you host Domain Name systems? Please
+choose on answer from the options below.",Route 53,VPC,Direct Connect,VPN,,,1,AWS Cloud practioner ,5,
+"What is the service provided by AWS that allows developers to easily deploy and
+manage applications on the cloud? Please choose an answer from the options below.",CloudFormation,Elastic Beanstalk,Opswork,Container service,,,2,AWS Cloud practioner ,5,
+"A company is deploying a new two-tier web application in AWS. The company wants to
+store their most frequently used data so that the response time for the application is
+improved. Which AWS service provides the solution for the company’s requirements?",MySQL Installed on two Amazon EC2 Instances in a single Availability Zone,Amazon RDS for MySQL with Multi-AZ,Amazon ElastiCache, Amazon DynamoDB,,,3,AWS Cloud practioner ,5,
+"If you wanted to take a backup of an EBS Volume, what would you do?",Store the EBS volume in S3,Store the EBS volume in an RDS database,Create an EBS snapshot,Store the EBS volume in DynamoDB,,,3,AWS Cloud practioner ,5,
+What does Amazon EC2 provide?,Virtual servers in the Cloud.,"A platform to run code (Java, PHP, Python), paying on an hourly basis.",Computer Clusters in the Cloud.,"Physical servers, remotely managed by the customer.",,,1,AWS Cloud practioner ,5,
+"Which of the following options of AWS RDS allows for AWS to failover to a secondary
+database in case the primary one fails.",AWS Multi-AZ,AWS Failover,AWS Secondary,AWS Standby,,,1,AWS Cloud practioner ,5,
+What service from AWS can help manage the costs for all resources in AWS?,Cost Explorer,Cost Allocation Tags,AWS Consolidated billing,Payment History,,,1,AWS Cloud practioner ,5,
+"What service helps you to aggregate logs from your EC2 instance? Choose one answer
+from the options below",SQS,S3,Cloudtrail,Cloudwatch Logs,,,4,AWS Cloud practioner ,5,
+"Which of the following identities allow an application deployed on an EC2 instance to
+write data to S3 in a secure manner",AWS IAM Users,AWS IAM Roles,AWS IAM Groups,AWS IAM Permissions,,,2,AWS Cloud practioner ,5,
+What are the four levels of AWS Premium Support?,"Basic, Developer, Business, Enterprise","Basic, Startup, Business, Enterprise","Free, Bronze, Silver, Gold",All support is free,,,1,AWS Cloud practioner ,5,
+"A company does not want to manage their database. Which of the following services is
+a fully managed NoSQL database provided by AWS.",AWS RDS,DynamoDB,Oracle RDS,Elastic Map Reduce,,,2,AWS Cloud practioner ,5,
+"Which of the following are the costing attributes for using Simple Storage Service?
+(Choose 2 options)",The storage class used for the objects stored.,Number of S3 buckets,The total size in gigabytes of all objects stored.,Using encryption in S3,,,1&3,AWS Cloud practioner ,5,
+"If you want to develop an application in Java , which of the following tools would you
+use.",AWS Powershell,AWS SDK,AWS CLI,AWS Console,,,2,AWS Cloud practioner ,5,
+"Which of the following services helps provide a connection from on-premises
+infrastructure to resources hosted in the AWS Cloud. Choose 2 answers from the
+options given below",AWS VPC,AWS VPN,AWS Direct Connect,AWS Subnets,,,2&3,AWS Cloud practioner ,5,
+"You want to take a snapshot of an EC2 Instance and create a new instance out of it. In
+AWS what is this snapshot equivalent to?",EBS Volumes,AMI,EC2 Snapshot,EBS Snapshot,,,2,AWS Cloud practioner ,5,
+"There is a requirement hosting a set of servers in the Cloud for a short period of 3
+months. Which of the following types of instances should be chosen to be cost
+effective.",Spot Instances,On-Demand,No Upfront costs Reserved,Partial Upfront costs Reserved,,,2,AWS Cloud practioner ,5,
+"Which of the following concepts is used when you want to manage the bills for multiple
+accounts under one master account",Consolidated billing,Combined Billing,Cost Explorer,IAM,,,1,AWS Cloud practioner ,5,
+Which of the following is not a disaster recovery deployment technique.,Pilot light,Warm standby,Single Site,Multi-Site,,,3,AWS Cloud practioner ,5,
+What is the key difference between an availability zone and an edge location?,"An availability zone is a grouping of AWS resources in a specific region; an
+edge location is a specific resource within the AWS region","An availability zone is an isolated location within an AWS region,
+whereas an edge location will deliver cached content to the closest
+location to reduce latency", Edge locations are used as control stations for AWS resources,None of the above,,,2,,5,
+>>>>>>> c0b04325b4177ea8b288d179c1df6bd1ef8c8a0b

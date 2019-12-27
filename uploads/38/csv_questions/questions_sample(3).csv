@@ -1,0 +1,19 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+"You currently operate a web application in the AWS US-East region. The application runs
+on an auto-scaled layer of EC2 instances and an RDS Multi-AZ database. Your IT security
+compliance officer has tasked you to develop a reliable and durable logging solution to
+track changes made to your EC2, IAM and RDS resources. The solution must ensure the
+integrity and confidentiality of your log data. Which of the below solutions would you
+recommend?","Create a new CloudTrail trail with one new S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use IAM
+roles, S3 bucket policies and Multi Factor Authentication (MFA) to
+delete on the S3 bucket that stores your logs.","Create a new CloudTrail with one new S3 bucket to store the logs.
+Configure SNS to send log file delivery notifications to your management
+system. Use IAM roles and S3 bucket policies on the S3 bucket that stores
+your logs.","Create a new CloudTrail trail with an existing S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use S3 ACLs
+and Multi Factor Authentication (MFA) to delete on the S3 bucket that
+stores your logs","Create three new CloudTrail trails with three new S3 buckets to store the
+logs one for the AWS Management console, one for AWS SDKs and one for
+command line tools. Use IAM roles and S3 bucket policies on the S3",,,3,Professional,5

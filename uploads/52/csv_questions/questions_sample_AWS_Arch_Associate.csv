@@ -1,0 +1,741 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+"You have an application running in us-west-2 requiring 6 EC2 Instances running at all
+times. With 3 Availability Zones in the region viz. us-west-2a, us-west-2b, and us-west-2c,
+
+which of the following deployments provides fault tolerance if an Availability Zone in us-
+west-2 becomes unavailable?
+
+Choose 2 answers from the options given below.","2 EC2 Instances in us-west-2a, 2 EC2 Instances in us-west-2b, and 2 EC2
+Instances in us-west-2c","3 EC2 Instances in us-west-2a, 3 EC2 Instances in us-west-2b, and no EC2
+Instances in us-west-2c","4 EC2 Instances in us-west-2a, 2 EC2 Instances in us-west-2b, and 2 EC2
+Instances in us-west-2c","6 EC2 Instances in us-west-2a, 6 EC2 Instances in us-west-2b, and no
+EC2 Instances in us-west-2c","3 EC2 Instances in us-west-2a, 3 EC2 Instances in us-west-2b, and 3
+EC2 Instances in us-west-2c",,4&5,AWS Arch Associate,5
+"For which of the following scenarios should a Solutions Architect consider using
+ElasticBeanStalk?
+Choose 3 answers from the options given below.",A Web application using Amazon RDS,A long running worker process,A static website,A management task run once on nightly basis,,,"1,2&3",AWS Arch Associate,5
+"While reviewing the Auto Scaling events for your application, you notice that your
+application is scaling up and down multiple times in the same hour.
+What design choice could you make to optimize costs while preserving elasticity?
+Choose 2 answers from the options given below.","Modify the Auto Scaling group termination policy to terminate the older
+instance first.","Modify the Auto Scaling group termination policy to terminate the newest
+instance first.",Modify the Auto Scaling group cool down timers.,Modify the Auto Scaling group to use Scheduled Scaling actions.,"Modify the CloudWatch alarm period that triggers your Auto Scaling
+scale down policy",,3&5,AWS Arch Associate,5
+"A company hosts a popular web application that connects to an Amazon RDS MySQL DB
+instance running in a default VPC private subnet created with default ACL settings. The
+web servers must be accessible only to customers on an SSL connection and the
+database must only be accessible to web servers in a public subnet. Which solution meets
+these requirements without impacting other running applications?
+Select 2 answers from the options given below.","Create a network ACL on the Web Server's subnets, allow HTTPS port 443
+inbound and specify the source as 0.0.0.0/0","Create a Web Server security group that allows HTTPS port 443
+inbound traffic from anywhere(0.0.0.0/0) and apply it to the Web
+Servers.","Create a DB Server security group that allows MySQL port 3306
+inbound and specify the source as the Web Server security group.","Create a network ACL on the DB subnet, allow MySQL port 3306 inbound
+for Web Servers and deny all outbound traffic.","Create a DB Server security groups that allows HTTPS port 443 inbound and
+specify the source as a Web Server security group.",,2&3,AWS Arch Associate,5
+"A Redshift cluster currently contains 60TB of data. There is a requirement that a disaster
+recovery site is put in place in a region located 600km away. Which of the following
+solutions would help ensure that this requirement is fulfilled?","Take a copy of the underlying EBS volumes to S3, and then do Cross-
+Region Replication.",Enable Cross-Region snapshots for the Redshift Cluster.,Create a CloudFormation template to restore the Cluster in another region.,Enable Cross Availability Zone snapshots for the Redshift Cluster.,,,2,AWS Arch Associate,5
+"A company is using a Redshift cluster to store their data warehouse. There is a
+requirement from the Internal IT Security team to encrypt data for the Redshift database.
+How can this be achieved?",Encrypt the EBS volumes of the underlying EC2 Instances.,Use AWS KMS Customer Default master key.,Use SSL/TLS for encrypting the data.,Use S3 Encryption.,,,2,AWS Arch Associate,5
+"An application hosted on EC2 Instances has its promotional campaign due to start in 2
+weeks. There is a mandate from the management to ensure that no performance
+problems are encountered due to traffic growth during this time. Which of the following
+must be done to the Auto Scaling Group to ensure this requirement can be fulfilled?",Configure Step scaling for the Auto Scaling Group.,Configure Dynamic Scaling and use Target tracking scaling Policy,Configure Scheduled scaling for the Auto Scaling Group,Configure Static scaling for the Auto Scaling Group,,,2,AWS Arch Associate,5
+"A database is being hosted using the AWS RDS service. This database is to be made into a
+production database and is required to have high availability. Which of the following can
+be used to achieve this requirement?","Use Multi-AZ for the RDS instance to ensure that a secondary database is
+created in another region.","Use the Read Replica feature to create another instance of the DB in
+another region.","Use Multi-AZ for the RDS instance to ensure that a secondary
+database is created in another Availability Zone.","Use the Read Replica feature to create another instance of the DB in
+another Availability Zone.",,,3,AWS Arch Associate,5
+"You require the ability to analyze a customer’s clickstream data on a website so they can
+do a behavioral analysis. Your customer needs to know what sequence of pages and ads
+their customer clicked on. This data will be used in real time to modify the page layouts as
+customers click through the site to increase stickiness and advertising click-through.
+Which option meets the requirements for capturing and analyzing this data?","Log clicks in weblogs by URL store to Amazon S3, and then analyze with
+Elastic MapReduce.","Push web clicks by session to Amazon Kinesis and analyze behavior
+using Kinesis workers.",Write click events directly to Amazon Redshift and then analyze with SQL.,"Publish web clicks by session to an Amazon SQS queue. Then send the
+events to AWS RDS for further processing.",,,2,AWS Arch Associate,5
+"A company has an infrastructure that consists of machines which keep sending log
+information every 5 minutes. The number of these machines can run into thousands and it
+is required to ensure that the data can be analyzed at a later stage. Which of the following
+would help in fulfilling this requirement?","Use Kinesis Data Streams with S3 to take the logs and store them in S3
+for further processing","Launch an Elastic Beanstalk application to take the processing job of the
+logs.","Launch an EC2 instance with enough EBS volumes to consume the logs
+which can be usedfor further processing.",Use CloudTrail to store all the logs which can be analyzed at a later stage.,,,1,AWS Arch Associate,5
+"Your company currently has a set of EC2 Instances hosted in AWS. The states of these
+instances need to be monitored and each state change needs to be recorded. Which of
+the following can help fulfill this requirement? Choose 2 collated steps from the options
+given below.",Use CloudWatch logs to store the state change of the instances.,Use CloudWatch Events to monitor the state change of the events.,Use SQS to trigger a record to be added to a DynamoDB table.,Use AWS Lambda to store a change record in a DynamoDB table.,,,1 & 2,AWS Arch Associate,5
+"You plan on hosting a web application on AWS. You create an EC2 Instance in a public
+subnet which needs to connect to an EC2 Instance that will host an Oracle database.
+Which of the following steps should be taken to ensure that a secure setup is in place?
+Choose 2 answers from the choices below.","Place the EC2 Instance with the Oracle database in the same public subnet
+as the Webserver for faster communication.","Place the EC2 Instance with the Oracle database in a separate private
+subnet.","Create a database Security group which allows incoming traffic only
+from the Web server's security group.","Ensure that the database security group allows incoming traffic from
+0.0.0.0/0",,,2&3,AWS Arch Associate,5
+"A company has setup an application in AWS that interacts with DynamoDB. It is required
+that when an item is modified in a DynamoDB table, an immediate entry is made to the
+associating application. How can this be accomplished? Choose 2 answers from the
+choices below.","Setup CloudWatch to monitor the DynamoDB table for changes. Then
+trigger a Lambda function to send the changes to the application.","Setup CloudWatch logs to monitor the DynamoDB table for changes. Then
+trigger AWS SQS to send the changes to the application.","Use DynamoDB streams to monitor the changes to the DynamoDB
+table.","Trigger a lambda function to make an associated entry in the
+application as soon as the DynamoDB streams are modified",,,3&4,AWS Arch Associate,5
+"A company has a set of web servers. It is required to ensure that all the logs from these
+web servers can be analyzed in real time for any sort of threat detection. Which of the
+following would assist in this regard?","Upload all the logs to the SQS Service and then use EC2 Instances to scan
+the logs.","Upload the logs to Amazon Kinesis and then analyze the logs
+accordingly.",Upload the logs to CloudTrail and then analyze the logs accordingly.,Upload the logs to Glacier and then analyze the logs accordingly.,,,2,AWS Arch Associate,5
+"A company is building a Two-Tier web application to serve dynamic transaction-based
+content. The Data Tier uses an Online Transactional Processing (OLTP) database. What
+services should you leverage to enable an elastic and scalable Web Tier?","Elastic Load Balancing, Amazon EC2, and Auto Scaling","Elastic Load Balancing, Amazon RDS with Multi-AZ, and Amazon S3",Amazon RDS with Multi-AZ and Auto Scaling,"Amazon EC2, Amazon Dynamo DB, and Amazon S3",,,1,AWS Arch Associate,5
+"Your company is planning on using Route 53 as the DNS provider. There is a need to
+ensure that the company's domain name points to an existing CloudFront distribution.
+How can this be achieved?",Create an Alias record which points to the CloudFront distribution.,Create a host record which points to the CloudFront distribution.,Create a CNAME record which points to the CloudFront distribution.,Create a Non-Alias Record which points to the CloudFront distribution.,,,1,AWS Arch Associate,5
+"A company has a workflow that sends video files from their on-premises system to AWS
+for transcoding. They use EC2 worker instances to pull transcoding jobs from SQS. Why is
+SQS an appropriate service for this scenario?",SQS guarantees the order of the messages.,SQS synchronously provides transcoding output.,SQS checks the health of the worker instances.,SQS helps to facilitate horizontal scaling of encoding tasks.,,,4,AWS Arch Associate,5
+"A company is planning to use the AWS ECS service to work with containers. There is a
+need for the least amount of administrative overhead while launching containers. How can
+this be achieved?",Use the Fargate launch type in AWS ECS.,Use the EC2 launch type in AWS ECS.,Use the Auto Scaling launch type in AWS ECS.,Use the ELB launch type in AWS ECS.,,,1,AWS Arch Associate,5
+"You have created an AWS Lambda function that will write data to a DynamoDB table.
+Which of the following must be in place to ensure that the Lambda function can interact
+with the DynamoDB table?","Ensure an IAM Role is attached to the Lambda function which has the
+required DynamoDB privileges.","Ensure an IAM User is attached to the Lambda function which has the
+required DynamoDB privileges.",Ensure the Access keys are embedded in the AWS Lambda function.,Ensure the IAM user password is embedded in the AWS Lambda function.,,,1,AWS Arch Associate,5
+"You are designing a system which needs at minimum, 8 m4.large instances operating to
+service traffic. While designing a system for high availability in the us-east-1 region having
+6 Availability Zones, your company needs to be able to handle the death of a full
+availability zone. How should you distribute the servers to save as much cost as possible,
+assuming all of the EC2 nodes are properly linked to an ELB? Your VPC account can utilize
+us-east-1’s AZs a through f, inclusive.","3 servers in each of AZs a through d, inclusive.",8 servers in each of AZs a and b.,"2 servers in each of AZs a through e, inclusive.","4 servers in each of AZs a through c, inclusive.",,,3,AWS Arch Associate,5
+"An organization has a requirement to store 10TB worth of scanned files. They are required
+to have a search application in place to search through the scanned files.
+Which of the below mentioned options is ideal for implementing the search facility?","Use S3 with reduced redundancy to store and serve the scanned files.
+Install a commercial search application on EC2 Instances and configure
+with Auto-Scaling and an ElasticLoad Balancer.","Model the environment using CloudFormation. Use an EC2 instance
+running Apache webserver and an open source search application, stripe
+multiple standard EBSvolumes together to store the scanned files with a
+search index.","Use S3 with standard redundancy to store and serve the scanned files.
+Use CloudSearch for query processing, and use Elastic Beanstalk to
+host the website across multiple Availability Zones.","Use a single-AZ RDS MySQL instance to store the search index for the
+scanned files and use an EC2 instance with a custom application to search
+based on the index.",,,3,AWS Arch Associate,5
+"An application currently writes a large number of records to a DynamoDB table in one
+region. There is a requirement for a secondary application to retrieve new records written
+to the DynamoDB table every 2 hours and process the updates accordingly. Which of the
+following is an ideal way to ensure that the secondary application gets the relevant
+changes from the DynamoDB table?","Insert a timestamp for each record and then scan the entire table for the
+timestamp as per the last 2 hours.","Create another DynamoDB table with the records modified in the last 2
+hours.","Use DynamoDB Streams to monitor the changes in the DynamoDB
+table.",Transfer records to S3 which were modified in the last 2 hours.,,,3,AWS Arch Associate,5
+"You need to ensure that data stored in S3 is encrypted but do not want to manage the
+encryption keys. Which of the following encryption mechanisms can be used in this case?",SSE-S3,SSE-C,SSE-KMS,SSE-SSL,,,1,AWS Arch Associate,5
+"You work as an architect for a company. An application is going to be deployed on a set of
+EC2 instances in a private subnet of VPC. You need to ensure that IT administrators can
+securely administer the instances in the private subnet. How can you accomplish this?","Create a NAT gateway, ensure SSH access is provided to the NAT gateway.
+Access the Instances via the NAT gateway.","Create a NAT instance in a public subnet, ensure SSH access is provided to
+the NAT instance. Access the Instances via the NAT instance.","Create a bastion host in the private subnet. Make IT admin staff use this as
+a jump server to the backend instances.","Create a bastion host in the public subnet. Make IT admin staff use this
+as a jump server to the backend instances.",,,4,AWS Arch Associate,5
+"You're an architect for your company. Your IT admin staff needs access to newly created
+EC2 Instances for administrative purposes. Which of the following needs to be done to
+ensure that the IT admin staff can successfully connect via port 22 on to the EC2 Instances","Adjust Security Group to permit egress traffic over TCP port 443 from your
+IP.",Configure the IAM role to permit changes to security group settings.,"Modify the instance security group to allow ingress of ICMP packets from
+your IP.","Adjust the instance’s Security Group to permit ingress traffic over port
+22.",Apply the most recently released Operating System security patches.,,4,AWS Arch Associate,5
+"An application consists of a fleet of EC2 Instances. These Instances are launched in the
+Oregon region which consists of 3 availability zones (us-west-2a, us-west-2b, us-west-2c).
+This application needs 6 Instances running at all times. As an architect you need to
+distribute the instances in such a way that the application could still maintain its capacity if
+any one availability zone were to go down. Also, you need to ensure that the cost is kept
+to a minimum? Which of the following configurations would you consider?","6 Instances running in us-west-2a, 6 Instances running in us-west-2b, 6
+Instances running in us-west-2c","3 Instances running in us-west-2a, 3 Instances running in us-west-2b, 3
+Instances running in us-west-2c","4 Instances running in us-west-2a, 2 Instances running in us-west-2b, 2
+Instances running in us-west-2c","6 Instances running in us-west-2a, 3 Instances running in us-west-2b, 3
+Instances running in us-west-2c",,,2,AWS Arch Associate,5
+"A company has an application defined with the following architecture
+
+Which of the following would help architect an operationally excellent architecture?
+
+","Create an SQS queue to store the information for Video uploads. Spin up
+the processing servers via an Autoscaling Group. Ensure the Group scales
+based on the Memory utilization of the underlying processing servers","Create an SQS queue to store the information for Video uploads. Spin
+up the processing servers via an Autoscaling Group. Ensure the Group
+scales based on the size of the queue","Create an SNS topic to store the information for Video uploads. Spin up the
+processing servers via an Autoscaling Group. Ensure the Group scales
+based on the Memory utilization of the underlying processing servers","Create an SNS topic to store the information for Video uploads. Spin up the
+processing servers via an Autoscaling Group. Ensure the Group scales
+based on the size of the queue messages",,,2,AWS Arch Associate,5
+"A company has an Amazon Aurora cluster setup. They have setup a Lambda function
+which needs to insert records into a DynamoDB table. The Amazon Aurora cluster needs
+to invoke the Lambda as a stored procedure. Which of the following need to be in place
+for this setup to work. Choose 2 answers from the options given below","Ensure that the Lambda function has an IAM Role assigned to it which can
+be used to invoke functions on Amazon Aurora","Ensure that the Amazon Aurora cluster has an IAM Role which allows it
+to invoke Lambda functions","Allow the Lambda function to allow outbound communication to Amazon
+Aurora","Allow the Amazon Aurora cluster to allow outbound communication to
+the Lambda function",,,2&4,AWS Arch Associate,5
+"Your team has been instructed to develop an application that will make use of a
+DynamoDB table. During the design stage, you have to provide inputs to ensure that an
+optimal strategy is employed for a high read and write expectancy on the underlying
+DynamoDB table. Which of the following would you consider?",Consider a lesser number of partition keys for the underlying table,"Use partition keys with a large number of distinct values for the
+underlying table","Use partition keys with a small number of distinct values for the underlying
+table",Use partition keys with the number data type only,,,2,AWS Arch Associate,5
+"A company is planning to store sensitive documents in an S3 bucket. They want to ensure
+that documents are encrypted at rest. They want to ensure they manage the underlying
+keys which are used for encryption but not the encryption/decryption process. Which of
+the following can be used for this purpose? Choose 2 answers from the options given
+below",Use S3 server-side encryption with Customer keys,Use S3 client-side encryption,Use S3 server-side encryption with AWS managed keys,"Use S3 server-side encryption with AWS KMS keys with Key policy
+document of size 40kb.","Use S3 server-side encryption with AWS KMS keys with the keys
+uploaded by the company to KMS",,1&5,AWS Arch Associate,5
+"Your organization already had a VPC(10.10.0.0/16) setup with one public(10.10.1.0/24) and
+two private subnets – private subnet 1 (10.10.2.0/24) and private subnet 2 (10.10.3.0/24).
+The public subnet has the main route table and two private subnets have two different
+route tables respectively. AWS sysops team reports a problem stating the EC2 instance in
+private subnet 1 cannot communicate to RDS MySQL database which is on private subnet
+2. What are the possible reasons? (choose 2 options)","One of the private subnet route table’s local route has been changed to
+restrict access only within the subnet IP range.","RDS security group inbound rule is incorrectly configured with
+10.10.1.0/24 instead of 10.10.2.0/24.","10.10.3.0/24 subnet's NACL is modified to deny inbound on port
+3306 from subnet 10.10.2.0/24","RDS Security group outbound does not contain a rule for ALL traffic or port
+3306 for 10.10.2.0/24 IP range.",,,2&3,AWS Arch Associate,5
+"Your company is planning on setting up an application that will consist of a presentation
+layer and a datastore in DynamoDB. The data in DynamoDB will only used frequently
+within the week in which the data is inserted. After a week, the data would tend to become
+stale. But the stale data would need to be available on durable storage for future analysis
+on historical data. Which of the following would be the ideal implementation steps for this
+sort of architecture? Choose 2 answers from the options given below","Setup DynamoDB tables. Scan the tables for older data and transfer them
+to another DynamoDB table.","Setup DynamoDB tables on a weekly basis. Ensure the most recent
+week table has a higher throughput setup.","Use the AWS Data Pipeline service to transfer the older data to EBS
+volumes","Use the AWS Data Pipeline service to transfer the older data to
+Amazon S3",,,2&4,AWS Arch Associate,5
+"You have created an S3 bucket in us-east-1 region with default configuration. You are
+located in Asia and deleted an object in the bucket using AWS CLI. However, when you
+tried to list the objects in the bucket, you still see the object you deleted. You are even
+able to download the object. What could have caused this behaviour?",Cross region deletes are not supported by AWS,AWS provides eventual consistency for DELETES.,AWS keeps copy of deleted object for 7 days in STANDARD storage.,AWS provides strong consistency for DELETES.,,,2,AWS Arch Associate,5
+"You are designing a web application that stores static assets in an Amazon S3 bucket. You
+expect this bucket to immediately receive over 400 requests with a mix of
+GET/PUT/DELETE per second. What should you do to ensure optimal performance?",Amazon S3 will automatically manage performance at this scale.,Add a random prefix to the key names.,"Use a predictable naming scheme, such as sequential numbers or date
+time sequences, in the key names.",Use multi-part upload.,,,1,AWS Arch Associate,5
+"You created a bucket named “myfirstwhizbucket” in US West region. What are valid URLs
+for accessing the bucket? (Choose 2 options)",https://myfirstwhizbucket.s3.us-west-1.amazonaws.com,https://s3.myfirstwhizbucket.us-west-1.amazonaws.com,https://s3.us-west-1.amazonaws.com/myfirstwhizbucket,https://s3-us-west-1-amazonaws.com/myfirstwhizbucket,https://s3.amazonaws.com/myfirstwhizbucket,,1&3,AWS Arch Associate,5
+"You have an AWS setup with an existing VPC in us-east-1. You have a fleet of 20 EC2
+instances which are attached to EFS with mount targets on all existing VPC’s availability
+zones. Your organization had requested you to replicate the same setup in another VPC
+within us-east-1 keeping same EFS volume. How will you achieve this?","Attach new VPC to existing EFS, create new mount targets for new VPC
+and mount EFS on EC2 instances within new VPC","Create a new VPC. Establish a VPC peering connection between the
+VPCs. Use the instances that are created in the new VPC to access the
+already existing EFS with mount targets","EFS is available for all VPCs within a region by default. Mount EFS on new
+EC2 instances and configure EFS security group to allow inbound traffic.","EFS can be used only within one VPC at a time. You need to launch EC2
+instances in existing VPC.",,,2,AWS Arch Associate,5
+"Your Operations department is using an incident based application hosted on a set of EC2
+Instances. These instances are placed behind an Auto Scaling Group to ensure the right
+number of instances are in place to support the application. The Operations department
+has expressed dissatisfaction with regard to poor application performance at 9:00 AM
+each day. However, it is also noted that the system performance returns to optimal at 9:45
+AM.
+What can be done to ensure that this issue gets fixed?","Create another Dynamic Scaling Policy to ensure that the scaling happens
+at 9:00 AM.",Add another Auto Scaling group to support the current one.,Change the Cool Down Timers for the existing Auto Scaling Group.,Add a Scheduled Scaling Policy at 8:30 AM.,,,4,AWS Arch Associate,5
+"Your organization had built a video sharing website on EC2 within US for which S3 bucket
+in us- east-1 is used to store the video files. The website has been receiving very good
+feedback and your organization decided to expand the website all over the world.
+However, customers in Europe and Asia started to complain that website access, upload
+and download of videos files are slow. How can you resolve the issue? (choose 2 options)","Use CloudFront for improving the performance on website by caching
+static files.","Use VPC Endpoints in Europe and Asia regions to improve S3 uploads and
+downloads.","Enable Transfer Acceleration feature on S3 bucket which uses AWS
+edge locations to improve upload and download speeds.","Change your application design to provision higher-memory configuration
+EC2 instances and process S3 requests through EC2.",,,1&3,AWS Arch Associate,5
+"You are building a content serving web application with 20 EC2 instances load balanced.
+For all the instances, content storage remains the same. You have chosen AWS EFS to act
+as common storage repository. Your application need to have as low latency as possible
+when serving content to the web users. Which of the following option would you choose
+and why?","Performance mode = General Purpose, AWS can handle performance with
+general purpose mode till 10s of EC2 instances.","Performance mode = General Purpose, provides low-latency access to
+EFS.","Performande mode = Max I/O, provides better performance when sharing
+EFS across more than 10 EC2 instances.","Performance mode = Max I/O, provides low-latency access to EFS.",,,2,AWS Arch Associate,5
+"You are building a content serving web application on 5 EC2 instances load balanced.
+Total content size stored may not exceed 25 GB. You have chosen EFS for content
+storage. The content is accessed frequently by large number of users. Which throughput
+mode would you choose inorder to make sure that application on EC2 instances to EFS
+data transfer will not have performance bottleneck?","Throughput mode = Bursting, provides a consistent high throughput for
+smaller data sizes.","Throughput mode = Bursting, automatically bursts throughput based on the
+requests irrespective of EFS data size","Throughput mode = Provisioned, you can configure specific throughput irrespective","Throughput mode = Provisioned, AWS provisions high throughput for
+smaller data sizes and vice versa.",,,3,AWS Arch Associate,5
+"An application reads and writes objects to an S3 bucket. When the application is fully
+deployed, the read/write traffic is expected to be 5,000 requests per second for the
+addition of data and 7,000 requests per second to retrieve data.
+How should the architect maximize the Amazon S3 performance?","Use as many S3 prefixes as you need in parallel to achieve the required
+throughput.",Use the STANDARD_IA storage class.,"Prefix each object name with a hex hash key along with the current
+date.",Enable versioning on the S3 bucket.,,,3,AWS Arch Associate,5
+"A retailer exports data daily from its transactional databases into an S3 bucket in the
+Sydney region. The retailer's Data Warehousing team wants to import this data into an
+existing Amazon Redshift cluster in their VPC at Sydney. Corporate security policy
+mandates that data can only be transported within a VPC.
+What combination of the following steps will satisfy the security policy?
+Choose 2 answers from the options given below.",Enable Amazon Redshift Enhanced VPC Routing.,"Create a Cluster Security Group to allow the Amazon Redshift cluster to
+access Amazon S3.","Create a NAT gateway in a public subnet to allow the Amazon Redshift
+cluster to access Amazon S3.",Create and configure an Amazon S3 VPC endpoint.,,,1&4,AWS Arch Associate,5
+"A company has an application hosted in AWS. This application consists of EC2 Instances
+which sit behind an ELB. The following are requirements from an administrative
+perspective:a) Ensure notifications are sent when the read requests go beyond 1000 requests per
+minute
+b) Ensure notifications are sent when the latency goes beyond 10 seconds
+c) Any API activity which calls for sensitive data should be monitored
+Which of the following can be used to satisfy these requirements? Choose 2 answers from
+the options given below.",Use CloudTrail to monitor the API Activity.,Use CloudWatch logs to monitor the API Activity.,"Use CloudWatch metrics for the metrics that need to be monitored as
+per the requirement and set up an alarm activity to send out
+notifications when the metric reaches the set threshold limit.","Use custom log software to monitor the latency and read requests to the
+ELB.",,,1&3,AWS Arch Associate,5
+"A company is planning to use Docker containers and necessary container orchestration
+tools for their batch processing requirements. There is a requirement for batch processing
+for both critical and non-critical data. Which of the following is the best implementation
+step for this requirement, to ensure that cost is effectively managed?","Use Kubernetes for container orchestration and Reserved instances for all
+underlying instances.",Use ECS orchestration and Reserved Instances for all underlying instances.,"Use Docker for container orchestration and a combination of Spot and
+Reserved Instances for the underlying instances.","Use ECS for container orchestration and a combination of Spot and
+Reserved Instances for the underlying instances.",,,4,AWS Arch Associate,5
+"An EC2 Instance hosts a Java based application that accesses a DynamoDB table. This EC2
+Instance is currently serving production users. Which of the following is a secure way for
+the EC2 Instance to access the DynamoDB table?","Use IAM Roles with permissions to interact with DynamoDB and assign
+it to the EC2Instance.","Use KMS Keys with the right permissions to interact with DynamoDB and
+assign it tothe EC2 Instance.","Use IAM Access Keys with the right permissions to interact with DynamoDB
+and assignit to the EC2 Instance.","Use IAM Access Groups with the right permissions to interact with
+DynamoDB andassign it to the EC2 Instance.",,,1,AWS Arch Associate,5
+"A Solutions Architect is designing an online shopping application running in a VPC on EC2
+Instances behind an ELB Application Load Balancer. The instances run in an Auto Scaling
+group across multiple Availability Zones. The application tier must read and write data to a
+customer managed database cluster. There should be no access to the database from the
+Internet, but the cluster must be able to obtain software patches from the Internet. Which
+VPC design meets these requirements?",Public subnets for both the application tier and the database cluster,"Public subnets for the application tier, and private subnets for the database
+cluster","Public subnets for the application tier and NAT Gateway, and private
+subnets for the database cluster","Public subnets for the application tier, and private subnets for the database
+cluster and NAT Gateway",,,3,AWS Arch Associate,5
+"You have a set of on-premises virtual machines used to serve a web-based application.
+You need to ensure that a virtual machine if unhealthy is taken out of the rotation. which ofthe following option can be used for health checking and DNS failover features for a web
+application running behind ELB, to increase redundancy and availability.",Use Route 53 health checks to monitor the endpoints.,Move the solution to AWS and use a Classic Load Balancer.,Move the solution to AWS and use an Application Load Balancer.,Move the solution to AWS and use a Network Load Balancer.,,,1,AWS Arch Associate,5
+"You have an EC2 Instance placed inside a subnet. You have created the VPC from scratch,
+and added the EC2 Instance to the subnet. It is required to ensure that this EC2 Instance
+has complete access to the Internet, since it will be used by users on the Internet.
+Which of the following options would help accomplish this?",Launch a NAT Gateway and add routes for 0.0.0.0/0,Attach a VPC Endpoint and add routes for 0.0.0.0/0,Attach an Internet Gateway and add routes for 0.0.0.0/0,Deploy NAT Instances in a public subnet and add routes for 0.0.0.0/0,,,3,AWS Arch Associate,5
+"A company has a lot of data hosted on their On-premises infrastructure. Running out of
+storage space, the company wants a quick win solution using AWS. Which of the following
+would allow easy extension of their data infrastructure to AWS?",The company could start using Gateway Cached Volumes.,The company could start using Gateway Stored Volumes.,The company could start using the Simple Storage Service.,The company could start using Amazon Glacier.,,,1,AWS Arch Associate,5
+"A company plans on deploying a batch processing application in AWS. Which of the
+following is an ideal way to host this application? Choose 2 answers from the options
+below. Each answer forms a part of the solution.",Copy the batch processing application to an ECS Container.,Create a docker image of your batch processing application.,Deploy the image as an Amazon ECS task.,Deploy the container behind the ELB.,,,2&3,AWS Arch Associate,5
+"Your company has a set of applications that make use of Docker containers used by the
+Development team. There is a need to move these containers to AWS. Which of the
+following methods could be used to set up these Docker containers in a separate
+environment in AWS?","Create EC2 Instances, install Docker and then upload the containers.","Create EC2 Container registries, install Docker and then upload the
+containers.","Create an Elastic Beanstalk environment with the necessary Docker
+containers.","Create EBS Optimized EC2 Instances, install Docker and then upload the
+containers.",,,3,AWS Arch Associate,5
+"You have a business-critical two-tier web application currently deployed in 2 Availability
+Zones in a single region, using Elastic Load Balancing and Auto Scaling. The app depends
+on synchronous replication at the database layer. The application needs to remain fully
+available even if one application AZ goes offline and if Auto Scaling cannot launch new
+instances in the remaining AZ. How can the current architecture be enhanced to ensure
+this?","Deploy in 2 regions using Weighted Round Robin with Auto Scaling
+minimums set at 50%peak load per region.","Deploy in 3 AZ with Auto Scaling minimum set to handle 33 percent peak
+load per zone.","Deploy in 3 AZ with Auto Scaling minimum set to handle 50 percent
+peak load per zone.","Deploy in 2 regions using Weighted Round Robin with Auto Scaling
+minimums set at 100%peak load per region.",,,3,AWS Arch Associate,5
+"A company is hosting a MySQL database in AWS using the AWS RDS service. To offload
+the reads, a Read Replica has been created and reports are run off the Read Replica
+database. But at certain times, the reports show stale data. Why may this be the case?",The Read Replica has not been created properly.,The backup of the original database has not been set properly.,This is due to the replication lag.,The Multi-AZ feature is not enabled.,,,3,AWS Arch Associate,5
+"Your app uses AWS Cognito Identity for authentication and stores user profiles in a User
+Pool. To expand the availability and ease of signing in to the app, your team is requesting
+advice on allowing the use of OpenID Connect (OIDC) identity providers as additional
+means of authenticating users and saving the user profile information. What is your
+recommendation on OIDC identity providers?","This is supported, along with social and SAML based identity
+providers.","This is not supported, only social identity providers can be integrated into
+User Pools","If you want OIDC identity providers, then you must include SAML and social
+based support as well","It’s too much effort to add non-Cognito authenticated user information to a
+User Pool",,,1,AWS Arch Associate,5
+"A company has a Redshift cluster for petabyte-scale data warehousing. The data within
+the cluster is easily reproducible from additional data stored on Amazon S3. The company
+wants to reduce the overall total cost of running this Redshift cluster. Which scenario
+would best meet the needs of the running cluster, while still reducing total overall
+ownership of the cluster? Choose the correct answer from the options below.","Instead of implementing automatic daily backups, write a CLI script that
+creates manualsnapshots every few days. Copy the manual snapshot to a
+secondary AWS regionfor disaster recovery situations.","Enable automated snapshots but set the retention period to a lower
+number to reducestorage costs.","Implement daily backups, but do not enable multi-region copy to save data
+transfer costs.",Disable automated and manual snapshots on the cluster.,,,4,AWS Arch Associate,5
+"A company is worried about the EBS volume hosted in AWS and wants to ensure that
+
+redundancy is achieved for the same. What must be done to achieve this in a cost-
+effective manner?","Nothing, since by default, EBS Volumes are replicated within their
+Availability Zones. ",Copy the data to S3 bucket for data redundancy.,Create EBS Snapshots in another Availability Zone for data redundancy.,Copy the data to a DynamoDB table for data redundancy.,,,1,AWS Arch Associate,5
+"A concern raised in your company is that developers could potentially delete production-
+based EC2 resources. As a Cloud Admin, which of the below options would you choose to
+
+help alleviate this concern? Choose 2 options.","Tag the production instances with production-identifying tag and add
+resource-level permissions to the developers with an explicit deny on
+the terminate API call to instances with the production tag.","Create a separate AWS account and move the developers to that
+account.","Modify the IAM policy on the production users to require MFA before
+deleting EC2 instances, and disable MFA access to the employee.","Modify the IAM policy on the developers to require MFA before deleting
+EC2 instances.",,,1&2,AWS Arch Associate,5
+"You plan on hosting a web application consisting of a web server and a database server.
+These servers are going to be hosted on different EC2 Instances in different subnets in a
+VPC. Which of the following can be used to ensure that the database server only allows
+traffic from the web server?",Make use of Security Groups.,Make use of VPC Flow Logs.,Make use of Network Access Control Lists.,Make use of IAM Roles.,,,1,AWS Arch Associate,5
+"You are building a large-scale confidential documentation web server on AWS and all of
+its documentation will be stored on S3. One of the requirements is that it should not be
+publicly accessible from S3 directly, and CloudFront would be needed to accomplish this.
+Which of the methods listed below would satisfy the outlined requirements? Choose an
+answer from the options below.","Create an Identity and Access Management (IAM) user for CloudFront and
+grant access to the objects in your S3 bucket to that IAM User.","Create an Origin Access Identity (OAI) for CloudFront and grant access
+to the objects in your S3 bucket to that OAI.","Create individual policies for each bucket the documents are stored in, and
+grant access only to CloudFront in these policies.","Create an S3 bucket policy that lists the CloudFront distribution ID as the
+Principal and the target bucket as the Amazon Resource Name (ARN).",,,2,AWS Arch Associate,5
+"Your company is planning on the following architecture for their application
+
+Which of the following architecture ensure high availability across all components?
+
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-
+security.html
+
+A set of EC2 Instances hosting the web part of the application.
+A relational database for the backend
+A Load balancer for distribution of traffic
+A NAT gateway for routing traffic from the database server to the Internet","A Load balancer with one public subnets. The EC2 Instances placed in one
+Availability Zone. RDS with Multi-AZ Enabled. NAT Gateway in 2 availability
+zones.","A Load balancer with 2 public subnets. The EC2 Instances placed
+across 2 Availability Zones. RDS with Multi-AZ Enabled. NAT Gateway
+in 2 availability zones.","A Load balancer with 2 public subnets. The EC2 Instances placed across 2
+Availability Zones. RDS with Multi-AZ Enabled. NAT Gateway in one
+availability zone","A Load balancer with 2 public subnets. The EC2 Instances placed in one
+Availability Zone. RDS with Multi-AZ Enabled. NAT Gateway in one
+availability zone",,,2,AWS Arch Associate,5
+"You are working as an architect in your organization. You have peered VPC A as requester
+and VPC B as accepter and both VPCs can communicate with each other. Now you want
+resources in both the VPCs to reach out to the internet but anyone on the internet should
+not be able to reach resources within both the VPCs. Which of the following statements is
+true?","Create a NAT Gateway on Requester VPC (VPC A) and configure a route in
+Route table with NAT Gateway. VPC B can route to internet through VPC A
+NAT Gateway.","Create an Internet Gateway on Requester VPC (VPC A) and configure a
+route in Route table with Internet Gateway. VPC B can route to internet
+through VPC A Internet Gateway.","Create NAT Gateways on both VPCs and configure routes in
+respective route tables with NAT Gateways.","Create a NAT instance on Requester VPC (VPC A) . VPC B can route to
+internet through VPC A NAT Instance.",,,3,AWS Arch Associate,5
+"You are building a fleet of EC2 Linux Instances in the AWS environment for managing
+heavy workloads and writing data into AWS Redshift. The developers and administrators
+need to login to these EC2 machines to develop, fix, deploy, and manage workloads within
+your organizational network. Which of the following would allow only the personnel within
+the organization to access the resources in the most secure way?","EC2 instances on public subnet with secure SSH keys to login, RedShift in
+private subnet.","A bastion host in public subnet with secure SSH key to login, EC2 instances
+in private subnet with secure SSH keys to login, RedShift in private subnet.","AWS VPN connection from your organization to AWS VPC, a bastion
+host in VPN enabled subnet with secure SSH key to login, EC2
+instances in private subnet with secure SSH keys to login, Redshift in
+private subnet.","AWS VPN connection from your organization to AWS VPC, EC2 instances in
+VPN enabled subnet with secure SSH keys to login, Redshift in private
+subnet.",,,3,AWS Arch Associate,5
+"You have an application on EC2 which stores the files in an S3 bucket. EC2 is being
+launched using a role which has GetObject permissions on the S3 bucket defined in its
+policy. The users who authenticate to this application will get a pre-signed URL for the
+files in S3 bucket using EC2 role temporary credentials. However, users reporting they get
+an error when accessing pre- signed URLs. What could be the reason?(Choose 2 options)",Pre-signed URLs expired.,"Logged in user must be an IAM user to download file through pre-signed
+URL.","Bucket might have a policy with Deny. EC2 role not whitelisted in the
+policy statement with Allow.","Default policy on temporary credentials does not have GetObject privileges
+on S3 bucket.",,,1&3,AWS Arch Associate,5
+"Your organization is using Amazon SQS as an enterprise message queuing platform. 100s
+of applications reading the queues every few seconds to process the messages and
+delete them as soon as they are being written into the queues. Looking at the number of
+requests being sent to Amazon SQS APIs, your management is concerned on the pricingthat will be incurred. As an architect, how would you reduce pricing without compromising
+on time in this scenario? Please select 2 correct answers.","Once successfully written, Amazon SQS messages are only available after 1
+minute. Ask applications to increase the delay between calls to 1 minute.
+This reduces the number of API calls made",Use Amazon SQS Long Polling.,Send DeleteMessage requests in batch.,Use Amazon SQS Short Polling.,,,2&3,AWS Arch Associate,5
+"You are performing a Load Testing exercise on your application hosted on AWS. While
+testing your Amazon RDS MySQL DB Instance, you notice that your application becomesnon responsive when you reach 100% CPU utilization. Your application is read-heavy. What
+methods will help scale your data-tier to meet the application’s needs? Choose three
+answers from the options given below.","Add Amazon RDS DB Read Replicas, and have your application direct
+read queries tothem.","Add your Amazon RDS DB Instance to an Auto Scaling group and configure
+yourCloudWatch metric based on CPU utilization.","Use an Amazon SQS queue to throttle data going to the Amazon RDS DB
+Instance.",Use ElastiCache to cache common queries of your Amazon RDS DB.,Shard your data set among multiple Amazon RDS DB Instances.,Enable Multi-AZ for your Amazon RDS DB Instance.,"1,4&5",AWS Arch Associate,5
+"You are working as an AWS Architect for a start-up company. They have a production
+website which is two-tier with web servers in front end & database servers in back end. All
+these database servers are spread across multiple Availability Zones & are stateful
+instance. You have configured Auto Scaling Group for these servers with minimum of 2
+instance & maximum of 6 instance. During scale in of these instances post peak hours, you
+are observing data loss from these database servers. What feature needs to be configured
+additionally to avoid data loss & copy data before instance termination?","Modify cooldown period to complete custom actions before Instance
+terminates.",Add lifecycle hooks to Auto scaling group,Customise Termination policy to complete data copy before termination.,Suspend Terminate process which will avoid data loss.,,,2,AWS Arch Associate,5
+"An application allows a manufacturing site to upload files. Each uploaded 3 GB file is
+processed to extract metadata, and this process takes a few seconds per file. The
+frequency at which the uploads happen is unpredictable. For instance, there may be no
+updates for hours, followed by several files being uploaded concurrently.
+What architecture addresses this workload in the most cost-efficient manner?","Use a Kinesis Data Delivery Stream to store the file. Use Lambda for
+processing.","Use an SQS queue to store the file, to be accessed by a fleet of EC2
+Instances.","Store the file in an EBS volume, which can then be accessed by another
+EC2 Instance for processing.","Store the file in an S3 bucket. Use Amazon S3 event notification to
+invoke a Lambda function for file processing.",,,4,AWS Arch Associate,5
+"An application reads and writes objects to an S3 bucket. When the application is fully
+deployed, the read/write traffic is expected to be 5,000 requests per second for the
+addition of data and 7,000 requests per second to retrieve data.
+How should the architect maximize the Amazon S3 performance?","Use as many S3 prefixes as you need in parallel to achieve the required
+throughput.",Use the STANDARD_IA storage class.,"Prefix each object name with a hex hash key along with the current
+date.",Enable versioning on the S3 bucket.,,,4,AWS Arch Associate,5
+"You are deploying an application on Amazon EC2, which must call AWS APIs.
+What method should you use to securely pass credentials to the application?",Pass API credentials to the instance using Instance userdata.,Store API credentials as an object in Amazon S3.,Embed the API credentials into your application.,Assign IAM roles to the EC2 Instances.,,,4,AWS Arch Associate,5
+"A consulting firm repeatedly builds large architectures for their customers using AWS
+resources from several AWS services including IAM, Amazon EC2, Amazon RDS,
+DynamoDB and Amazon VPC. The consultants have architecture diagrams for each of their
+architectures, and are frustrated that they cannot use them to automatically create their
+resources.
+Which service should provide immediate benefits to the organization?",AWS Beanstalk,AWS CloudFormation,AWS CodeBuild,AWS CodeDeploy,,,2,AWS Arch Associate,5
+"An application currently stores all its data on Amazon EBS Volumes. All EBS volumes must
+be backed up durably across multiple Availability Zones.
+What is the MOST resilient and cost-effective way to back up the volumes?",Take regular EBS snapshots.,Enable EBS volume encryption.,Create a script to copy data to an EC2 Instance store.,Mirror data across 2 EBS volumes.,,,1,AWS Arch Associate,5
+"A Solutions Architect is designing a shared service for hosting containers from several
+customers on Amazon ECS. These containers will use several AWS services. A container
+from one customer should not be able access data from another customer.
+Which of the below solutions should the architect use to meet these requirements?",IAM roles for tasks,IAM roles for EC2 Instances,IAM Instance profile for EC2 Instances,Security Group rules,,,1,AWS Arch Associate,5
+"An application needs to have a Data store hosted in AWS. The following requirements are
+in place for the Data store:
+a) An initial storage capacity of 8 TB
+b) The ability to accommodate a database growth of 8GB per day
+c) The ability to have 4 Read Replicas
+Which of the following Data stores would you choose for this requirement?",DynamoDB,Amazon S3,Amazon Aurora,SQL Server,,,3,AWS Arch Associate,5
+"A million images are required to be uploaded to S3. What option ensures optimal
+performance in this case?",Use a sequential ID for the prefix.,Use a hexadecimal hash for the prefix.,Use a hexadecimal hash for the suffix.,Use a sequential ID for the suffix.,,,2,AWS Arch Associate,5
+"A company is using a Redshift cluster to store their data warehouse. There is a
+requirement from the Internal IT Security team to encrypt data for the Redshift database.
+How can this be achieved?",Encrypt the EBS volumes of the underlying EC2 Instances.,Use AWS KMS Customer Default master key.,Use SSL/TLS for encrypting the data.,Use S3 Encryption.,,,2,AWS Arch Associate,5
+"A company owns an API which currently gets 1000 requests per second. The company
+wants to host this in a cost effective manner using AWS. Which one of the following
+solution is best suited for this?",Use API Gateway with the backend services as it is.,Use the API Gateway along with AWS Lambda,Use CloudFront along with the API backend service as it is.,Use ElastiCache along with the API backend service as it is.,,,2,AWS Arch Associate,5
+"A company plans to have their application hosted in AWS. This application has users
+uploading files and then using a public URL for downloading them at a later stage. Which
+of the following designs would help fulfill this requirement?",Have EBS Volumes hosted on EC2 Instances to store the files.,Use Amazon S3 to host the files.,"Use Amazon Glacier to host the files since this would be the cheapest
+storageoption.",Use EBS Snapshots attached to EC2 Instances to store the files.,,,2,AWS Arch Associate,5
+"A company has setup an application in AWS that interacts with DynamoDB. It is required
+that when an item is modified in a DynamoDB table, an immediate entry is made to the
+associating application. How can this be accomplished? Choose 2 answers from the
+choices below.","Setup CloudWatch to monitor the DynamoDB table for changes. Then
+trigger a Lambda function to send the changes to the application.","Setup CloudWatch logs to monitor the DynamoDB table for changes. Then
+trigger AWS SQS to send the changes to the application.","Use DynamoDB streams to monitor the changes to the DynamoDB
+table.","Trigger a lambda function to make an associated entry in the
+application as soon as the DynamoDB streams are modified",,,3&4,AWS Arch Associate,5
+"An application running on EC2 Instances processes sensitive information stored on
+Amazon S3. This information is accessed over the Internet. The security team is concerned
+that the Internet connectivity to Amazon S3 could be a security risk. Which solution will
+resolve the security concern?",Access the data through an Internet Gateway.,Access the data through a VPN connection.,Access the data through a NAT Gateway.,Access the data through a VPC endpoint for Amazon S3.,,,4,AWS Arch Associate,5
+"A company wants to have a fully managed data store in AWS. It should be a compatible
+MySQL database, which is an application requirement. Which of the following databases
+engines can be used for this purpose?",AWS RDS,AWS Aurora,AWS DynamoDB,AWS Redshift,,,2,AWS Arch Associate,5
+"It is expected that only certain specified customers can upload images to the S3 bucket
+for a certain period of time. As an architect what is your suggestion?","Create a secondary S3 bucket. Then, use an AWS Lambda to sync the
+contents to the primary bucket.",Use Pre-Signed URLs instead to upload the images.,Use ECS Containers to upload the images.,Upload the images to SQS and then push them to the S3 bucket.,,,2,AWS Arch Associate,5
+"You currently have the following architecture in AWS:
+a. A couple of EC2 Instances located in us-west-2a
+b. The EC2 Instances are launched via an Auto Scaling group.
+c. The EC2 Instances sit behind a Classic ELB.
+Which of the following additional steps should be taken to ensure the above architecture
+conforms to a well-architected framework?",Convert the Classic ELB to an Application ELB.,Add an additional Auto Scaling Group.,Add additional EC2 Instances to us-west-2a.,Add or spread existing instances across multiple Availability Zones.,,,4,AWS Arch Associate,5
+"A company has an entire infrastructure hosted on AWS. It wants to create code templates
+used to provision the same set of resources in another region in case of a disaster in the
+primary region. Which of the following services can help in this regard?",AWS Beanstalk,AWS CloudFormation,AWS CodeBuild,AWS CodeDeploy,,,2,AWS Arch Associate,5
+"An application needs to have a messaging system in AWS. It is of the utmost importance
+that the order of messages is preserved and duplicate messages are not sent. Which of
+the following services can help fulfill this requirement?",AWS SQS FIFO,AWS SNS,AWS Config,AWS ELB,,,1,AWS Arch Associate,5
+"An architecture consists of the following:
+a) An active/passive infrastructure hosted in AWS
+b) Both infrastructures comprise ELB, Auto Scaling, and EC2 resources
+How should Route 53 be configured to ensure proper failover in case the primary
+infrastructure were to go down?",Configure a primary routing policy.,Configure a weighted routing policy.,Configure a Multi-Answer routing policy.,Configure a failover routing policy.,,,4,AWS Arch Associate,5
+"An instance is launched into a VPC subnet with the network ACL configured to allow
+all outbound traffic and deny all inbound traffic. The instance’s security group is
+configured to allow SSH from any IP address. What changes need to be made to allow
+SSH access to the instance?","The Outbound Security Group needs to be modified to allow outbound
+traffic.","The Inbound Network ACL needs to be modified to
+allow inbound traffic","Nothing, it can be accessed from any IP address using SSH.","Both the Outbound Security Group and Outbound Network ACL need to be
+modified toallow outbound traffic.",,,2,AWS Arch Associate,5
+"You have created an AWS Lambda function that will write data to a DynamoDB table.
+Which of the following must be in place to ensure that the Lambda function can interact
+with the DynamoDB table?","Ensure an IAM Role is attached to the Lambda function which has the
+required DynamoDB privileges.","Ensure an IAM User is attached to the Lambda function which has the
+required DynamoDB privileges.",Ensure the Access keys are embedded in the AWS Lambda function.,Ensure the IAM user password is embedded in the AWS Lambda function.,,,1,AWS Arch Associate,5
+"A company currently storing a set of documents in the AWS Simple Storage Service, is
+worried about the potential loss if these documents are ever deleted. Which of the
+following can be used to ensure protection from loss of the underlying documents in S3?
+Choose 2 Options.",Enable Versioning for the underlying S3 bucket.,Copy the bucket data to an EBS Volume as a backup.,Create a Snapshot of the S3 bucket.,"Enable an IAM Policy which does not allow deletion of any document
+from the S3 bucket.",,,1&4,AWS Arch Associate,5
+"Your company is planning on using Route 53 as the DNS provider. There is a need to
+ensure that the company's domain name points to an existing CloudFront distribution.
+How can this be achieved?",Create an Alias record which points to the CloudFront distribution.,Create a host record which points to the CloudFront distribution.,Create a CNAME record which points to the CloudFront distribution.,Create a Non-Alias Record which points to the CloudFront distribution.,,,1,AWS Arch Associate,5
+"You have a video transcoding application running on Amazon EC2. Each instance polls a
+queue to find out which video should be transcoded, and then runs a transcoding process.
+If this process is interrupted, the video gets transcoded by another instance based on the
+queuing system. You have a large backlog of videos that need to be transcoded and you
+would like to reduce this backlog by adding more instances. These instances will only be
+needed until the backlog is reduced. What Amazon EC2 Instance type should you use to
+reduce the backlog in the most cost-efficient way?",Reserved Instances,Spot Instances,Dedicated Instances,On-Demand Instances,,,2,AWS Arch Associate,5
+"A company wants to build a brand new application on the AWS Cloud. They want to
+ensure that this application follows the Microservices architecture. Which of the following
+services can be used to build this sort of architecture? Choose 3 answers from the options
+given below.",AWS Lambda,AWS ECS,AWS API Gateway,AWS Config,,,"1,2&3",AWS Arch Associate,5
+"A company is planning to run a number of Admin related scripts using the AWS Lambda
+service. There is a need to detect errors that occur while the scripts run. How can this be
+accomplished in the most effective manner?",Use CloudWatch metrics and logs to watch for errors.,Use CloudTrail to monitor for errors.,Use the AWS Config service to monitor for errors.,Use the AWS Inspector service to monitor for errors.,,,1,AWS Arch Associate,5
+"You have a small company that is only leveraging cloud resources like AWS Workspaces
+and AWS Workmail. You want a fully managed solution to provide user management and
+to set policies. Which AWS Directory Service would you recommend?",AWS Managed Microsoft AD for its full-blown AD features and capabilities,AD Connector for use with on-premises applications,AWS Cognito for its scalability and customization,"Simple AD for limited functionality and compatibility with desired
+applications",,,4,AWS Arch Associate,5
+"Your company has an application that takes care of uploading, processing and publishing
+videos posted by users. The current architecture for this application includes the
+following:
+a) A set of EC2 Instances to transfer user uploaded videos to S3 buckets
+b) A set of EC2 worker processes to process and publish the videos
+c) An Auto Scaling Group for the EC2 worker processes
+Which of the following can be added to the architecture to make it more reliable?",Amazon SQS,Amazon SNS,Amazon CloudFront,Amazon SES,,,1,AWS Arch Associate,5
+"You have been tasked with creating a VPC network topology for your company. The VPC
+network must support both internet-facing applications and internal-facing applications
+accessed only over VPN. Both Internet-facing and internal-facing applications must be
+able to leverage at least 3 AZs for high availability. How many subnets must you create
+within your VPC to accommodate these requirements?",2,3,4,6,,,4,AWS Arch Associate,5
+"An application consists of a web server and database server hosted on separate EC2
+Instances. There are lot of read requests on the database which is degrading the
+performance of the application. Which of the following can help improve the performance
+of the database under this heavy load?",Enable Multi-AZ for the database.,Use an ElastiCache to improve the performance of the database., Place another web server in the architecture to take the load.,Place a CloudFront distribution in front of the database.,,,2,AWS Arch Associate,5
+"A company currently hosts a lot of data on their On-premises location. They want to start
+storing backups of this data on AWS. How can this be achieved in the most efficient way
+possible?",Create EBS Volumes and store the data.,Create EBS Snapshots and store the data.,Make use of Storage Gateway Stored volumes.,Make use of Amazon Glacier.,,,3,AWS Arch Associate,5
+"A company is hosting EC2 instances which focus on work-loads for non-production and
+non-priority batch loads. Also, these processes can be interrupted at any time. What is the
+best pricing model that can be used for EC2 instances in this case?",Reserved instances,On-Demand instances,Spot instances,Regular instances,,,3,AWS Arch Associate,5
+"You need to ensure that new objects being uploaded to an s3 bucket are available in
+another region. This is because of the criticality of the data that is hosted in the S3 bucket.
+How can you achieve this in the easiest way possible?",Enable Cross-Region Replication for the bucket.,"Write a script to copy the objects to another bucket in the destination
+region.",Create an S3 snapshot in the destination region.,Enable versioning which will copy the objects to the destination region.,,,1,AWS Arch Associate,5
+"You work in the media industry and have created a web application where users will be
+able to upload photos they create to your website. This web application must be able to
+call the S3 API in order to be able to function. Where should you store your API credentials
+whilst maintaining the maximum level of security?",Save the API credentials to your PHP files.,"Don’t save your API credentials. Instead, create a role in IAM and
+assign this role to an EC2 instance when you first create it.",Save your API credentials in a public Github repository.,Pass API credentials to the instance using instance user data.,,,2,AWS Arch Associate,5
+"IOT sensors monitor the number of bags that are handled at an airport. The data gets sent
+back to a Kinesis stream with default settings. Every alternate day, the data from the
+stream is sent to S3 for processing. But it is noticed that S3 is not receiving all of the data
+that is being sent to the Kinesis stream. What could be the reason for this?","The sensors probably stopped working on somedays, hence data is not
+sent to the stream.",S3 can only store data for a day.,"Data records are only accessible for a default of 24 hours from the
+time they areadded to a stream.",Kinesis streams are not meant to handle IoT related data.,,,3,AWS Arch Associate,5
+"Your organization is planning to build a BigData project on AWS. They need high data
+transfer rates for huge workloads to stream through with better performance. They are
+also looking for a solution which is cost effective. Which EBS storage type would you
+choose in this scenario?",General Purpose SSD,Provisioned IOPS SSD,Throughput Optimized HDD,Cold HDD,,,3,AWS Arch Associate,5
+Which of the following is an action you cannot perform on an EBS snapshot?,Create Image from snapshot.,Create EBS volume from snapshot.,Share a snapshot with another AWS account.,Make unencrypted copy of an encrypted snapshot.,,,4,AWS Arch Associate,5
+"You are working as an AWS architect in your organization. An application is being
+developed on AWS EC2 instance and would need a local volume with low latency to
+handle database workloads. They figured out Provisioned IOPS SSD volume type suits
+best. However, when the application team is launching an EC2 instance, they found an
+option named “EBS-optimized”. They reached out to you asking the purpose of EBS
+optimized instances. What do you suggest?","Amazon EBS–optimized instance provides additional, dedicated capacity for
+Amazon EBS I/O.","Amazon EBS-optimized instance comes with instance store ephemeral storage
+which provides faster throughput.","EBS-optimized is a configuration on the EBS volume, not an option on EC2
+instance.","Amazon EBS-optimized instances cannot have Provisioned IOPS SSD volume
+types. They only work with General Purpose SSD, Throughput optimized HDD,
+Cold HDD",,,1,AWS Arch Associate,5
+Which of the following is not an AWS CloudWatch metric for EBS Volumes?,VolumeReadBytes,VolumeWriteOps,VolumeThroughputPercentage,VolumeRemainingSize,,,4,AWS Arch Associate,5
+"Your company is planning on setting up a web-based application onto AWS. This would
+be a content-based system wherein you have users across the world who would want to
+access the content. You have to ensure that users across the world get a seamless user
+experience when using the web application. Which of the below AWS service needs to be
+part of the architecture for this application?",Amazon SES,Amazon Cloudtrail,Amazon CloudFront,Amazon S3,,,3,AWS Arch Associate,5
+"Your company currently has setup their data store on AWS DynamoDB. One of your main
+revenue generating applications uses the tables in this service. Your application is now
+expanding to 2 different other locations and you want to ensure that the latency for data
+retrieval is the least from the new regions. Which of the following can help accomplish
+this?",Place a cloudfront distribution in front of the database,Enable Multi-AZ for DynamoDB,Place an ElastiCache in front of DynamoDB,Enable global tables for DynamoDB,,,4,AWS Arch Associate,5
+"A company is planning on moving their applications to the AWS Cloud. They have some
+large SQL data sets that need to be hosted in a data store on the cloud. The data store
+needs to have features available for disaster recovery as well. Which of the following
+service should be considered for this requirement.",Amazon DynamoDB,Amazon Redshift,Amazon Kinesis,Amazon Simple Queue Service,,,2,AWS Arch Associate,5
+"Your company has setup EC2 Instances in a VPC for their application. The IT Security
+department needs to understand what the security mechanisms are available to protect
+the Instances when it comes to traffic going in and out of the instance. What are the two
+layers of security provided by AWS in the VPC? Choose 2 answers from the options given
+below",Security Groups,NACLs,DHCP Options,Route Tables,,,1&2,AWS Arch Associate,5
+"Your company is planning on developing and deploying an application onto AWS. The
+application will follow a microservices based architecture which will involve the
+deployment of several docker containers. Which of the following services is ideal for this
+scenario?",DynamoDB,Simple Queue Service,Elastic Container Service,CodeCommit,,,3,AWS Arch Associate,5
+Which of the following statement defines task definition?,JSON template that describes containers which forms your application.,Template for a program that runs inside AWS ECS Cluster.,AWS managed service that launches ECS clusters.,"Template that defines actions for each IAM user on the ECS cluster and its
+containers.",,,1,AWS Arch Associate,5
+Which of the following are the parameters specified in task definition? (choose 3 options),The Docker images to use with the containers in your task.,EC2 instance types to be used as container instances.,How much CPU and memory to use with each container.,AWS VPC and subnets to launch containers in.,The command the container should run when it is started.,,"1,3&5",AWS Arch Associate,5
+"You are working for an organization which is actively using AWS. They have noticed that
+few AWS ECS clusters are running and they do not know who and when the clusters are
+created. They tasked you to find out the logs regarding this. What will you do?",Check CloudWatch event logs.,Check CloudTrail logs.,Check CloudWatch metrics dashboard.,Check Trusted Advisor.,,,2,AWS Arch Associate,5
+"You have two VPCs in different regions ( VPC A and VPC B) peered with each other. You
+have created an EFS for VPC A. When you tried to mount the EFS on EC2 instances on
+VPC B, you are getting connection timed out error. What can cause this ( choose 2
+options",AWS EFS takes upto an hour after creation to make mount targets available.,Security group is not created for EFS mount target,"Security group on mount targets does not have NFS port open to VPC
+B’s EC2 instances.",EFS cannot be mounted through VPC peering.,,,2&3,AWS Arch Associate,5
+"You are building a content serving web application on 5 EC2 instances load balanced.
+Total content size stored may not exceed 25 GB. You have chosen EFS for content
+storage. The content is accessed frequently by large number of users. Which throughput
+mode would you choose inorder to make sure that application on EC2 instances to EFS
+data transfer will not have performance bottleneck?","Throughput mode = Bursting, provides a consistent high throughput for
+smaller data sizes.","Throughput mode = Bursting, automatically bursts throughput based on the
+requests irrespective of EFS data size","Throughput mode = Provisioned, you can configure specific throughput irrespective","Throughput mode = Provisioned, AWS provisions high throughput for
+smaller data sizes and vice versa.",,,3,AWS Arch Associate,5
+Which of the following are valid integration sources for API Gateway? (choose 3 options),Public facing HTTP-based endpoints outside AWS network.,Lambda functions from another account.,Database connections on internet outside AWS network.,VPC Link,SFTP connection,,"1,2&4",AWS Arch Associate,5
+"Your organization would need to expose certain services to its customer. You have
+created and deployed REST API for your organization using AWS API Gateway over public
+internet. However, you noticed requests from hosts other than your customer. How would
+you control access in this scenario?
+(choose 2 options)","Establish DirectConnect to each of your customer’s network and enable API
+Gateway’s VPC Link through a private VPC.","Enable CORS and add required host names under Access-Control-
+Allow-Origin.",Configure your customer’s IP address ranges in resource policy.,Create IAM users for your customers and enable user authentication,"Generate and distribute Client Certificate to customer. Ask them to use the
+certificate while sending requests.",,2&3,AWS Arch Associate,5
+"You have a requirement to create a REST API using AWS API Gateway with Lambda as
+backend system and Oracle RDS instance as database. You have created API methods,
+Lambda function code and spinned up Oracle RDS instance in a private VPC with no
+Internet Gateway. When you are trying to connect to RDS instance from your Lambda,
+connection getting failed. What could be the reason? (choose 2 options)",Lambda execution role does not have policy to access RDS instance.,Lambda function is running in “no VPC” network mode.,"Lambda is running in same VPC as RDS, but RDS instance security
+group is not allowing connections from Lambda subnet range.",RDS instance is not configured as destination in Lambda setup.,,,2&3,AWS Arch Associate,5
+"When configuring AWS SQS as event source for AWS Lambda function, what is the
+maximum batch size supported by AWS SQS for ReceiveMessage call?",20,40,10,100,,,3,AWS Arch Associate,5
+Which of the following is a valid AWS Lambda configuration?,64 MB memory and 212 seconds timeout.,1376 MB memory and 120 seconds timeout.,2112 MB memory and 10 seconds timeout.,3072 MB memory and 300 seconds timeout.,,,3,AWS Arch Associate,5
+"You are setting up AWS Lambda function to receive messages from SQS queue, process
+the message body and insert one record in MySQL RDS instance. You have setup SQS
+event trigger as AWS Lambda function. However, for connecting to RDS instance, you
+need MySQL details such as hostname, username and password. Where would you
+configure them?","Use environment variables to pass configuration. They are automatically
+encrypted by AWS default KMS keys and decrypted when used in Lambda
+function.","Use environment variables to pass configuration. Use encryption helpers to
+encrypt sensitive information by your own KMS key. Decrypt the variable
+using decryption helper code provided in the console.","Use properties file in AWS Lambda function for any such configuration. Properties
+files are encrypted by AWS in transit and at rest.","Store such configuration in AWS S3 bucket and enable encryption on S3 bucket.
+Perform S3 get object to get the configuration details in the Lambda function
+code.",,,2,AWS Arch Associate,5
+"Which of the following statement is not true with respect to default retry behaviour of
+AWS Lambda function?","With synchronous invocation, the invoking application receives a 429
+error and is responsible for retries.","With asynchronous invocation, if AWS Lambda is unable to fully process
+the event and if you don't specify a Dead Letter Queue (DLQ), the event will
+be discarded.","With Poll-based (or pull model) event sources that are stream-based, when
+a Lambda function invocation fails, AWS Lambda attempts to process the
+erring batch of records until the time the data expires, which can be up to
+seven days.","With Poll-based event sources that are not stream-based, if the invocation
+fails or times out, the message will be returned to the queue and will be
+available for invocation once the Visibility Timeout period expires.",,,1,AWS Arch Associate,5
+"Your organization had setup Auto Scaling for an EC2 instance. They intend to launch one
+additional new instance with same configuration automatically when the workload
+increases and shut it down automatically when the workload is back to normal. However,
+for security reasons, they have applied operating system patches to the main instance and
+would like this to be reflected when Auto Scaling group launches new EC2 instance. What
+would happen in this scenario?","Auto Scaling group will launch new EC2 instance from the main instance latest
+snapshot. New instance will have updated patches.","Create an image out of main EC2 instance and update Auto Scaling group
+configuration with new image AMI ID.","Create an image out of main EC2 instance and update Launch Configuration with
+new image AMI ID.","Create an image out of main EC2 instance, create a new Launch
+Configuration with new image AMI ID, update Auto Scaling group with new
+Launch Configuration ID",,,4,AWS Arch Associate,5
+"In an AWS Setup of a company, a web-based application has a fleet of 10 EC2 instances. 7
+EC2 instances are present in Availability Zone A whereas 3 EC2 instances in Availability
+Zone B. The percentage (%) of requests received in Availability Zone B is greater than the
+percentage (%) of requests in Availability Zone A. Which of the following statements are
+correct as per given scenario? Please select 2 correct options.",Use Application Load Balancer to achieve this ability.,Enable “split traffic equally” checkbox under load balancer configuration.,Enable Cross-Zone Load Balancing,Use Network Load Balancer to achieve his ability.,,,1&3,AWS Arch Associate,5
+"Which of the following are features for monitoring application load balancer? Choose the
+3 correct options.",CloudWatch metrics,Request tracing,VPC Flow Logs,CloudTrail logs,EC2 Flow Logs,,"1,2&4",AWS Arch Associate,5

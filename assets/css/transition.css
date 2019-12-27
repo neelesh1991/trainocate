@@ -1,0 +1,43 @@
+/* Theme transition Effect */
+*:after,
+*:before,
+a,
+p,
+h1,h2,h3,h4,h5,h6,
+button,
+.course-column,
+.event-detail,
+.event-column,
+.event-detail ul,
+.blog-slider .owl-dots .owl-dot,
+.facts-column i,
+.nav-list > ul > li > a::before,
+.blog-column img,
+.blog-column,
+.instagram-gallery ul li a img,
+.overlay,
+.event-column img,
+.banner-tags img,
+.team-column.style-2,
+.service-column.style-3 .service-icon,
+.owl-nav .owl-prev,
+.owl-nav .owl-next,
+.tc-hover,
+.product-detail,
+.add-cart-option,
+.product-column img,
+.project-detail,
+.project-column img,
+.nav-list ul li > ul
+{-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;}
+
+
+
+
+
+
+

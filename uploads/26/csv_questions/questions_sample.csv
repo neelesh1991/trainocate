@@ -1,0 +1,80 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+Which of the following statements related to jQuery selectors are correct? ,"$(""p"") will select all the p elements.","S(""p.intro"") will select all p elements with class=""intro"" defined in them. ","S(""p4clemo"") this will select all p elements with id=""demo"".", All of the above. ,,,1,Jquery,1
+jQuery is designed to change the way that you write JavaScript. ,TRUE,FALSE,,,,,1,Jquery,1
+A callback is a function that is passed as an argument to another function and is executed before its parent function has completed. ,TRUE,FALSE,,,,,1,Jquery,1
+In which of the following general areas JavaScript can be placed for use in a webpage? ,Within the body tag, In an external file ,All of the above,,,,3,Jquery,1
+Which of the following is not an example of JavaScript events?,A mouse click ,The webpage loading,Hovering ,None of the above ,,,2,Jquery,1
+Which of the following statements related to PHP are correct?,PHP is probably the most popular  language on the web,it is used to enhance web pages,PHP is known as a client-sided language,All of the above,,,1,PHP,1
+All variables in PHP start with which of the following symbol? ,&,$,!,#,,,2,PHP,1
+Variables are displayed in the URL when POST method is used? ,TRUE,FALSE,,,,,2,PHP,1
+Which of the following is the correct way to create a function in PHP? ,create_function myFunction() ,function myFunction() ,create myFunction() ,All of the above,,,2,PHP,1
+Which of the following is the correct way to connect to a MySQL database? ,"connect_mysql(""hostname"",""username"",""password""); ","dbopen(""hostname"",""username"",""password"");","mysql_connect(""hostname"",""username"",""password"");","mysql_open(""hostname"",""username"",""password""); ",,,3,PHP,1
+What will be displayed after you execute the following: echo 'hello $world';,hello world,It depends on the value of $world,It will not work due to a syntax error,hello $world,,,4,PHP,1
+How do you define a constant?,"set(MY_CONSTANT, ""value"");","define MY_CONSTANT = ""value"";","define(""MY_CONSTANT"", ""value"");",set MY_CONSTANT=value;,,,3,PHP,1
+What is the correct syntax for specifying a default argument value in a fun,function my_function(null $param1);,function my_function($param1 null) ,"function my_function($param1=="""");","function my_function($param1="""");",,,4,PHP,1
+"$var = ""5"".""6""; What is the value of $var ?",5,6,11,56,,,4,PHP,1
+How do you return a value within a function?,result=$var;,return=$var;,result $var;,return $var;,,,4,PHP,1
+Which of the following functions does not exist in PHP?,is_string,is_array,is_object,is_number,,,4,PHP,1
+"What is the purpose of the ""foreach"" instruction?",It does not exist in PHP,"It is an alias of the instruction ""for""",It loops through the specified array,It allows you to reach a different part of the program,,,3,PHP,1
+Is PHP whitespace sensitive?,FALSE,TRUE,,,,,1,PHP,1
+Which of the following type of variables have only two possible values either true or false?,Integers,Doubles,Booleans,Strings,,,3,PHP,1
+Which of the following is correct about constants?,"Unlike with variables, you do not need to have a constant with a $.","Only scalar data (boolean, integer, float and string) can be contained in constants.",Both of the above.,None of the above.,,,3,PHP,1
+Which of the following operator is used to concatenate two strings?,<span>.</span>,<span>+</span>,append,None of the above.,,,2,Jquery,1
+Which of the following operator is used to concatenate two strings?,<span>.</span>,<span>+</span>,append,None of the above.,,,1,PHP,1
+Which of the following can be used to get information sent via get/post method in PHP?,$_REQUEST,$REQUEST,$REQUEST_PAGE,None of the above.,,,1,PHP,1
+"Singly quoted strings are treated almost literally, whereas doubly quoted strings replace variables with their values.",FALSE,TRUE,,,,,2,PHP,1
+Which of the following provides the size of the uploaded file in PHP?,$_FILES['file']['tmp_name'],$_FILES['file']['name'],$_FILES['file']['size'],$_FILES['file']['type'],,,3,PHP,1
+Using which of the following way can you embed PHP code in an HTML page?,<?php PHP code goes here ?>,<? PHP code goes here ?>,"<script language=""php""> PHP code goes here </script>",All of the above.,,,4,PHP,1
+Which of the following is correct about NULL?,NULL is a special type that only has one value: NULL.,"The special constant NULL is capitalized by convention, but actually it is case insensitive.",Both of the above.,None of the above.,,,3,PHP,1
+Which of the following keyword causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating?,break,continue,,,,,2,PHP,1
+Which of the following is used to create a session?,session_start() ,$_SESSION[],isset() function,session_destroy(),,,1,PHP,1
+Which of the following function is used to check if a file exists or not?,fopen(),fread(),filesize(),file_exist(),,,4,PHP,1
+In how many ways can a CSS be integrated as a web page?,Inline: Style attribute can be used to have CSS applied HTML elements.,Embedded: The Head element can have a Style element within which the code can be placed.,Linked/ Imported: CSS can be placed in an external file and linked via link element.,All of the above.,,,4,CSS,1
+What does CSS stand for?,Creative Style Sheets,Colorful Style Sheets,Cascading Style Sheets,Computer Style Sheets,,,3,CSS,1
+Where in an HTML document is the correct place to refer to an external style sheet?,At the end of the document,In the <head> section,At the top of the document,In the <body> section,,,2,CSS,1
+Which is the correct CSS syntax?,body {color: black},{body;color:black},{body;color:black},body:color=black,,,1,CSS,1
+Which property is used to change the background color?,bgcolor:,background-color:,color:,,,,2,CSS,1
+How do you change the font of an element?,font-family:,font=,f:,,,,1,CSS,1
+How do you make a list that lists its items with squares?,type: 2,type: square,list-type: square,list-style-type: square,,,4,CSS,1
+A webpage displays a picture. What tag was used to display that picture?,picture,Image,img,src,,,3,HTML,1
+<b> tag makes the enclosed text bold. What is other tag to make text bold?,<strong>,<dar>,<black>,<emp>,,,1,HTML,1
+hich tag inserts a line horizontally on your web page?,<hr>,<line>,<line direction=”horizontal”>,<tr>,,,1,HTML,1
+How can you make an e-mail link?,<a href=”xxx@yyy”>,<mail href=”xxx@yyy”>,<mail>xxx@yyy</mail>,<a href=”mailto:xxx@yyy”>,,,4,HTML,1
+What is the correct HTML for making a hyperlink?,<a href=”http:// mcqsets.com”>ICT Trends Quiz</a>,<a name=”http://mcqsets.com”>ICT Trends Quiz</a>,<http://mcqsets.com</a>,url=”http://mcqsets.com”>ICT Trends Quiz,,,1,HTML,1
+Which tag creates a check box for a form in HTML?,<checkbox>,<input type=”checkbox”>,<input=checkbox>,<input checkbox>,,,2,HTML,1
+What is the full form of HTML?,Hyper text markup language,Hyphenation text markup language,Hyphenation test marking language,Hyper text marking language,,,1,HTML,1
+<TITLE> … </TITLE> tag must be within ________,Title,Form,Header,Body,,,3,HTML,1
+Which HTML tag produces the biggest heading? ,<h7>,<h9>,<h1>,<h4>,,,3,HTML,1
+"Main container for <TR>, <TD> and <TH> is",<TABLE>,<GROUP>,<DATA>,All of these,,,1,HTML,1
+jQuery uses CSS selectors to select elements?,TRUE,FALSE,,,,,1,Jquery,1
+Which jQuery method is used to hide selected elements?,hidden(),hide(),visible(false),display(none),,,2,Jquery,1
+"Which jQuery function is used to prevent code from running, before the document is finished loading?",$(document).load(),$(document).ready(),$(body).onload(),,,,3,Jquery,1
+" Which of the following are correct ways of creating an array?
+i) state[0] = “karnataka”;
+ii) $state[] = array(“karnataka”);
+iii) $state[0] = “karnataka”;
+iv) $state = array(“karnataka”);",iii) and iv),ii) and iii),Only i),"ii), iii) and iv)",,,1,PHP,1
+"<?php 
+$states = array(""karnataka"" => array( ""population"" => ""11,35,000"", ""captial"" => ""Bangalore""),""Tamil Nadu"" => array( ""population"" => ""17,90,000"", ""captial"" => ""Chennai"") );
+echo $states[""karnataka""][""population""];
+?>","karnataka 11,35,000","11,35,000","population 11,35,000",karnataka population,,,2,PHP,1
+Which function will return true if a variable is an array or false if it is not?,this_array(),is_array(),do_array(),in_array(),,,2,PHP,1
+Which two predefined variables are used to retrieve information from forms?,$GET & $SET, $_GET & $_SET,$__GET & $__SET,GET & SET,,,2,PHP,1
+The attack which involves the insertion of malicious code into a page frequented by other users is known as..,basic sql injection,advanced sql injection,cross-site scripting,scripting,,,3,PHP,1
+"When you use the $_GET variable to collect data, the data is visible to..",none,only you,everyone,selected few,,,3,PHP,1
+"<?php
+$array = array (1, 2, 3, 5, 8, 13, 21, 34, 55);
+$sum = 0;
+for ($i = 0; $i < 5; $i++) {
+$sum += $array[$array[$i]];
+}
+echo $sum;
+?>",78,19,NULL,5,0,,3,PHP,1
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,

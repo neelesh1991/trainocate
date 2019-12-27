@@ -1,0 +1,24 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+"You have an application running in us-west-2 requiring 6 EC2 Instances running at all
+times. With 3 Availability Zones in the region viz. us-west-2a, us-west-2b, and us-west-2c,
+
+which of the following deployments provides fault tolerance if an Availability Zone in us-
+west-2 becomes unavailable?
+
+Choose 2 answers from the options given below.","2 EC2 Instances in us-west-2a, 2 EC2 Instances in us-west-2b, and 2 EC2
+Instances in us-west-2c","3 EC2 Instances in us-west-2a, 3 EC2 Instances in us-west-2b, and no EC2
+Instances in us-west-2c","4 EC2 Instances in us-west-2a, 2 EC2 Instances in us-west-2b, and 2 EC2
+Instances in us-west-2c","6 EC2 Instances in us-west-2a, 6 EC2 Instances in us-west-2b, and no
+EC2 Instances in us-west-2c","3 EC2 Instances in us-west-2a, 3 EC2 Instances in us-west-2b, and 3
+EC2 Instances in us-west-2c",,4&5,Multiple,5
+"For which of the following scenarios should a Solutions Architect consider using
+ElasticBeanStalk?
+Choose 3 answers from the options given below.",A Web application using Amazon RDS,A long running worker process,A static website,A management task run once on nightly basis,,,1&2&3,Multiple,5
+"While reviewing the Auto Scaling events for your application, you notice that your
+application is scaling up and down multiple times in the same hour.
+What design choice could you make to optimize costs while preserving elasticity?
+Choose 2 answers from the options given below.","Modify the Auto Scaling group termination policy to terminate the older
+instance first.","Modify the Auto Scaling group termination policy to terminate the newest
+instance first.",Modify the Auto Scaling group cool down timers.,Modify the Auto Scaling group to use Scheduled Scaling actions.,"Modify the CloudWatch alarm period that triggers your Auto Scaling
+scale down policy",,3&5,Multiple,5

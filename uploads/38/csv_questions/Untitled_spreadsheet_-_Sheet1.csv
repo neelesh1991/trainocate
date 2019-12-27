@@ -1,0 +1,22 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+A __________ is a document that provides a formal statement of one or more permissions.,Policy,Permission,Role,Resource,,,1,System operations,5
+What is the scope of an EBS volume?,VPC,Region,Placement Group,Availability Zone,,,4,System operations,5
+You are working with a customer who is using Chef configuration management in their data center. Which service is designed to let the customer leverage existing Chef recipes in AWS?,Amazon Simple Workflow Service,AWS Elastic Beanstalk,AWS CloudFormation,AWS OpsWorks,,,4,System operations,5
+Which Amazon Elastic Compute Cloud feature can you query from within the instance to access instance properties?,Instance user data,Resource tags,Instance metadata,Amazon Machine Image,,,3,System operations,5
+Will my standby RDS instance be in the same Availability Zone as my primary?,Only for Oracle RDS types,Yes,Only if configured at launch,No,,,4,System operations,5
+Is decreasing the storage size of aEBS volume permitted?,Depends on the instance used,Yes,No,Only for HDDs,,,3,System operations,5
+"Amazon EBS Snapshots, RDS DB snapshots and automated backups are stored in",Amazon S3,Amazon EBS Volume,Amazon EFS,Amazon EMR,,,1,System operations,5
+You need to pass a custom script to new Amazon Linux instances created in your Auto Scaling group. Which feature allows you to accomplish this?,User data,Resource tags,Instance metadata,Amazon Machine Image,,,1,System operations,5
+"When you run a DB Instance as a Multi-AZ deployment, the “_____” serves database writes and reads",secondary,backup,stand by,primary,,,4,System operations,5
+Which is not a valid ELB type?,Classic Load Balancer,Application Load Balancer,System Load Balancer,Network Load Balancer,,,3,System operations,5
+Can we direct traffic from ELB to an Autoscaling group?,TRUE,FALSE,Only in US region,,,,1,System operations,5
+What does Amazon Route53 provide?,A global Content Delivery Network.,None of these.,A scalable Domain Name System,An SSH endpoint for Amazon EC2.,,,3,System operations,5
+Which is not a valid Route53 routing policy?,Latency based,Throughput based,Weighted,Geolocational,,,2,System operations,5
+Cloudfront leverages _____________ to deliver/distribute the contents to the end users.,Regions,Azs,Edge locations,VPCs,,,3,System operations,5
+What does Amazon CloudFormation provide?,The ability to setup Autoscaling for Amazon EC2 instances.,A templated resource creation for Amazon Web Services.,A template to map network resources for Amazon Web Services,None of these,,,2,System operations,5
+_________ helps to get a history of AWS API calls and related events for the AWS account.,AWS Cloudtrail,AWS Cloud9,AWS API,AWS S3,,,1,System operations,5
+Which storage class is a low cost Archival solution?,S3 Standard,Glacier,EBS,EFS,,,2,System operations,5
+Which is not a valid EBS volume type?,General purpose SSDs,Provisioned IOPS SSDs,Provisioned Throughput SSDs,Hard Disk drives (HDD),,,3,System operations,5
+Which is a valid AWS NoSQL DB solution?,Aurora,RDS,DynamoDB,NoDB,,,3,System operations,5
+Which is a virtually unlimited AWS Object Storage?,EBS,EFS,S3,NAS,,,3,System operations,5

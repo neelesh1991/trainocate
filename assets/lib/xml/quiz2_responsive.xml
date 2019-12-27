@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+    <events>
+		<event id="btnover">
+			<rollover>
+				<css name="btnOverCss">this</css>
+			</rollover>
+
+			<rollout>
+				<css name="btnOutCss">this</css>
+			</rollout>
+		</event>
+
+		<event id="optionover">
+			<rollover>
+				<css name="optionOverCss">this</css>
+			</rollover>
+
+			<rollout>
+				<css name="optionOutCss">this</css>
+			</rollout>
+		</event>
+
+		<event id="selectandsubmit">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="select">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+			</click>
+		</event>
+
+		<event id="submit">
+			<click>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="reset">
+			<click>
+				<function name="reset">this</function>
+			</click>
+		</event>
+
+        <event id="begin">
+            <click>
+                <anim type="remove" animtime="0" oncomplete="0">openingText</anim>
+                <function name="begin">this</function>
+            </click>
+        </event>
+
+        <event id="loadNextQuestion">
+            <click>
+                <function name="loadNextQuestion">this</function>
+            </click>
+        </event>
+
+        <event id="loadPreviousQuestion">
+            <click>
+                <function name="loadPreviousQuestion">this</function>
+            </click>
+        </event>
+
+		<event id="restart">
+            <click>
+                <function name="restart">this</function>
+            </click>
+        </event>
+
+        <event id="showq1bg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">q1bg</anim>
+            </click>
+        </event>
+
+         <event id="hidepassbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="showpassbg">
+            <click>
+                <anim type="show" animtime="5" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="hidefailbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+
+        <event id="showfailbg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+    </events>
+
+    <box id="failbg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="failbg" />
+    <box id="orangebg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="orangebg" />
+
+
+    <!--responsive timer-->
+    <!--2 column layout, timer on the right, moves to top center on phones-->
+    <box id="timerRow" position="absolute" x="0" y="0" anim="none" animtime="0.5" animdelay="1" class="col-md-12">
+    	<box id="timerCol1" position="relative" class="col-md-10 col-sm-12" />
+    	<box id="timerContainer" position="relative" class="col-md-2 col-sm-12" />
+    </box>
+
+    <!--opening text-->
+    <box id="openingText" position="relative" anim="left" animtime="0.5" animdelay="1" class="col-md-12  vertical-align" z-index="3">
+
+    	<text id="title" position="relative" margin-top="20" anim="none"><![CDATA[<h1 class="black">Multiple Choice Quiz Engine</h1><p class="p_16_black">Welcome to this short quiz.</p><p class="p_16_black">For each question, select the answer before your time runs out!</p>]]></text>
+
+    	<button id="goBtn" position="relative" height="40" width="100" margin-top="40" margin-bottom="20" anim="none" event="btnover,begin" target="title"><![CDATA[Let's go!]]></button>
+    </box>
+
+    <!--timed quiz-->
+    <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-12">
+		<settings timer="false" timerx="0" timery="0"/>
+	<!-- question 1 -->
+        <question id="q1" time="130" event="">
+        <box id="col1" position="relative" class="col-md-10 col-sm-12" />
+        <box id="col2" position="relative" class="col-md-2 col-sm-12" />
+        <text id="question1" position="relative" target="col1" x="0" margin-top="10" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">If there is more than one correct option, can the engine handle it?</p>]]></text>
+
+      <!--option 1 -->
+      <option correct="true" class="z-depth-1">
+        <text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,select" class="optionBox z-depth-1"><![CDATA[<p class="p_16">Yes. For example, this option is flagged as correct.</p>]]></text>
+      </option>
+
+      <!--option 2 -->
+      <option correct="false" class="z-depth-1">
+        <text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox z-depth-1"><![CDATA[<p class="p_16">And this option is <i>also</i> flagged as correct.</p>]]></text>
+      </option>
+
+
+      <!--option 3 -->
+      <option correct="false">
+        <text id="option1_3" position="relative" target="col1" x="match" width="100%" margin-bottom="20" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox z-depth-1"><![CDATA[<p class="p_16">But this option is flagged as incorrect.</p>]]></text>
+      </option>
+      <!--/options -->
+
+
+      <button id="prvQBtn" position="relative" target="col1" x="match" float="left" margin-right="10" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,loadPreviousQuestion"><![CDATA[Previous]]></button>
+
+      <button id="submitBtn" position="relative" target="col1" x="match" float="left" width="100" anim="show" animtime="0.3" animdelay="0.7" event="btnover,submit"><![CDATA[<p class="genericBtn">Submit</p>]]></button>
+
+      <button id="nextQBtn" position="relative" target="col1" x="match" float="left" margin-left="10" margin-bottom="40" width="100" anim="show" animtime="0.3" animdelay="0.7" event="btnover,loadNextQuestion"><![CDATA[Next]]></button>
+
+    </question>
+
+        <!-- question 2 -->
+        <question id="q2" time="15" event="">
+            <box id="col1" position="relative" class="col-md-10 col-sm-12" />
+            <box id="col2" position="relative" class="col-md-2 col-sm-12" />
+
+            <text id="question2" position="relative" target="col1" x="0" margin-top="10" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">The number of questions I can add is:</p>]]></text>
+            
+            <!--option 1 -->
+            <option correct="false">
+                <text id="option2_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16">Limited to 5</p>]]></text>
+            </option>
+            
+            <!--option 2 -->    
+            <option correct="false">
+                <text id="option2_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16">Limited to 10</p>]]></text>
+            </option>
+            
+            <!--option 3 -->
+            <option correct="true">
+                <text id="option2_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16">Unlimited</p>]]></text>
+            </option>
+            <!--/options -->
+
+            <button id="prvQBtn" position="relative" target="col1" x="match" float="left" margin-right="10" margin-bottom="40" width="100" anim="show" animtime="0.7" animdelay="0.7" event="btnover,loadPreviousQuestion"><![CDATA[Previous]]></button>
+
+            <button id="submitBtn" position="relative" target="col1" x="match" float="left" width="100" anim="show" animtime="0.3" animdelay="0.7" event="btnover,submit"><![CDATA[<p class="genericBtn">Submit</p>]]></button>
+
+            <button id="nextQBtn" position="relative" target="col1" x="match" float="left" margin-left="10" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,loadNextQuestion"><![CDATA[Next]]></button>
+
+        </question>
+
+        <score masteryscore="80">
+           <fb id="pass" event="">
+            	<box id="center" position="relative" height="100%">
+	            	<box id="passTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border passbg">
+
+						<text id="pass_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
+						<![CDATA[<p class="p_30 white glow">CONGRATULATIONS!</p><p class="p_24 orange glow">You scored [score]%</p>]]></text>
+
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" event="btnover,restart,hidepassbg"><![CDATA[Play again?]]></button>
+	                </box>
+                </box>
+            </fb>
+
+            <fb id="fail" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Bad luck! You scored [score]%</p><p class="p_24 orange glow">Why not have another go?</p>]]></text>
+
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[Start again]]></button>
+	                </box>
+                </box>
+            </fb>
+        </score>
+
+    </custom>
+
+</data>
+

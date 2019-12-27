@@ -1,0 +1,18 @@
+[08-Mar-2017 10:28:24 Asia/Kolkata] PHP Fatal error:  Call to undefined function valueOf() in /home/pbd123/public_html/quiz/application/controllers/api/Api.php on line 234
+[17-Mar-2017 15:37:37 Asia/Kolkata] PHP Fatal error:  Class 'CI_Controller' not found in /home/pbd123/public_html/quiz/system/core/CodeIgniter.php on line 366
+[17-Mar-2017 15:37:43 Asia/Kolkata] PHP Fatal error:  Class 'CI_Controller' not found in /home/pbd123/public_html/quiz/system/core/CodeIgniter.php on line 366
+[23-Mar-2017 14:10:26 Asia/Kolkata] PHP Fatal error:  Class 'CI_Controller' not found in /home/pbd123/public_html/quiz/system/core/CodeIgniter.php on line 366
+[02-Feb-2018 01:28:35 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '}' in /home/pbd123/public_html/quiz/application/controllers/Home.php on line 110
+[22-Nov-2019 14:51:04 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 15:01:24 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 15:01:50 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 18:59:12 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 19:22:36 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 19:26:31 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 19:28:50 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 19:50:56 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 20:07:01 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 20:23:40 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 20:25:34 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 20:27:40 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75
+[22-Nov-2019 20:33:10 UTC] PHP Notice:  Undefined offset: 2 in /home/vk9u6n107bz2/public_html/trainocate/application/config/constants.php on line 75

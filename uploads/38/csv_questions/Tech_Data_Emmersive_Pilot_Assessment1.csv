@@ -1,0 +1,60 @@
+﻿#,Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+1,"Active-data pools can be collocated on a sequential-access disk to optimize access to active data versions for
+fast restore. Which two methods allow data to be copied to active-data pools? (Choose two.)",Active data can be written to an active data pool using simultaneous write.,Active data can be copied to an active data pool using multi-threaded backups.,Active data can be copied to an active data pool using the COPY ACTIVEDATA command.,Active data can be moved to an active data pool using the MOVE ACTIVEDATA command.,,,1,,1
+2,"A system administrator has TSM V5.5 installed, but has not installed the ISC. The administrator comes into work first thing in the morning and needs to check on the status of the nightly backups. Which three tasks can the administrator perform to check the status of the backups and the success or cause of any failures? ",issue Q Event * *,view the tsmsched.log file,view the error log of any node that shows as failed,view the schedule log of any node that shows as missed,,,3,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+3,The TSM storage administrator just installed and configured TSM Operational Reporting to provide information for a Windows TSM server. Which two options are valid for viewing or obtaining report details? (Choose two.),set up email to deliver the reports,set up clients to be automatically deleted,set up reports to be automatically generated,set up a PMR for support to troubleshoot all errors,,,1,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+4,Your LTO3 tape drives are rated at 80 MB/s uncompressed. All data for NODEA is stored in a storage pool on this type of tape. You create a backup set for NODEA on LTO3 tape and note that data is generated for the backup set at a rate of 5 MB/s. What are three ways to determine the cause? (Choose three.),check collocation for the storage pool that holds the DATA for NODEA,issue the Q VOL NODE=NODEA and Q CONTENTS for each of those volumes,check activity log for tape errors,check node to see how many volumes are being used,,,4,,1
+,,,itcertification39@gmail.com,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+5,"A problem with the tape device driver has occurred in the TSM environment. After checking the activity log and operating system error reports, what should the system administrator use to troubleshoot this problem further?",Administrators Guide,TSM Reference Guide,TSM Quick Start Guide,TSM Problem Determination Guide,,,4,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+6,"The storage administrator wants to manually expire data from the TSM database and run this command for one hour. Using the administrative command line interface, which command should be used to expire the data?",expire data du=60,expire inventory du=60, expire database du=1 duru=h,expire catalogue du=1 duru=h,,,2,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+7,A new TSM administrator has over-allocated space for the TSM database.The system administrator wants to reduce the TSM database size. What indicates the maximum reduction that can be issued on the TSM database?,Q DB,Q DBSTATS,Q REDUCTION,Q DBREDUCTION,,,1,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+8,Which file type would benefit from TSM Open File Support being enabled?,system object files,system registry files itcertification39@gmail.com,locked application files,Oracle and MS SQL databases,,,3,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+9,"A company nightly backup has successfully completed. Using the TSM administrative command line interface, the storage administrator must now copy the completed nightly backup from the primary disk pool, DISK01, to the off-site tape pool, OFFSTAPE01. Before starting the copy, the administrator needs to verify there are enough scratch tapes available. Which select statement accomplishes this?",select count(tape_status) where tape_status='Scratch',select count(*) from libvolumes where status='Scratch',select count(*) from VOLUME_USAGE where status='Scratch',select count(tape_status) from tape_volumes where tape_status='Scratch',,,2,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+10,"With an administrative ID of admin and a password of admin, what is the correct syntax to start the administrative command line?",dsmc -su=admin -pa=admin,dsmadmc -id=admin -pa=admin,dsmadmc dmin=admin -password=admin dsmadmc ?dmin=admin -password=admin,dsmc -type=admin -id=admin -pa=prompt,,,2,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+11,The TSM storage administrator is moving data between two tape storage pools. Which two steps should the storage administrator take before performing this task? (Choose two.),verify that the tape library inventory is in sync,verify that at least two tape drives are available,verify that there is a valid storage pool available,verify that there is a sufficient number of scratch tapes,,,4,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+12,What are three ways to label a new tape and add it to an SCSI library? (Choose three.),dsmlabel,dsmformat,LABEL LIBVOLUME,"UPDATE LIBRARY to use AUTOLABEL, then CHECKIN LIBVOLUME with CHECKLABEL=BARCODE Option",,,3,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+13,The storage administrator wants to create a sequential disk storage pool with a devclass of FILE on the Linux TSM server. The administrator wants to select the local filesystem with the most available space. What is used to accomplish this?,lspci,df -a,ls -lh,fdisk ,,,2,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+14,The TSM storage administrator recognizes an I/O error reading a label for volume C00223. What is the first step the storage administrator should take?,issue the command reconstruct label C00223,re-label the tape and then audit it,physically inspect the leader pin on the tape,verify whether or not the tape has valid data remaining on it,,,4,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+15,What are all copy groups named?,Active,Default, Standard,Copy Group,,,3,,1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,

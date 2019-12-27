@@ -1,0 +1,300 @@
+@media (max-width: 1200px) {
+.video-titel .position-center-center{ width: 100%;}
+.caption h1{ font-size: 33px;}
+.nav-list > ul > li > a{ padding: 38.4px 13px;}
+.tags-3,
+.tags-4{ width: 140px;}
+.tags-3{ bottom: 50px; left: 30px;}
+.tags-4{ bottom: 100px; right: 30px;}
+.tags-5{ right: 360px;}
+.tags-1,
+.tags-2,
+.tags-5{ width: 110px;}
+.banner-3-caption h1{ font-size: 70px;}
+.banner-3-caption h3{ letter-spacing: 20px;}
+.scroll-down{ margin: 80px 0 0;}
+.banner-3-caption h3{ letter-spacing: 10px;}
+}
+
+@media (max-width: 1199px) {
+.event-detail-style-2{ padding: 25px 30px;}
+.countdown li span{ padding: 20px 15px;}
+.event-detail-style-2 h4{ margin: 0 0 20px;}
+ 
+.caption h1{ font-size: 30px;}
+.f-column-widget .social-icons li a{ height: 34px; line-height: 34px; width: 34px;}
+.instagram-gallery ul{ overflow: hidden;}
+.facts-column{ padding: 20px;}
+.facts-column i{ font-size: 20px; right: 10px; top: 20px;}
+.facts.style-2 .facts-column{ padding: 30px;}
+.facts.style-2 .facts-column i{ font-size: 40px;}
+.facts.style-2 .facts-column h4{ font-size: 14px;}
+.facts.style-2 .facts-column strong{ font-size: 40px;}
+.facts.style-2 .facts-column h4{ margin: 0 0 40px;}
+.about-text h3{ margin: 0 0 20px;}
+.about-text p{ margin: 0 0 20px; font-size: 14px;}
+
+.chose-detail .position-center-center{ width: 100%;}
+.event-img > img{ width: 100%;}
+.learning-online-form h2{ font-size: 50px;}
+.content-banner.style-2 .banner-caption h2{ font-size: 100px;} 
+.content-banner.style-2 .banner-caption h3{ letter-spacing: 20px;}
+.timeline-tabs ul li{ margin: 0 0 0 15.9%;}
+.timeline-text p{ line-height: 24px;}
+
+.standar-blog-list .video-post iframe{ height: 342px;}
+
+.inner-page-heading.style-2 .main-heading{ margin: 0 0 0 -230px;}
+.price-figure{ margin: 0 0 30px;}
+.price-figure > img{ width: 100%;}
+
+.inner-page-heading.style-2.style-3 .main-heading{ margin: 0 0 0 -160px;}
+.product-disc li{ margin: 0 0 0 30px;}
+.chose-product ul li{ width: auto;}
+
+.product-column{ margin: 0 0 30px!important;}
+.product-column .product-img > img{ width: 100%;} 
+.product-column .product-detail{ width: 100%;}
+} 
+
+@media (max-width: 1024px) {
+.single-blog-detail{min-width: 100%}
+}
+
+@media (max-width: 991px) {
+.nav-list{ display: none;}
+.caption .btn-list{ display: none;}
+.caption h1{ font-size: 25px; margin: 0 0 20px;}
+.caption p{ font-size: 13px; margin: 0;}
+.slider-nav{ height: 100px; line-height: 100px;}
+.r-m-bottom{ margin: 0 0 30px!important;}
+.testimonil-slider li p{ line-height: 50px; font-size: 40px;}
+.bx-wrapper{ margin: 0 auto 40px;}
+.f-column-widget{ margin: 0 0 30px; overflow: hidden;}
+.sub-footer{ text-align: center;}
+.sub-footer p{ float: none; margin: 0 0 10px;}
+.sub-footer .sub-footer-nav{ float: none; display: inline-block;}
+.video-titel span{ font-size: 40px;}
+.menu-link-holder{ display: block; padding: 0 0 0 30px!important; border-left: 1px solid #e5e5e5!important;} 
+.menu-link-holder .menu-link{ box-shadow: none; background: none; height: 20px; line-height: 20px; width: 20px;}
+.search-nd-cart li:first-child{ margin: 0; padding: 0; border: 0;}
+.main-heading p{ font-size: 14px;}
+.r-m-bottom-60{ margin: 0 0 60px!important;}
+.footer.style-2 .f-column-widget{ margin: 0;}
+.footer.style-2 .address-widget p{ font-size: 20px;}
+.course-img > img{ width: 100%;}
+.course-column.style-2{ margin: 0 0 30px!important;}
+.learning-online-form h2{ font-size: 40px;}
+.learning-online-form p{ font-size: 14px;}
+
+.related-events-body ul li{ margin: 0 0 30px;}
+.related-events-body ul li:last-child{ margin: 0;}
+
+.tags-3,
+.tags-4{ width: 100px;}
+.tags-3{ bottom: 40px; left: 30px;}
+.tags-4{ bottom: 70px; right: 30px;}
+.tags-5{ right: 360px;}
+.tags-1,
+.tags-2,
+.tags-5{ width: 110px;}
+.tags-1{ left: 100px}
+.tags-2{ right: 100px;}
+.banner-3-caption h1{ font-size: 60px;}
+.banner-3-caption h3{ letter-spacing: 20px;}
+.scroll-down{ margin: 80px 0 0;}
+.banner-3-caption h3{ letter-spacing: 10px;}
+
+.detail-option h2{ font-size: 30px;}
+.video-banner{ height: 558px;}
+
+.about-text-inner{ width: 100%;}
+.about-text-inner p{ font-size: 14px;}
+.service-column.style-3{ margin: 30px 0!important;}
+.why-Chose-us .service-column{ margin: 30px 0!important;}
+.standar-blog-list .video-post iframe{ height: 234px;}
+.blog-detail h2{ font-size: 18px;}
+.bodypass-list .comments-holder ul li iframe{ height: 100%; }
+.pricing-column{ margin: 0 0 30px;}
+
+.product-slider-view{ margin: 0 0 30px;}
+.product-view-option ul li{ margin: 0 0 0 15px;}
+.product-detail-holder .reviews-holder{ margin: 0 0 30px;}
+
+.project-column img{ width: 100%;}
+.project-column{ margin: 0 0 30px!important;} 
+
+.s-teacher-column{ margin: 0;}
+.t-table-widget{ margin: 0 0 60px!important;}
+}
+
+@media (max-width: 800px) {
+.tags-3,
+.tags-4{ width: 80px;}
+.tags-1,
+.tags-2,
+.tags-5{ width: 80px;}
+.banner-3-caption h1{ font-size: 50px;}
+.banner-tags .overlay h6{ display: none;}
+.content-banner.style-2 .banner-caption h2{ font-size: 60px;}
+.content-banner.style-2 .banner-caption h3{ letter-spacing: 10px;}
+}
+
+@media (max-width: 768px) {
+.video-banner{ height: 432px;}
+.video-caption h3{ letter-spacing: 15px; font-size: 16px;}
+.video-caption h2{ font-size: 26px; border: 5px solid #fff;}
+.single-blog-detail{
+	min-width: 100%;
+}
+}
+
+@media (max-width: 767px) {
+.caption h1{ font-size: 20px; margin: 0 0 10px;}
+.caption p{ font-size: 10px; line-height: 13px;}
+.main-heading h2{ font-size: 28px; margin: 0 0 15px;}
+.main-heading p{ font-size: 14px;}
+.why-chose-us ul{ margin: -15px 0 0;}
+.facts-column{ margin: 15px 0;}
+.video-section{ height: 400px;}
+.blog-column > img{ width: 100%;}
+.about-text{ margin: 0 0 30px;}
+.filter-tags-holder ul li{ margin: 0 0 0 10px;}
+.footer.style-2 .f-column-widget{ margin: 0 0 30px;}
+.footer-column{ padding-bottom: 0;}
+.owl-nav{ top: -50px;}
+.filter-tags-holder ul li{ margin: 0 10px 10px 0!important;}
+.tc-padding{ padding: 60px 0;}
+.tc-padding-top{ padding-top: 60px;}
+.tc-padding-bottom{ padding-bottom: 60px;}
+.main-heading{ padding: 0 0 60px;}
+.layer-holder{ display: none;}
+.scroll-down{ display: none;}
+.banner-3-caption{ width: 100%;}
+.banner-3-caption h1{ margin: 0;}
+
+.find-courses .form-group{ margin: 0 0 30px!important;}
+.banner-layer{ display: none;}
+.pricng-video-holder{ display: none;}
+.footer.style-3{ text-align: center;}
+.footer.style-3 .footer-logo{ display: inline-block; margin: 0 0 30px;}
+.footer.style-3 .center-links{ margin: 0 0 30px;}
+.footer.style-3 .social-icons{ float: none!important; display: inline-block;}
+.video-banner{ height: 361px;}
+.video-caption h3{ letter-spacing: 15px; font-size: 16px;}
+.video-caption h2{ font-size: 26px; border: 5px solid #fff;}
+.service.style-3 .service-column{ margin: 0 0 30px!important;}
+.contact-address{ margin: 0 0 30px;}
+.footer.style-3 .text-right{ text-align: inherit;}
+
+.content-banner.style-2 .banner-caption h3{ font-size: 20px;}
+.r-pull-none{ float: none!important;}
+.pricing-plan-holder.style-2 .course-img.style-2{ margin: 0 0 30px!important;}
+.testimonial-column{ min-height: 340px;}
+.pricing-plan-holder.style-2{ padding: 80px 0;}
+.timeline-tabs ul li{ margin: 0 0 0 13.3%;}
+.timeline-tabs ul li{ margin: 0 0 0 10.6%;}
+
+.single-blog-detail{ margin: 0 0 40px;min-width: 100%}
+.bodypass-list .comments-holder ul li iframe{ height: 256px;}
+
+.courses-grid .course-column{ margin: 0 0 30px!important;}
+.single-event-detail{ margin: 0 0 30px;}
+
+.project-detail{ width: 100%;}
+
+.aside{ margin: 0 0 30px;}
+/*.inner-banner{ min-height: 150px;}*/
+.inner-page-heading .main-heading h2{ margin: 0;}
+.team-filter{ margin: 10px 0 0!important;}
+}	 
+
+@media (max-width: 640px) {
+.chose-detail{ position: relative; width: 100%; height: 290px;}
+.Scholarship{ top: 100%;}
+.chose-option{ overflow: hidden; min-height: auto;}
+.detail-option::before{ border: 40px solid rgba(255, 255, 255, 0.2); margin: 0 0 0 -91px; top: -40px;}
+.inner-page-heading.style-2.style-3 .main-heading{ margin: 0;}
+
+.product-filter{ text-align: center;}
+.product-filter .change-view-option{ float: none!important; display: inline-block; margin: 0 0 20px;}
+.product-filter .by-sort-option{ float: none!important; display: inline-block;}
+}
+
+@media (max-width: 539px) {
+.r-full-width{ width: 100%!important;}
+.event-column > img{ width: 100%;}
+.owl-dots .owl-dot{ width: 20px;}
+.video-banner{ height: 100%;}
+.video-caption-holder{ display: none;}
+.content-banner.style-2 .banner-caption h2{ font-size: 40px;}
+.content-banner.style-2 .banner-caption h3{ font-size: 10px;}
+.bodypass-list .comments-holder ul li iframe{ height: 100%;}
+.s-teacher-column > img{ width: 100%;}
+.s-teacher-column{ margin: 0 0 30px;}
+}
+
+@media (max-width: 480px) {
+.caption h1{ font-size: 16px; margin: 0 0 10px;}
+.caption p{ display: none;}
+.slider-nav{ height: 50px; line-height: 50px;}
+.carousel-indicators li, .carousel-indicators li.active{ width: 40px;}
+.carousel-indicators{ margin: 0 0 0 -70px;}
+.video-section{ height: 300px;}
+.video-titel span{ font-size: 20px;}
+.video-titel span i{ margin: 0 20px; font-size: 30px;}
+.filter-tags-holder ul li a{ font-size: 15px;}
+.banner-3-caption h3{ font-size: 14px;}
+.banner-3-caption h1{ font-size: 30px;}
+
+.timeline-tabs ul li a{ height: 50px; line-height: 50px; width: 50px; font-size: 14px;}
+.inner-page-heading.style-2 .main-heading{ margin-left: 0; left: 30px;}
+.facts-column strong{ font-size: 25px;}
+
+.project-column .project-detail{ bottom: -45px;}
+}
+
+@media (max-width: 479px) {
+.logo{ width: 110px; margin: 10px 0 0;}
+.address-list-top{ display: none;}
+.caption{ display: none;}
+.slider-nav{ width: 20px; font-size: 11px;}
+.carousel-indicators{ bottom: 20px;}
+.blog-detail{ padding: 40px 20px;}
+.blog-detail h3{ font-size: 20px;}
+.meta-post li{ margin: 0 0 0 10px;}
+.scrollup{ bottom: 135px; right: 10px;} 
+.sub-footer-nav{ display: none!important;}
+.main-heading h2{ font-size: 20px;}
+.main-heading p{ font-size: 13px;}
+.responsive-btn{ bottom: -24px; right: 20px;}
+.responsive-btn .circle-btn{ height: 30px; line-height: 30px; width: 30px; font-size: 10px;}
+.main-heading h2{ font-size: 20px;}
+.footer.style-2 .newslatter .form-group .btn{ min-width: 150px;}
+.banner-3-caption h3{ font-size: 10px; letter-spacing: 8px;}
+.banner-3-caption h1{ font-size: 20px;}
+.find-courses .form-group{ margin: 0 0 30px!important;}
+.countdown li span{ font-size: 15px;}
+.countdown li{ margin: 0 0 0 10px!important;}
+.content-banner.style-2{ height: 470px;}
+.content-banner.style-2 .banner-caption h2{ font-size: 30px;}
+.content-banner.style-2 .banner-caption .btn{ min-width: 160px; height: 50px; line-height: 50px; padding: 0 20px;}
+.timeline-tabs ul li{ margin: 0 0 0 2.6%;}
+
+.inner-page-heading h2{ font-size: 16px;}
+}
+
+@media (max-width: 320px) {
+.main-meta li{ font-size: 14px;}
+.aurthor-quote img{ position: static; margin: 0 0 30px;}
+.aurthor-detail{ padding: 0;}
+.sub-comment{ margin-left: 20px !important;}
+.leave-comment h3{ font-size: 24px;}
+.bodypass-list .comments-holder{ padding: 60px 20px;}
+.comment{ padding: 0 0 0 80px;}
+.join-event-option .btn-list li{ width: 44%;}
+.join-event-option .btn-list .btn{ font-size: 12px; }
+.login-option .dropdown-menu{
+left: -57px;
+}
+} 

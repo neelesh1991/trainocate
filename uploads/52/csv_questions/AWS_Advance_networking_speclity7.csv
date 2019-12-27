@@ -1,0 +1,320 @@
+Sr no,Question,Option1,Option2,Option3,Option4,Option5,Option6,Correct OPtion (note:- if Correct option is Option 1 then insert 1),Category Name,Marks
+2,Which of the following statements are false with regards to placement groups?,You can merge placement groups,A placement group can span peered VPC’s,A cluster placement group can't span multiple Availability Zones.,You can move an existing instance into a placement group,,,2, AWS certified Advance Networking  speclity,5
+3,"Which of the following are advantages to use multiple IP addresses on an EC2 Instance in AWS?
+Choose three answers",Host multiple websites on a single server by using multiple SSL certificate,To support multiple network interfaces,To failover to a standby instance,To ensure broadcasting is possible on the subnet,,,1&2&3, AWS certified Advance Networking  speclity,5
+4,"You currently manage a set of web servers hosted on EC2 Servers with public IP addresses. These IP
+addresses are mapped to domain names. There was an urgent maintenance activity that had to be
+carried out on the servers and the servers had to be restarted. Now the web application hosted on
+these EC2 Instances is not accessible via the domain names configured earlier. Which of the following
+could be a reason for this.",The Route53 hosted zone needs to be restarted,The network interfaces need to initialized again.,The public IP addresses need to associated to the ENI again.,"The public IP addresses have changed after the instance was stopped and
+started",,,4, AWS certified Advance Networking  speclity,5
+5,"Your company currently has a Link Aggregation Group to AWS with two 1Gbps connections. What is
+the best way to increase throughput on this Link Aggregation Group?",Add one 10Gbps connections to the Link Aggregation Group,Add two 10Gbps connections to the Link Aggregation Group,Add two 1Gbps connections to the Link Aggregation Group,Add three 1Gbps connections to the Link Aggregation Group,,,3, AWS certified Advance Networking  speclity,5
+6,Which of the following protocols are used for dynamically routed VPN Connections,TCP,UDP,ICMP,BGP,,,4, AWS certified Advance Networking  speclity,5
+7,"Your company currently has a 100 Mbps line and needs to have a Direct Connect connection in place.
+How can the company achieve this?",This is not possible with a 100 Mbps line.,This is possible only if you upgrade to a 200 Mbps line,This is possible only if you upgrade to a 500 Mbps line,You can contact an AWS Partner for this requirement,,,4, AWS certified Advance Networking  speclity,5
+8,"There are 2 company’s that have their own AWS accounts. How can they connect to a central VPC for
+identity validation? How would you best design this solution? Choose an answer from the options","Migrate each VPC resources to the central VPC using migration tools such as
+Import/Export, Snapshot, AMI Copy, and S3 sharing",Create a VPC peering connection with the central VPC.,Create a Direct Connect connection from each VPC endpoint to the central VPC.,"Create an OpenVPN instance in central VPC and establish an IPSec tunnel between
+VPCs.",,,2, AWS certified Advance Networking  speclity,5
+9,"You have 2 VPN connections established between AWS and your on-premise location. You need to
+ensure that one VPN is preferred over the other.
+Which of the following configurations can allow you to do this?",Use more specific routes,Use less specific routes,Use AS-path prepending,Use BGP priority,,,1, AWS certified Advance Networking  speclity,5
+10,"When you create a subnet, you specify the CIDR block for the subnet. The CIDR block of a subnet can
+be the same as the CIDR block for the VPC (for a single subnet in the VPC), or a subset (to enable
+multiple subnets). The allowed block size is between a /28 netmask and /16 netmask. You decide to
+you create a VPC with CIDR block 10.0.0.0/24. Therefore what is the maximum allowed number of IP
+addresses and the minimum allowed number of IP addresses according to AWS and what is the
+number of IP addresses supported by the VPC you created? Choose the correct answer from the
+options below",Maximum is 28 and the minimum is 16 and the one created supports 24 IP addresses,"Maximum is 256 and the minimum is 16 and the one created supports 24 IP
+addresses","Maximum is 65,536 and the minimum is 24 and the one created supports 28 IP
+addresses","Maximum is 65,536 and the minimum is 16 and the one created supports 256 IP
+addresses",,,4, AWS certified Advance Networking  speclity,5
+11,"Your website utilizes EC2, S3, ELB-Classic, and CloudFront. How can you implement the right security
+measures for this configuration? Choose 2 answers from the options given below",An NACL that blocks all ports to your subnets,A restricted bucket policy on S3,A WAF on your CloudFront distribution.,A WAF on the load balancer.,,,2&3, AWS certified Advance Networking  speclity,5
+12,"You have a static VPN connecting your data center and your VPC. You currently have 50 routes added
+to your route table. There is a requirement to add more routes. What should be done in this case.
+Choose 2 answers from the options given below",Increase the limit on the route table,Delete static VPN and create a dynamic VPN,Use BGP for routing,Add the route to the route table,,,2&3, AWS certified Advance Networking  speclity,5
+13,"You are the network administrator for a company. There is a requirement to connect VPC’s which are
+located in different regions. Which of the following option cannot be used for connectivity",VPC Peering,Software VPN,Software to Hardware VPN,Internet based VPN,,,1, AWS certified Advance Networking  speclity,5
+14,"You have 2 VPC's VPCA(172.16.0.0/16) and VPCB(10.0.0.0/16). You are planning on establishing VPC
+connecting peering. Which of the following routes need to be added to the route table for both VPC's
+to ensure communication across VPC's. Choose 2 answers from the options given below. Assume that
+the Target for the VPC Peering connection has an ID of pcx-1122",In the Route table for VPCA add a route of 172.16.0.0/16 and Target as pcx-1122,In the Route table for VPCA add a route of 10.0.0.0/16 and Target as pcx-1122,In the Route table for VPCB add a route of 172.16.0.0/16 and Target as pcx-1122,In the Route table for VPCB add a route of 10.0.0.0/16 and Target as pcx-1122,,,2&3, AWS certified Advance Networking  speclity,5
+15,"When automating the creation of a network using cloudformation , which of the following types would
+normally be assigned a property of a private IP address?",AWS::EC2::Subnet,AWS::EC2::NetworkInterface,AWS::EC2::VPC,AWS::EC2::SubnetCidrBlock,,,2, AWS certified Advance Networking  speclity,5
+16,"You have an application hosted on an EC2 Instance. To distribute content you are planning to use the
+Content Delivery service. Before going to production there is a requirement to perform a load test.
+Which of the following should be considered when conducting a load test which involves the CDN
+service. Choose 3 answers from the options given below",Send client requests from multiple geographic regions,Con??gure your test so each client makes an independent DNS request,Ensure that the request goes to the ??rst IP returned by the DNS,spread your client requests across the set of IP addresses that are returned by DNS,,,1&2&4, AWS certified Advance Networking  speclity,5
+17,Which of the following is not an ideal design recommendation of encrypting data in transit in AWS,Limit the number of public subnets,Route egress tra??c through a NAT instance,When using ELB terminate the TLS connection at the back end instances,Ensure that security groups and NACLs are con??gured to address the requirements of the PCI DSS.,,,3, AWS certified Advance Networking  speclity,5
+18,"A user has created a VPC with CIDR 20.0.0.0/24. The user has created a public subnet with CIDR
+20.0.0.0/25 and a private subnet with CIDR 20.0.0.128/25. The user has launched one instance each in
+the private and public subnets. Which of the below mentioned options cannot be the correct IP
+address (private IP. assigned to an instance in the public or private subnet?",20.0.0.255,20.0.0.132,20.0.0.122,20.0.0.55,,,1, AWS certified Advance Networking  speclity,5
+19,What is the maximum allowable time available for connection draining on a class load balancer?,30 minutes,1 hour,2 hours,5 hours,,,2, AWS certified Advance Networking  speclity,5
+20,"You currently have EC2 Instances in a private subnets. There are applications based on IPv6 which are
+hosted on these instances. You have configured NAT instances in a public subnet to ensure that
+applications hosted on the instances in the private subnet can download the required updates. But
+after configuring the instances , the applications are still not able to download the updates. Which of
+the following could be the underlying issue.","The NAT instance should not be con??gured in the public subnet , it should be con??gured in the
+private subnet",The NAT instance is not con??gured with a private IP address,NAT is not supported for IPv6 tra??c,The NAT instance is not con??gured with a private DNS name,,,3, AWS certified Advance Networking  speclity,5
+21,"Due to a lot of your EC2 services going off line at least once a week for no apparent reason your
+security officer has told you that you need to tighten up the logging of all events that occur on your
+AWS account. He wants to be able to access all events that occur on the account across all regions
+quickly and in the simplest way possible. He also wants to make sure he is the only person that has
+access to these events in the most secure way possible. Which of the following would be the best
+solution to assure his requirements are met? Choose the correct answer from the options below","Use CloudTrail to log all events to a separate S3 bucket in each region as CloudTrail
+cannot write to a bucket in a different region. Use MFA and bucket policies on all the
+different buckets","Use CloudTrail to send all API calls to CloudWatch and send an email to the security
+officer every time an API call is made. Make sure the emails are encrypted.","Use CloudTrail to log all events to one S3 bucket. Make this S3 bucket only
+accessible by your security officer with a bucket policy that restricts access to
+his user only and also add MFA to the policy for a further level of security.","Use CloudTrail to log all events to an Amazon Glacier Vault. Make sure the vault
+access policy only grants access to the security officer's IP address.",,,3, AWS certified Advance Networking  speclity,5
+22,"Your company has an on-premise environment with Active Directory for authentication and a DNS
+Server. You are trying to make the EC2 Instances in your AWS VPC resolve the on-premise resources ,
+but it does not seem to work. What could be the reason for this. Choose 2 answers from the options
+given below",The NACL is blocking UDP port 53 outbound,The NACL is blocking TCP port 53 outbound,The Security Group is blocking port 80 Inbound.,The Security Group is blocking port 80 Outbound.,,,1&2, AWS certified Advance Networking  speclity,5
+23,"Your company has a highly available Direct Connect solution that utilizes two datacenters. Each data
+center contains one two-connection LAG and one standard DX connection. How many LOAs will be
+filled out in total if your company completes an order to add a new connection to each one of the
+LAGs?",1,4,6,10,,,2, AWS certified Advance Networking  speclity,5
+24,"You have instructed to create a presence on the AWS Cloud. The IP address range 11.11.253.0/24 has
+been allocated for the cloud. Which of the following is the right number of subnets and hosts
+available for this CIDR range? Do not consider the reserved IP addresses by AWS for subnets.",256 maximum number of subnets and 254 number of hosts,128 maximum number of subnets and 254 number of hosts,256 maximum number of subnets and 128 number of hosts,256 maximum number of subnets and 256 number of hosts,,,1, AWS certified Advance Networking  speclity,5
+25,"You are considering on migrating your existing DNS service to AWS Route53. Which of the following is
+the first thing you should do in Route53 for this",Create a CNAME record,Create a AAA record,Create a hosted zone,Create a new domain name,,,3, AWS certified Advance Networking  speclity,5
+26,"Your company has an on-premise Active Directory setup in place. The company has extended their
+footprint on AWS , but still want to have the ability to use their on-premise Active Directory for
+authentication. Which of the following AWS services can be used to ensure that AWS resources such
+as AWS Workspaces can continue to use the existing credentials stored in the on-premise Active
+Directory",Use the Active Directory service on AWS,Use the AWS Simple AD service,Use the Active Directory connector service on AWS,Use the ClassicLink feature on AWS,,,3, AWS certified Advance Networking  speclity,5
+27,"Apart from the below 2 aspects , what other requirements need to be in place to ensure that instances
+from a VPC subnet can access the Internet.
+1. Ensure that your subnet's route table points to the Internet gateway
+2. Ensure that your network access control and security group rules allow the relevant traffic to
+flow to and from your instance
+Choose 2 answers from the options given below",Attach an Internet gateway to your VPC.,Attach an Internet gateway to your subnet,Ensure the instance in the subnet has a private IP,Ensure the instance in the subnet has a public IP,,,1&4, AWS certified Advance Networking  speclity,5
+28,"If you want to have a cluster of EC2 Instances which would need to have low network latency between
+them , which of the following would you ideally do",Launch all of the Instances as t2.micro instances,Launch all of the instances with Security Groups which allows all network traffic,Launch all of the instances with NACL’s which allows all network traffic,Launch all of the instances in a placement group,,,4, AWS certified Advance Networking  speclity,5
+29,"Which of the following services can be used to mitigate DDos attacks to your application hosted in
+AWS. Choose 3 answers from the options given below",Route53,Cloudfront,Elastic Load balancer,SQS,,,1&2&3, AWS certified Advance Networking  speclity,5
+30,Which of the following is not an item which is captured via VPC Flow Logs,Source Address,Destination Port,Packets,Frames,,,4, AWS certified Advance Networking  speclity,5
+31,What are the 2 separate charges for AWS Direct Connect?,VPC’s in the region,port-hours,Data transfer,Subnets in VPC,,,2&3, AWS certified Advance Networking  speclity,5
+32,Which of the following are valid VPC CIDR's? Choose 2 answers from the options given below,10.0.0.0/24,10.0.0.0/29,20.0.0.0/10,20.0.0.0/27,,,1&4, AWS certified Advance Networking  speclity,5
+33,"You have a static VPN connecting your data center and your VPC. You currently have 50 routes added
+to your route table. You want to add more, which of the following you would do to achieve this.",Convert your VPN to a dynamic VPN,Consider using BGP,Increase the number of Route tables,Increase the number of VPC’s,,,1&2, AWS certified Advance Networking  speclity,5
+34,"For the given network , 10.0.0.0/25 , what is the first and last address (network and broadcast)?
+Explanation:
+Answer – A
+This can",10.0.0.0 and 10.0.0.127,10.0.0.0 and 10.0.0.128,10.0.0.1 and 10.0.0.255,10.0.0.0 and 10.0.0.255,,,1, AWS certified Advance Networking  speclity,5
+35,"You need to ensure that a subnet can get requests from all destinations. Which of the following would
+you use in the route table?",255.255.255.255/32,255.255.255.255/0,0.0.0.0/0,0.0.0.0/32,,,3, AWS certified Advance Networking  speclity,5
+36,Which of the following port numbers are used by the HTTPS protocol,80,22,23,443,,,4, AWS certified Advance Networking  speclity,5
+37,"Which of the following is a not a recommended Private IP range that should be used when defining
+your internal VPC’s",10.0.0.0 - 10.255.255.255,20.0.0.0 - 20.255.255.255,172.16.0.0 - 172.31.255.255,192.168.0.0 - 192.168.255.255,,,2, AWS certified Advance Networking  speclity,5
+38,"You currently have a set of EC2 Instances in a private subnet that communicates to the internet via a
+NAT instance. You now plan to start using a NAT gateway and replace the usage of the NAT Instance.
+During the transition , which of the following needs to be noted","You can safely do the transition since during the transition , the existing connections
+will be moved from the NAT instance to the gateway.","The existing connections to the NAT instance will go through a connection draining
+period, hence there will be no disruptions to the existing service.","There will be a slight disruption which needs to be accounted for because the
+current connections to the NAT instance will be dropped.",It is not possible to replace a NAT gateway with a NAT instance.,,,3, AWS certified Advance Networking  speclity,5
+39,"Which of the following is not a protocol which can be used when monitoring an endpoint using
+Route53 health checks",HTTP,HTTPS,TCP,UDP,,,4, AWS certified Advance Networking  speclity,5
+40,"If a VPN connection exists between an on-premise facility and AWS , and Workspaces are being used.
+What is the minimum amount of MTU which should be supported by the connection?",500,900,1200,1500,,,3, AWS certified Advance Networking  speclity,5
+41,"When using the AWS Direct Connect connection , what is the pricing for Inbound Traffic.",$0.02 per GB in all locations,It depends on the region for the Direct Connect connection,It depends on the AZ for the Direct Connect connection,$0.00 per GB in all locations,,,4, AWS certified Advance Networking  speclity,5
+42,"A company currently has 50 employees and would like to use a directory service in AWS. Which of the
+following would be best suited",Simple AD,AD Connector,Microsoft AD hosted on an EC2 Instance,Microsoft AD,,,1, AWS certified Advance Networking  speclity,5
+43,Which of the below CIDR notation mask is assigned to a subnet which holds IPv6 IP addresses?,/32,/48,/56,/64,,,3, AWS certified Advance Networking  speclity,5
+44,"Which of the following allows private EC2 Instances in your VPC have the ability to work with AWS
+resources without the need of an an internet gateway, NAT device, public IP address, or VPN
+connection",PublicLink,VPCLink,PrivateLink,AWSLink,,,3, AWS certified Advance Networking  speclity,5
+45,"You have 3 EC2 Instances that have public IP’s addresses that are mapped to DNS names in Route53.
+A peer administrator has advised that this may not be the ideal setup and that the DNS names could
+point to invalid IP addresses in the future. Which of the following can help ensure that this issue does
+not happen. Choose 2 answers from the options given below. Each option forms part of the solution.",Map the DNS names to the private IP addresses,Create Elastic IP’s and assign them to the EC2 Instances,Map the DNS names to the Elastic IP’s,Ensure the Instances receive private IP addresses,,,2&3, AWS certified Advance Networking  speclity,5
+46,"You have linux EC2 Instances hosted in AWS. You want to create scripts that can use the tracepath
+command. Which of the following protocols need to be opened up in the Security groups",TCP,UDP,ICMP,SSL,,,2, AWS certified Advance Networking  speclity,5
+47,"You've recently migrated an application from a customer's on-premise data center to the AWS cloud.
+Currently, you're using the ELB to serve traffic to the legacy application. The ELB is also using HTTP
+port 80 as the health check ping port. The application is currently responding by returning a text file
+on port 80 when you test the IP address directly. However, the instance is not registering as healthy
+even though the appropriate amount of time has passed for the health check to register as healthy.
+How might the issue be resolved? Choose the correct answer from the options below","Change the ELB listener port from ping port 80 to HTTPS port 80 for the instance to
+register as healthy","Change the ELB listener port from HTTP port 80 to TCP port 80 for the instance
+to register as healthy","Change the ELB listener port from HTTP port 80 to HTTPS port 80 for the instance to
+register as healthy","Change the ELB listener port from HTTP port 80 to TCP port 443 for the instance to
+register as healthy",,,2, AWS certified Advance Networking  speclity,5
+48,"You have servers in your private subnet in a VPC which need to access the Internet.
+How could you achieve this?
+The solution needs to be highly available",Convert the subnet to a public subnet,Deploy a NAT instance,Deploy a bastion host,Use the NAT gateway service,,,4, AWS certified Advance Networking  speclity,5
+49,"A user has created a VPC with a public subnet. The user has terminated all the instances which are
+part of the subnet. Which of the below mentioned statements is true with respect to this scenario?",The user cannot delete the VPC since the subnet is not deleted,All network interface attached with the instances will be deleted,When the user launches a new instance it cannot use the same subnet,The subnet to which the instances were launched with will be deleted,,,2, AWS certified Advance Networking  speclity,5
+50,"You have a business-to-business web application running in a VPC consisting of an Elastic Load
+Balancer (ELB), web servers, application servers and a database. Your web application should only
+accept traffic from predefined customer IP addresses. Which two options meet this security
+requirement? Choose 2 answers",Configure ELB security group to allow traffic from your customer Ips,Configure web server security group to allow traffic from ELB,"Configure ELB security groups to allow traffic from your customers’ IPs and deny all
+outbound traffic","Configure a VPC NACL to allow web traffic from your customers’ IPs and deny all
+outbound traffic",,,1&2, AWS certified Advance Networking  speclity,5
+51,"Your VPC currently has 2 subnets in AWS. The VPC has a CIDR block of 10.0.0.0/16 and the subnets
+have a CIDR block of 10.0.1.0/24 and 10.0.2.0/24 respectively. You decide on creating a custom route
+table for each subnet. When you initially create a custom route table , which of the following routes
+will be present in the route table automatically,",A route for 10.0.0.0/16 as the destination,A route for 10.0.0.0/16 as the destination,A route for 10.0.2.0/24 as the destination,There will be no default route in the route table,,,1, AWS certified Advance Networking  speclity,5
+52,"An application has been built with the appropriate AWS SDK. This application interacts with the S3
+service in AWS. This application is going to be deployed in a private subnet. Which of the following
+should be done to ensure that the application can successfully interact with the S3 service",Make the subnet as a public subnet,Attach an Internet gateway to the VPC,Create a VPC S3 endpoint,Attach a Virtual Private gateway to the VPC,,,3, AWS certified Advance Networking  speclity,5
+53,"Which are the 3 types of health checks that you can monitor using Route53 health checks. Choose 3
+answers from the options given below",Health checks that monitor an endpoint,Health checks that monitor CloudWatch alarms,Health checks that monitor CloudWatch logs,Health checks that monitor other health checks,,,1&2&4, AWS certified Advance Networking  speclity,5
+54,"When you want to create an AWS Direct Connect connection in the AWS console, what are the 2
+artefacts which are required? Choose 2 answers from the options given below",AWS Direct Connection location,The Virtual Private gateway,The Customer gateway,The port speed,,,1&4, AWS certified Advance Networking  speclity,5
+55,"A VPN has been setup between AWS and the on-premise network. An EC2 Instance is launched in the
+VPC to test the connection via the ping command. Which of the below must be done to ensure the
+test works as desired. Choose 3 answers from the options given below.",Ensure the Security Groups allow Inbound ICMP traffic,Ensure the Security Groups allow Outbound ICMP traffic,Ensure that the NACL allows Inbound ICMP traffic,Ensure that the NACL allows Outbound ICMP traffic,,,1&3&4, AWS certified Advance Networking  speclity,5
+56,"There is a requirement to monitor the HTTPS traffic that is being directed to the Cloudfront setup you
+have in AWS. Which of the following services can be used for this",AWS Shield,AWS Cloudfront logs,AWS WAF,AWS Cloudwatch,,,3, AWS certified Advance Networking  speclity,5
+57,"Which of the below mentioned services can be used to monitor the account activity in your AWS
+account",AWS Cloudtrail,AWS Cloudwatch,AWS Cloudwatch logs,Account Reports,,,1, AWS certified Advance Networking  speclity,5
+58,Which of the following record types in Route53 is used for IPv6 addresses?,A,AAAA,CNAME,PTR,,,2, AWS certified Advance Networking  speclity,5
+59,"Your AWS infrastructure currently has 4 VPC’s. Your company has established an AWS Direct Connect
+connection from the on-premise to the AWS infrastructure. How many private interfaces would you
+configure?",None. You can use the resources in the VPC in the normal way.,One. One Virtual Interface is enough for accessing the VPC’s,Four. One Virtual Interface for each VPC,Eight. Two Virtual Interface(One for Incoming and one for Outgoing) for each VPC.,,,3, AWS certified Advance Networking  speclity,5
+60,"You have created 5 VPC’s in the Ireland region and attached an Internet gateway to them. When you
+try to create another Internet gateway, you are not able to do so. Which of the following could be a
+reason for this",You need to create a VPC before you create an Internet gateway,You need to ensure the VPC is public before you can create an Internet gateway,You have crossed the threshold of 4 internet gateways,You have crossed the threshold of 5 internet gateways,,,4, AWS certified Advance Networking  speclity,5
+61,"You have acquired a new contract from a client to move all of his existing infrastructure onto AWS. You
+notice that he is running some of his applications using multicast, and he needs to keep it running as
+such when it is migrated to AWS. You discover that multicast is not available on AWS, as you cannot
+manage multiple subnets on a single interface on AWS and a subnet can only belong to one
+availability zone. Which of the following would enable you to deploy legacy applications on AWS that
+require multicast? Choose the correct answer from the options below",Provide Elastic Network Interfaces between the subnets.,Create a virtual overlay network that runs on the OS level of the instance.,"All of the answers listed will help in deploying applications that require multicast on
+AWS.",Create all the subnets on a different VPC and use VPC peering between them.,,,2, AWS certified Advance Networking  speclity,5
+62,"Which of the following services can be used to do a deep dive into the packets sent across to EC2
+Instances.",Cloudwatch,Cloudtrail,FlowLogs,None of the above,,,4, AWS certified Advance Networking  speclity,5
+63,Which of the following is not part of the charges which can get acquired when using AWS Cloudfront?,Data Transfer In,Data Transfer Out,HTTP/HTTPS Requests,Invalidation Requests,,,1, AWS certified Advance Networking  speclity,5
+64,"When you launch an instance with the default settings in a default VPC, which of the below
+automatically get generated for the instance. Choose 3 answers from the options given below",Private IP address,Elastic IP address,Private DNS hostname,Public DNS hostname,,,1&3&4, AWS certified Advance Networking  speclity,5
+65,"You have created a custom VPC(10.0.0.0/16) and subnet in AWS. You have are planning on hosting
+applications on EC2 instances that depend on IPV6 traffic. You need to ensure that the traffic goes
+through the internet gateway. Which of the following routes would you add to the route table to
+ensure that the traffic would flow as desired?",0.0.0.0/0 - >Internet gateway,10.0.0.0/16->Internet gateway,::/0->Internet gateway,10.0.0.0/16->Internet gateway,,,3, AWS certified Advance Networking  speclity,5
+66,Which of the following are 2 types of NAT devices provided by AWS?,NAT Instance,NAT gateway,NAT connection,NAT device,,,1&2, AWS certified Advance Networking  speclity,5
+67,"You have a classic load balancer that have backend instances that have instances that communicate
+on the TCP protocol. If there was a need to get connection information such as the source IP address ,
+which of the following configurations needs to be carried out?",Configure connection draining,Configure sticky sessions,Configure Proxy protocol,Configure Cross-Zone Load balancing,,,3, AWS certified Advance Networking  speclity,5
+68,"You are in charge of setting up a Direct Connect connection between your company’s AWS account
+and their on-premise infrastructure. Your senior management has asked for the cost parameters for
+the Direct Connect connection. Which of the following contribute to the cost of the AWS Direct
+Connect connection. Choose 2 answers from the options given below",Initial upfront charges,Port-hours charges,Data Transfer In charges,Data Transfer Out charges,,,2&4, AWS certified Advance Networking  speclity,5
+69,Which of the following determines what is the maximum supported MTU for an Instance,The AMI,The Instance Type,The VPC the instance is hosted in,The subnet the instance is hosted in,,,2, AWS certified Advance Networking  speclity,5
+70,"Which of the following can be used to connect an existing Active Directory setup to Amazon
+Workspaces. Choose 2 answers from the options given below",Simple AD,Samba AD,AWS Microsoft AD,AD connector,,,3&4, AWS certified Advance Networking  speclity,5
+71,"Which of the following services cannot be used to help protect against DDos attacks on your AWS
+infrastructure?",AWS Config,AWS WAF,AWS Shield,AWS Shield Advanced,,,1, AWS certified Advance Networking  speclity,5
+72,"You have used the VPC Wizard to create a VPC with the private and public subnet option along with
+the NAT instance. You been told that the VPC is no longer required. You are trying to delete the VPC
+but are not able to do so. Why is this the case?",It’s because the VPC needs to dissociated from the subnets first,The NAT instance needs to be deleted first,The Internet gateway needs to be detached first,The route tables need to be deleted first,,,2, AWS certified Advance Networking  speclity,5
+73,Which of the following HTTP methods are not cached by Cloudfront?,PUT,GET,HEAD,OPTIONS,,,1, AWS certified Advance Networking  speclity,5
+74,"Which of the following are some steps that can be used to troubleshoot AWS Direct connect
+connections. Choose 3 answers from the options given below",Ensure AWS Direct Connect cross connects are established,Check if Auto Negotiation is turned off,Verify that your device is supported by AWS Direct Connect,Check the status of the Virtual private gateway,,,1&2&3, AWS certified Advance Networking  speclity,5
+75,"Your company has decided to use AWS WorkSpaces for its hosted desktop solution. Your company
+has an existing AD of about 60,000 users, and you want to minimize authentication traffic from AWS to
+your datacenter. What steps would you take to ensure the above requirement can be fulfilled?
+Choose 2 options.",Create a VPN between the datacenter AWS,Deploy an AD Connector in AWS,Create a Direct Connect connection between the datacenter and AWS,Use the Microsoft AD in AWS,,,3&4, AWS certified Advance Networking  speclity,5
+76,"When a NAT gateway is created , which of the following needs to be specified for the NAT gateway.",Public IP address,Private IP address,Static IP address,Elastic IP address,,,4, AWS certified Advance Networking  speclity,5
+77,"Your company is planning on deploying an EC2 instance which will be used to route VPN traffic to an
+on-premise data center. In such a scenario what is the responsibility of AWS?",Ensuring high availability of the EC2 Instance,Ensuring high availability of the VPN connection,Ensuring the health of the underlying physical host,Configuration of the IPSec protocol,,,3, AWS certified Advance Networking  speclity,5
+78,"Your company is planning on creating a private hosted zone in AWS. They need to ensure that onpremise
+devices can reach the resources defined in the private hosted zone. How can this be achieved
+, ensuring least effort is put into setting this up.",Consider using Simple AD for resolving DNS requests,Convert the private hosted zone to a public one,Create an EC2 instance and install a DNS resolver,Create an EC2 instance and install AD Domain services,,,1, AWS certified Advance Networking  speclity,5
+79,"An architecture consists of the following
+a) A primary and secondary infrastructure hosted in AWS.
+b) Both infrastructures consists of ELB, Autoscaling and EC2 resources
+How should Route53 be configured to ensure proper failover incase the primary infrastructure goes
+down",Configure a primary routing policy,Configure a weighted routing policy,Configure a Multi-Answer routing policy,Configure a failover routing policy,,,4, AWS certified Advance Networking  speclity,5
+80,"You’ve setup a set of EC2 Linux based instances in a placement group. You’ve chosen instances with
+Enhanced Networking enabled. You want to ensure that the maximum number of packets can be sent
+across the network interfaces. How could you achieve this.?",Set the Network Access Control List to the maximum network packet size,Set the Placement Group settings to the maximum network packet size,Change the MTU setting on the ethernet interface for each instance,Change the Jumbo frame setting on the ethernet interface for each instance,,,3, AWS certified Advance Networking  speclity,5
+81,"Your company is planning on using an EC2 instance for handling voice related traffic. A custom
+application will be installed on a Linux based instance. Which of the following implementation will
+help to achieve higher bandwidth for the application?",Enable Enhanced networking on the instance,Use a Network load balancer in front of the EC2 instance,Use a placement group for the EC2 Instance,Use an Application load balancer in front of the EC2 instance,,,1, AWS certified Advance Networking  speclity,5
+82,"Your production team had earlier created a VPC with the CIDR block of 192.168.0.0./16. Instances were
+launched in the VPC. Now there is a decision to ensure the instances have an address space for
+10.0.0.0/16. How can this be achieved?","Add a new address space to the VPC. Then ensure that the instances use the new
+address space","Create a new VPC with the address block of 10.0.0.0/16. Migrate all of the
+instances to the new VPC.","Change the address block of the VPC from 192.168.0.0./16 to 10.0.0.0/16. All of the
+instances will now use the new address space.","Launch a NAT Instance. Ensure that the instance performs Network address
+translation onto the CIDR range of 10.0.0.0/16",,,2, AWS certified Advance Networking  speclity,5
+83,"Your VPC consists of public and private subnets. The private subnets make use of a NAT instance to
+download updates from the internet. The Instances are trying to download updates from a server
+which listens on port 8090. But the instances are not able to reach the external server for updates.
+Which of the following could be relevant issues with this. Choose 2 answers from the options given
+below","The Security Group Attached to NAT instance has not defined inbound rule from
+Private subnet at port 8090","The inbound traffic at 8090 from public Subnet not allowed in the NACL
+attached to Private Subnet.",The Inbound Security Groups are blocking traffic on port 8090,The Remote server firewall is blocking traffic,,,1&2, AWS certified Advance Networking  speclity,5
+84,"Your IT Security department has deployed a firewall on an AWS EC2 Instance. They have mandated at
+all traffic from certain applications needs to move through the firewall. In such a case, what
+considerations should be made for the EC2 instance for maximum performance? Choose 2 answers",Consider using an Amazon Linux AMI only,The underlying Instance type,Driver support for the Intel Virtual Function and Elastic Network Adapter (ENA),Consider using NACL's,,,2&3, AWS certified Advance Networking  speclity,5
+85,"You have been put in charge for setting up a network architecture for a company. The architecture
+consists of an application that will exchange a lot of information and hence will need a high bandwidth
+consideration. There will be other B2B customers that will access this application as separate tenants.
+What consideration will you provide in the design.","Consider using a Virtual private gateway for each customer as this will provide the
+least latency","Consider using AWS Direct Connect for each customer. But this will also
+depend on the availability of an AWS partner in that location of the customer","Consider using AWS VPN for each customer. But this will also depend on the
+availability of an AWS partner in that location of the customer.","Allow each customer to connect via the Internet. Setup the right security groups
+and NACL's for the application.",,,2, AWS certified Advance Networking  speclity,5
+86,"Your company has a department that has set their own AWS account that is not part of the
+consolidating billing process for the company. The department also has setup a AWS Direct Connect
+connection to a VPC via a private VIF for downloading data from an EC2 instance. How would the
+charges come across?",The company would be charged for data transfer out via the Internet gateway,The company would be charged for data transfer out via AWS Direct Connect,The department would be charged for data transfer out via the Internet gateway,"The department would be charged for data transfer out via AWS Direct
+Connect",,,4, AWS certified Advance Networking  speclity,5
+87,"Your company has an AWS Direct connect connection in the us-west region. They are currently using
+a public VIF to access an S3 bucket in the us-west region. They now want to make use of AWS Direct
+Connect to access an S3 bucket in the us-east region. How can this be achieved in the most
+economical way?","Create another AWS Direct connect connection from your on-premise network in the
+us-east region.",Create another Private VIF from your current AWS Direct connect connection,Create another Public VIF from your current AWS Direct connect connection,Create an VPN IPsec connection,,,3, AWS certified Advance Networking  speclity,5
+88,"You have an EC2 Instance which will be responsible for processing a lot of video and audio. There is a
+requirement to ensure that the EC2 Instance has the maximum performance when it comes to the
+network packet processing. How can this be achieved? Choose 2 answers from the options given
+below",Ensure that the instance supports single root I/O virtualization,Ensure that the MTU is set to 9001 on the Instance,Ensure that the MTU is set to 9001 for the VPC,Choose a t2.medium instance type,,,1&2, AWS certified Advance Networking  speclity,5
+89,"You work for your company as an AWS administrator. You’ve setup a Classic Load balancer and EC2
+Instances for an application. You have setup HTTPS listeners with the default security policies. Your
+Security department has mentioned that the security policy defined for the load balancer does not
+meet the regulations defined for the policy. What changes would you make to be in line with the
+requirements of the IT security department.",Create a new SSL and associate it with the underlying EC2 Instances,Create a new SSL and associate it with the underlying Classic Load balancer,Create a custom security policy and associate it with the EC2 Instance,Create a custom security policy and associate it with the Classic Load Balancer,,,4, AWS certified Advance Networking  speclity,5
+90,"When creating an AWS workspace , which of the following is required for the creation of the
+workspace.",A VPC with a private and public subnet,A User directory,A NAT instance on the customer side,An AWS Direct Connect connection,,,2, AWS certified Advance Networking  speclity,5
+91,"Your company currently hosts an application that consists of a NGINX web server that is hosted
+behind a load balancer. You need to ensure that you restrict access to certain locations for the content
+hosted on the Web server. How can you accomplish this?"," Use the NGINX logs to get the web server variable and then use the IP address to
+restrict content via Cloudfront geo-restrictions.",Use the ELB logs to create a blacklist for restrictions,"Use the IP addresses in the X-Forwarded-For HTTP header and then restrict
+content via Cloudfront geo-restrictions.",Use the ELB itself to restrict content via geo-restrictions.,,,3, AWS certified Advance Networking  speclity,5
+92,"Your planning on setting up a VPC with Subnets. The EC2 Instances hosted in the VPC needs to get
+the time from a custom NTP server. How can you accomplish this?",Create a DHCP Options set and provide the NTP server name,Define a resource record in Route 53 and provide the NTP server name,Assign the NTP server in the Subnet configuration,"Use an Application Load Balancer and then provide the NTP server as part of the
+ALB configuration",,,1, AWS certified Advance Networking  speclity,5
+93,"You have a set of Instances in your VPC that communicate over the IPv6 protocol. You need to ensure
+that traffic can flow from the Instances to the Internet but not vice versa. How ca you achieve this.",Change the Internet gateway to only allow outbound traffic for IPv6,Change the Internet gateway to only allow outbound traffic for IPv6,Change the NACL’s to not allow Inbound Traffic on the Instances,Use an Egress only Internet gateway,,,4, AWS certified Advance Networking  speclity,5
+94,"You’re planning on creating a VPN connection to 2 VPC’s in AWS. You are going to be using the same
+customer gateway in both cases. These VPC’s have overlapping CIDR blocks. What can be done to
+ensure the routing is done right on the customer side",Use static routes on the customer side,Configure AS_PATH for each of the routes,Use VRF technology for routing,Use BFD technology for routing,,,3, AWS certified Advance Networking  speclity,5
+95,"You have a set of EC2 Instances that are deployed in a VPC. An application is hosted on these
+instances. There are some issues which keep on recurring in the application and you plan to inspect
+the packets being sent from the application to trace the error. How can you achieve this?",Use VPC Flow logs,Use an IDS,Use Cloudtrail,Use Cloudwatch Logs,,,2, AWS certified Advance Networking  speclity,5
+96,"You’ve setup VPC Flow logs for your EC2 Instance ENI in a subnet. You can see the below REJECT
+record in the VPC Flow logs. What does this indicate.
+2 123456789911 eni-abc123de 172.31.9.69 172.31.9.12 49761 3389 6 20 4249 1418530010 1418530070
+REJECT OK",A request was made on port 80 to the Instance,Someone was trying to log into the Instance via SSH,Someone was trying to log into the Instance via RDP,A request was made on port 443 to the Instance,,,3, AWS certified Advance Networking  speclity,5
+97,"Your company currently has VPC’s located in us-west and us-east. The company has an AWS Direct
+Connect connection in the US East region. They want to have the ability to extend the connection to
+us-west. They also need to minimize time and effort to have this in place. How can this be achieved?",Create another AWS Direct Connect connection in us-west,Make use of the Direct Connect gateway,Create a private VIF using the current connection,Make use of an IPSec VPN,,,2, AWS certified Advance Networking  speclity,5
+98,"You have a requirement of providing remote access to clients from their mobile devices and tablets.
+This is to access a service from inside a VPC. Which of the following would be part of the design?",A custom VPN server hosted on an EC2 Instance,An AWS Managed VPN,An AWS Managed Direct Connect connection,An AWS Managed Direct Connect gateway,,,1, AWS certified Advance Networking  speclity,5
+99,"Your company is using a hosted virtual interface from its parent AWS Account. You need to mention to
+IT management on what charges your company will acquire. Which of the following would you
+mention?",The port hour charges,The data transfer in,The data transfer out via the interface,The amount of hours used by the interface,,,3, AWS certified Advance Networking  speclity,5
+100,"You’ve configured a classic load balancer with EC2 Instances behind them. You are going to the DNS
+name for the load balancer , but you are not getting the response from the underlying instances.
+Which of the following are checks you should carry out? Choose 2 answers from the options given
+below",Ensure the load balancer is created in the public subnet,Ensure the load balancer is created in the private subnet,"Ensure the Security group for the load balancer accepts traffic on port 80
+from10.0.0.0/16","Ensure the Security group for the load balancer accepts traffic on port 80
+from0.0.0.0/0",,,1&4, AWS certified Advance Networking  speclity,5

@@ -1,0 +1,1567 @@
+Sr No.,Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+1,"You currently operate a web application in the AWS US-East region. The application runs
+on an auto-scaled layer of EC2 instances and an RDS Multi-AZ database. Your IT security
+compliance officer has tasked you to develop a reliable and durable logging solution to
+track changes made to your EC2, IAM and RDS resources. The solution must ensure the
+integrity and confidentiality of your log data. Which of the below solutions would you
+recommend?","Create a new CloudTrail trail with one new S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use IAM
+roles, S3 bucket policies and Multi Factor Authentication (MFA) to
+delete on the S3 bucket that stores your logs.","Create a new CloudTrail with one new S3 bucket to store the logs.
+Configure SNS to send log file delivery notifications to your management
+system. Use IAM roles and S3 bucket policies on the S3 bucket that stores
+your logs.","Create a new CloudTrail trail with an existing S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use S3 ACLs
+and Multi Factor Authentication (MFA) to delete on the S3 bucket that
+stores your logs","Create three new CloudTrail trails with three new S3 buckets to store the
+logs one for the AWS Management console, one for AWS SDKs and one for
+command line tools. Use IAM roles and S3 bucket policies on the S3",,,3,Professional,5
+2,"An enterprise wants to use a 3rd party SaaS application hosted by another AWS account.
+The SaaS application needs to have access to issue several API commands to discover
+Amazon EC2 resources running within the enterprise’s account. The enterprise has internal
+security policies that require any outside access to their environment must conform to the
+principles of least privilege and there must be controls in place to ensure that the
+credentials used by the SaaS vendor cannot be used by any other third party.
+Which of the following options would meet all of these conditions?","From the AWS Management Console, navigate to the Security Credentials
+page and retrieve the access and secret key for your account","Create an IAM user within the enterprise account assign a user policy to the
+IAM user that allows only the actions required by the SaaS application.
+Create a new access and secret key for the user and provide these
+credentials to the SaaS provider.","Create an IAM role for cross-account access that allows the SaaS
+provider’s account to assume the role and assign it a policy that
+allows only the actions required by the SaaS application.","Create an IAM role for EC2 instances, assign it a policy which allows only
+the actions required for the Saas application to work, provide the role
+ARN to the SaaS provider, to be used when launching their application
+instances.",,,3,Professional,5
+3,"An AWS customer is deploying an application that is composed of an auto scaling group
+of EC2 Instances. The customer's security policy requires that every outbound connection
+from these instances to any other service within the customers Virtual Private Cloud must
+be authenticated using a unique X.509 certificate that contains the specific instance ID. In
+addition, an X.509 certificate must be designed by the AWS Key Management Service
+(KMS) in order to be trusted for authentication.
+Which of the following configurations will support these requirements?","Configure an IAM Role that grants access to an Amazon S3 object
+containing a signed certificate and configure an Auto Scaling group to
+launch instances with this role. Have the instances bootstrap, get the
+certificate from Amazon S3 upon first boot.","Embed a certificate into the Amazon Machine Image that is used by the
+Auto Scaling group Have the launched instances, generate a certificate
+signature request with the instance’s assigned instance-id to the AWS KMS
+for signature","Configure the AutoScaling group to send an SNS notification of the
+launch of a new instance to the AWS Certificate Manager. Create a
+signed certificate using AWS Certificate Manager (ACM).","Configure the launched instances to generate a new certificate upon first
+boot. Have the AWS KMS poll the Auto Scaling group for associated
+instances and send new instances a certificate signature (that contains the
+specific instance-id).",,,3,Professional,5
+4,"Your company is hosting a web application on AWS. According to the architectural best
+practices, the application must be highly available, scalable, cost effective, with highperformance
+and should require minimal human intervention. You have deployed the web
+servers and database servers in public and private subnet of the VPC respectively. While
+testing the application via web browser, you noticed that the application is not accessible.
+Which of the following two configuration settings can help you to tackle this issue?
+Choose any two options where each one will provide an independent solution to tackle
+the issue.","Configure a NAT instance in your VPC and create a default route via the
+NAT instance and associate it with all subnets. Configure a DNS A record
+that points to the NAT instance public IP address.","Configure a CloudFront distribution and configure the origin to point to the
+private IP addresses of your Web servers. Configure a Route53 CNAME
+record to your CloudFront distribution","Place all your web servers behind ELB. Configure a Route53 ALIASRecord
+to point to the ELB DNS name.","Assign EIP's to all web servers. Configure a Route53 A-Record set with
+all EIPs with health checks and DNS failover.","Configure ELB with an EIP. Place all your Web servers behind ELB.
+Configure a Route53 A record that points to the EIP.",,3&4,Professional,5
+5,"You have developed an application that processes massive amount of process logs
+generated by web site and mobile app. This application requires the ability to analyze
+petabytes of unstructured data using Amazon Elastic MapReduce. The resultant data is
+stored on Amazon S3. You have deployed c4.8xlarge Instance type, whose CPUs are
+mostly idle during the data processing. Which of the below options would be the most
+cost-efficient way to reduce the runtime of the log processing job?","Create log files with smaller size and store them on Amazon S3. Apply the
+life cycle policy to the S3 bucket such that the files would be first moved to
+RRS and then to Amazon Glacier vaults.","Add additional c4.8xlarge instances by introducing a task instance group.
+The network performance of 10 Gigabit per EC2 instance would increase
+the processing speed; thus reducing the load on the EMR cluster",Use smaller instances that have higher aggregate I/O performance,"Create fewer, larger log files. Compress and store them on Amazon S3
+bucket. Apply the life cycle policy to the S3 bucket such that the files
+would be first moved to RRS and then to Amazon Glacier vaults",,,4,Professional,5
+6,"Your department creates regular analytics reports from your company’s log files. All log
+data is collected in Amazon S3 and processed by daily Amazon Elastic MapReduce (EMR)
+jobs that generate daily PDF reports and aggregated tables in CSV format for an Amazon
+Redshift data warehouse. You notice that the average EMR hourly usage is more than 25%
+but less than 50%.
+Your CFO requests you to optimize the cost structure for this system. Which of the
+following alternatives will lower costs without compromising the average performance of
+the system or data integrity for the raw data?","Use Glacier to store PDF and CSV Data. Add Spot instances to Amazon
+EMR jobs. Use Reserved instances for Amazon Redshift.","Use standard S3 to store PDF. Use a combination of spot instances
+and reserved instances for EMR and reserved instances for RedShift.","Use Glacier to store PDF and CSV Data. Add Spot instances to Amazon
+EMR jobs. Use Spot instances for Amazon Redshift.","Use S3-IA to store PDF and CSV Data. Use Reserved instances to Amazon
+EMR jobs. Use Reserved instances for Amazon Redshift.",,,2,Professional,5
+7,"You are the new IT architect in a company that operates a mobile sleep tracking
+application. When activated at night, the mobile app is sending collected data points of 1
+KB every 5 minutes to your middleware. The middleware layer takes care of
+authenticating the user and writing the data points into an Amazon DynamoDB table.
+Every morning, you scan the table to extract and aggregate last night’s data on a per-user
+basis, and store the results in Amazon S3. Users are notified via Amazon SMS mobile pushnotifications that new data is available, which is parsed and visualized by the mobile app.
+Currently, you have around 100k users. You have been tasked to optimize the architecture
+of the middleware system to lower the cost. What would you recommend?
+Choose 2 options from below:","Create a new Amazon DynamoDB table each day and drop the one for
+the previous day after its data is on Amazon S3.","Have the mobile app access Amazon DynamoDB directly instead of JSON
+files stored on Amazon S3.","Introduce an Amazon SQS queue to buffer writes to the Amazon
+DynamoDB table and reduce provisioned write throughput","Introduce Amazon Elasticache to cache reads from the Amazon
+DynamoDB table and reduce provisioned read throughput.","Write data directly into an Amazon Redshift cluster replacing both Amazon
+DynamoDB and Amazon S3.",,1&3,Professional,5
+8,"Your website is serving on-demand training videos to your workforce. Videos are
+uploaded monthly in high-resolution MP4 format. Your workforce is distributed globally
+often on the move and using company-provided tablets that require the HTTP Live
+Streaming (HLS) protocol to watch a video. Your company has no video transcoding
+expertise and it required you may need to pay for a consultant. How would you implement
+the most cost-efficient architecture without compromising high availability and quality of
+video delivery?","Elastic Transcoder to transcode original high-resolution MP4 videos to
+HLS. Use S3 to host videos. Use CloudFront to serve HLS transcoded
+videos from S3.","A video transcoding pipeline running on EC2 using SQS to distribute tasks
+and Auto Scaling to adjust the number of nodes depending on the length
+of the queue. Use S3 to host videos with Lifecycle Management to archive
+all files to Glacier after a few days. Use CloudFront to serve HLS
+transcoding videos from Glacier.","Elastic Transcoder to transcode original high-resolution MP4 videos to HLS
+EBS volumes to host videos and EBS snapshots to incrementally backup
+original rues after a few days. CloudFront to serve HLS transcoded videos
+from EC2.","A video transcoding pipeline running on EC2 using SQS to distribute tasks
+and Auto Scaling to adjust the number of nodes depending on the length
+of the queue EBS volumes to host videos and EBS snapshots to
+incrementally backup original files after a few days CloudFront to serve
+HLS transcoded videos from EC2.",,,1,Professional,5
+9,"You’ve been hired to enhance the overall security posture for a very large e-commerce
+site. They have a well architected multi-tier application running in a VPC that uses ELBs in
+front of both the web and the app tier with static assets served directly from S3. They are
+using a combination of RDS and DynamoDB for their dynamic data and then archiving
+nightly into S3 for further processing with EMR. They are concerned because they found
+questionable log entries and a flood of superfluous requests for accessing the resources.
+You suspect that someone is attempting to gain unauthorized access. Which approach
+provides a cost-effective scalable mitigation to this kind of attack?","Recommend that they lease space at a DirectConnect partner location and
+establish a 1G DirectConnect connection to their VPC. Then they would
+establish Internet connectivity into their space, filter the traffic in hardware
+Web Application Firewall (WAF) and then pass the traffic through the
+DirectConnect connection into their application running in their VPC.","Add previously identified host file source IPs as an explicit INBOUND DENY
+NACL to the web tier subnet","Add a WAF tier by creating a new ELB and an AutoScaling group of
+EC2 Instances running a host-based WAF. They would redirect Route
+53 to resolve to the new WAF tier ELB. The WAF tier would pass the
+traffic to the current web tier. The web tier Security Groups would be
+updated to only allow traffic from the WAF tier Security Group","Remove all but TLS 1 & 2 from the web tier ELB and enable Advanced
+Protocol Filtering. This will enable the ELB itself to perform WAF
+functionality.",,,3,Professional,5
+10,"You currently operate a web application in the AWS US-East region. The application runs
+on an auto-scaled layer of EC2 instances and an RDS Multi-AZ database. Your IT security
+compliance officer has tasked you to develop a reliable and durable logging solution to
+track changes made to your EC2, IAM and RDS resources. The solution must ensure the
+integrity and confidentiality of your log data. Which of the below solutions would you
+recommend?","Create a new CloudTrail trail with one new S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use IAM
+roles, S3 bucket policies and Multi Factor Authentication (MFA) to
+delete on the S3 bucket that stores your logs.","Create a new CloudTrail with one new S3 bucket to store the logs.
+Configure SNS to send log file delivery notifications to your management
+system. Use IAM roles and S3 bucket policies on the S3 bucket that stores
+your logs.","Create a new CloudTrail trail with an existing S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use S3 ACLs
+and Multi Factor Authentication (MFA) to delete on the S3 bucket that
+stores your logs","Create three new CloudTrail trails with three new S3 buckets to store the
+logs one for the AWS Management console, one for AWS SDKs and one for
+command line tools. Use IAM roles and S3 bucket policies on the S3
+buckets that store your logs.",,,1,Professional,5
+11,"An enterprise wants to use a 3rd party SaaS application hosted by another AWS account.
+The SaaS application needs to have access to issue several API commands to discover
+Amazon EC2 resources running within the enterprise’s account. The enterprise has internal
+security policies that require any outside access to their environment must conform to the
+principles of least privilege and there must be controls in place to ensure that the
+credentials used by the SaaS vendor cannot be used by any other third party.
+Which of the following options would meet all of these conditions?","From the AWS Management Console, navigate to the Security Credentials
+page and retrieve the access and secret key for your account","Create an IAM user within the enterprise account assign a user policy to the
+IAM user that allows only the actions required by the SaaS application.
+Create a new access and secret key for the user and provide these
+credentials to the SaaS provider.","Create an IAM role for cross-account access that allows the SaaS
+provider’s account to assume the role and assign it a policy that
+allows only the actions required by the SaaS application.","Create an IAM role for EC2 instances, assign it a policy which allows only
+the actions required for the Saas application to work, provide the role
+ARN to the SaaS provider, to be used when launching their application
+instances.",,,3,Professional,5
+12,"You are designing a data leak prevention solution for your VPC environment. You want
+your VPC Instances to be able to access software depots and distributions on the Internetfor product updates. The depots and distributions are accessible via the third party via
+their URLs. You want to explicitly deny any other outbound connections from your VPC
+instances to hosts on the internet.
+Which of the following options would you consider?","Place all EC2 instances that do not require direct access to the
+internet in private subnets so their egress traffic can be directed to a
+web proxy server in public subnet and enforce URL based rules for
+outbound access.","Implement security groups and configure outbound rules to only permit
+traffic to software depots","Move all your instances into private VPC subnets. Remove default routes
+from all routing tables and add specific routes to the software depots and
+distributions only","Implement network access control lists to allow traffic from specific
+destinations, with an implicit deny as a rule.",,,1,Professional,5
+13,"An administrator is using Amazon CloudFormation to deploy a three-tier web application
+that consists of a web tier and application tier that will utilize Amazon DynamoDB for
+storage. While creating the CloudFormation template which of the following would allow
+the application instance access to the DynamoDB tables without exposing API
+credentials?","Create an Identity and Access Management Role that has the required
+permissions to read and write from the required DynamoDB table and
+associate the Role to the application instances by referencing an instance
+profile.","Use the Parameter section in the Cloud Formation template to have the
+user input Access and Secret Keys from an already created IAM user that
+has me permissions required to read and write from the required
+DynamoDB table.","Create an IAM Role that has the required permission to read and write
+from the required DynamoDB table, add the role to the instance
+profile and associate the instance profile with the application instance","Create an identity and Access Management user in the CloudFormation
+template that has permissions to read and write from the required
+DynamoDB table, use the GetAtt function to retrieve the Access and secret
+keys and pass them to the application instance through user-data.",,,3,Professional,5
+14,"An AWS customer is deploying an application that is composed of an auto scaling group
+of EC2 Instances. The customer's security policy requires that every outbound connection
+from these instances to any other service within the customers Virtual Private Cloud must
+be authenticated using a unique X.509 certificate that contains the specific instance ID. In
+addition, an X.509 certificate must be designed by the AWS Key Management Service
+(KMS) in order to be trusted for authentication.
+Which of the following configurations will support these requirements?","Configure an IAM Role that grants access to an Amazon S3 object
+containing a signed certificate and configure an Auto Scaling group to
+launch instances with this role. Have the instances bootstrap, get the
+certificate from Amazon S3 upon first boot","Embed a certificate into the Amazon Machine Image that is used by the
+Auto Scaling group Have the launched instances, generate a certificate
+signature request with the instance’s assigned instance-id to the AWS KMS
+for signature.","Configure the AutoScaling group to send an SNS notification of the
+launch of a new instance to the AWS Certificate Manager. Create a
+signed certificate using AWS Certificate Manager (ACM).","Configure the launched instances to generate a new certificate upon first
+boot. Have the AWS KMS poll the Auto Scaling group for associated
+instances and send new instances a certificate signature (that contains the
+specific instance-id).",,,3,Professional,5
+15,"You are given a task with moving a legacy application from a virtual machine running
+inside your datacenter to an Amazon VPC. Unfortunately, this app requires access to anumber of on-premise services and no one who configured the app still works for your
+company. Even worse, there’s no documentation for it. What does the application running
+inside the VPC need to reach out to on-premises services?
+Choose 3 options the below:","An AWS Direct Connect link between the VPC and the network
+housing the internal services.",An Internet Gateway to allow a VPN connection.,An Elastic IP address on the VPC instance,An IP address space that does not conflict with the one on-premises,"Entries in Amazon Route 53 that allow the Instance to resolve its
+dependencies’ IP addresses",A VM Import of the current virtual machine,1&4&6,Professional,5
+16,"Your company has recently extended its data center into a VPC on AWS to add burst
+computing capacity as needed. Members of your Network Operations Center need to be
+able to go to the AWS Management Console and administer Amazon EC2 instances as
+necessary. You don’t want to create new IAM users for each member and make those users sign in again to the AWS Management Console. Which option below will meet the
+needs of your NOC members?","Use OAuth 2.0 to retrieve temporary AWS security credentials to enable
+your members to sign in to the AWS Management Console.","Use web Identity Federation to retrieve AWS temporary security
+credentials to enable your members to sign in to the AWS Management
+Console.","Use your on-premises SAML 2.0-compliant identity provider (IDP) to
+grant the members federated access to the AWS Management
+Console via the AWS single sign-on (SSO) endpoint","Use your on-premises SAML 2.0-compliant identity provider (IDP) to
+retrieve temporary security credentials to enable members to sign in to the
+AWS Management Console.",,,3,Professional,5
+17,"You are designing an SSL/TLS solution that requires HTTPS clients to be authenticated by
+the Web server using client certificate authentication. The solution must be resilient.
+Which of the following options would you consider for configuring the web server
+infrastructure?
+Choose any 2 options from the list given below, each one being an independent solution
+to the scenario.","Configure ELB with TCP listeners on TCP/443 and place the Web
+servers behind it.","Configure your Web servers with EIP’s. Place the Web servers in a
+Route53 Record Set and configure health checks against all Web
+servers.","Configure ELB with HTTPS listeners, and place the Web servers behind it.","Configure your web servers as the origins for a CloudFront distribution. Use
+custom SSL certificates on your CloudFront distribution.",,,1&2,Professional,5
+18,"You are designing a connectivity solution between on-premises infrastructure and
+Amazon VPC. Your servers on-premises will be communicating with your VPC instances.
+You will be establishing IPSec tunnels over the internet. You will be using Virtual
+Private Gateways and terminating the IPsec tunnels on AWS-supported customer
+gateways.
+Which of the following objectives would you achieve by implementing an IPSec tunnel as
+outlined above?
+Choose 4 answers from the below:",End-to-end protection of data in transit,End-to-end Identity authentication,Data encryption across the Internet,Protection of data in transit over the Internet,"Peer identity authentication between Virtual Private Gateway and
+customer gateway is achieved as it is imperative for its
+implementation",Data integrity protection across the Internet,3&4&5&6,Professional,5
+19,"You are designing an intrusion detection prevention (IDS/IPS) solution for a customer's
+web application in a single VPC. You are considering the options for implementing IDS/IPS
+protection for traffic coming from the Internet. Which of the following options would you
+consider?
+Choose 2 options from the below",Implement IDS/IPS agents on each Instance running In VPC,"Configure an instance in each subnet to switch its network interface card to
+promiscuous mode and analyze network traffic.","Implement Elastic Load Balancing with SSL listeners In front of the web
+applications","Implement a reverse proxy layer in front of web servers and configure
+IDS/IPS agents on each reverse proxy server.",,,1&4,Professional,5
+20,"You are designing a photo-sharing mobile app. The application will store all pictures in a
+single Amazon S3 bucket. Users will upload pictures from their mobile device directly to
+Amazon S3 and will be able to view and download their own pictures directly from
+Amazon S3. You want to configure security to handle potentially millions of users in the
+most secure manner possible.
+What should be done by your server-side application, when a new user registers on the
+photo-sharing mobile application?","Create a set of long-term credentials using AWS Security Token Service
+with appropriate permissions. Store these credentials in the mobile app
+and use them to access Amazon S3.","Record the user’s Information in Amazon RDS and create a role in IAM
+with appropriate permissions. When the user uses their mobile app
+create temporary credentials using the AWS Security Token Service
+‘AssumeRole’ function, store these credentials in the mobile app’s
+memory and use them to access Amazon S3. Generate new
+credentials the next time the user runs the mobile app.","Record the user’s Information In Amazon DynamoDB. When the user uses
+their mobile app create temporary credentials using AWS Security Token
+Service with appropriate permissions. Store these credentials in the mobile
+app’s memory and use them to access Amazon S3. Generate new
+credentials the next time the user runs the mobile app.","Create IAM user. Assign appropriate permissions to the IAM user Generate
+an access keyand secret key for the IAM user, store them in the mobile app
+and use thesecredentials to access Amazon S3.","Create an IAM user. Update the bucket policy with appropriate permissions
+for the IAM user. Generate an access Key and secret Key for the IAM user,
+store them in the mobile app and use these credentials to access Amazon
+S3.",,2,Professional,5
+21,"You have an application running on an EC2 Instance which will allow users to download
+files from a private S3 bucket using a pre-signed URL. Before generating the URL, the
+application should verify the existence of the file in S3. How should the application use
+AWS credentials to access the S3 bucket securely?","Use the AWS account access Keys. The application retrieves the
+credentials from the source code of the application.","Create an IAM user for the application with permissions that allow list
+access to the S3 bucket launch the instance as the IAM user and retrieve
+the IAM user’s credentials from the EC2 instance user data.","Create an IAM role for EC2 that allows list access to objects in the S3
+bucket. Launch the instance with the role, and retrieve the role’s
+credentials from the EC2 Instance metadata","Create an IAM user for the application with permissions that allow list
+access to the S3 bucket. The application retrieves the IAM user credentials
+from a temporary directory with permissions that allow read access only to
+the application user.",,,3,Professional,5
+22,"You are designing a social media site and are considering how to mitigate distributed
+denial-of-service (DDoS) attacks. Which of the below are viable mitigation techniques?
+Choose 3 options from the below","Add multiple elastic network interfaces (ENIs) to each EC2 instance to
+increase the network bandwidth.","Use dedicated instances to ensure that each instance has the maximum
+performance possible.","Use an Amazon CloudFront distribution for both static and dynamic
+content.","Use an Elastic Load Balancer with Auto Scaling Groups at the
+web Application layer restricting direct internet traffic to Amazon
+Relational Database Service (RDS) tiers.","Add alert Amazon CloudWatch to look for high network in and CPU
+utilization.","Create processes and capabilities to quickly add and remove rules to the
+instance OS firewall",3&4&5,Professional,5
+23,"A benefits enrollment company is hosting a 3-tier web application running in a VPC on
+AWS which includes a NAT (Network Address Translation) instance in the public Web tier.
+There is enough provisioned capacity for the expected workload for the new fiscal year
+benefit enrollment period plus some extra overhead. Enrollment proceeds nicely for two
+days and then the web tier becomes unresponsive, upon investigation using CloudWatch
+and other monitoring tools. It is discovered that there is an extremely large and
+unanticipated amount of inbound traffic coming from a set of 15 specific IP addresses over
+port 80 from a country where the benefits company has no customers. The web tier
+instances are so overloaded that benefit enrolment administrators cannot even SSH into
+them. Which activity would be useful in defending against this attack?","Create a custom route table associated with the web tier and block the
+attacking IP addresses from the IGW (internet Gateway)","Change the EIP (Elastic IP Address) of the NAT instance in the web tier
+subnet and update the Main Route Table with the new EIP","Create 15 Security Group rules to block the attacking IP addresses over
+port 80","Create an inbound NACL (Network Access control list) associated with
+the web tier subnet with deny rules to block the attacking IP
+addresses",,,4,Professional,5
+24,"Your fortune 500 company has undertaken a TCO analysis evaluating the use of Amazon
+S3 versus acquiring more hardware. The outcome was that all employees would be
+granted access to use Amazon S3 for storage of their personal documents. Which of the
+following will you need to consider so you can set up a solution that incorporates single
+sign-on from your corporate AD or LDAP directory?
+Choose 3 options from the below",Setting up a federation proxy or identity provider,Using AWS Security Token Service to generate temporary tokens,Tagging each folder in the bucket,Configuring IAM role,"Setting up a matching IAM user for every user in your corporate directory
+that needs access to a folder in the bucket",,1&2&4,Professional,5
+25,"Your company is getting ready to do a major public announcement of a social media site
+on AWS. The website is running on EC2 instances deployed across multiple Availability
+Zones with a Multi-AZ RDS MySQL Extra Large DB Instance. The site performs a high
+number of small reads and writes per second and relies on an eventual consistency
+model. After comprehensive tests, you discover that there is read contention on RDS
+MySQL. Which are the best approaches to meet these requirements?
+Choose 2 options from the below:","Deploy ElasticCache in-memory cache running in each availability
+zone",Implement sharding to distribute load to multiple RDS MySQL instances,Increase the RDS MySQL Instance size and implement provisioned IOPS,Add an RDS MySQL read replica in each availability zone,,,1&4,Professional,5
+26,"A large financial application generates logs in comma separated format and saves to S3
+for the processing. After each file is generated a message is sent to SQS from where EC2
+picks the message and starts the processing. EC2 instances are running behind load
+balancers which are monitoring the SQS queue. Once the processing is completed, the
+processed files are stored into another S3 bucket for the reporting purpose. EC2 loads the
+application from S3 on the startup. Based on the application release logs, there has been
+more than a few releases made to the application last month. The data security and
+monitoring team want to check the application logs to make sure the logs are not
+revealing any sensitive information. How can you complete this process effectively
+without interrupting the auto-scaling or the application release cycle?","Enable CloudTrail and redirect all the system logs to the S3. Download the
+log files from S3 and check","Suspend the AutoScaling Terminate process, log into the machines which
+have been recently started and check the logs","Install the CloudWatch Logs Agents, redirect the logs to the
+CloudWatch. Trigger a Lambda function to process the logs in real
+time.","Take daily snapshots of the instances, mount the recent snapshots to
+another instance and check the logs",,,3,Professional,5
+27,"You have an existing application which runs on your premise and currently uses a nonrelational
+database. Your team has decided to move the application to cloud environment
+and also the database to DynamoDB to use some of its features like scaling and data
+streaming. As per the management outline, post migration, all the communication
+between the application and the DynamoDB must be secure and scalable as the load will
+increase in the near future. What combination can be best used to design the migration?
+Select two options.",Migrate the on-premise application to the AWS EC2,"Use the HTTPS endpoint of the DynamoDB to make sure all the
+communication is secure","Connect your on-premise network to AWS using the VPN to access the
+DynamoDB via the VPC endpoints","Run your application using auto-scaling and provision higher read/write
+capacity to the DynamoDB tables","Use the VPC gateway endpoint to connect with your DynamoDB,
+provide the endpoint to your application configuration","Enable the encryption at rest option to make sure all the data stored in the
+DynamoDB is secure",1&6,Professional,5
+28,"To follow the new security compliances your company has hired an external auditor to
+assess the security perimeter around your SaaS platform. The application is running in
+multiple regions and uses the load balancers within each regions for higher availability.
+The instances loads sensitive configurations from an S3 bucket at start and the DynamoDB
+is used as primary database. The auditor has advised to further tighten the security groups
+and NACLs based on the application requirement and use the private network instead of
+using the public endpoints to access the AWS services. Your team decided to use the VPC
+Endpoints as it uses the AWS internal network for all the communication, after detail
+examination they realised the current architecture will not allow them to use the VPC
+endpoints as it is and will require a set of modifications. Please select three valid
+modifications:","Configure the DynamoDB Global Tables to replicate the data into
+multi-regions","Create VPC Endpoints for S3 and DynamoDB and modify the route
+tables for all the availability zones used by the auto scaling group","Use the NAT Gateway for all the egress communication to these AWS
+services","Setup VPC gateway endpoint for S3 and interface endpoint for DynamoDB
+to communicate with these services over the private AWS network","Use the S3 Cross Region Replication to save the configurations in the
+multiple regions",,1&2&5,Professional,5
+29,"Your organization is planning to shift one of the high-performance data analytics
+application running on Linux servers purchased from the 3rd party vendor to the AWS.
+Currently, the application works in an on-premise load balancer and all the data is stored
+in a very large shared file system for low-latency and high throughput purpose. The
+management wants minimal disruption to existing service and also wants to do stepwise
+migration for easy rollback. Please select valid options from below.","Save all the data on S3 and use it as shared storage, use an application load
+balancer with EC2 instances to share the processing load","Create a RAID 1 storage using EBS and run the application on EC2 with
+application-level load balancers to share the processing load","Use the VPN or Direct Connect to create a link between your company
+premise and AWS regional data center","Create an EFS with provisioned throughput and share the storage
+between your on-premise instances and EC2 instances","Setup a Route 53 record to distribute the load between on-premise
+and AWS load balancer with the weighted routing policy",,3&4&5,Professional,5
+30,"Your solutions architect has asked you to submit an analysis report to help decide
+between EFS and S3 as a distributed storage options for the new mobile application. The
+application will accept images and videos from the mobile app and will store, enhance,
+watermark and deliver to other users. As per the initial research, it seems the EFS will be a
+suitable option as the application will be running behind a load balancer and the file
+system will be shared among the instances so that the data can be delivered fast. They
+have decided to use the CloudFront before the load balancer to geocache the contents
+and serve it faster. Under what circumstances EFS will not be best suitable for the current
+application design?
+Choose 2 Options.","EFS is not redundant and will require periodic backup to ensure no data is
+at a loss","The throughput of EFS increases with storage capacity, so the download
+will become faster with more data","Your application will have to handle all the upload/download
+processing A","Encryption in transit and at the storage level is not available. So in future, if
+your application needs encryption, EFS will not the right choice.","EFS performance is dependent on storage size, under heavy load, EFS
+may start to throttle unexpectedly",,3&5,Professional,5
+31,"Your company runs a popular map service as a SaaS platform. Your application users are
+spread across the world but not all of them are using the system heavily, so the load is
+high in some of the regions but not all. The application uses the NoSQL database and runs
+it on a cluster of EC2 machines and using the custom tools to replicate the data acrossdifferent regions. The current database size is around 10PB and as the popularity of the
+application grows, the database is also growing rapidly. Now the application is serving
+millions of requests from your SaaS platform. The management has decided to come up
+with a plan to re-design the architecture both from the application availability and
+infrastructure cost perspective. Please suggest the necessary changes. Select 3 Options.","Route53 with Latency based routing policy to redirect to the nearest
+region and deploy the application into regions from where the heavy
+load is generating","Migrate the application on S3 and use CloudFront edge locations to serve
+the requests","Use DynamoDB global tables to replicate the data into multiple
+regions","Deploy the ElastiCache to the regions in which DynamoDB is not
+running","Use RDS with the Read Replicas into multiple regions, application servers
+will use the read replicas to serve the traffic",,1&3&4,Professional,5
+32,"You have developed a web application to collect monthly expense reports. As the nature
+of the application and looking at the usage statistics it is mostly used around the last week
+of the month and the first week of the month. To increase the application performance
+you added a caching layer in front of the application servers, so the reports are cached
+and served immediately. You started off with ElastiCache Redis with a t2 small instance.
+The application has been running fine and by looking at the performance activity into the
+CloudWatch, the cache hardly hits the 50% of the capacity. You want to minimize the cost
+to keep the application running at minimal resources. Please select a valid option to
+reduce the cost for the caching layer.","Modify the ElastiCache instance from t2 small to t2 micro, as t2 micro is
+more suitable for the given requirement","Create a new ElastiCache instance with t2 micro, and terminate the t2
+small instance","Migrate the application to Elastic Beanstalk to use auto-scaling and set the
+desired and min capacity to 1, use the RDS and Cache layer of Beanstalk to
+save the cost",Run the web application from S3 and serve with CloudFront,,,2,Professional,5
+33,"You are an IT administrator and you are responsible for managing several on-premises
+databases in VMware vSphere environments. The R&D team has just created several RDS
+instances on VMware to utilize the latest AWS RDS on VMware feature. Then those new
+databases can be managed by using RDS console, API and CLI. Which activities does the
+Amazon RDS on VMware manage on your behalf? (Select FOUR)","The patching of the RDS on-premises operating systems and database
+engines.","Automated multi-availability zone (Multi-AZ) configurations for RDS
+instances in Vmware","Online backups based on retention policies of databases in RDS
+VMware.","Point-in-time restore from on-premises instances and cloud backups
+when needed","IP management such as a dedicated public IP has been allocated by AWS
+VPC.",,1&2&3&4,Professional,5
+34,"You are an AWS solutions architect and are in charge of the maintenance of a RDS on
+VMware database which is deployed on-premise. You have created a read replica in apsouth-
+1 region to share some read traffic. The system has run smoothly for a while then
+the company decides to migrate all the products to AWS including the on-premise RDS
+instance. Other than that, the instance needs to have another replica in another region apsoutheast-
+1. What actions should you take to fulfill this requirement?","Use Data Migration Service to migrate the on-premise database to a RDS
+instance in AWS. Create a read replica in ap-southeast-1 region afterwards.","In RDS console, click “migrating the instance” to create a new RDS instance.
+Then create a new read replica in the ap-southeast-1 region","Create another read replica in ap-southeast-1 region to share the read
+traffic for the RDS instance on VMware. Promote the RDS read replica in
+ap-south-1 to be the new RDS instance so that the original on-premise
+database is migrated in AWS with a replica in ap-southeast-1.","Promote the RDS read replica in ap-south-1 to be the new RDS
+instance. Create another read replica in ap-southeast-1 for this new
+instance",,,4,Professional,5
+35,"You are a development lead and your team has maintained an emailing service for the
+company’s major applications. The emailing service is deployed on-premise with several
+RDS on VMware databases to store users’ metadata. There is no plan to migrate the onpremise
+RDS databases to AWS RDS. However you need an appropriate approach to
+backup the databases to AWS so that the database can be quickly restored. Which steps
+should you take to fulfill this requirement? (Select THREE)","Specify an automated backup every day to store the snapshot to S3
+bucket so that the backup has high availability and durability","Configure a read-replica in the same region as the VPC that the RDS on
+VMware instance connects to. Read-replica cannot be created in other
+regions","Create an automated backup schedule in RDS and save the daily snapshots
+to AWS Glacier for long term backup","Create a read-replica in additional region for disaster recovery as long
+as the region supports RDS","Create backups by replicating the RDS on-premise instance to RDS in
+AWS.",,1&4&5,Professional,5
+36,"Which of the following are the recommendations from AWS when migrating a legacy
+application which is hosted on a virtual machine in an on-premise location?
+Choose 2 options from the below:",Use a NAT instance to route traffic from the instance in the VPC.,Use a Static IP address on the VPC instance,"Use entries in Amazon Route 53 that allow the Instance to resolve its
+dependencies’ IP addresses on the on-premise location",Use the VM Import facility provided by aws.,,,3&4,Professional,5
+37,"Your team is building up a smart home iOS APP. The end users have used your company’s
+camera-equipped home devices such as baby monitors, webcams, and home surveillance
+systems. Then the videos are uploaded to AWS Kinesis. Afterwards, through the mobile
+APP, users can play the on-demand or live videos using the format of HTTP Live
+Streaming (HLS). Which combinations of steps should you use accomplish this task?
+(Select TWO)","Create a Kinesis Data Firehose to ingest, durably store and encrypt the live
+videos from the users’ home devices.","Create a Kinesis video stream to capture, store, and index the videos
+from the camera-equipped home devices.","Transform the stream data to HLS compatible data by using Kinesis Data
+Analytics or customer code in EC2/Lambda. Then in the mobile application,
+use HLS protocol to display the video stream by using the converted HLS
+streaming data.","In the mobile application, use HLS to display the video stream by using
+the HLS streaming session URL.",,,2&4,Professional,5
+38,"An IOT company has a new product which is a camera device. The device has installed
+several sensors and can record video as required. The device has AWS Kinesis Video
+Streams SDK in the software and is able to transmit recorded video in real time to AWS
+Kinesis. Then the end users can use a desktop or web client to view, download or share
+the video stream. The client app should be simple and use a third-party player such as
+Google Shaka Player to display the video stream from Kinesis. How should the client app
+be designed?","The client can use HTTP Live Streaming (HLS) for live playback. Use
+GetMedia API to process and play Kinesis video streams.","The client can use HLS for live playback. Use
+GetHLSStreamingSessionURL API to retrieve the HLS streaming
+session URL then provide the URL to the video player.","The client can use Adobe HTTP Dynamic Streaming (HDS) for live playback.
+Use GetHDSStreamingSessionURL API to retrieve the HDS streaming
+session URL then provide the URL to the video player.","The client can use Microsoft Smooth Streaming (MSS) for live playback.
+Use GetMSSStreaming API to retrieve the MSS streaming to the video
+player.",,,2,Professional,5
+39,"Kinesis Video Streams can capture massive amounts of live video data from millions of
+sources including smartphones, security cameras, webcams, etc. To consume the video in
+Kinesis Video Streams, there are two methods. The first is using the GetMedia API and the
+second is using HTTP Live Streaming (HLS). For which of the following scenarios HLS
+method should be recommended? (Select TWO)","A web application that is able to display the video stream using the
+third-party player Video.js.","In order to process Kinesis video streams, a SAAS provider needs to build a
+new video player which is integrated into their major online product.","Able to view only live video, not archived video.","Playback video by typing in the HLS streaming session URL in the
+location bar of the Apple Safari browser for debug purpose",,,1&4,Professional,5
+40,"When one creates an encrypted EBS volume and attach it to a supported instance type,
+which of the following data types are encrypted?
+Choose 3 options from the below:",Data at rest inside the volume,All data copied from the EBS volume to S3,All data moving between the volume and the instance,All snapshots created from the volume,,,1&3&4,Professional,5
+41,"You are hired as an AWS solutions architect in a startup company. You notice that there
+are some issues for the backup strategy of EC2 instances and there is no snapshot
+lifecycle management at all. Users just create snapshots manually without a routine policy
+to control. You want to suggest to use a proper EBS Snapshot Lifecycle policy. How would
+you persuade your team lead to approve this suggestion? (Select TW","A snapshot lifecycle policy helps to retain backups as required by
+auditors or internal complianc","An EBS Snapshot Lifecycle helps to protect valuable data by enforcing
+a regular backup schedule","proper snapshot lifecycle policy is able to reduce storage costs as the
+snapshots taken by the schedule policy are free","User can design their own schedule to backup snapshots according to
+different requirements, such as every 1 week, 2 weeks etc",,,1&2,Professional,5
+42,"A communication company has deployed several EC2 instances in region ap-southeast-1
+which are used to monitor user activities. The AWS administrator has configured an EBS
+lifecycle policy to create a snapshot every day for each EBS volume to preserve data. The
+retention is configured as 5 which means the oldest snapshot will be deleted after 5 days.
+The administrator plans to copy some snapshots to another region ap-southeast-2 as
+these snapshots contain some important data. Are these new snapshots in the new region
+retained with this method?","These new snapshots may be deleted after the retention period as they are
+still affected by the retention policy.","These new snapshots can be kept only when they are copied to another
+region otherwise they may be deleted by the retention policy. In this case,
+the snapshots can be kept","These new snapshots can be kept as the retention schedule is not
+carried over to the copy","The new snapshots in region ap-southeast-2 will be deleted after 5 days
+unless the delete protection option is enabled",,,3,Professional,5
+43,"An IT company has a big data analytics application that is deployed in EC2 in multiple
+availability zones. These EC2 instances simultaneously access a shared Amazon EFS file
+system using a traditional file permissions model. A recent internal security audit has
+found that there is a potential security risk as the EFS file system is not encrypted for
+either at rest or in transit. What actions could be taken to address the potential security
+threat posed by non encryption of the EFS volume?","The encryption of data at rest has to be enabled when the Amazon
+EFS file system is created. The encryption of data in transit can be
+enabled when the file system is mounted in EC2 instance","The encryption of data at rest and in transit can be enabled when the
+Amazon EFS file system is created.","The encryption of data at rest and in transit can only be enabled when the
+Amazon EFS file system is mounted in EC2 instance.","The encryption of data at rest is able to be enabled when the Amazon EFS
+file system is mounted in EC2 instance. The encryption of data in transit is
+enabled when the EFS file system is created using AWS console or CLI.",,,1,Professional,5
+44,"An International company has deployed a multi-tier web application that relies on
+DynamoDB in a single region. For regulatory reasons they need disaster recovery
+capability in a separate region with a Recovery Time Objective of 2 hours and a Recovery
+Point Objective of 24 hours. They should synchronize their data on a regular basis and be
+able to provision a web application rapidly using CloudFormation. The objective is to
+minimize changes to the existing web application, control the throughput of DynamoDB
+used for the synchronization of data.
+Which design would you choose to meet these requirements?","Use AWS Data Pipeline to schedule a DynamoDB cross region copy once a
+day, create a “Last updated” attribute in your DynamoDB table that would
+represent the timestamp of the last update and use it as a filter.","Use EMR and write a custom script to retrieve data from DynamoDB in the
+current region using a SCAN operation and push it to DynamoDB in the
+second region.","Use AWS data pipeline to schedule an export of the DynamoDB table
+to S3 in the current region once a day then schedule another task
+immediately after it that will import data from S3 to DynamoDB in the
+other region.","Send each item into an SQS queue in the second region; use an autoscaling
+group behind the SQS queue to replay the write in the second
+region.",,,3,Professional,5
+45,"For application development and testing purpose, your team has created several EFS
+volumes recently. You, as the AWS operation engineer, have been assigned a task to
+mount these EFS file systems to EC2 linux instances with encryption enabled in transit.
+You have already installed the EFS mount helper in the instances. To use the mount
+helper properly to mount the EFS volumes, which actions should you perform? (Select
+THREE)","Get that EFS file system's ID from the console or programmatically
+through the Amazon EFS API.","Make sure that the security group of EC2 instances has opened the port 443
+for SSL traffic.","In your virtual private cloud (VPC) availability zones of EC2 instances,
+mount targets are needed to be created first for EFS volumes","In the EC2’s subnets, create a rule in network ACL to allow HTTPS traffic so
+that encryption in transit between EC2 and EFS file system is allowed","When the mount helper utility is used, add the encryption option which
+is “-o tls”.",,1&3&5,Professional,5
+46,"You are an AWS consultant in an IT company. Your development manager just assigned
+you a task to evaluate if the EBS volume types of the EC2 instances were properly
+configured in all regions. The major concern that you have found is that almost all EBS
+volumes are using the Provisioned IOPS SSD (io1) volume type which costs the company a
+lot. You plan to change the volume type from io1 to other types. However, for which
+scenarios should you still use the EBS volume type of io1?","A boot volume of a test server which is frequently used by the Quality
+Assurance team.","A Cassandra database which needs extremely low latency and high
+performance when being processed.","A data warehouse server that contains huge amount of customer data. The
+data needs to be accessed and analyzed by a monitor process frequently.","Some large and legacy cold data which is stored to trace customers’
+activities in the past. The database requires fewer scans per day",,,2,Professional,5
+47,"An AWS Solutions Architect has noticed that their company is using almost exclusively
+EBS General Purpose SSD (gp2) volume types for their EBS volumes. They are considering
+modifying the type of some of these volumes, but it is important that performance is not
+affected. Which of the following actions could the Solutions Architect consider? (Select
+TWO)","A 50GB gp2 root volume can be modified to an EBS Provisioned IOPS
+SSD (io1) without stopping the instance.","A gp2 volume that is attached to an instance as a root volume needs can be
+modified to a Throughput Optimized HDD (st1) volume.","A 1GB gp2 volume that is attached to an instance as a non-root volume can
+be modified to a Cold HDD (sc1) volume.","A 1TB gp2 volume that is attached to an instance as a non-root volume
+can be modified to a Throughput Optimized HDD (st1) volume without
+stopping the instance or detaching the volume.",,,1&4,Professional,5
+48,"Your team is working on a plant recognition application. After users upload photos of
+plants, the application is able to provide their names and properties.
+A MySQL database is deployed in EC2 using instance store as instance store-backed
+storage is very fast in terms of reads and writes, which makes it optimal for running
+MySQL. However, as instance store is an ephemeral volume, the database will be lost
+when the instance stops or terminated. How should the team design the disaster recovery
+plan for the MySQL database in EC2? (Select TWO)","Back up individual files instead of, or in addition to, backing up the
+whole instance store volume to an EBS volume or S3.","Create a new EBS volume and attach the volume to EC2. Migrate the
+MySQL database to the EBS volume using some disk management or
+migration tool.","In the EC2 AWS console, select the instance -> Actions -> Image -> Create
+Image. Then the created AMI is able to backup the MySQL data in the
+instance store","Create snapshots for the instance store volume where the MySQL database
+resides. Copy the snapshots to other regions for further backup",,,1&2,Professional,5
+49,"A video provider has a big proportion of EC2 instance store volumes as many of their
+workloads require super fast disk IO. Compared with EBS counterparts, instance store
+volumes are physically attached to the host and have better performance. However, they
+still need to work out a suitable method to backup instance store volumes. Are they able
+to create AMI as a backup solution?","No. Instance store volume cannot have AMI images which are only
+available for EBS volumes","They can only create an AMI using AWS EC2 CLI command for instance
+store volumes.","Yes. The AMI can be created by using AWS EC2 console, CLI or SDK for
+instance store volumes.","Yes. The AMI CLI tools can be used to create a bundle for the volume
+and upload it to S3. Then register the AMI to the file in the S3 bucket. A",,,4,Professional,5
+50,"A media company is working on migrating its various on-premise products and services to
+AWS platform. In one web service, MongoDB was used to store user subscription
+information. The AWS cloud engineer has migrated this NoSQL database to DynamoDB in
+AWS.
+He is using Java AWS SDK to implement this. In his log system he has found that a large
+number of ProvisionedThroughputExceededException is happening for this DynamoDB
+table. How should he troubleshoot the issue and lower down the number of exceptions?
+(Select TWO)","In Java AWS SDK, implement a retry mechanism to retry the request when
+the exception ProvisionedThroughputExceededException happens.","Open the Amazon CloudWatch console and view performance metrics
+for provisioned throughput vs. consumed throughput","In the CloudWatch console and view the
+ProvisionedThroughputExceededException metrics to understand when it
+happens.","Increase the provisioned read and write capacity and monitor the log
+system.",,,2&4,Professional,5
+51,"A large IT company has an on-premise website which provides real-estate information
+such as renting, house prices and latest news to users. The website has a Java backend
+and a NoSQL MongoDB database that is used to store subscribers data. You are a cloud
+analyst and need to migrate the whole application to AWS platform. Your manager
+requires that a similar structure should be deployed in AWS.
+Moreover, a tracing framework is essential which can record data from both the client
+request and the downstream call to the database in AWS. Which AWS services should you
+choose to implement the migration?
+Select 3 Options","Deploy an autoscaling group of Java backend servers to provide high
+availability","Use RDS Aurora as the database for the subscriber data because it is highly
+available and can scale up to 15 Read Replicas.","Create a DynamoDB database to hold subscriber data. Set up an
+autoscaling policy for the read/write throughp","Use AWS X-Ray SDK to record data about incoming and outgoing
+requests. View the statistics graph in X-Ray console","Trace the requests using AWS JAVA SDK and send logs to AWS
+CloudWatch Events. Create a CloudWatch dashboard to view the statistics.",,1&3&4,Professional,5
+52,"You work in a video game company and your team is working on a feature that tells how
+many times that certain web pages have been viewed or clicked. You also created an
+AWS Lambda function to show some key statistics of the data. You tested the Lambda
+function and it worked perfectly.
+However, your team lead requires you to show the statistics every day at 8:00AM GMT on
+a big TV screen so that when employees come in to the office every morning, they have a
+rough idea of how the feature runs. What is the most cost efficient and straightforward
+way for you to make this happen","Create an AWS CloudWatch Events rule that is scheduled using a cron
+expression as “00 08 * * ? *”. Configure the target as the Lambda
+function.","Create an Amazon linux EC2 T2 instance and set up a Cron job using
+Crontab. Use AWS CLI to call your AWS Lambda every 8:00AM.
+] C.","Use Amazon Batch to set up a job with a job definition that runs every
+8:00AM for the Lambda function.","In AWS CloudWatch Events console, click “Create Event” using the cron
+expression “ * ? * * 08 00”. Configure the target as the Lambda function",,,1,Professional,5
+53,"A company has its major business on selling second-hand products and its online trading
+system is deployed on AWS EC2 instances. In Route53, a domain name has been
+configured to route the traffic to a Classic Load Balancer. As Classic Load Balancer is quite
+old and in AWS there are new types of Load Balancers which Classic Load Balancer can
+be easily migrated to, the operation team decides to migrate the Load Balancer. They
+want all the connections between clients and EC2 instances be kept secure using
+certificates that they created and also want a secure data encryption in transit between
+the clients and EC2 instances. Which choices should be used together to meet the needs?
+Select 2 Options.","In “Create Load Balancer” console, create an Application Load Balancer and
+add a listener with protocol TLS and port 443 so that the TLS connections
+terminate at the Load Balancer","Go to the Load Balancer console, create a Network Load Balancer with
+a listener that listens to the traffic with protocol as TLS and port as 443.","Create an Application Load Balancer with a listener that listens to the traffic
+with protocol as HTTPS and port 80.","For the new Load Balancer, select the target protocol as HTTPS and port as
+443, which set up the connections with targets securely","For the new Load Balancer, select the target protocol as TLS and port
+as 443. As a result, the connections between Load Balancer and
+targets are secure",,2&5,Professional,5
+54,"You are an AWS solutions architect in a large IT company and your company has owned
+several AWS accounts. By using IAM roles, the access to resources in other accounts is
+granted. For example, users in Test account may switch role and operate on DynamoDB
+resources that belong to Dev account.
+For training purpose, you are responsible for preparing a document on how to switch roles
+properly. Which conditions must be met for IAM users to switch roles successfully across
+accounts? (Select TWO)",User is signed in as the AWS account non-root user.,The assuming entity has used multi-factor authentication (MFA) protection,The target account that user plans to switch to must use an alias.,User must be explicitly granted permission to assume the role,,,1&4,Professional,5
+55,"A supermarket chain had a big data analysis system deployed in AWS. The system has the
+raw data such as clickstream or process logs in S3. A m3.large EC2 instance transformed
+the data to other formats and saved it to another S3 bucket. Amazon Redshift analysed the
+data afterwards.
+Your team is in charge of improving the system using AWS Glue which is a fully managed
+ETL (extract, transform, and load) service. Which tasks can AWS Glue simplify during reestablishing
+the big data system? (Select TWO","AWS Glue contains a crawler that connects to the S3 bucket and scans
+the dataset. Then the service creates metadata tables in the data
+catalog.","AWS Glue automatically generates code in Java to extract data from the
+source and transform the data to match the target schema.","Be default, AWS Glue creates a scheduler to trigger the activated tasks
+every minute","AWS Glue has a central metadata repository (data catalog). The data in
+the catalog is available for analysis immediately",,,1&4,Professional,5
+56,"Your company manages a high-end auctioning site. The members register their products
+with the company and manage the actions related to the products. The application is built
+using NodeJS and MongoDB. It also uses the Redis to cache the current auctioning data
+and pub/sub to distribute the auction related events like bidding count and price
+fluctuations.
+The engineering team has decided to re-build the part of the bid processing module and
+move it to a durable and scalable option instead of using the Redis pub/sub. With the new
+design, the management also want the application to support the concurrent bidding,
+which is currently limited to just one at a time as the bids need to be processed in order.
+The engineering team thinks, after allowing concurrent auctioning, they will need to
+support around 12,000-15000 transactions per minute. Please select 2 suitable options to
+support the new redesign.",Use the SQS standard queue,"Use the SNS which is similar to the Redis pub/sub but supports unlimited
+messages and scales automatically",Create and use the SQS FIFO queue,"Use the SQS FIFO queue with AWS Lambda, migrate the bid processing
+module to the Lambda for auto-scaling","Use the auction event data for message group identifier for concurrent
+processing within the FIFO queue",,3&5,Professional,5
+57,"A Node.js software team has developed a recipe application that end-users can search
+and share recipes. The team deployed the app in AWS EC2 instances with a network loadbalancer. A recent security audit has discovered an issue that the load balancer listener is
+using TCP. That means the application is at a security risk and is prone to be threatened by
+man in the middle attack. Which below choices are correct to help fix this issue? Select 2.","Modify the listener protocol to TLS and choose an existing certificate in
+ACM (AWS Certificate Manager).","Change the listener protocol to HTTPS. Import a new certificate to ACM
+(AWS Certificate Manager) and use it in the load balancer listener","Edit the listener by changing the protocol to TLS. Use an existing
+certificate from IAM","Modify the listener protocol to SSL and choose an existing certificate in
+KMS (AWS Key Management Service).","Edit the listener by changing the protocol to TLS. Upload a new key to
+Secret Manager and link the key for the listener to use.",,1&3,Professional,5
+58,"A customer is deploying an SSL enabled Web application on AWS and would like to
+implement a separation of roles between the EC2 service administrators that are entitled
+to login to Instances as well making API calls and the security officers who will maintain
+and have exclusive access to the application's X.509 certificate that contains the private
+key. Which configuration option would satisfy the above requirements?","Configure IAM policies authorizing access to the ACM certificate store
+only to the security officer's and terminate SSL on the ELB.","Configure system permissions on the web servers to restrict access to the
+certificate only to the authorized security officers","Upload the certificate on an S3 bucket owned by the security officers and
+accessible only by the EC2 role of the web servers","Configure the web servers to retrieve the certificate upon boot from an
+CloudHSM that is managed by the security officers",,,1,Professional,5
+59,"Another team just transferred your team a task to maintain an AWS CodeBuild project that
+aims for creating a docker image for the QA lab environment. Previously, this CodeBuild
+project was triggered manually at about 20:00 every working day by a QA engineer, which
+is not quite appropriate. You are considering setting up an automatic trigger for the project
+and at the same time when the job runs, using a SNS topic to notify the team by email.
+Which procedures should you use?","Configure a newly created CloudWatch Events rule that have a cron
+expression of “0 20 ? * * *”. The targets for the rule include the CodeBuild
+project name and the SNS topic.","Create a new CloudWatch Events rule that has a cron expression of “0
+20 ? * MON-FRI *”. The targets for this rule are the CodeBuild project
+ARN and the SNS topic name","Configure two new CloudWatch Events that have a cron expression of “0
+20 ? * MON-FRI *”. The target for the first rule is the CodeBuild project ARN
+and the trigger for the second rule is the SNS topic.","As AWS CloudWatch Events rule does not support CodeBuild service, an
+EC2 or an on-premise lightweight server is required to schedule the docker
+image build of the project. Use a new CloudWatch Events rule to schedule
+the SNS notification.",,,2,Professional,5
+60,"Your company runs a customer facing event registration site which is built with a 3-tier
+architecture with web and application tier servers, and a MySQL database. The application
+requires 6 web tier servers and 6 application tier servers for normal operation, but can run
+on a minimum of 65% server capacity and a single MySQL database. When deploying this
+application in a region with three availability zones (AZs) which architecture provides high
+availability?","A web tier deployed across 2 AZs with 3 EC2 (Elastic Compute Cloud)
+instances in each AZ inside an Auto Scaling Group behind an ELB (elastic
+load balancer), an application tier deployed across 2 AZs with 3 EC2
+instances in each AZ inside an Auto Scaling Group behind an ELB, and one
+RDS (Relational Database Service) instance deployed with read replicas in
+the other AZ","A web tier deployed across 3 AZs with 2 EC2 (Elastic Compute Cloud)
+instances in each AZ inside an Auto Scaling Group behind an ELB (elastic
+load balancer), an application tier deployed across 3 AZs with 2 EC2
+instances in each AZ inside an Auto Scaling Group behind an ELB, and one
+RDS (Relational Database Service) instance deployed with read replicas in
+the two other AZs.","A web tier deployed across 2 AZs with 3 EC2 (Elastic Compute Cloud)
+instances in each AZ inside an Auto Scaling Group behind an ELB (elastic
+load balancer), an application tier deployed across 2 AZs with 3 EC2
+instances m each AZ inside an Auto Scaling Group behind an ELB, and a
+Multi-AZ RDS (Relational Database Service) deployment","A web tier deployed across 3 AZs with 2 EC2 (Elastic Compute Cloud)
+instances in each AZ inside an Auto Scaling Group behind an ELB
+(elastic load balancer), an application tier deployed across 3 AZs with
+2 EC2 instances in each AZ inside an Auto Scaling Group behind an
+ELB, and a Multi-AZ RDS (Relational Database services) deployment",,,4,Professional,5
+61,"Your company has developed a suite of business analytics service as a SaaS application
+which is used by hundreds of customers around the world. Recently there has been an
+acquisition of a product and the management has decided to integrate the product with
+the main service. The product also runs onto the AWS platform. The initial phase required
+the product software to use some private resources of the main SaaS service.
+The operations team created the Cross Account Role with the required policies and
+assigned the role to the account so that they can start using the resources. After a few
+days, the operations team found that someone deleted an important S3 bucket from their
+production account which has caused the feature disruption across the service.
+The management has asked the auditing team to inspect and identify the root cause of
+the resource deletion based on the CloudTrail logs. Select the valid options through which
+the auditing team can identify who deleted the resources.","Auditing team will need the CloudTrail logs detail of both the SaaS and
+the product AWS accounts as the call was made from the product
+application’s AWS account"," Auditing team can find the detail only from the SaaS application’s AWS
+account, as the bucket was part of that account","Look for the DeleteBucket API record into the SaaS application’s AWS
+account CloudTrail logs, it should have a user Id and the bucket detail as
+part of the log detail","Look for the sharedEventId and the userIdentity for the DeleteBucket
+API event in both the AWS accounts","Look for the sharedEventId and the userIdentity for the AssumeRole API
+event in both the AWS accounts",,1&4,Professional,5
+62,"Your company runs a successful medical sampling application onto the AWS cloud and
+uses a variety of AWS services like EC2, EBS, S3, DynamoDB, etc. Due to the nature of
+their business, they have an internal audit and compliance team which regularly audits the
+security posture and takes up various compliance related activities on a strict basis. The
+management has decided to also go for an external tool to add-on the internal auditing
+process. The management has decided to use a 3rd-party tool which helps them quickly
+do the auditing and compliance scanning and generate reports.
+The tool needs a way to access the production account and access resources in a readonly
+mode. Because there has been no final agreement from the management yet, after
+reading through the documentation of the tool, the security team decided to use their
+sandbox AWS account and create a cross-account role for all the required policies so that
+the tool can access the resources and they can check and verify the reports. The internal
+audit team has advised to further secure the cross-account roles so that the role can only
+be used by the tool and accidentally not used by any other service to avoid the confused
+deputy problem. Your security team says the cross-account role is created with the origin
+AWS account number and does not require to further security. Please select 2 valid
+options to justify and configure the access.","The security team is correct and you do not need any extra security to
+verify the access","The auditing team is correct and you can use the External Id to further
+secure the access",Use the OwnerId and ExternalId with the AssumeRole API,Use the ExternalId with the AssumeRole API,You will need to modify the IAM policy to add the ExternalId condition,,2&4,Professional,5
+63,"Your organization has hundreds of developers using AWS accounts. Based on the
+organization policy, when a developer joins the company, for development and testing
+purpose, a new AWS account is created for that user and added under the AWS
+Organisation to manage the billing and other service level policies.
+Your accounting team realizes that most recently some extra cost has been coming up to
+the organization’s total bill and the cost is coming up from these developer level accounts.
+It is possible that either the individual developers are not turning-off their instances after
+the use or they are running some software which they are not supposed to run. Select the
+process to restrict the usage of the developer accounts so that the overall usage remains
+within the company defined policies. Choose 3 correct options","Implement Service Control Policies to whitelist or blacklist different
+AWS services depending on the user role.","Use the CloudWatch Events to track the user activity using CloudTrail
+events.","Enable the CloudTrail on to the user accounts to track and log user
+activities, redirect the logs to the organization wise S3 bucket for
+processing.","Run AWS Lambda on individual user accounts to check for malicious
+activities.",Assign IAM policies to only allow certain activities.,,"1,2&3",Professional,5
+64,"Your company decided to improvise on the current batch processing model and start
+using the AWS Batch instead of the currently running SQS and EC2 with Auto Scaling
+configurations. Your processing jobs are using a Docker containers and they pull
+messages from the AWS SQS queue and writes the data into DynamoDB tables once the
+processing is completed. You have created a small Proof-of-concept application to try out
+the AWS Batch before you actually migrate your job containers.
+As a part of the process, you created the required compute environment, job queue and
+the job definition to make sure you have everything you need before you execute your
+first job. After submitting a job to the job queue, you realized that the job is stuck in the
+RUNNABLE state for a long amount of time. On your local environment, however, the job
+runs and completes within the 2 to 5 minutes from start. What could be the possible
+causes of the job being stuck into the RUNNABLE state?
+Please select 3 correct options.",Make sure the Role assigned to your job has adequate permissions,Make sure Internet Access is available to your container,Make sure CPU and RAM is given as per the compute allocation,Make sure your AWS account has not reached to the EC2 limit,"Make sure the VPC Endpoint is set to access the SQS queue from the
+containers inside the VPC",,"1,3&4",Professional,5
+65,"Your company runs a business management applications on the AWS cloud and has
+hundreds of customers. During the peak load, they receive hundreds of requests per
+seconds. The overall application uses a bunch of AWS services like API Gateway, Lambda,
+DynamoDB, Kinesis, RDS etc. The product allows the customer and users to customize
+their environment based on their requirement and these configurations can be very
+complicated.
+The product development team is divided into different groups and uses different
+programming languages for different parts of the application. Most recently with the
+launch of the new releases, the operations teams have started seeing a random decreasein the performance and increase in support tickets being generated. The management
+wants to prepare a plan to find out the performance issues and identify them in real-time.
+Also if possible, put additional options to group the issues based on the feature or
+customer information if possible to figure out high-impact customers. When the issue is
+identified the respective team can be reported. Please select two steps to prepare the
+tracing system based on the requirements","Publish logs using the CloudWatch Logs and redirect the logs to Kinesis to
+inspect the issues in real-time","Because of the distributed nature of the application and multiple services
+used, use the 3rd party tool and integrate with the application.","Use X-Ray to monitor the performance of your application
+A","Use CloudWatch custom metrics to publish and generate events for the
+notifications",Use X-Ray segments and annotations for group level tracing,,3&5,Professional,5
+66,"Your company hosts an on-premises legacy engineering application with 900GB of data
+shared via a central file server. The engineering data consists of thousands of individual
+files ranging in size from megabytes to multiple gigabytes. Engineers typically modify 5-10
+percent of the files a day. Your CTO would like to migrate this application to AWS, but only
+if the application can be migrated over the weekend to minimize user downtime. You
+calculate that it will take a minimum of 48 hours to transfer 900GB of data using your
+company’s existing 45-Mbps Internet connection.
+After replicating the application’s environment in AWS, which option will allow you to
+move the application’s data to AWS without losing any data and within the given
+timeframe?","Copy the data to Amazon S3 using multiple threads and multi-part upload
+for large files over the weekend, and work in parallel with your developers
+to reconfigure the replicated application environment to leverage Amazon
+S3 to serve the engineering files.","Sync the application data to Amazon S3 starting a week before the
+migration, on Friday morning perform a final sync, and copy the entire
+data set to your AWS file server after the sync completes","Copy the application data to a 1-TB USB drive on Friday and immediately
+send overnight, with Saturday delivery, the USB drive to AWS
+Import/Export to be imported as an EBS volume, mount the resulting EBS
+volume to your AWS file server on Sunday","Leverage the AWS Storage Gateway to create a Gateway-Stored volume.
+On Friday copy the application data to the Storage Gateway volume. After
+the data has been copied, perform a snapshot of the volume and restore
+the volume as an EBS volume to be attached to your AWS file server on
+Sunday.",,,2,Professional,5
+67,"You are a software engineer and developing an online food order web application. The
+Node.js backend needs to get the client’s IP to understand users’ locations. The
+application is deployed in AWS EC2 with a network load balancer to distribute traffic. For
+the network load balancer, the target is specified using instance id. TLS is also terminated
+on the Network Load Balancer. You are worried that the backend cannot get the client’s IP
+due to the network load balancer. Which below description is correct in this situation?","Enable proxy protocol using AWS CLI for the network load balancer so that
+you can get the client IP in the backend service.","You just need to get the client ip from TCP X-Forwarded-For header which
+is used to identify the originating IP address of the user connecting to the
+web server.","Source IP continues to be preserved to your back-end applications
+when TLS is terminated on the Network Load Balancer in this case","Change listener protocol to TCP or change the load balancer to application
+or classic load balancer. Otherwise the client ip cannot be preserved",,,3,Professional,5
+68,"Which of the following are Lifecycle events available in OpsWorks?
+Choose 3 options from the below:",Setup,Decommision,Deploy,Shutdown,,,1&3&4,Professional,5
+69,"You tried to integrate 2 systems (front end and back end) with an HTTP interface to one
+large system. These subsystems don’t store any state inside. All of the state information is
+stored in a DynamoDB table. You have launched each of the subsystems with separate
+AMIs.
+After testing, these servers stopped running and are issuing malformed requests that do
+not meet the HTTP specifications of the client. Your developers fix the issue and deploy
+the fix to the subsystems as soon as possible without service disruption.
+What are the 3 most effective options from the below to deploy these fixes and ensure
+that healthy instances are redeployed?",Use VPC.,"Use AWS Opsworks autohealing for both the front end and back end
+instance pair","Use Elastic Load balancing in front of the front-end system and Auto
+scaling to keep the specified number of instances","Use Elastic Load balancing in front of the back-end system and Auto
+scaling to keep the specified number of instances",Use Amazon Cloudfront with access the front end server with origin fetch.,Use Amazon SQS between the front end and back end subsystems.,2&3&4,Professional,5
+70,"You lead a team to use Kubernetes to develop some microservices in local server and
+data center. To align with the company’s strategy to move to AWS cloud, you need to
+consider the possibilities of migrating the projects that your team is working on. You think
+that Amazon Elastic Container Service for Kubernetes (Amazon EKS) is a good candidate.
+In order to start using EKS properly, which prerequisites must be met? (Select TWO)","All related container images are registered in Amazon ECR since EKS can
+only pull docker images from ECR.","An Application Load Balancer should be in place for Amazon EKS to route
+internet traffic among various public subnets.","An IAM EKS service role should be created to allow Amazon EKS to
+manage clusters on your behalf.","A VPC and a security group exist for EKS cluster to use. VPC subnets
+should spread across least two Availability Zones.",,,3&4,Professional,5
+71,"You've created a temporary application that accepts image uploads, stores them in S3,
+and records information about the image in RDS. After building this architecture and
+accepting images for the duration required, it's time to delete the CloudFormation
+template. However, your manager has informed you that for archival reasons the RDS data
+needs to be stored and the S3 bucket with the images needs to remain. Your manager has
+also instructed you to ensure that the application can be restored by a CloudFormation
+template and run next year during the same period.
+Knowing that when a CloudFormation template is deleted, it will remove the resources it
+created. What is the best method for achieving the desired goals?","Enable S3 bucket replication on the source bucket to a destination bucket
+to maintain a copy of all the S3 objects, set the deletion policy for the RDS
+instance to snapshot.","For both the RDS and S3 resource types on the CloudFormation template,
+set the DeletionPolicy to retain.","Set the DeletionPolicy on the S3 resource to snapshot and the
+DeletionPolicy on the RDS resource to snapshot","Set the DeletionPolicy on the S3 resource declaration in the
+CloudFormation template to retain, set the RDS resource declaration
+DeletionPolicy to snapshot.",,,4,Professional,5
+72,"You are an AWS administrator for a large organization and you maintain several AWS
+accounts. Your manager recently asked you to generate the Cost & Usage Reports from
+the billing dashboard regularly so that he can have a review of the usage and cost status.
+Through the AWS Billing & Cost Management console, you have configured the report
+successfully. How should you present the reports to your manager?","Configure the billing report to use SNS to send the report to your manager
+with an email notification every day.","Create an IAM admin user for your manager so that he can login into AWS
+billing console to view the Cost & Usage Reports","Configure a S3 bucket where AWS delivers the billing report files to.
+Allocate a read access for your manager to this bucket.","Create a new S3 bucket for AWS to send the billing report files to. Make
+sure the bucket is public accessible by modifying the bucket policy so that
+your manager is able to see the report properly.",,,3,Professional,5
+73,"Consolidated Billing feature is used in a multinational company. A master AWS account is
+setup to pay the charges of all the member accounts. You are an AWS solutions architect
+and you created the billing Cost and Usage Reports in the master AWS account. In terms
+of this billing report configuration, which benefits can you get? (Select TWO)","The billing reports for all member accounts are activated automatically and
+refreshed each hour. All member accounts can view their reports in the
+billing dashboard.","The reports can be uploaded to Amazon Redshift, allowing you to
+analyze the costs and usage. Billing and Cost Management can
+provide the RedshiftCommands.sql file in the Billing and Cost
+Management Console","The JSON format billing reports are uploaded to a S3 bucket that was
+previously configured. You could easily download the reports from the
+Amazon S3 console.","The reports are available only to the master account and include
+activities for all the member accounts",,,2&4,Professional,
+74,"You are moving an existing traditional system to AWS. During migration, you discover that
+the master server is the single point of failure. Having examined the implementation of the
+master server you realize that there is not enough time during migration to re-engineer it
+to be highly available. You also discover that it stores its state in local MySQL database.
+In order to minimize downtime, you select RDS to replace the local database and
+configure the master to use it. What steps would best allow you to create a self-healing
+architecture?","Migrate the local database into Multi-AZ database. Amazon RDS
+detects and automatically recovers from the most common failure
+scenarios for Multi-AZ deployments so that you can resume database
+operations as quickly as possible without administrative intervention","Migrate the local database into Multi-AZ database. Place the master node
+into a Cross Zone ELB with a minimum of one and maximum of one with
+health checks","Replicate the local database into a RDS Read Replica. Place the master
+node into a Cross Zone ELB with a minimum of one and maximum of one
+with health checks","Replicate the local database into a RDS Read Replica.Place the master
+node into a multi-AZ auto-scaling group with a minimum of one and
+maximum of one with health checks",,,1,Professional,5
+75,"An e-commerce platform has sent online order requests to a standard SQS queue. The
+visibility timeout for the messages in the queue is set as 30 seconds by default. The
+message retention period is 7 days. From the backend log system, it has been found that
+the backend processing of some messages has failed and as a result these messages
+were not deleted successfully from the queue. What should you do to isolate the failed
+messages to troubleshoot the reason why the processing doesn't succeed?","Create a new FIFO queue as the dead letter queue. So the failed messages
+are isolated and stored in this dead letter queue.","Enlarge the visibility timer a little bit and monitor the log system to see if
+there are still messages that fail to be processed.","Modify the visibility timer to 0 to mitigate the impacts when messages are
+deleted unsuccessfully","Create another SQS standard queue as the dead letter queue. So the
+problematic messages are isolated.",,,4,Professional,5
+76,"A document storage company is deploying their application to AWS and changing their
+business model to support both Free Tier and Premium Tier users. The premium Tier users
+will be allowed to store up to 200GB of data and Free Tier customers will be allowed to
+store only 5GB. The customer expects that billions of files will be stored. All users need to
+be alerted when approaching 75 percent quota utilization and again at 90 percent quota
+use.
+To support the Free Tier and Premium Tier users, how should they architect their
+application?","The company should utilize an Amazon Simple Workflow Service
+activity worker that updates the user’s used data counter in Amazon
+DynamoDB. The Activity Worker will use Simple Email Service to send
+an email if the counter increases above the appropriate thresholds.","The company should deploy an Amazon Relational Database Service (RDS)
+relational database with a stored objects table that has a row for each
+stored object along with the size of each object. The upload server will
+query the aggregate consumption of the user in question (by first
+determining the files stored by the user, and then querying the stored
+objects table for respective file sizes) and send an email via Amazon
+Simple Email Service if the thresholds are breached.","The company should write both the content length and the username of
+the files owner as S3 metadata for the object. They should then create a
+file watcher to iterate over each object and aggregate the size for each
+user and send a notification via Amazon Simple Queue Service to an
+emailing service if the storage threshold is exceeded","The company should create two separate Amazon Simple Storage Service
+buckets, one for date storage for Free Tier Users, and another for data
+storage for Premium Tier users. An Amazon Simple Workflow Service
+activity worker will query all objects for a given user based on the bucket
+the data is stored in and aggregate storage. The activity worker will notify
+the user via Amazon Simple Notification Service when necessary.",,,1,Professional,5
+77,"As a solution architect professional, you have been requested to launch 20 Large EC2
+instances which will all be used to process huge amounts of data. There is also a
+requirement that these instances will need to transfer data back and forth among each
+other. Which of the following would be the most efficient setup to achieve this?
+Choose the correct option from the below:",Ensure that all the instances are placed in the same region,Ensure that all instances are placed in the same availability zone,"Use Placement Groups and ensure that all instances are launched at
+the same time.","Use the largest EC2 instances currently available on AWS and make sure
+they are spread across multiple availability zones.",,,3,Professional,5
+78,"You are an AWS solutions architect in an IT company. Your company has a big data
+product which analyzes data from a variety of sources like transactions, web servers,
+surveys and social media. You need to design a new solution in AWS that is able to extract
+data from the source in S3 and transform the data to match the target schema
+automatically. Moreover, the transformed data can be analyzed using standard SQL.
+Which combination of solutions would meet these requirements in the best way? (Select
+TWO.)","Set up an AWS ECS cluster to manage the extract, transform, and load (ETL)
+service that can prepare and load the data in S3 for analytics","Configure an AWS EMR cluster to transform the data to a target format for
+downstream. Execute the EMR tasks on a schedule.","Create an AWS Glue Crawler to run on schedule to scan the data in S3
+and populate the Glue Data Catalog accor",Use AWS Athena to query the data using standard SQL.,,,3&4,Professional,5
+79,"A big SaaS provider is considering migrating one of its on-premise products to AWS since
+a large number of customers (over 300) already have their own Virtual Private Clouds
+(VPCs) in AWS. Due to certain features of this product, one key requirement is that all
+traffic between the service provider and customers should be private without being
+exposed to the internet. The company’s operation team already configured a VPC. What is
+the best solution to continue migrating the product?","Set up a virtual private gateway in this VPC. To communicate with
+customer VPCs, setup a private VPN connection therefore a highly
+available and private link is created between customers and the service
+provider","Create a VPC peering between this VPC and each customer’s VPC so that
+all connections are secure and private","Configure an AWS endpoint service (PrivateLink) in the VPC. Other
+AWS customer accounts can create a connection from their VPC to
+the endpoint service using an interface VPC endpoint","Create a NAT Gateway in the VPC. Modify main route table to allow traffic
+to other VPCs only through this gateway to ensure that the traffic is not
+public",,,3,Professional,5
+80,"You are designing multi-region architecture and you want to send users to a geographic
+location based on latency-based routing, which seems simple enough; however, you also
+want to use weighted-based routing among resources within that region. Which of the
+below setups would best accomplish this?
+Choose the correct answer from the below options","You will need to use complex routing (nested record sets) and ensure that
+you define the latency based records first","You will need to use complex routing (nested record sets) and ensure
+that you define the weighted resource record sets first.",This cannot be done. You can't use different routing records together.,"You will need to use AAAA - IPv6 addresses when you define your
+weighted based record sets.",,,2,Professional,5
+81,"An Amazon Redshift cluster with four nodes is running 24/7/365 and expects potentially
+to add one on-demand node for one to two days once during the year. Which architecture
+would have the lowest possible cost for the cluster requirement?","Purchase 4 reserved nodes and rely on on-demand instances for the
+fifth node, if required",Purchase 5 reserved nodes to cover all possible usage during the year.,"Purchase 4 reserved nodes and bid on spot instances for the extra node if
+required","Purchase 2 reserved nodes and utilize 3 on-demand nodes only for peak
+usage times.",,,1,Professional,5
+82,"A company has placed a set of on-premise resources with an AWS Direct Connect
+provider. After establishing connections to a local AWS region in the US, the company
+needs to establish a low latency dedicated connection to an S3 public endpoint over the
+Direct Connect dedicated low latency connection. What steps need to be taken to
+accomplish configuring a direct connection to a public S3 endpoint?
+Choose the correct answer from the options given below","Configure a public virtual interface to connect to a public S3 endpoint
+resource.",Establish a VPN connection from the VPC to the public S3 endpoint,"Configure a private virtual interface to connect to the public S3 endpoint
+via the Direct Connect connectio","Add a BGP route as part of the on-premise router; this will route S3 related
+traffic to the public S3 endpoint to dedicated AWS region.",,,1,Professional,5
+83,"A fintech startup company is developing a product in AWS platform. To speed up the
+development, the company plans to use a SaaS that is provided by AWS Marketplace. The
+SaaS provider already configured an AWS PrivateLink. In the company’s VPC, which
+configuration is required to utilize this private connection so that traffic flows to the
+service provider over private AWS networking rather than over the Internet?","In the VPC, configure an interface VPC endpoint for the SaaS which
+creates an elastic network interface in the subnet with a private IP
+address.","Configure a site to site VPN connection in customer VPC for the SaaS to
+use the AWS private link connection","In the VPC, set up a gateway VPC endpoint for the SaaS which creates an
+elastic network interface in the subnet with an elastic IP address","In the VPC, create an AWS Direct Connect connection for the SaaS to
+connect with the AWS PrivateLink in a secure way.",,,1,Professional,5
+84,"attached. The EC2 instance is EBS-Optimized and supports 500 Mbps throughput between
+EC2 and EBS. The EBS volumes are configured as a single RAID 0 device, and each
+Provisioned IOPS volume is provisioned with 4,000 IOPS (4,000 16KB reads or writes) for a
+total of 16,000 random IOPS on the instance. The EC2 instance initially delivers the
+expected 16,000 IOPS random read and write performance. Sometime later in order to
+increase the total random I/O performance of the instance, you add an additional two 500
+GB EBS Provisioned IOPS volumes to the RAID. Each volume is provisioned to 4,000 lOPs
+like the original four for a total of 24,000 IOPS on the EC2 instance. Monitoring shows that
+the EC2 instance CPU utilization increased from 50% to 70%. but the total random IOPS
+measured at the instance level did not increase at all. What is the problem and a valid
+solution?","Larger storage volumes support higher Provisioned IOPS rates; hence,
+increase the provisioned volume storage of each of the 6 EBS volumes to
+1TB.","The EBS-Optimized throughput limits the total IOPS that can be
+utilized; hence, use an EBS-Optimized instance that provides larger
+throughput.","Small block sizes cause performance degradation, limiting the I/O
+throughput; hence, configure the instance device driver and file system to
+use 64KB blocks to increase throughput","RAID 0 only scales linearly to about 4 devices, use RAID 0 with 4 EBS
+Provisioned IOPS volumes but increase each Provisioned IOPS EBS volume
+to 6,000 IOPS.","The standard EBS instance root volume limits the total IOPS rate; hence,
+change the instant root volume to also be a 500GB 4,000 Provisioned IOPS
+volume",,2,Professional,5
+85,"You work for an e-commerce retailer as an AWS Solutions Architect. Your company is
+looking to improve customer loyalty programs by partnering with other third-parties to
+offer a more comprehensive selection of customer rewards. You plan to use Amazon
+Managed Blockchain to implement a blockchain network that allows your company and
+third-parties to share and validate rewards information quickly and transparently. How do
+you add members for this blockchain?","When Amazon Managed Blockchain is set up, there is an initial
+member in the AWS account. Then new members can be added in
+this AWS account without having to send an invitation, or a network
+invitation can be created for a member in a different AWS account","While Amazon Managed Blockchain is configured, there is an initial
+member in the AWS account. Then new members can be added in this
+AWS account without having to send an invitation. You cannot add new
+members for other AWS accounts","When Amazon Managed Blockchain is created, there is no any member in
+the AWS account. Then new members can be added in this AWS account
+or other accounts by sending out an an invitation.","When Amazon Managed Blockchain is firstly created, there is no any
+member in the AWS account. Then new members can be added in this
+AWS account. For other accounts, they can join this net blockchain
+network by using the network ID.",,,1,Professional,5
+86,"You are recently hired as an AWS architect in a startup company. The company just
+developed an online photo-sharing product. After the product was deployed for
+sometime, you have found that from time to time, the instances in the autoscaling group
+have reached the maximum value due to high CPU rate and traffic.
+The network team has identified three IP addresses that sent large number of malicious
+requests during the time. You plan to configure a WAF Access Control List (ACL) with a
+rule to filter these three IP addresses. Which component or service are you able to
+associate the new WAF ACL with? (Select TWO.)",The global CloudFront distribution that the product is using,The autoscaling group that the product has used.,"All EC2 instances created for the product. Add each instance ID to associate
+with the ACL",The application load balancer for the product,"The network load balancer for the product however only in US East (N.
+Virginia) region",,1&4,Professional,5
+87,"You work in a financial company as an AWS architect. The security team has informed you
+that they have found the company’s AWS web product has been attacked by SQL
+injection recently. Several attackers tried to insert certain malicious SQL code into web
+requests to extract data from the MySQL database. The database is deployed in several
+EC2 instances under an application load balancer. Although the attack was unsuccessful,
+you are expected to provide a better solution to protect the product. Which action should
+you perform?","Configure a rule in AWS Firewall Manager to block all malicious SQL
+injection requests for the EC2 instances.","Create a WAF Access Control List (ACL) with a rule to block the
+malicious SQL injection requests. Associate the application load
+balancer with the new ACL.","Use AWS Shield Advanced service to block the malicious SQL injection
+requests that go to the application load balancer.","Configure a WAF Access Control List (ACL) with a rule to allow all requests
+except the malicious SQL injection requests. Associate each EC2 instance
+with the new ACL",,,2,Professional,5
+88,"Which of the following must be done while generating a pre-signed URL in S3 in order to
+ensure that the user who is given the pre-signed URL has the permission to upload the
+object?",Ensure the user has write permission to S3.,Ensure the user has read permission to S3.,"Ensure that the person who has created the pre-signed URL has the
+permission to upload the object to the appropriate S3 bucket.",Create a Cloudfront distribution,,,3,Professional,5
+89,"A startup company just hired you as an AWS solutions architect. Your manager has
+assigned you a task to lower down the cost of AWS resources due to limited budget. In
+the meantime, the service should not be impacted when the cost reduction activities are
+performed. For example, idle load balancers can be safely deleted to save cost without
+service impact. Which way can quickly help you to identify ways to optimize the cost?","Launch Cost Explorer which can graph, visualize, and analyze the spend
+and then identify the services to be optimized.","Configure AWS Cost and Usage Reports and then analyze the AWS costs
+as well as the specific product offerings and usage amounts underlying
+those costs.","Check the Billing details which list all AWS service charges. Identify and
+optimize the services that have unreasonable cost.","Search for the recommended actions in the Trusted Advisor Cost
+Optimization dashboard",,,4,Professional,5
+90,"A user has setup Auto Scaling with ELB on the EC2 instances. The user wants to configure
+that whenever the CPU utilization is below 10%, Auto Scaling should remove one instance.
+How can the user configure this?","The user can get an email using SNS when the CPU utilization is less than
+10%. The user can use the desired capacity of Auto Scaling to remove the
+instance","Use CloudWatch to monitor the data and Auto Scaling to remove the
+instances using scheduled actions","Configure a CloudWatch alarm in the execution policy that notifies the
+Auto Scaling Launch configuration when the CPU utilization is less than
+10%, and configure the Auto Scaling policy to remove the instance.","Configure a CloudWatch alarm in the execution policy that notifies the
+Auto Scaling group when the CPU Utilization is less than 10%, and
+configure the Auto Scaling policy to remove the instance.",,,4,Professional,5
+91,"A user has configured an SSL listener at ELB as well as on the back-end instances. Which
+of the below-mentioned statements helps the user understand ELB traffic handling with
+respect to the SSL listener?","It is not possible to have the SSL listener both at ELB and back-end
+instances.",ELB will modify headers to add requestor details.,"ELB will intercept the request to add the cookie details if sticky session is
+enabled.",ELB will not modify the headers, ,,4,Professional,5
+92,"In a large company, you work as an AWS administrator. For a windows SQL server
+instance, there is already a daily task to regularly transfer the database backup files to a
+S3 bucket (DB_Backup_1) in AWS account 111111111111. One data scientist asks you if it is
+possible to copy the latest backup file to another S3 bucket (DB_Backup_2) in his AWS
+account 222222222222. You plan to use AWS S3 CLI to do this. Which combinations of
+methods can accomplish this mission? (Select TWO.)","In account 111111111111, attach a bucket policy to DB_Backup_1 that
+allows the destination account 222222222222 to do the actions of
+""s3:ListBucket"" and ""s3:GetObject","In account 111111111111, attach an Access Control List (ACL) policy to
+DB_Backup_1 that allows the destination account 222222222222 to do the
+actions of ""s3:ListBucket"" and ""s3:PutObject","In account 222222222222, attach an IAM policy to the IAM user or group
+that allows the data scientist user to copy objects from source bucket
+DB_Backup_1 to bucket DB_Backup_2.","In account 222222222222, attach a bucket policy to DB_Backup_2 that
+allows the destination account 222222222222 to do the actions of
+""s3:ListBucket"" and ""s3:PutObject","In account 222222222222, attach an Access Control List (ACL) policy to
+DB_Backup_2 that allows the source account 111111111111 to do the actions
+of ""s3:ListBucket"", ""s3:GetObject"" and ""s3:ListObject"".",,1&3,Professional,5
+93,"An organization has created one IAM user and applied the below-mentioned policy to the
+user. What entitlements do the IAM users avail with this policy?
+{
+""Version"": ""2012-10-17"",
+""Statement"": [
+{
+""Sid"": ""VisualEditor0"",
+""Effect"": ""Allow"",
+""Action"": [
+""ec2:Describe*""
+],
+""Resource"": ""*""
+},
+{
+""Sid"": ""VisualEditor0"",Effect"": ""Allow"",
+""Action"": [
+""autoscaling:Describe*""
+],
+""Resource"": ""*""
+},
+{
+""Sid"": ""VisualEditor0"",
+""Effect"": ""Allow"",
+""Action"": [
+""cloudwatch:ListMetrics"",
+""cloudwatch:Describe*"",
+""cloudwatch:GetMetricStatistics""
+],
+""Resource"": ""*""
+}
+]
+}","The policy will allow the user to perform all read-only activities on the EC2
+services.",The policy will allow the user to list all the EC2 resources except EBS.,"The policy will allow the user to perform all read and write activities on the
+EC2 services","The policy will allow the user to perform all read-only activities on the
+EC2 services except load Balancing. ",,,4,Professional,5
+94,"An organization has configured Auto Scaling with ELB. There is a memory issue in the
+application which is causing CPU utilization to go above 90%. The higher CPU usage
+triggers an event for Auto Scaling as per the scaling policy. If the user wants to find the
+root cause inside the application without triggering a scaling activity, how can he achieve
+this?",Stop the scaling process until research is completed,"It is not possible to find the root cause from that instance without triggering
+scaling",Delete AutoScaling group until research is completed,Suspend the scaling process until research is completed.,,,4,Professional,5
+95,"A company has 2 accounts- one is a development account and the other is the production
+account. There are 20 people on the development account who now need various levels
+of access provided to them on the production account. 10 of them need read-only access
+to all resources on the production account, 5 of them need read/write access to EC2
+resources, and the remaining 5 only need read-only access to S3 buckets. Which of the
+following options would be the best way for both practically and security-wise to
+accomplish this task?
+Choose the correct answer from the below options","Create 3 roles in the production account with a different policy for
+each of the access levels needed. Add permissions to each IAM User
+on the developer account based on the type of access needed","Create 3 new users on the production account with the various levels of
+permissions needed. Give each of the 20 users the login for whichever one
+of the 3 users they need depending on the level of access required.","Create encryption keys for each of the resources that need access and
+provide those keys to each user depending on the access required.","Copy the 20 users IAM accounts from the development account to the
+production account. Then change the access levels for each user on the
+production account",,,1,Professional,5
+96,"Your company has configured an AWS organization with a master account and several
+organization units (OU) for its various R&D departments. In the organization, there is a S3
+bucket owned by AWS account A which needs to be accessed by one IAM user that
+belongs to another AWS account B. And account B is outside the organization. The S3
+bucket policy already granted access to this account B user. And in account B, the user
+has the IAM permissions to read the bucket. However, AWS account A has a Service
+Control Policy (SCP) attached to allow the bucket access only from account A users. Is the
+IAM user in account B able to read the files in the bucket successfully","No. Because the SCP policy takes priority and disallows the bucket access
+from the user in account B","No. Because S3 cross-accounts access can only be allowed for AWS IAM
+users within an AWS Organization","No. The AWS organization should add a new OU for account B and then
+configure a SCP in the new OU to allow access to the S3 bucket.","Yes. Since SCP doesn't apply to those outside users, the user in
+account B has the permission to access the files in the bucket.",,,4,Professional,5
+97,"An IT company has owned several AWS accounts that belong to an AWS Organization.
+The root account and all children accounts have configured Service Control Policies
+(SCPs) to help manage the organization. Recently, an IAM user in a child account needs
+the permissions to enable its Amazon VPC Flow Logs. Under which configurations can the
+user operate the VPC Flow Logs successfully? (Select TWO.)","The SCP for the root account permits enabling VPC Flow Logs. The SCP for
+the child account does NOT permit enabling VPC Flow Logs. The user has
+the IAM permission policy to enable VPC Flow Logs.","The SCPs for both root account and the child account permit enabling
+VPC Flow Logs. The user has the IAM permission policy to enable VPC
+Flow Logs.","The SCP for the root account permits all actions with default
+FullAWSAccess policy. The user does NOT have the IAM permission policy
+to enable VPC Flow Logs.","The SCP for the root account permits all actions with default
+FullAWSAccess policy. The child account permits enabling VPC Flow
+Logs. The user has the IAM permission policy to enable VPC Flow
+Logs.","The SCP for the root account does NOT permit enabling VPC Flow Logs.
+The SCP for the child account permits enabling VPC Flow Logs. The user
+has NOT the IAM permission policy to enable VPC Flow Logs.",,2&4,Professional,5
+98,"You are working on a proof of concept serverless project and need to present it to the
+shareholders in a week. This project needs an API gateway, a Lambda function and a
+DynamoDB table to store user data. To save time, you plan to use AWS Serverless
+Application Model (AWS SAM) as it provides templates to quickly deploy all required
+resources. You have found that SAM templates are very similar to CloudFormation
+templates. However, which resource types are specially introduced by the SAM template?
+(Select TWO.)",AWS::DynamoDB::Table,AWS::Serverless::Api,AWS::Lambda::Api,AWS::Serverless::Function,AWS::ApiGateway::RestApi,,2&4,Professional,5
+99,"You are a software engineer and creating a serverless application in AWS to process
+photos. When each image is uploaded to a S3 bucket, a Lambda function is invoked. This
+Lambda function then calls Amazon Rekognition to detect text in the image. The returned
+results are saved in a DynamoDB table. You have used a template provided by AWS
+Serverless Application Model (AWS SAM) to build and deploy the whole application. For
+the above mentioned AWS services, which one do you still need to pay even if the service
+is not used?",Lambda function,SAM Template,API Gateway,Rekognition Image Analysis,None of the above,,5,Professional,5
+100,"You have owned a two-tier LAMP stack in a local data center. The stack has a frontend of
+Apache and PHP and a backend database running on MySQL. The whole system is hosted
+on a virtualized platform and you need to migrate the system to AWS in two weeks. You
+plan to use AWS provided migration services to migrate MySQL database to RDS Aurora
+and on-premise virtual machines (managed by VMware vSphere) to EC2. Which AWS
+services should be used? (Select TWO.)",AWS Database Migration Service,AWS Migration Hub,AWS Snowball,AWS Server Migration Service,AWS Application Discovery Service,,1&4,Professional,5
+101,"A small trading business consults you to implement a blockchain across its supply chain
+network, providing greater transparency, and real-time recording and tracking of goods.
+Each supplier or distributor can be a member of the blockchain network. The customers
+are looking to manage their own blockchain network and need an easy way to set up and
+get started. They prefer to deploy the blockchain framework of Hyperledger Fabric as
+containers on an Amazon Elastic Container Service (ECS) cluster, or directly on an EC2
+instance running Docker. What way should you recommend","Use Amazon Quantum Ledger Database (QLDB) to deploy the AWS
+BlockChain network in ECS and EC2 depending on specific requirements","Use Amazon Managed Blockchain to deploy the network. Replicate an
+immutable copy of the blockchain network activity into Amazon Quantum
+Ledger Database (QLDB) where customers can fully manage the
+blockchain network","Use Amazon Managed Blockchain to deploy the framework. By using
+Amazon Managed Blockchain, customers can access ECS or EC2 instances
+and deploy decentralized applications","Use AWS Blockchain Templates to deploy the blockchain
+Hyperledger Fabric framework on an Amazon Elastic Container
+Service (ECS) cluster, or directly on an EC2 instance",,,4,Professional,5
+102,"What are the steps that get carried out by OpsWork when you attach a load balancer to a
+layer in OpsWork?
+Choose 3 options from the below:",Terminates the EC2 Instances,De-registers any currently registered instances,"Automatically registers the layer's instances when they come online
+and de-registers instances when they go offline, including load-based
+and time-based instances.","Automatically starts routing requests to registered instances in their
+Availability Zones.",,,2&3&&4,Professional,5
+103,"Your company asked you to create a mobile application. The application is built to work
+with DynamoDB as the backend and Javascript as the frontend. During the usage of the
+application, you notice that there are write contention issues in the application. Which is
+the most cost-effective option to manage DynamoDB write throughput? Choose an
+answer from the options below.",Autoscale DynamoDB to meet the requirements.,Increase write capacity of DynamoDB to meet the peak loads.,"Use the SQS service to read messages in the queue and write these to
+DynamoDB","Launch DynamoDB in Multi-AZ configuration with a global index to balance
+writes.",,,3,Professional,5
+104,"An agile team just starts using AWS and the team leader wants them to move the legacy
+Java-based software to the AWS platform in 2 weeks. The requirement is that the new
+environment must be highly available and the infrastructure is managed as code and
+version controlled. Besides, the team has good experiences of Chef so they want to use
+that knowledge during the migration. Which actions should the team perform to meet the
+needs? Select 2.","Use several CloudFormation templates to build up infrastructure such
+as VPC, NAT Gateway, Bastion, and Route53. Version control it using
+CodeCommit","As CloudFormation does not support OpsWorks service, use Chef in EC2 to
+build up the web services. Existing cookbooks can be used. Add an auto
+scaling group with a proper auto scaling configuration to ensure high
+availability","Use various CloudFormation templates to set up infrastructure such as VPC,
+NAT Gateway, Bastion host, Security Groups and EC2 instances. Version
+control it using GitHub.","Use a nested CloudFormation template to create an OpsWorks stack.
+The resource type is “AWS::OpsWorks::Stack”. Add a Java layer in the
+stack. Make sure that the Scaling configuration is turned on",,,1&4,Professional,5
+105,"As AWS grows, most of your clients' main concerns seem to be about security, especially
+when all of their competitors also seem to be using AWS. One of your clients asks you
+whether having a competitor who hosts their EC2 instances on the same physical host
+would make it easier for the competitor to hack into the client's data. Which of the
+following statements would be the best choice to put your client's mind at rest?","Different instances running on the same physical machine are isolated from
+each other via a 256- bit Advanced Encryption Standard (AES-256).","Different instances running on the same physical machine are isolated from
+each other via the hypervisor and via a 256-bit Advanced Encryption
+Standard (AES-256).","Different instances running on the same physical machine are isolated
+from each other via the hypervisor","Different instances running on the same physical machine are isolated
+from each other via IAM permissions",,,3,Professional,5
+106,"You are building a large-scale confidential documentation web server on AWS, and all of
+the documentation for it will be stored on S3. One of the requirements is that it cannot be
+publicly accessible from S3 directly, and you will need to use CloudFront to accomplish
+this. Which of the methods listed below would satisfy the requirements as outlined?
+Choose an answer from the options below","Create an Identity and Access Management (IAM) user for CloudFront and
+grant access to the objects in your S3 bucket to that IAM User.","Create an Origin Access Identity (OAI) for CloudFront and grant access
+to the objects in your S3 bucket to that OAI","Create individual policies for each bucket that stores documents and in
+that policy grant access to only CloudFront","Create an S3 bucket policy that lists the CloudFront distribution ID as the
+Principal and the target bucket as the Amazon Resource Name (ARN).",,,2,Professional,5
+107,"You have been tasked with creating file level restore on your EC2 instances. You already
+have the access to all the frequent snapshots of the EBS volume. You need to be able to
+restore an individual lost file on an EC2 instance within 15 minutes of a reported loss of
+information. The acceptable RPO is several hours. How would you perform this on an EC2
+instance? Choose an answer from the options below","Setup a cron that runs aws s3 cp on the files and copy the files from the
+EBS volume to S3","Turn off the frequent snapshots of EBS volumes. Create a volume from an
+EBS snapshot, attach the EBS volume to the EC2 instance at a different
+mount location, cutover the application to look at the new backup volume
+and remove the old volume","Create a volume from the source snapshot and attach the EBS volume
+to the same EC2 instance at a different mount location, browse the file
+system on the newly attached volume and select the file that needs to
+be restored, copy it from the new volume to the original source
+volume.","Enable auto snapshots on Amazon EC2 and restore the EC2 instance upon
+single file failure",,,3,Professional,5
+108,"A developer is trying to get a new DevOps role and preparing for a technical task for the
+interview. The requirement is that a simple pipeline should be built up within 1 week for a
+RESTful web service which contains several endpoints. For the pipeline, he decides to use
+AWS CodePipeline. For the application, he wants to use T2 Micro EC2 instances as they
+belong to free tier. In order to show a breadth of skills, he would like to use certain
+orchestration tool such as OpsWorks or CloudFormation to deploy the App. He has used
+Chef for some open source projects before. What below option is the best for him to do in
+a short time?","Use OpsWorks to hook up CodePipeline in the build stage. The artifacts
+can be put in a S3 bucket and OpsWorks will use the newest code in S3 to
+deploy the applications","Firstly, configure an OpsWorks stack, layer and instance. Secondly, in
+CodePipeline, choose a S3 bucket as the source which can be a zip
+file for the app and set up the existing OpsWorks stack as the
+deployment provider. Then the app can be deployed to your stack
+automatically.","As CodePipeline does not support OpsWorks, CloudFormation template is
+required to build up EC2 instance with ELB and Autoscaling. Configure
+CodePipeline to select CloudFormation as a deployment target in the
+deploy stage of the pipeline.","For CodePipeline, configure a S3 bucket as the source provider and
+configure the OpsWorks as the deployment provider. Then OpsWorks is
+able to create stack/layers and deploy APPs using artifacts in S3",,,2,Professional,5
+109,"Your final task, that will complete a cloud migration for a customer, is to set up an Active
+Directory service for them so that they can use Microsoft Active Directory with the newlydeployed
+AWS services. After reading the AWS documentation for this, you discover that
+three options are available to set up the AWS Directory Service. You call the customer to
+collect more information about their requirements, and they tell you that they have 1,000
+users on their AD service and want to be able to use their existing on-premises directory
+with AWS services.
+Which of the following options would be the most appropriate to set up the AWS
+Directory Service for your customer?",Simple AD,AWS Directory Service for Microsoft Active Directory (Enterprise Edition),AD Connector,"Any of these options are acceptable as long as they configured correctly
+for 1,000 customers",,,3,Professional,5
+110,"You have two different groups to analyze data of a petabyte-scale data warehouse using
+Redshift. Each query issued by the first group takes approximately 1-2 hours to analyze
+the data while the second group's queries only take between 5-10 minutes to analyze
+data. You don’t want the second group's queries to wait until the first group's queries are
+finished. You need to design a solution so that this does not happen. Which of the
+following will be the best and cheapest solution to solve this dilemma? Choose an answer
+from the options below:","Create a read replica of Redshift and run the second team's queries on the
+read replica.","Create two separate workload management groups and assign them
+to the respective groups","Pause the long queries when necessary and resume them when no query
+is running.","Start another Redshift cluster from a snapshot for the second team if the
+current Redshift cluster is busy processing long queries",,,2,Professional,5
+111,"You have just developed a new mobile application that handles analytics workloads on
+large-scale datasets that are stored on Amazon Redshift. Consequently, the application
+needs to access Amazon Redshift tables. Which of the following methods would be the
+best, both practically and security-wise, to access the tables? Choose the correct answer
+from the options below","Create an IAM user and generate encryption keys for that user. Create a
+policy for Redshift read-only access. Embed the keys in the application.","Create a HSM client certificate in Redshift and authenticate using this
+certificate.","Create a Redshift read-only access policy in IAM and embed those
+credentials in the application.","Use roles that allow a web identity federated user to assume a role
+that allows access to the Redshift table by providing temporary
+credentials",,,4,Professional,5
+112,"Your company has just set up a new document server on its AWS VPC, and it has four very
+important clients that it wants to give access to. These clients also have VPCs on AWS and
+it is through these VPCs that they will be given access to the document server. In addition,
+each of the clients should not have access to any of the other clients' VPCs. Choose the
+correct answer from the options below","Set up VPC peering between your company's VPC and each of the
+clients' VPCs.","Set up VPC peering between your company's VPC and each of the clients'
+VPCs, but block the IPs from CIDR of the clients' VPCs to deny access
+between each other.","Set up VPC peering between your company's VPC and each of the clients'
+VPC. Each client should have VPC peering set up between each other to
+speed up access time.","Set up all the VPCs with the same CIDR but have your company's VPC as a
+centralized VPC.",,,1,Professional,5
+113,"A company has a library of on-demand MP4 files needing to be streamed publicly on their
+new video webinar website. The video files are archived and are expected to be streamed
+globally, primarily on mobile devices. Which of the following architectures can be
+implemented as a solution to this requirement.
+Select 2 answers.","Provision streaming EC2 instances which use S3 as the source for the HLS
+on-demand transcoding on the servers. Provision a new CloudFront
+streaming distribution","Provision streaming EC2 instances which use S3 as the source for the
+HLS on-demand transcoding on the servers. Provision a new
+CloudFront download distribution with the WOWZA streaming server
+as the origin","Upload the MP4 files to S3 and create an Elastic Transcoder job that
+transcodes the MP4 source into HLS chunks. Store the HLS output in
+S3 and create an on-demand video streaming CloudFront distribution
+with download option to serve the HLS file to end users.","Upload the MP4 files to S3 and create an Elastic Transcoder job that
+transcodes the MP4 source into HLS chunks. Store the HLS output in S3 and
+create an RTMP CloudFront distribution with a live video streaming option
+to stream the video contents.?",,,2&3,Professional,5
+114,"You're migrating an existing application to the AWS cloud. The application will be only
+communicating with the EC2 instances with in the VPC. This application needs to be built
+with the highest availability architecture available. The application currently relies on
+hardcoded hostnames for intercommunication between the three tiers. You've migrated
+the application and configured the multi-tiers using the internal Elastic Load Balancer for
+serving the traffic. The load balancer hostname is demo-app.useast-
+1.elb.amazonaws.com. The current hard-coded hostname in your application used to
+communicate internally between your multi-tier application is demolayer.example.com.
+What is the best method for architecting this setup to have as much high availability as
+possible? Choose the correct answer from the options below","Create an environment variable passed to the EC2 instances using userdata
+with the ELB hostname, demo-app.us-east-1.elb.amazonaws.com.","Create a private resource record set using Route 53 with a hostname
+of demolayer.example.com and an alias record to demo-app.useast-
+1.elb.amazonaws.com","Create a public resource record set using Route 53 with a hostname of
+demolayer.example.com and an alias record to demo-app.useast-
+1.elb.amazonaws.com","Add a cname record to the existing on-premise DNS server with a value of
+demo-app.us-east-1.elb.amazonaws.com. Create a public resource record
+set using Route 53 with a hostname of applayer.example.com and an alias
+record to demo-app.us-east-1.elb.amazonaws.com.",,,2,Professional,5
+115,"When it comes to KMS, which of the following best describes how the AWS Key
+Management Service works? Choose the correct answer from the options below","AWS KMS supports two kinds of keys — master keys and data keys. Master
+keys can be used to directly encrypt and decrypt up to 4 kilobytes of data
+and can also be used to protect data keys. The master keys are then used
+to encrypt and decrypt customer data.","AWS KMS supports two kinds of keys — master keys and data keys.
+Master keys can be used to directly encrypt and decrypt up to 4
+kilobytes of data and can also be used to protect data keys. The data
+keys are then used to encrypt and decrypt customer data.","AWS KMS supports two kinds of keys — master keys and data keys. Master
+keys can be used to directly encrypt and decrypt up to 4 kilobytes of data
+and can also be used to protect data keys. The data keys are then used to
+decrypt the customer data, and the master keys are used to encrypt the
+customer data","AWS KMS supports two kinds of keys — master keys and data keys. Master
+keys can be used to directly encrypt and decrypt up to 4 kilobytes of data
+and can also be used to protect data keys. The data keys are then used to
+encrypt the customer data and the master keys are used to decrypt the
+customer data.",,,2,Professional,5
+116,"A company has developed a Ruby on Rails content management platform. Currently,
+OpsWorks with several stacks for dev, staging, and production is being used to deploy
+and manage the application. Now, the company wants to start using Python instead of
+Ruby. How should the company manage the new deployment such that it should be able
+to revert back to the old application with Ruby if the new deployment starts adversely
+impacting the existing customers? Choose the correct answer from the options below","Create a new stack that contains the Python application code and manages
+separate deployments of the application via the secondary stack using the
+deploy lifecycle action to implement the application code.","Create a new stack that contains a new layer with the Python code.
+Route only a small portion of the production traffic to use the new
+deployment stack. Once the application is validated, slowly increase
+the production traffic to the new stack using the Canary Deployment.
+Revert to the old stack, if the new stack deployment fails or does not
+work.","Create a new stack that contains the Python application code. Route all the
+traffic to the new stack at once so that all the customers get to access the
+updated application.","Update the existing host instances of the application with the new Python
+code. This will save the cost of having to maintain two stacks, hence
+cutting down on the costs",,,2,Professional,5
+117,"Your application is having very high traffic, so you have enabled autoscaling in multiavailability
+zone to suffice the needs of your application but you observe that one of the
+availability zones is not receiving any traffic. What can be wrong here?",Autoscaling only works for single availability zone,Autoscaling can be enabled for multi AZ only in north Virginia region,Availability zone is not added to Elastic load balancer,Instances need to manually added to availability zone,,,3,Professional,5
+118,"You're running a financial application on an EC2 instance. Data is stored in the instance is
+critical and in the event of a failure of an EBS volume, the RTO and RPO are less than 1
+minute. How would you architect this application given the RTO and RPO requirements?
+Choose the correct answer from the options below","Mirror the data using RAID 1 configuration, which provides fault
+tolerance on EBS volumes.","Nothing is required since EBS volumes are durability backed up to
+additional hardware in the same availability zone.","Write a script to create automated snapshots of the EBS volumes every
+minute. In the event of failure have an automated script that detects failure
+and launches a new volume from the most recent snapshot.","Stripe multiple EBS volumes together with RAID 0, which provides fault
+tolerance on EBS volumes.",,,1,Professional,5
+119,"A company is considering integrating their on-premises resources with AWS in a hybrid
+architecture without any security threats posed by the internet. Their goal is to run the
+customer-facing data collection processes in AWS. They have to transfer huge volume of
+data from EC2 instances running in an AWS VPC to their on-premises environment daily.
+How can this be accomplished?","Provision a VPN connection between the on-premise data center and the
+AWS region using the VPN section of a VPC.","Suggest provisioning a Direct Connect connection between the onpremise
+data center and the AWS regi","Suggest using AWS import/export to transfer the TBs of data while
+synchronizing the new data as it arrives.","Suggest leaving the data required for the application on-premise and use a
+VPN to query the on-premise database data from EC2 when required",,,2,Professional,5
+120,"You are working as a consultant for a company designing a new hybrid architecture to
+manage part of their application infrastructure in the cloud and on-premise. As part of the
+infrastructure, they need to consistently transfer high amounts of data. They require a low
+latency and high consistency traffic to AWS. The company is looking to keep costs as low
+possible and is willing to accept slow traffic in the event of primary failure. Given these
+requirements how would you design a hybrid architecture? Choose the correct answer
+from the options below","Provision a Direct Connect connection to an AWS region using a Direct
+Connect partner. Provision a VPN connection as a backup in the event
+of Direct Connect connection failure.","Create a dual VPN tunnel for private connectivity, which increases network
+consistency and reduces latency. The dual tunnel provides a backup VPN
+in the case of primary failover.","Provision a Direct Connect connection which has automatic failover and
+backup built into the service.","Provision a Direct Connect connection to an AWS region using a Direct
+Connect provider. Provision a secondary Direct Connect connection as a
+failover.",,,2,Professional,5
+121,"An employee keeps terminating EC2 instances on the production environment. You've
+determined the best way to ensure this doesn't happen to add an extra layer of defense
+against terminating the instances. What is the best method to ensure that the employee
+does not terminate the production instances?
+Choose the 2 correct answers from the options below","Tag the instance with a production-identifying tag and add resourcelevel
+permissions to the employee user with an explicit deny on the
+terminate API call to instances with the production tag","Tag the instance with a production-identifying tag and modify the
+employees group to allow only start, stop, and reboot API calls and not the
+terminate instance call.","Modify the IAM policy on the user to require MFA before deleting EC2
+instances and disable MFA access to the employee","Modify the IAM policy on the user to require MFA before deleting EC2
+instances",,,1&4,Professional,5
+122,"A company has many employees who need to run internal applications that access the
+company's AWS resources. These employees already have user credentials in the
+company's current identity authentication system, which does not support SAML 2.0. The
+company does not want to create a separate IAM user for each company employee. How
+should the SSO setup be designed?
+Choose the 2 correct answers from the options below",Create an IAM user to share based off of employee roles in the company.,"Create a custom identity broker application which authenticates the
+employees using the existing system, uses the GetFederationToken
+API call and passes a permission policy to gain temporary access
+credentials from STS.","Create a custom identity broker application which authenticates
+employees using the existing system and uses the AssumeRole API
+call to gain temporary, role-based access to AWS.","Configure an AD server which synchronizes from the company's current
+Identity Provide and configures SAML-based single sign-on which will then
+use the AssumeRoleWithSAML API calls to generate credentials for the
+employees.",,,2&3,Professional,5
+123,"Which of the following is NOT a way to minimize the attack surface area as a DDOS
+minimization strategy in AWS? Choose the correct answer from the options below","Configure services such as Elastic Load Balancing and Auto Scaling to
+automatically scale",Reduce the number of necessary Internet entry points,Separate end user traffic from management traffic.,Eliminate non-critical Internet entry points,,,3,Professional,5
+124,"A software team is building up a feature that needs a new RESTful endpoint that returns
+greetings to customers. The endpoint contains several path variables and query string
+parameters. This HTTP endpoint is supposed to be hit millions of times per month
+however the hit rate may change dramatically. The team decides to use API
+gateway/lambda to save some cost. The team needs to deploy the feature quickly
+however the team members have little experiences on lambda. Which below options CAN
+NOT help the team? Select 2.","In lambda console, choose a blueprint such as “microservice-http-endpoint”
+to create an lambda-microservice under the API that is selected.","Build an API gateway with a proxy resource for a Lambda function. This can
+be done by selecting the “Configure as proxy resource” option when
+creating API resource","Use the API Gateway console to build an API that enables a client to
+call Lambda functions through the Lambda custom integration.
+Lambda custom integration is very simple to use and the user has little
+else to do except choosing a particular Lambda function in a given
+region.","Implement a lambda authorizer for the API gateway to grant
+permissions. A Lambda authorizer uses bearer token authentication
+strategies, such as OAuth or SAML, which secures the access to API
+gateway and back end lambda.",,,3&4,Professional,5
+125,"A company has a Redshift cluster for petabyte-scale data warehousing. The data within
+the cluster is easily reproducible from additional data stored on Amazon S3. The company
+wants to reduce the overall total cost of running this Redshift cluster. Which scenario
+would best meet the needs of the running cluster, while still reducing total overall
+ownership cost of the cluster? Choose the correct answer from the options below","Instead of implementing automatic daily backups, write a CLI script that
+creates manual snapshots every few days. Copy the manual snapshot to a
+secondary AWS region for disaster recovery situations","Enable automated snapshots but set the retention period to a lower
+number to reduce storage costs","mplement daily backups, but do not enable multi-region copy to save data
+transfer costs.",Disable automated and manual snapshots on the cluster,,,4,Professional,5

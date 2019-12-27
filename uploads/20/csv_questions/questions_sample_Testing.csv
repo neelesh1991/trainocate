@@ -1,0 +1,35 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+The expected results of the software is _________________.,Only important in system testing,Only used in component testing,Most useful when specified in advance,Derived from the code,,,1,Testing,1
+Which Testing is performed first?,Black box testing,White box testing,Dynamic testing,Static testing,,,4,Testing,1
+When an expected result is not specified in test case template then ___________,We cannot run the test,It may be difficult to repeat the test,It may be difficult to determine if the test has passed or failed,We cannot automate the user inputs,,,3,Testing,1
+Test cases are created in which phase?,Test Specification,Test Planning,Test Requirement,Test Configuration,,,1,Testing,1
+Which testing cannot be performed on first build of the software? ,Regression testing,Retesting,Sanity testing,Only A and B,All of these,,5,Testing,1
+Pesticide Paradox principle of testing says that ______________,Clustering modules contain most of the defects,Finding and Fixing defects does not help if the system built is unstable,Testing is done differently in different context,Test cases needs to be regularly reviewed and revised,,,4,Testing,1
+Defects can be found more easily in ________,Bottom up Integration Testing,Top down Integration Testing,Big Bang Testing,Sandwich Integration Testing,,,1,Testing,1
+Which of the following is / are not a characteristic of Regression Testing?,Regression Testing can be performed on each level,It is done to illustare that software is not changed intenationally,It is done to illustrate that new defects are not introduced after adding a new functionality or correcting previous one,It is best candidate for automation,,,2,Testing,1
+What is the example of Load Testing? ,Downloading large contents from the internet,Running multiple applications on a computer or server simultaneously,Printing large document using printer in a queue,Generating a large amount of traffic on particalr page,All the above,,5,Testing,1
+"Which of the following is not a method of Dynamic Testing?
+1. System testing
+2. UAT
+3. Inspection
+4. Unit Testing
+5. Walk through
+6. Technical review ","1,2,4","3,5,6","2,3,5,6",All of the above,,,2,Testing,1
+Which technique is applied for usability testing?,White box,Black box,Grey box,Combination of all,,,2,Testing,1
+"When Testing should be stopped? 
+",When manager asks to stop,When time runs out,When enough money are spend on testing,It depends on risk associated with that project,,,4,Testing,1
+When should Regression Testing to be performed?,When the project manager says,After the software has changed,Whenever software testing team get the time,None of the above,,,2,Testing,1
+What are the objectives of Integration Testing?,To verify that system is functioning according to specified requirements,To verify that system meets user expectation and needs,To verify that system separately testable modules are functioning properly,To verify that interfaces between different parts of system,All of the above,,4,Testing,1
+"Which of the followings is/are best described as Smoke Testing? 
+",Part of Black Box Testing,Unit testing for small programs,Rolling Integration Testing,None of the above,,,3,Testing,1
+Which of the followings is/are a form of Functional Testing? ,Boundary Value Analysis,Usability Testing,Performance Testing,Security Testing,,,1,Testing,1
+Which of the followings is NOT a White Box Technique? ,Statement testing,Path testing,Data flow testing,None of the above,,,4,Testing,1
+Which of the following is the form of Alpha and Beta Testing?,Acceptance Testing,System Testing,Unit Testing,Integration Testing,,,1,Testing,1
+What is Pesticide Paradox?,"If the same tests are repeated over and over again , eventually the same set of test cases will no longer find any new bugs",A small number of modules contain most of the defects,"Testing can show that defects are present , but can not prove that there are no defects",Finding and fixing defects does not help if the system built is unusable and does not fulfill the users need and expectations,,,1,Testing,1
+Which of the following is not a state of a Bug in Bug Life Cycle,New,Open,Verified,Deffered,Critical,,5,Testing,1
+If a defect is delayed for later phases it proves more costly,TRUE,FALSE,,,,,1,Testing,1
+"Normally, the impact ratings for defects are classified into three types","Minor, Low, Critical","Low, Major, Critical","Minor, Major, High","Minor, Major, Critical",,,4,Testing,1
+........... happens when defect introduced in one phase passes to another phase without getting caught in the phase-end verification or validation activities,Defect Cascading,Defect Prevention,QC,Defect Leakage,,,4,Testing,1
+.......identifies areas of your Web site that may not conform to the World Wide Web Consortium (W3C) Web Content Accessibility Guidelines.,Accessibility Checkpoint,standard checkpoints,Database checkpoints,Accessible Checkpoint,,,1,Testing,1
+What is the order of Priority Testing?,Unit >>Integration >>System Testing,Unit>> System>>Acceptance Testing,System>>Integration>> Acceptance Testing,System>>Acceptance>>Integration,,,1,Testing,1

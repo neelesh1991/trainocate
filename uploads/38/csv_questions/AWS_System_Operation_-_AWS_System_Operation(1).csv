@@ -1,0 +1,178 @@
+Question,Option 1,Option2,Option3,Option4,Option5,Option 6,Correct OPtion (note:- if Correct option is Option 1 then insert 1),Category Name,Marks
+"Your company currently has a VPC with EC2 Instances. A new instance being launched which will host
+an application that works on IPv6. You need to ensure that this instance can initiate traffic outgoing to
+the Internet. At the same time, you need to ensure that no incoming connection can be initiated from
+the Internet on to the Instance. Which of the following would you add to the VPC for this requirement?",A NAT Instance,A NAT gateway,An Internet gateway,An egress-only Internet gateway,,,4,System Operations,5
+"A company is planning for hosting a 3-tier application onto AWS. The presentation layer is hosted on a
+set of web servers and are placed in a public subnet. Application layer hosted on 2 EC2 instances, and
+Oracle database servers, hosted on EC2 instances are placed in a private subnet. You need to ensure
+that all traffic has been evenly distributed. Also, you need to ensure that database servers are not
+accessible on the Internet.
+Which of the following 2 configurations you will propose to implement?",Create an external load balancer for the web servers,Create an external load balancer for the database servers,Create an Internal load balancer for the web servers,Create an internal load balancer for the Application Layer,,,1&4,System Operations,5
+"You’ve set up an EC2 Instance in one of the default subnets in a default VPC. You need to setup an
+application on the EC2 Instance. For that you need to ensure that you can log into the Linux Instance.
+Which of the following changes would you need to implement to be able to log into the Instance",Incoming for Security Group for TCP protocol on port 22,Outgoing for Security Group for TCP protocol on port 22,Incoming for NACL for TCP protocol on port 22,Outgoing for NACL for TCP protocol on port 22,,,1,System Operations,5
+"You’re planning on allowing an Administrator to setup an EC2 Instance. This EC2 Instance will host an
+application that would need access to a DynamoDB table. Which of the following policy permissions
+are required to ensure that from a security perspective this implementation can be carried out?
+Choose 2 answers from the options given below",A trust policy that allows the EC2 Instance to assume a role,A trust policy that allows the user to assume a role,An IAM permission policy that allows the user to assume a role,An IAM permission policy that allows the user to pass a role,,,1&4,System Operations,5
+"Your company has a set of S3 buckets defined in AWS. The reporting users need to analyse the data in
+S3 using standard SQL. Which of the following service can help meet their demand?",AWS Redshift,AWS Athena,AWS DynamoDB,AWS RDS,,,2,System Operations,5
+"You are an Operations Engineer for a company. The company has just started using AWS RDS-MySQL
+for their underlying data store. There is a requirement to ensure that the database is available even in
+the event of a failure. The transition to the backup database should take the least amount of time.
+Which of the following features would you use to fulfil this requirement?",Use Read Replicas,Use Global tables,Use Multi-AZ,Use Automated Backups,,,3,System Operations,5
+"Your company has setup EC2 Instances in AWS. These EC2 Instances are normally setup on staging
+environments and then promoted as production-based instances. You need ensure that SSH is always
+disabled on these Instances. You normally have around 500 Instances to manage. Which of the
+following would be the best way to ensure this security check is in place?",Use the AWS Inspector to check the Security Groups,Use AWS Config Rules to check the Security Groups,Create a CLI script to check all the Security groups,Use the EC2 Config utility to check all the Security groups,,,2,System Operations,5
+"Your team is planning on hosting a set of EC2 Instances which is going to host databases. The
+databases would receive a heavy load. Which of the following EBS volume type would you provision
+for the underlying EC2 Instances",General Purpose SSD,Provisioned IOPS,Throughput Optimized HDD,Cold HDD,,,2,System Operations,5
+"Your team is planning on hosting a set of EC2 Instances which is going to host Memcached which will
+be used as the Cache for several applications. As the IT admin, you need to provision the EC2
+Instances. Which of the following Instance type would you provision for the underlying EC2 Instance?",Compute Optimized,Memory Optimized,Storage Optimized,General Purpose,,,2,System Operations,5
+"Your company needs to connect their on-premise network to their AWS VPC’s. You are in charge of
+setting up the AWS VPN connection to setup this hybrid architecture. Which of the following are part
+of the implementation steps to have this in place? Choose 3 answers from the options given below.",Ensure that a customer gateway is in place.,Attach an Internet gateway to the VPC,Attach a virtual private gateway to the VPC,Create the VPN connection,,,1&3&4,System Operations,5
+"An application has currently been deployed on AWS. The application sits on a set of EC2 Instances
+and sits behind an Elastic Load balancer. The IT Security department has requested for a list of client
+IP addresses that access the Load Balancer. How can you accomplish this? Choose 2 answers from
+the options given below",Enable cloudwatch logs for the individual EC2 Instances,Enable access logging for the ELB,Give access to the S3 bucket for accessing the logs,Give access to Cloudwatch logs for accessing the logs,,,2&3,System Operations,5
+"Your company is setting up a web site that will be hosted in S3. They want to ensure that users across
+the world get a seamless user experience when accessing the web site. As the AWS administrator
+which of the following would you create to ensure this requirement is fulfilled?",Create a Cloud front distribution and place the S3 bucket as the source,Enable cross region replication for the web site in the S3 bucket,Use ElastiCache to cache the Reponses,Place an Elastic Load balancer in front of the static web site,,,1,System Operations,5
+"Your team is developing an application that will be hosted on AWS. The application needs to send
+messages across components of the applications. The order of the messages needs to be preserved.
+Which of the following would you provision for this requirement?",A Standard SQS queue,A SQS FIFO queue,A SNS topic,A Kinesis stream,,,2,System Operations,5
+"You are a systems admin for a company. There is a requirement to host a batch processing application.
+This batch processing application can be interrupted at any point in time and then resumed. You have
+been told to provision the underlying EC2 Instances ensuring that cost is kept at a minimum. Which of
+the following would you consider?",Spot Instances,On-Demand Instances,Dedicated Hosts,Reserved Instances,,,1,System Operations,5
+"You’re the systems administrator a company. They are planning on setting up an AWS Direct Connect
+connection between an AWS VPC and their on-premise data centre. As the Administrator, which of the
+following pre-requisites that you must have in place? Choose 2 answers from the options given below.",The network must use a single mode fiber with a 1000BASE-LX,The network must use a dual mode fiber with a 1000BASE-LX,The network device on your side must support BGP,The network device on your side must support static routing,,,1&3,System Operations,5
+"Your team has developed a set of Lambda functions, and they need to be placed in re-usable
+templates so that they can be used in subsequent deployment in other AWS environments. Which of
+the following service is the correct option to pick for this requirement?",AWS Opswork,AWS Cloudformation,AWS Cloudtrail,AWS Config,,,2,System Operations,5
+"You have 2 VPC’s , VPCA(10.0.0.0/16) and VPCB(20.0.0.0/16). You create a VPC peering connection
+which has an id of pcx-1a2b1a2b between the 2 VPC’s. Which of the following route entries need to be
+added to the route tables to ensure that traffic can flow across the VPC’s. Choose 2 answers from the
+options given below",In VPCA (Destination:20.0.0.0/16 and Target: pcx-1a2b1a2b),In VPCA (Destination:10.0.0.0/16 and Target: pcx-1a2b1a2b),In VPCA (Destination:20.0.0.0/16 and Target: 10.0.0.0/16),In VPCB (Destination:10.0.0.0/16 and Target: pcx-1a2b1a2b),In VPCB (Destination:10.0.0.0/16 and Target: 20.0.0.0/16),,1&4,System Operations,5
+"A company has a set of Hadoop clusters running on their On-premise environment. They want to
+transfer them to AWS. Which of the following would be the ideal service you would use to transition
+the existing workload?",AWS Redshift,AWS DynamoDB,AWS EMR,AWS RDS,,,3,System Operations,5
+"A company is hosting a social media application on AWS. The application makes use of DynamoDB as
+the backend. The read and write capacity has already been defined for the table. But it has been
+noticed that during high peak loads, the database begins throttling requests. Which of the following
+can be used to effectively manage the high number of requests during high peak loads?",Place an ELB in front of the DynamoDB table,Add the DynamoDB table to an Autoscaling Group,Enable Autoscaling for the DynamoDB table,Place an SQS queue in front of the DynamoDB table,,,3,System Operations,5
+"A company has a set of EC2 Instances hosted in a VPC. There is a requirement to perform a scan to
+see if there are any security vulnerabilities. The check needs to be done as per the Industry standards
+of the “Center for Internet Security (CIS) Benchmarks”. Which of the following can help you achieve
+this requirement?",Use the AWS Trusted Advisor,Use the AWS Inspector service,Use the AWS Config service,Use the AWS GuardDuty service,,,2,System Operations,5
+"Your development team has set an application on an EC2 Instance. This instance is currently sitting in
+a private subnet. The application needs to make use of Kinesis streams. How would you ensure that
+the application would be able to make use of the Kinesis streams service?",Ensure that an Internet gateway is attached to the VPC,Ensure that an Egress-only Internet gateway,Use a VPC Endpoint gateway,Use a VPC Endpoint Interface,,,4,System Operations,5
+"Your company has a set of EC2 Instances in AWS. Senior management wants to know the usage costs
+for the current set of EC2 Instances and also get a clear forecast in the future usage and costs. How
+can you go about fulfilling this requirement?",By using the AWS Trusted Advisor,By using the EC2 Explorer,By using the Cost Explorer,By using the AWS Config tool,,,3,System Operations,5
+"You are planning on launching your first Linux based EC2 instance in the default VPC on AWS Cloud.
+How can you access this instance on the cloud using the keys?",The public key needs to be created and placed on the EC2 Instance,The private key needs to be created and placed on the EC2 Instance,The public key needs to be used to log into the Instance,The private key needs to be used to log into the Instance,,,1&4,System Operations,5
+"Your company’s development team currently have an application deployed on their on-premise
+environment. This application makes use of Docker containers. This application environment needs to
+be ported onto AWS. The development team does not want to manage the underlying infrastructure.
+Which of the following is the ideal service you would use to provision the environment for them?",AWS ElasticBeanstalk,AWS EC2,AWS Cloudformation,AWS Opswork,,,1,System Operations,5
+"Your development team have started using the ElastiCache service. You’ve setup a Memcached
+cluster for them. After continuous usage, there are alerts being triggered of high utilization for the
+cluster. Which of the following can be done to resolve the issue of high CPU utilization? Choose 2
+answers from the options given below.",Use a larger cache node type,Add more cache nodes,Add Autoscaling to the nodes,Add an Elastic Load balancer in front of the cache cluster,,,1&2,System Operations,5
+"A company has a set of DynamoDB tables. The company wants to ensure that DynamoDB tables are
+protected and recoverable in case of accidental write or delete operations. Which of the following can
+be used to fulfil this requirement?",Enable global tables,Use the Point-in-time recovery feature,Enable Autoscaling,Enable Multi-AZ,,,2,System Operations,5
+"Your company has an S3 bucket located in the EU region. Based on compliance regulations, the
+objects now need to be replicated from the bucket onto another region. Which of the following steps
+as a System Administrator do you need to ensure are in place for replication to take place. Choose 2
+answers from the options given below",The source and destination buckets must have versioning enabled,The source and destination buckets must have encryption enabled,The source and destination buckets must be in different AWS Regions,The source and destination buckets must be in same AWS Region,,,1&3,System Operations,5
+"Your company currently has a set of Images that are placed in an S3 bucket. To give better user
+experience to users across the world, you have created a CloudFront distribution with the S3 bucket
+as the origin. But in your monitoring reports, you now see that a lot of users are bypassing the
+CloudFront URL and directly going to the S3 bucket and downloading the images. Which of the
+following steps can be performed to remediate this issue. Choose 2 answers from the options given
+below.",Create a Cloudfront origin access identity,Create a separate IAM user,"Ensure that only the Cloudfront origin access identity has access to read
+objects from the S3 bucket.",Ensure that only the IAM user has access to read objects from the S3 bucket,,,1&3,System Operations,5
+"Your company is planning on hosting a batch processing application on a set of EC2 Instances. You
+need to spin up the Instances for hosting the application. Which of the following would you use as the
+underlying Instance type for the Instances?",General Purpose,Memory Optimized,Storage Optimized,Compute Optimized,,,4,System Operations,5
+"Your company has set a Network Load Balancer in AWS. They need to get the detailed traffic requests
+that flow into the load balancer. Which of the following can help accomplish this requirement?",Use Cloudwatch Logs,Use Cloudwatch metrics,Use Cloudtrail logs,Use VPC Flow Logs,,,4,System Operations,5
+"A software development company is currently working on developing a new application. This will be
+hosted in AWS. In order to test the application, a performance test is being conducted. The only issue
+is that whenever the infrastructure needs to be scaled, the team needs to go to the IT admin team to
+request for new infrastructure. How can you automate such requests? Choose 2 options",Create an Autoscaling Group and Launch configuration,"Ensure the Autoscaling Group creates new instances based on instance
+utilization",Create an Elastic Load Balancer,Create a target group in the load balancer,,,1&2,System Operations,5
+"You want to setup an EC2 instance in a VPC. The primary requirement of this instance is that it needs
+to support higher bandwidth and higher packet per second (PPS) performance. Which of the following
+option would you consider for this requirement?",Consider using placement groups,Use EBS Optimized Instance types,Use Instance types which support Enhanced Networking,Consider using Elastic IP addresses,,,3,System Operations,5
+"An organization is generating digital policy files which are required by the admins for verification. Once
+the files are verified they may not be required in the future unless there is some compliance issue. As
+the Sysops Administrator, you have been requested to create a suitable store for the files once they've
+been verified. Which of the following would be the best COST-effective option for this?",AWS S3 - Reduced Redundancy Storage,AWS S3 - Standard Storage,AWS - RDS,AWS Glacier,,,4,System Operations,5
+"An organization is planning to use AWS for their production roll out. The organization wants to
+implement automation for deployment such that it will automatically create a LAMP stack, download
+the latest PHP installable from S3 and setup the ELB. Which of the below mentioned AWS services
+meets the requirement for making an orderly deployment of the software?",AWS Elastic Beanstalk,AWS Cloudfront,AWS Cloudformation,AWS Opsworks,,,1,System Operations,5
+"A set of developers want to query some data from a set of CSV files which are stored in S3. They don’t
+want to develop a specific program for this and want to use any AWS service if possible. Which of the
+following could you use for this requirement?",AWS Athena,AWS Redshift,AWS DynamoDB,AWS Glacier,,,1,System Operations,5
+"A company is having their critical data stored on EBS volumes and they are planning for a disaster
+recovery procedure. They want to automate the process of keeping updated copies of their EBS
+volume snapshots. Which of the following service can you use for the automation process?",AWS Lambda,AWS API gateway,AWS Cloudtrail,AWS Config,,,1,System Operations,5
+"Your team needs to setup a DynamoDB table. An application which picks up date from various IoT
+devices will be writing data to the underlying table. As per the requirements, there would be around
+40 devices writing data every 10 seconds. Each data write would be around 1KB. As a Systems
+Administrator, how much Write throughput would you assign for the underlying table?",2,4,10,12,,,2,System Operations,5
+"Your company currently has a hybrid IT architecture. There is a VPN connection setup between AWS
+VPC and the on-premise data centre. There is a requirement that all Instances in the VPC use the Onpremise DNS server for resolving DNS names. How could you achieve this?",Create an Internal Route 53 hosted zone,Create a secondary DNS server in AWS,Create a DHCP Options set and assign it to the VPC,Modify the DNS resolution of the VPC,,,3,System Operations,5
+"You’re working as a Systems Administrator for a company. They have just started using AWS. You are
+trying to understand those aspects which you can do yourself and those where you need to contact
+AWS. For which of the following would you need to contact AWS. Choose 2 answers from the options
+given below",Getting a consolidated bill for all of the accounts you own,"Getting compliance documents from AWS to get a breakdown of their physical
+infrastructure",Request for increase in the number load balancers per region,"Request for increase in the the number of DynamoDB tables per account more
+then allocated by default.",,,3&4,System Operations,5
+"Your company is hosting an application that consists of a blogging site where some articles which are
+static in nature get a lot of hits and sometimes causes the application to behave slowly. Which of the
+following can be used to alleviate the issue of many users hitting the application for such pages?",Consider placing ElastiCache in front of the database,Consider creating a Read Replica of the database,Consider hosting the web pages using static web site hosting in S3,Consider using the latency policy in Route 53,,,3,System Operations,5
+"A company is currently hosting an application that is setup on EC2 Instances. These EC2 Instances are
+being spun up as part of an Autoscaling Group. The application is being used extensively during office
+hours from 8-4. Users are complaining that the performance of the application is slow during the start
+of the day after which the application works properly. Which of the following can be done to ensure
+the application works properly in the beginning of the day?","Add a Dynamic scaling policy for the Autoscaling group to launch new instances
+based on the CPU utilization","Add a Dynamic scaling policy for the Autoscaling group to launch new instances
+based on the Memory utilization","Add a Scheduled scaling policy for the Autoscaling group to launch new
+instances before the start of the day",Add an Application Load balancer to the entire setup,,,3,System Operations,5
+"Your team has a Memcached cluster defined in AWS. After usage of the solution, you can see a large
+number of evictions based on the recent cloudwatch metrics data. Which of the following can be used
+to solve the issue of the increased number of evictions? Choose 2 answers from the options given
+below",Add an additional node to the cluster,Change the underlying volume for the cluster to use Provisioned IOPS,Consider increasing the node size,Consider restarting the cluster,,,1&3,System Operations,5
+"Your company is planning on hosting an application on a set of EC2 Instances. These instances will sit
+behind an Elastic Load balancer. You need to ensure that Route 53 is configured with the company’s
+domain name to the Elastic Load balancer. Which of the following record would you create for this
+requirement?",‘A’ record,MX’ record,ALIAS record,AAAA’ record,,,3,System Operations,5
+"You need to monitor the memory and swap usage for a set of Linux EC2 Instances. The metrics need
+to be available in the Cloudwatch dashboard. Which of the following do you need to do to achieve
+this?",Register for a cloudwatch account,Install the necessary scripts on the EC2 Instance,Enable detailed monitoring on the instance,Enable basic monitoring on the instance,,,2,System Operations,5
+"Your company has launched a set of resources in AWS. There is now a security mandate to ensure
+that all changes to the resources are monitored. Which of the following can help achieve this? Choose
+2 answers from the options given below",AWS Cloudwatch,AWS Cloudtrail,AWS Config,AWS Trusted Advisor,,,2&3,System Operations,5
+"Your company has a set of EBS volumes. There is a request to ensure that automated backups of the
+EBS volumes are in place. Which of the following would you use for this purpose?",Amazon Data Lifecycle Manager,S3 Lifecycle policies,AWS Config,AWS Inspector,,,1,System Operations,5
+"Your application architecture design currently looks at the use of SQS queues for messaging. One of
+the requirements is to ensure a separate queue is kept in place for those messages which are not
+processed successfully. Which of the following would you configure for this purpose?",FIFO Queues,Dead letter queues,Queues with short polling configured,Delay queues,,,1,System Operations,5
+"You need to conduct the penetration testing for EC2 Instances in your company’s AWS account. You
+need to do this as part of the security procedure for the company. Which of the following is TRUE
+when it comes to penetration testing for EC2 Instances?",It is not allowed under any circumstances,It can be performed by AWS at certain times,Can be performed by the customer on their own instances,It can be performed at any point in time,,,3,System Operations,5
+"You’ve set up a VPC with a subnet. You’ve set up the EC2 Instance which has a public IP. You have set
+the Security Groups to allow access to your EC2 Instance. Which of the following are additional steps
+that need to be carried out to ensure that you can connect to the EC2 instance from the Internet?
+Please select 2 options from below",Attach a NAT gateway to the VPC,Attach an Internet gateway to the VPC,Modify the Route tables for traffic to flow via the NAT gateway,Modify the Route tables for traffic to flow via the Internet gateway,,,2&4,System Operations,5

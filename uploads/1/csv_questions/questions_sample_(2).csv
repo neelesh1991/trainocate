@@ -1,0 +1,53 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option6,"Correct Option
+(Note:- if correct option is Option1 then insert 1)",Category Name,Marks
+"You currently operate a web application in the AWS US-East region. The application runs
+on an auto-scaled layer of EC2 instances and an RDS Multi-AZ database. Your IT security
+compliance officer has tasked you to develop a reliable and durable logging solution to
+track changes made to your EC2, IAM and RDS resources. The solution must ensure the
+integrity and confidentiality of your log data. Which of the below solutions would you
+recommend?","Create a new CloudTrail trail with one new S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use IAM
+roles, S3 bucket policies and Multi Factor Authentication (MFA) to
+delete on the S3 bucket that stores your logs.","Create a new CloudTrail with one new S3 bucket to store the logs.
+Configure SNS to send log file delivery notifications to your management
+system. Use IAM roles and S3 bucket policies on the S3 bucket that stores
+your logs.","Create a new CloudTrail trail with an existing S3 bucket to store the logs
+and with the option that applies trail to all regions selected. Use S3 ACLs
+and Multi Factor Authentication (MFA) to delete on the S3 bucket that
+stores your logs","Create three new CloudTrail trails with three new S3 buckets to store the
+logs one for the AWS Management console, one for AWS SDKs and one for
+command line tools. Use IAM roles and S3 bucket policies on the S3",,,Option3,AWS Arch,5
+"An enterprise wants to use a 3rd party SaaS application hosted by another AWS account.
+The SaaS application needs to have access to issue several API commands to discover
+Amazon EC2 resources running within the enterprise’s account. The enterprise has internal
+security policies that require any outside access to their environment must conform to the
+principles of least privilege and there must be controls in place to ensure that the
+credentials used by the SaaS vendor cannot be used by any other third party.
+Which of the following options would meet all of these conditions?","From the AWS Management Console, navigate to the Security Credentials
+page and retrieve the access and secret key for your account","Create an IAM user within the enterprise account assign a user policy to the
+IAM user that allows only the actions required by the SaaS application.
+Create a new access and secret key for the user and provide these
+credentials to the SaaS provider.","Create an IAM role for cross-account access that allows the SaaS
+provider’s account to assume the role and assign it a policy that
+allows only the actions required by the SaaS application.","Create an IAM role for EC2 instances, assign it a policy which allows only
+the actions required for the Saas application to work, provide the role
+ARN to the SaaS provider, to be used when launching their application
+instances.",,,Option3,AWS Arch,5
+"An AWS customer is deploying an application that is composed of an auto scaling group
+of EC2 Instances. The customer's security policy requires that every outbound connection
+from these instances to any other service within the customers Virtual Private Cloud must
+be authenticated using a unique X.509 certificate that contains the specific instance ID. In
+addition, an X.509 certificate must be designed by the AWS Key Management Service
+(KMS) in order to be trusted for authentication.
+Which of the following configurations will support these requirements?","Configure an IAM Role that grants access to an Amazon S3 object
+containing a signed certificate and configure an Auto Scaling group to
+launch instances with this role. Have the instances bootstrap, get the
+certificate from Amazon S3 upon first boot.","Embed a certificate into the Amazon Machine Image that is used by the
+Auto Scaling group Have the launched instances, generate a certificate
+signature request with the instance’s assigned instance-id to the AWS KMS
+for signature","Configure the AutoScaling group to send an SNS notification of the
+launch of a new instance to the AWS Certificate Manager. Create a
+signed certificate using AWS Certificate Manager (ACM).","Configure the launched instances to generate a new certificate upon first
+boot. Have the AWS KMS poll the Auto Scaling group for associated
+instances and send new instances a certificate signature (that contains the
+specific instance-id).",,,Option3,AWS Arch,

@@ -1,0 +1,177 @@
+
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Missing argument 3 for Dashboard_model::getQuizLogData(), called in /home/vk9u6n107bz2/public_html/quiz/admin/application/controllers/Dashboard.php on line 217 and defined</p>
+<p>Filename: models/Dashboard_model.php</p>
+<p>Line Number: 239</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/models/Dashboard_model.php<br />
+			Line: 239<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/controllers/Dashboard.php<br />
+			Line: 217<br />
+			Function: getQuizLogData			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/index.php<br />
+			Line: 318<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: admin_level</p>
+<p>Filename: models/Dashboard_model.php</p>
+<p>Line Number: 269</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/models/Dashboard_model.php<br />
+			Line: 269<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/controllers/Dashboard.php<br />
+			Line: 217<br />
+			Function: getQuizLogData			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/index.php<br />
+			Line: 318<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Missing argument 3 for Dashboard_model::retryLogData(), called in /home/vk9u6n107bz2/public_html/quiz/admin/application/controllers/Dashboard.php on line 218 and defined</p>
+<p>Filename: models/Dashboard_model.php</p>
+<p>Line Number: 285</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/models/Dashboard_model.php<br />
+			Line: 285<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/controllers/Dashboard.php<br />
+			Line: 218<br />
+			Function: retryLogData			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/index.php<br />
+			Line: 318<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: admin_level</p>
+<p>Filename: models/Dashboard_model.php</p>
+<p>Line Number: 309</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/models/Dashboard_model.php<br />
+			Line: 309<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/application/controllers/Dashboard.php<br />
+			Line: 218<br />
+			Function: retryLogData			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /home/vk9u6n107bz2/public_html/quiz/admin/index.php<br />
+			Line: 318<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>user_id,name,email_id,contact_no,organization,city,exam_id,exam_name,attempted_date,no_of_question,attempt_question,correct_answer,out_of_marks,total_marks,percentage

@@ -1,0 +1,6 @@
+Question,Option1,Option2,Option3,Option4,Option5,Option 6,Correct OPtion (note:- if Correct option is Option 1 then insert 1),Category Name ,Marks
+Which of the following storage mechanisms can be used to store messages effectively which can be used across distributed systems. ,Amazon Glacier,Amazon EBS Volumes, Amazon EBS Snapshots, Amazon SQS ,,,4,AWS Cloud practioner ,5
+You are exploring which AWS service will help you in the processing of a large number of data sets.  Pick the correct one form the given list.,EMR,S3,Glacier,"Storage gateway
+",,,1,AWS Cloud practioner ,5
+Which one of the following features is normally present in all of AWS Support plans, 24*7 access to Customer Service ,Access to all features in the Trusted Advisor,A technical Account Manager,,,,1,AWS Cloud practioner ,5
+Which of the following options would entice a company to use AWS over an onpremises data center? Choose 2 answers from the options given below,Having access to Free and Unlimited Storage , Having access to Unlimited Physical servers ,Having a highly available infrastructure ,Ability to use resources on demand,,,3,AWS Cloud practioner ,5
